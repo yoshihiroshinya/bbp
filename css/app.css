@@ -1,0 +1,330 @@
+/* =============================================================================
+   app.css — スマートフォン前提のレイアウト
+   外部 CSS フレームワークは使わない（オフラインで動く PWA にしたいので
+   配布物を増やさない。テンプレート同梱の Bootstrap も外してある）。
+   ========================================================================== */
+
+:root {
+    --bg: #10171c;
+    --panel: #18222a;
+    --line: #2a3742;
+    --fg: #e7eef2;
+    --muted: #8fa3b0;
+    --accent: #3ddc97;
+    --accent-dark: #0f2f24;
+    --danger: #ff6b6b;
+
+    /* 下タブ（.app-nav）の高さ。画面下に固定するシートはここから上へ置く。
+       .app-nav は rem 指定だけで組んであるので、この比率は端末が変わっても保たれる。
+       実測 65px / ルート 15px = 4.33rem。**目分量で 3.6rem としていたときは
+       シートの最下段が 11px ぶんタブに隠れていた。** 変えるときは実測しなおすこと。 */
+    --nav-h: 4.4rem;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, sans-serif;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+}
+
+.boot { padding: 2rem; color: #8fa3b0; font-family: sans-serif; }
+
+.app { display: flex; flex-direction: column; min-height: 100dvh; }
+
+.app-header {
+    position: sticky; top: 0; z-index: 5;
+    display: flex; align-items: baseline; gap: .5rem;
+    padding: .7rem 1rem;
+    padding-top: calc(.7rem + env(safe-area-inset-top));
+    background: var(--accent-dark);
+    border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 700; font-size: 1.1rem; }
+.brand-sub { color: var(--muted); font-size: .8rem; }
+
+.app-body {
+    flex: 1;
+    padding: 1rem;
+    /* 下タブに隠れないよう余白を確保する */
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+}
+
+.app-nav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 5;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.app-nav a {
+    display: flex; flex-direction: column; align-items: center; gap: .15rem;
+    padding: .55rem 0;
+    color: var(--muted); text-decoration: none; font-size: .72rem;
+}
+.app-nav a span { font-size: 1.15rem; }
+.app-nav a.active { color: var(--accent); }
+
+h1 { font-size: 1.25rem; margin: 0 0 .8rem; }
+h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
+.muted { color: var(--muted); font-size: .82rem; }
+
+.card {
+    display: block;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: .9rem 1rem;
+    margin-bottom: .7rem;
+}
+.card.link { color: inherit; text-decoration: none; }
+.card.busy { color: var(--accent); }
+.big { font-size: 1.15rem; font-weight: 600; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
+.btn {
+    flex: 1 1 auto;
+    padding: .7rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    color: var(--fg);
+    font-size: .9rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+.btn.primary { background: var(--accent); color: #06231a; border-color: var(--accent); font-weight: 700; }
+.btn.danger { color: var(--danger); border-color: var(--danger); flex: 0 1 auto; }
+.btn.small { flex: 0 0 auto; padding: .4rem .8rem; font-size: .8rem; }
+.btn.small.on { background: var(--accent); color: #06231a; border-color: var(--accent); }
+.btn:disabled { opacity: .45; cursor: default; }
+
+.tbl { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.tbl th, .tbl td { padding: .4rem .45rem; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+.tbl th { color: var(--muted); font-weight: 500; font-size: .75rem; }
+.tbl .n { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl .r { text-align: right; }
+.tbl .name { white-space: nowrap; }
+.tbl .score { text-align: center; font-variant-numeric: tabular-nums; padding: .4rem .8rem; }
+.tbl tr.hurt td { color: var(--danger); }
+
+/* 能力値の表は列が多い。ページ全体ではなく表だけを横スクロールさせる。 */
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.log {
+    background: #0b1116;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: .6rem;
+    max-height: 22rem;
+    overflow: auto;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: .7rem;
+    line-height: 1.45;
+    white-space: pre;
+}
+
+/* ---- プレー（構造化イベント）----
+   実況ログの <pre> と違い、1件が1つの要素なので種類ごとに色を付けられる。 */
+.plays { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.pl-inning {
+    background: #0b1116; color: var(--muted);
+    padding: .3rem .6rem; font-size: .75rem;
+    border-top: 1px solid var(--line);
+}
+.pl-inning:first-child { border-top: 0; }
+.pl {
+    display: flex; align-items: baseline; gap: .4rem;
+    padding: .35rem .6rem;
+    font-size: .78rem; line-height: 1.35;
+    border-top: 1px solid #1b242b;
+    border-left: 3px solid transparent;
+}
+.pl-out { color: var(--muted); flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+.pl-who { flex: 0 0 auto; }
+.pl-what { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+.pl-runs { flex: 0 0 auto; font-weight: 700; color: var(--accent); }
+
+/* 塁（プレー前）。左から1塁・2塁・3塁 */
+.pl-bases { display: inline-flex; gap: .12rem; flex: 0 0 auto; }
+.pl-bases .bs {
+    width: 7px; height: 7px; transform: rotate(45deg);
+    border: 1px solid var(--muted);
+}
+.pl-bases .bs.on { background: var(--accent); border-color: var(--accent); }
+
+.pl.k-hit .pl-what { color: var(--accent); }
+.pl.k-onbase .pl-what { color: #9ecbff; }
+.pl.k-steal .pl-what { color: #ffd479; }
+.pl.k-tactic .pl-what { color: #c9a0ff; }
+.pl.k-out .pl-what { color: var(--fg); }
+/* 得点が入ったプレーは行ごと目立たせる。探しているのはたいていここ */
+.pl.scored { background: #16261f; border-left-color: var(--accent); }
+
+/* ---- タイトル争い（個人成績のランキング）---- */
+.card.lead { padding: .6rem .8rem; }
+.lead-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; margin-bottom: .2rem; }
+.lead-t { font-weight: 700; color: var(--accent); }
+/* 札の中の表は枠線を出さない。カテゴリの区切りはカード自体が担う */
+.lead-tbl td { border-bottom: 0; padding: .18rem .3rem; }
+.lead-rank { color: var(--muted); width: 1.2rem; text-align: right; }
+.lead-val { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.lead-tbl tr.top .lead-val { color: var(--accent); }
+
+/* ---- xlsx の取り込み結果（警告・エラーの一覧）---- */
+.io-list { margin: .3rem 0 0; padding-left: 1.2rem; font-size: .78rem; color: var(--muted); }
+.io-list li { margin-bottom: .15rem; overflow-wrap: anywhere; }
+.io-list.bad li { color: var(--danger); }
+/* Blazor の InputFile は素の <input type="file">。ダークな地でも読めるようにする */
+input[type="file"] {
+    color: var(--fg); font-family: inherit; font-size: .8rem;
+    max-width: 100%;
+}
+
+.day { margin-bottom: 1rem; }
+.day-h { font-size: .85rem; color: var(--muted); margin-bottom: .2rem; }
+.day.now .day-h { color: var(--accent); }
+.pager { font-size: .85rem; color: var(--muted); }
+
+#blazor-error-ui {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    background: #7a1f1f; color: #fff;
+    padding: .8rem 1rem; font-size: .85rem;
+}
+#blazor-error-ui .dismiss { float: right; cursor: pointer; }
+#blazor-error-ui .reload { color: #fff; }
+
+/* ---- 采配（HumanTactics の問い）---- */
+.card.tactics {
+    border-color: var(--accent);
+    background: #16261f;
+}
+.t-title { font-weight: 700; color: var(--accent); }
+.t-sit { font-size: .95rem; margin: .2rem 0 .1rem; font-variant-numeric: tabular-nums; }
+.t-choices { display: flex; flex-direction: column; gap: .4rem; margin-top: .7rem; }
+.t-choices .btn { text-align: left; }
+
+/* ---- 采配は画面下に固定する ----
+   ページの途中に置くと、下へスクロールしているときに見落とす。
+   見落とすとエンジンは入力待ちのまま止まり、「固まった」ようにしか見えない。 */
+.tactics-sheet {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));   /* 下タブの上 */
+    z-index: 10;
+    max-height: 60dvh;
+    overflow-y: auto;
+    background: #16261f;
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
+    padding: .8rem 1rem 1rem;
+}
+
+/* ---- 場面のスコアボード ----
+   シートの中で上に貼り付ける（position: sticky）。継投は選択肢が10件あり
+   シートがスクロールするので、貼り付けないと「どういう場面か」が見えなくなる。
+   シートの padding ぶん外へ広げてから塗り直し、下の行が透けないようにする。 */
+.t-board {
+    /* top を 0 にすると、貼り付く位置がシートの**内容の上端**になり、
+       padding-top（.8rem）のぶんだけ上に隙間が残って、そこを選択肢が
+       通り抜けて見える（実際にそう見えていた）。padding と同じだけ引き上げる。 */
+    position: sticky; top: -.8rem; z-index: 1;
+    margin: -.8rem -1rem .55rem;
+    padding: .6rem 1rem .5rem;
+    background: #16261f;
+    border-bottom: 1px solid var(--line);
+}
+
+.line { border-collapse: collapse; font-size: .78rem; font-variant-numeric: tabular-nums; }
+.line th, .line td {
+    padding: .15rem .34rem;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--line);
+}
+.line thead th { color: var(--muted); font-weight: 500; font-size: .7rem; }
+.line thead th.now { color: var(--accent); }
+.line .tname { text-align: left; font-weight: 500; padding-right: .5rem; }
+.line .rhe { border-left: 1px solid var(--line); font-weight: 700; }
+/* 攻撃中のチームを1行だけ強調する。どちらの回かが一目で分かる */
+.line tr.atbat .tname { color: var(--accent); }
+.line tr.atbat .tname::before { content: "▶ "; }
+
+.t-field { display: flex; align-items: flex-start; gap: .7rem; margin-top: .45rem; }
+/* 選手名は「Fスタメン3(左)（ミート78 …」のように半角が続いて改行位置が無くなる。
+   放っておくとシートの右端で切れて読めない（実際に切れていた）。 */
+.t-meta { min-width: 0; flex: 1 1 auto; overflow-wrap: anywhere; }
+.t-inning { font-size: .9rem; display: flex; align-items: center; gap: .4rem; }
+
+/* 走者の図。上が2塁・左が3塁・右が1塁。画像を使わずに正方形を45度回す。 */
+.diamond { position: relative; width: 46px; height: 46px; flex: 0 0 46px; }
+.diamond .b {
+    position: absolute; width: 13px; height: 13px;
+    transform: rotate(45deg);
+    border: 1px solid var(--muted);
+    background: transparent;
+}
+.diamond .b.on { background: var(--accent); border-color: var(--accent); }
+.diamond .b2 { top: 0; left: 16px; }
+.diamond .b3 { top: 16px; left: 0; }
+.diamond .b1 { top: 16px; left: 32px; }
+
+/* アウトカウント。塗りつぶしがアウト。 */
+.outs { display: inline-flex; gap: .2rem; }
+.outs .o {
+    width: 9px; height: 9px; border-radius: 50%;
+    border: 1px solid var(--muted);
+}
+.outs .o.on { background: var(--danger); border-color: var(--danger); }
+
+/* ---- 中断した節の再開 ---- */
+.card.resume { border-color: var(--accent); }
+
+/* ---- オーダー編成 ---- */
+.order select {
+    background: var(--panel); color: var(--fg);
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: .25rem .3rem; font-size: .8rem; font-family: inherit;
+}
+.ord { display: flex; align-items: center; gap: .2rem; }
+.ord .mv {
+    width: 1.5rem; height: 1.5rem; line-height: 1; padding: 0;
+    border: 1px solid var(--line); border-radius: 5px;
+    background: var(--panel); color: var(--fg); font-size: .7rem; cursor: pointer;
+}
+.ord .mv:disabled { opacity: .3; cursor: default; }
+/* 適性0の起用は守備範囲・肩が下限まで落ちる。数値の色で気づけるようにする */
+.tbl td.bad { color: var(--danger); font-weight: 700; }
+/* 次の試合に投げる先発 */
+.tbl tr.next td.name { color: var(--accent); font-weight: 700; }
+
+/* ---- 選手の年度別成績 ----
+   采配パネルと同じく画面下に固定する。列の多い表を横スクロールしている最中に
+   表の途中で開くと視界から外れるため、どこをタップしても同じ場所に出るようにする。 */
+.player-sheet {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));   /* 下タブの上 */
+    z-index: 10;
+    max-height: 60dvh;
+    overflow-y: auto;
+    background: #16261f;
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
+    padding: .8rem 1rem 1rem;
+}
+.p-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; margin-bottom: .5rem; }
+.p-head .btn { flex: 0 0 auto; }
+.p-name { font-weight: 700; color: var(--accent); margin-right: .5rem; }
+
+/* 開いている行が分かるようにする。表は横に長いので、色だけで示す。 */
+.tbl tr.tap { cursor: pointer; }
+.tbl tr.sel td { background: #1d3329; }
+.tbl tr.now td { color: var(--accent); }
+.tbl tr.total td { border-top: 1px solid var(--line); font-weight: 600; }

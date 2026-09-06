@@ -1,0 +1,64 @@
+{
+  "Standings": [
+    {
+      "TeamId": "Team_A",
+      "TeamName": "チームA",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    },
+    {
+      "TeamId": "Team_B",
+      "TeamName": "チームB",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    },
+    {
+      "TeamId": "Team_C",
+      "TeamName": "チームC",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    },
+    {
+      "TeamId": "Team_D",
+      "TeamName": "チームD",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    },
+    {
+      "TeamId": "Team_E",
+      "TeamName": "チームE",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    },
+    {
+      "TeamId": "Team_F",
+      "TeamName": "チームF",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0.0,
+      "GamesBehind": 0.0
+    }
+  ]
+}

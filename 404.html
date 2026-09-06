@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>BBP ペナントレース</title>
+    <base href="/bbp/" />
+    <!--
+        【消さないこと】publish 時にビルドが dotnet.js の preload へ書き換える。
+        importmap の空タグとあわせて、指紋付きファイル名の解決に必要な目印。
+    -->
+    <link href="_framework/dotnet.tmhg3jhyaw.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-RVyhYtAm5horLojHdXxT2DIL5KP0IPXbNI9m3nkcUt4=" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <meta name="theme-color" content="#0f2f24" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!--
+        【消さないこと】空のままでよい。publish 時にビルドが中身を書き込む
+        （指紋付きファイル名への対応表と整合性ハッシュ）。
+        **これが無いと指紋の置き換えが走らず、publish した
+        成果物が `_framework/blazor.webassembly.js` の 404 で起動しない。**
+        開発サーバは指紋なしの名前でも配るので `dotnet run` では気づけない。
+    -->
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.w3qd1tpl0e.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.vzj2a6aakt.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.zbexyp8zrs.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.tmhg3jhyaw.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/blazor.webassembly.w3qd1tpl0e.js": "sha256-lDXsDYFgm62F+YUvxES7IOTCXYpiHpU3uR45YdC6mq4=",
+    "./_framework/dotnet.js": "sha256-RVyhYtAm5horLojHdXxT2DIL5KP0IPXbNI9m3nkcUt4=",
+    "./_framework/dotnet.native.js": "sha256-RezASHv+dbqV50cFnld76YiLhk4B+BjMAKs/euUdNyE=",
+    "./_framework/dotnet.native.vzj2a6aakt.js": "sha256-RezASHv+dbqV50cFnld76YiLhk4B+BjMAKs/euUdNyE=",
+    "./_framework/dotnet.runtime.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
+    "./_framework/dotnet.runtime.zbexyp8zrs.js": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
+    "./_framework/dotnet.tmhg3jhyaw.js": "sha256-RVyhYtAm5horLojHdXxT2DIL5KP0IPXbNI9m3nkcUt4="
+  }
+}</script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="boot">読み込み中…</div>
+    </div>
+
+    <div id="blazor-error-ui">
+        エラーが発生しました。ページを再読み込みしてください。
+        <a href="." class="reload">再読み込み</a>
+        <span class="dismiss">🗙</span>
+    </div>
+
+    <!-- BrowserStorage (C#) が呼ぶ localStorage ラッパ。Blazor より先に読み込む。 -->
+    <script src="bbpStorage.js"></script>
+    <script src="bbpFile.js"></script>
+    <!--
+        【置き換えの目印を消さないこと。】
+        .NET 10 は publish 時に `_framework` の資産へ指紋を付ける
+        （`blazor.webassembly.w3qd1tpl0e.js` のような名前になる）。
+        指紋なしで書くと **publish した成果物だけが 404 で起動しない。**
+        開発サーバは指紋なしでも配るので `dotnet run` では気づけない
+        （実際、ここが指紋なしのままで publish 版は一度も動いていなかった）。
+        置き換えには head の importmap の空タグも要る（そちらのコメント参照）。
+    -->
+    <script src="_framework/blazor.webassembly.w3qd1tpl0e.js"></script>
+
+    <!--
+        サービスワーカーの登録。**これが無いと PWA として成立しない。**
+        `service-worker.published.js` は publish 時に `service-worker.js` へ
+        置き換わるが、登録していなければ一度も動かない（＝オフラインで開けず、
+        ホーム画面へ追加しても中身はネットワーク頼み）。
+
+        開発時（dotnet run）に読み込まれる service-worker.js は fetch を
+        素通りさせるだけの実装なので、登録してもキャッシュは効かない。
+        オフラインを確かめるには publish した成果物を配信すること。
+
+        【注意】publish 版はキャッシュ優先になる。更新は次回の起動で反映される
+        （Blazor のオフライン対応の既知の挙動）。
+    -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            // updateViaCache: 'none' はテンプレートと同じ。サービスワーカー本体を
+            // HTTP キャッシュから読ませないので、更新が確実に拾われる。
+            navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' })
+                .catch(e => console.error('service worker の登録に失敗:', e));
+        }
+    </script>
+</body>
+
+</html>

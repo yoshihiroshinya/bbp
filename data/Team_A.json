@@ -1,0 +1,1909 @@
+{
+  "TeamId": "Team_A",
+  "TeamName": "チームA",
+  "Manager": {
+    "Name": "A監督",
+    "ReliefTendency": "Aggressive",
+    "StealTendency": "Aggressive",
+    "BuntTendency": "Normal",
+    "PinchHitTendency": "Aggressive"
+  },
+  "Batters": [
+    {
+      "Name": "Aスタメン1(中)",
+      "BattingOrder": 1,
+      "MainPosition": "CF",
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 29,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 73,
+      "Power": 51,
+      "Eye": 65,
+      "Speed": 73,
+      "Clutch": 70,
+      "Catching": 73,
+      "GroundBallRate": 53,
+      "Baserunning": 80,
+      "AvgVsRight": 0.257,
+      "AvgVsLeft": 0.235,
+      "HasVsLeftBoost": true,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 63,
+        "LF": 47,
+        "CF": 100,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 62,
+          "ArmStrength": 75
+        },
+        "Pos1B": {
+          "DefenseRange": 82,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 81,
+          "ArmStrength": 58
+        },
+        "Pos3B": {
+          "DefenseRange": 67,
+          "ArmStrength": 73
+        },
+        "SS": {
+          "DefenseRange": 67,
+          "ArmStrength": 64
+        },
+        "LF": {
+          "DefenseRange": 53,
+          "ArmStrength": 58
+        },
+        "CF": {
+          "DefenseRange": 55,
+          "ArmStrength": 73
+        },
+        "RF": {
+          "DefenseRange": 81,
+          "ArmStrength": 53
+        },
+        "DH": {
+          "DefenseRange": 62,
+          "ArmStrength": 76
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン2(二)",
+      "BattingOrder": 2,
+      "MainPosition": "Pos2B",
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 22,
+      "InjuryProne": 99,
+      "Growth": "Normal",
+      "Contact": 75,
+      "Power": 61,
+      "Eye": 66,
+      "Speed": 68,
+      "Clutch": 73,
+      "Catching": 79,
+      "GroundBallRate": 46,
+      "Baserunning": 62,
+      "AvgVsRight": 0.258,
+      "AvgVsLeft": 0.265,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 73,
+          "ArmStrength": 53
+        },
+        "Pos1B": {
+          "DefenseRange": 84,
+          "ArmStrength": 82
+        },
+        "Pos2B": {
+          "DefenseRange": 83,
+          "ArmStrength": 61
+        },
+        "Pos3B": {
+          "DefenseRange": 77,
+          "ArmStrength": 75
+        },
+        "SS": {
+          "DefenseRange": 51,
+          "ArmStrength": 67
+        },
+        "LF": {
+          "DefenseRange": 56,
+          "ArmStrength": 79
+        },
+        "CF": {
+          "DefenseRange": 84,
+          "ArmStrength": 71
+        },
+        "RF": {
+          "DefenseRange": 79,
+          "ArmStrength": 84
+        },
+        "DH": {
+          "DefenseRange": 82,
+          "ArmStrength": 53
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン3(左)",
+      "BattingOrder": 3,
+      "MainPosition": "LF",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 22,
+      "InjuryProne": 99,
+      "Growth": "Normal",
+      "Contact": 84,
+      "Power": 60,
+      "Eye": 79,
+      "Speed": 57,
+      "Clutch": 77,
+      "Catching": 66,
+      "GroundBallRate": 48,
+      "Baserunning": 61,
+      "AvgVsRight": 0.276,
+      "AvgVsLeft": 0.231,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 79,
+        "SS": 0,
+        "LF": 100,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 58,
+          "ArmStrength": 68
+        },
+        "Pos1B": {
+          "DefenseRange": 79,
+          "ArmStrength": 51
+        },
+        "Pos2B": {
+          "DefenseRange": 82,
+          "ArmStrength": 82
+        },
+        "Pos3B": {
+          "DefenseRange": 58,
+          "ArmStrength": 58
+        },
+        "SS": {
+          "DefenseRange": 58,
+          "ArmStrength": 80
+        },
+        "LF": {
+          "DefenseRange": 78,
+          "ArmStrength": 52
+        },
+        "CF": {
+          "DefenseRange": 81,
+          "ArmStrength": 72
+        },
+        "RF": {
+          "DefenseRange": 70,
+          "ArmStrength": 78
+        },
+        "DH": {
+          "DefenseRange": 55,
+          "ArmStrength": 79
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン4(一)",
+      "BattingOrder": 4,
+      "MainPosition": "Pos1B",
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 34,
+      "InjuryProne": 99,
+      "Growth": "Normal",
+      "Contact": 70,
+      "Power": 72,
+      "Eye": 78,
+      "Speed": 67,
+      "Clutch": 79,
+      "Catching": 75,
+      "GroundBallRate": 48,
+      "Baserunning": 74,
+      "AvgVsRight": 0.296,
+      "AvgVsLeft": 0.238,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 55,
+        "Pos1B": 100,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 32,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 73,
+          "ArmStrength": 50
+        },
+        "Pos1B": {
+          "DefenseRange": 58,
+          "ArmStrength": 68
+        },
+        "Pos2B": {
+          "DefenseRange": 59,
+          "ArmStrength": 73
+        },
+        "Pos3B": {
+          "DefenseRange": 57,
+          "ArmStrength": 81
+        },
+        "SS": {
+          "DefenseRange": 68,
+          "ArmStrength": 81
+        },
+        "LF": {
+          "DefenseRange": 52,
+          "ArmStrength": 73
+        },
+        "CF": {
+          "DefenseRange": 62,
+          "ArmStrength": 70
+        },
+        "RF": {
+          "DefenseRange": 73,
+          "ArmStrength": 82
+        },
+        "DH": {
+          "DefenseRange": 80,
+          "ArmStrength": 50
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン5(三)",
+      "BattingOrder": 5,
+      "MainPosition": "Pos3B",
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 22,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 69,
+      "Power": 68,
+      "Eye": 60,
+      "Speed": 59,
+      "Clutch": 68,
+      "Catching": 67,
+      "GroundBallRate": 57,
+      "Baserunning": 76,
+      "AvgVsRight": 0.249,
+      "AvgVsLeft": 0.259,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 40,
+        "CF": 55,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 66,
+          "ArmStrength": 74
+        },
+        "Pos1B": {
+          "DefenseRange": 77,
+          "ArmStrength": 51
+        },
+        "Pos2B": {
+          "DefenseRange": 55,
+          "ArmStrength": 72
+        },
+        "Pos3B": {
+          "DefenseRange": 58,
+          "ArmStrength": 76
+        },
+        "SS": {
+          "DefenseRange": 77,
+          "ArmStrength": 81
+        },
+        "LF": {
+          "DefenseRange": 79,
+          "ArmStrength": 80
+        },
+        "CF": {
+          "DefenseRange": 61,
+          "ArmStrength": 76
+        },
+        "RF": {
+          "DefenseRange": 74,
+          "ArmStrength": 53
+        },
+        "DH": {
+          "DefenseRange": 76,
+          "ArmStrength": 74
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン6(右)",
+      "BattingOrder": 6,
+      "MainPosition": "RF",
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 30,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 73,
+      "Power": 70,
+      "Eye": 60,
+      "Speed": 63,
+      "Clutch": 77,
+      "Catching": 69,
+      "GroundBallRate": 49,
+      "Baserunning": 64,
+      "AvgVsRight": 0.254,
+      "AvgVsLeft": 0.276,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 46,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 100,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 77,
+          "ArmStrength": 70
+        },
+        "Pos1B": {
+          "DefenseRange": 54,
+          "ArmStrength": 53
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 55
+        },
+        "Pos3B": {
+          "DefenseRange": 74,
+          "ArmStrength": 83
+        },
+        "SS": {
+          "DefenseRange": 54,
+          "ArmStrength": 50
+        },
+        "LF": {
+          "DefenseRange": 70,
+          "ArmStrength": 80
+        },
+        "CF": {
+          "DefenseRange": 56,
+          "ArmStrength": 57
+        },
+        "RF": {
+          "DefenseRange": 69,
+          "ArmStrength": 82
+        },
+        "DH": {
+          "DefenseRange": 63,
+          "ArmStrength": 65
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン7(遊)",
+      "BattingOrder": 7,
+      "MainPosition": "SS",
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 21,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 77,
+      "Power": 75,
+      "Eye": 65,
+      "Speed": 57,
+      "Clutch": 56,
+      "Catching": 66,
+      "GroundBallRate": 54,
+      "Baserunning": 69,
+      "AvgVsRight": 0.265,
+      "AvgVsLeft": 0.237,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 100,
+        "LF": 54,
+        "CF": 0,
+        "RF": 57,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 74,
+          "ArmStrength": 75
+        },
+        "Pos1B": {
+          "DefenseRange": 73,
+          "ArmStrength": 69
+        },
+        "Pos2B": {
+          "DefenseRange": 83,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 51,
+          "ArmStrength": 66
+        },
+        "SS": {
+          "DefenseRange": 83,
+          "ArmStrength": 80
+        },
+        "LF": {
+          "DefenseRange": 66,
+          "ArmStrength": 59
+        },
+        "CF": {
+          "DefenseRange": 63,
+          "ArmStrength": 66
+        },
+        "RF": {
+          "DefenseRange": 82,
+          "ArmStrength": 76
+        },
+        "DH": {
+          "DefenseRange": 63,
+          "ArmStrength": 61
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン8(捕)",
+      "BattingOrder": 8,
+      "MainPosition": "C",
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 22,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 79,
+      "Power": 71,
+      "Eye": 66,
+      "Speed": 81,
+      "Clutch": 56,
+      "Catching": 80,
+      "GroundBallRate": 61,
+      "Baserunning": 73,
+      "AvgVsRight": 0.276,
+      "AvgVsLeft": 0.23,
+      "HasVsLeftBoost": true,
+      "HasClutchBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 80,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 58,
+          "ArmStrength": 74
+        },
+        "Pos1B": {
+          "DefenseRange": 58,
+          "ArmStrength": 83
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 50
+        },
+        "Pos3B": {
+          "DefenseRange": 70,
+          "ArmStrength": 76
+        },
+        "SS": {
+          "DefenseRange": 59,
+          "ArmStrength": 84
+        },
+        "LF": {
+          "DefenseRange": 66,
+          "ArmStrength": 55
+        },
+        "CF": {
+          "DefenseRange": 53,
+          "ArmStrength": 71
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 65
+        },
+        "DH": {
+          "DefenseRange": 64,
+          "ArmStrength": 70
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "Aスタメン9(指)",
+      "BattingOrder": 9,
+      "MainPosition": "DH",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 26,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 65,
+      "Power": 71,
+      "Eye": 60,
+      "Speed": 72,
+      "Clutch": 55,
+      "Catching": 78,
+      "GroundBallRate": 43,
+      "Baserunning": 78,
+      "AvgVsRight": 0.247,
+      "AvgVsLeft": 0.265,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 76,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 56,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 72,
+          "ArmStrength": 68
+        },
+        "Pos1B": {
+          "DefenseRange": 50,
+          "ArmStrength": 62
+        },
+        "Pos2B": {
+          "DefenseRange": 63,
+          "ArmStrength": 71
+        },
+        "Pos3B": {
+          "DefenseRange": 50,
+          "ArmStrength": 80
+        },
+        "SS": {
+          "DefenseRange": 58,
+          "ArmStrength": 84
+        },
+        "LF": {
+          "DefenseRange": 68,
+          "ArmStrength": 53
+        },
+        "CF": {
+          "DefenseRange": 51,
+          "ArmStrength": 58
+        },
+        "RF": {
+          "DefenseRange": 65,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 83,
+          "ArmStrength": 51
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 33,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 63,
+      "Power": 60,
+      "Eye": 71,
+      "Speed": 65,
+      "Clutch": 52,
+      "Catching": 70,
+      "GroundBallRate": 40,
+      "Baserunning": 56,
+      "AvgVsRight": 0.258,
+      "AvgVsLeft": 0.229,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 50,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 65,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 57,
+          "ArmStrength": 67
+        },
+        "Pos1B": {
+          "DefenseRange": 79,
+          "ArmStrength": 54
+        },
+        "Pos2B": {
+          "DefenseRange": 68,
+          "ArmStrength": 54
+        },
+        "Pos3B": {
+          "DefenseRange": 84,
+          "ArmStrength": 62
+        },
+        "SS": {
+          "DefenseRange": 54,
+          "ArmStrength": 69
+        },
+        "LF": {
+          "DefenseRange": 66,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 66,
+          "ArmStrength": 82
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 62,
+          "ArmStrength": 51
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控2(一)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos1B",
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 24,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 64,
+      "Power": 45,
+      "Eye": 60,
+      "Speed": 55,
+      "Clutch": 54,
+      "Catching": 65,
+      "GroundBallRate": 55,
+      "Baserunning": 78,
+      "AvgVsRight": 0.262,
+      "AvgVsLeft": 0.236,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 100,
+        "Pos2B": 0,
+        "Pos3B": 80,
+        "SS": 0,
+        "LF": 0,
+        "CF": 70,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 63,
+          "ArmStrength": 57
+        },
+        "Pos1B": {
+          "DefenseRange": 70,
+          "ArmStrength": 64
+        },
+        "Pos2B": {
+          "DefenseRange": 78,
+          "ArmStrength": 79
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 80,
+          "ArmStrength": 54
+        },
+        "LF": {
+          "DefenseRange": 60,
+          "ArmStrength": 50
+        },
+        "CF": {
+          "DefenseRange": 82,
+          "ArmStrength": 79
+        },
+        "RF": {
+          "DefenseRange": 84,
+          "ArmStrength": 74
+        },
+        "DH": {
+          "DefenseRange": 75,
+          "ArmStrength": 74
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控3(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 34,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 63,
+      "Power": 76,
+      "Eye": 71,
+      "Speed": 72,
+      "Clutch": 58,
+      "Catching": 71,
+      "GroundBallRate": 61,
+      "Baserunning": 54,
+      "AvgVsRight": 0.249,
+      "AvgVsLeft": 0.213,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 69,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 62,
+          "ArmStrength": 81
+        },
+        "Pos1B": {
+          "DefenseRange": 84,
+          "ArmStrength": 50
+        },
+        "Pos2B": {
+          "DefenseRange": 51,
+          "ArmStrength": 73
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 77
+        },
+        "SS": {
+          "DefenseRange": 57,
+          "ArmStrength": 69
+        },
+        "LF": {
+          "DefenseRange": 51,
+          "ArmStrength": 57
+        },
+        "CF": {
+          "DefenseRange": 58,
+          "ArmStrength": 52
+        },
+        "RF": {
+          "DefenseRange": 71,
+          "ArmStrength": 67
+        },
+        "DH": {
+          "DefenseRange": 76,
+          "ArmStrength": 84
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控4(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 33,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 71,
+      "Power": 77,
+      "Eye": 60,
+      "Speed": 68,
+      "Clutch": 71,
+      "Catching": 73,
+      "GroundBallRate": 63,
+      "Baserunning": 56,
+      "AvgVsRight": 0.22,
+      "AvgVsLeft": 0.244,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 67,
+          "ArmStrength": 70
+        },
+        "Pos1B": {
+          "DefenseRange": 54,
+          "ArmStrength": 62
+        },
+        "Pos2B": {
+          "DefenseRange": 71,
+          "ArmStrength": 70
+        },
+        "Pos3B": {
+          "DefenseRange": 56,
+          "ArmStrength": 83
+        },
+        "SS": {
+          "DefenseRange": 61,
+          "ArmStrength": 67
+        },
+        "LF": {
+          "DefenseRange": 65,
+          "ArmStrength": 81
+        },
+        "CF": {
+          "DefenseRange": 75,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 51
+        },
+        "DH": {
+          "DefenseRange": 57,
+          "ArmStrength": 52
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控5(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 33,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 79,
+      "Power": 72,
+      "Eye": 66,
+      "Speed": 55,
+      "Clutch": 68,
+      "Catching": 66,
+      "GroundBallRate": 64,
+      "Baserunning": 57,
+      "AvgVsRight": 0.261,
+      "AvgVsLeft": 0.221,
+      "HasVsLeftBoost": true,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 100,
+        "LF": 0,
+        "CF": 0,
+        "RF": 83,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 60,
+          "ArmStrength": 60
+        },
+        "Pos1B": {
+          "DefenseRange": 68,
+          "ArmStrength": 57
+        },
+        "Pos2B": {
+          "DefenseRange": 66,
+          "ArmStrength": 59
+        },
+        "Pos3B": {
+          "DefenseRange": 52,
+          "ArmStrength": 68
+        },
+        "SS": {
+          "DefenseRange": 52,
+          "ArmStrength": 67
+        },
+        "LF": {
+          "DefenseRange": 57,
+          "ArmStrength": 82
+        },
+        "CF": {
+          "DefenseRange": 61,
+          "ArmStrength": 65
+        },
+        "RF": {
+          "DefenseRange": 59,
+          "ArmStrength": 81
+        },
+        "DH": {
+          "DefenseRange": 53,
+          "ArmStrength": 65
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控6(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 35,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 60,
+      "Power": 58,
+      "Eye": 74,
+      "Speed": 67,
+      "Clutch": 54,
+      "Catching": 64,
+      "GroundBallRate": 60,
+      "Baserunning": 45,
+      "AvgVsRight": 0.265,
+      "AvgVsLeft": 0.215,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 40,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 59,
+        "LF": 100,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 60,
+          "ArmStrength": 72
+        },
+        "Pos1B": {
+          "DefenseRange": 73,
+          "ArmStrength": 67
+        },
+        "Pos2B": {
+          "DefenseRange": 68,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 57,
+          "ArmStrength": 75
+        },
+        "SS": {
+          "DefenseRange": 67,
+          "ArmStrength": 81
+        },
+        "LF": {
+          "DefenseRange": 71,
+          "ArmStrength": 62
+        },
+        "CF": {
+          "DefenseRange": 79,
+          "ArmStrength": 78
+        },
+        "RF": {
+          "DefenseRange": 82,
+          "ArmStrength": 68
+        },
+        "DH": {
+          "DefenseRange": 77,
+          "ArmStrength": 82
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    },
+    {
+      "Name": "A控7(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 35,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 70,
+      "Power": 59,
+      "Eye": 69,
+      "Speed": 78,
+      "Clutch": 50,
+      "Catching": 78,
+      "GroundBallRate": 60,
+      "Baserunning": 71,
+      "AvgVsRight": 0.241,
+      "AvgVsLeft": 0.258,
+      "HasVsLeftBoost": false,
+      "HasClutchBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 83,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 30,
+        "CF": 100,
+        "RF": 58,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 78,
+          "ArmStrength": 65
+        },
+        "Pos1B": {
+          "DefenseRange": 68,
+          "ArmStrength": 81
+        },
+        "Pos2B": {
+          "DefenseRange": 80,
+          "ArmStrength": 50
+        },
+        "Pos3B": {
+          "DefenseRange": 75,
+          "ArmStrength": 52
+        },
+        "SS": {
+          "DefenseRange": 69,
+          "ArmStrength": 53
+        },
+        "LF": {
+          "DefenseRange": 53,
+          "ArmStrength": 80
+        },
+        "CF": {
+          "DefenseRange": 75,
+          "ArmStrength": 68
+        },
+        "RF": {
+          "DefenseRange": 73,
+          "ArmStrength": 83
+        },
+        "DH": {
+          "DefenseRange": 81,
+          "ArmStrength": 82
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0
+      }
+    }
+  ],
+  "Pitchers": [
+    {
+      "Name": "A先発1",
+      "Role": "Starter",
+      "Hand": "右",
+      "Control": 63,
+      "Stuff": 78,
+      "Stamina": 82,
+      "HasIntimidation": false,
+      "Age": 24,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 70,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A先発2",
+      "Role": "Starter",
+      "Hand": "左",
+      "Control": 73,
+      "Stuff": 70,
+      "Stamina": 83,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 74,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 76,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A先発3",
+      "Role": "Starter",
+      "Hand": "右",
+      "Control": 75,
+      "Stuff": 80,
+      "Stamina": 80,
+      "HasIntimidation": false,
+      "Age": 26,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 74,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 78,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 45,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A先発4",
+      "Role": "Starter",
+      "Hand": "左",
+      "Control": 77,
+      "Stuff": 75,
+      "Stamina": 77,
+      "HasIntimidation": false,
+      "Age": 24,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 57,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 63,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 45,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A先発5",
+      "Role": "Starter",
+      "Hand": "右",
+      "Control": 76,
+      "Stuff": 80,
+      "Stamina": 79,
+      "HasIntimidation": false,
+      "Age": 24,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 76,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 57,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 56,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 62,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A中継ぎ1",
+      "Role": "Reliever",
+      "Hand": "左",
+      "Control": 71,
+      "Stuff": 62,
+      "Stamina": 36,
+      "HasIntimidation": false,
+      "Age": 35,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 75,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 73,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 69,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A中継ぎ2",
+      "Role": "Reliever",
+      "Hand": "左",
+      "Control": 67,
+      "Stuff": 68,
+      "Stamina": 48,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 72,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 76,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 71,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A中継ぎ3",
+      "Role": "Reliever",
+      "Hand": "右",
+      "Control": 62,
+      "Stuff": 64,
+      "Stamina": 49,
+      "HasIntimidation": false,
+      "Age": 28,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 75,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 73,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 56,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A中継ぎ4",
+      "Role": "Reliever",
+      "Hand": "左",
+      "Control": 64,
+      "Stuff": 64,
+      "Stamina": 36,
+      "HasIntimidation": false,
+      "Age": 29,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 62,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 50,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    },
+    {
+      "Name": "A抑え",
+      "Role": "Closer",
+      "Hand": "右",
+      "Control": 84,
+      "Stuff": 80,
+      "Stamina": 36,
+      "HasIntimidation": true,
+      "Age": 28,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "Pitches": [
+        {
+          "Name": "豪速球",
+          "Quality": 85,
+          "StrikeoutBoost": 10,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "SFF",
+          "Quality": 85,
+          "StrikeoutBoost": 20,
+          "GroundBallBoost": 15
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 83,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      }
+    }
+  ]
+}

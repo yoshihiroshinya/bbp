@@ -1,0 +1,2 @@
+# 配信物なので改行を変換しない（service-worker-assets.js の SHA-256 と一致させる）
+* -text
