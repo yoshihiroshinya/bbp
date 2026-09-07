@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!--
+    選手名鑑。**アプリから開く単体の HTML。**
+
+    【正はこのファイル】リポジトリ直下の wwwroot/almanac.html が正で、
+    Web/wwwroot/ へはビルド時にコピーされる（bbpStorage.js と同じ扱い。
+    コピー先は .gitignore 済み）。
+
+    【数式と定数はすべて実装から写したもの】仕様を変えたらここも直すこと。
+    「効かないもの」の一覧が入っているので、放置すると嘘になる。
+    同じ内容の文字版が MANUAL.md にある。
+
+    【フォントは外部から取る】オフラインでは代替書体に落ちる（読めれば良い）。
+    アプリ本体と違い CSP の制約は無いので Google Fonts をそのまま使う。
+-->
+<title>BBP パラメータ名鑑</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+  /* ── 配色は野球の材質から取る。芝・ファウルラインの白・ボールの縫い目の赤・内野の土 ── */
+  :root {
+    --paper:      #f3f5f1;   /* 用紙。わずかに緑へ寄せた紙色 */
+    --paper-2:    #e9ede6;   /* 段組みの地 */
+    --ink:        #17201b;   /* 緑に寄った黒 */
+    --ink-2:      #4a5a50;   /* 副文 */
+    --ink-3:      #7d8a82;   /* 注記 */
+    --field:      #14432f;   /* 外野の芝。構造色 */
+    --field-2:    #1e5c40;
+    --chalk:      #d3dacd;   /* ファウルラインの白灰。罫線 */
+    --stitch:     #b3122c;   /* ボールの縫い目。警告と強調はここだけ */
+    --stitch-bg:  #fbeaec;
+    --clay:       #a9663f;   /* 内野の土。副次の数値 */
+    --shadow:     0 1px 0 var(--chalk);
+  }
+  /* 既定（システム設定）のダーク = ナイター */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:     #101713;
+      --paper-2:   #16201a;
+      --ink:       #e8efe8;
+      --ink-2:     #a3b4a8;
+      --ink-3:     #74857a;
+      --field:     #4fbb85;
+      --field-2:   #7fd6a6;
+      --chalk:     #2a382f;
+      --stitch:    #ff6b7e;
+      --stitch-bg: #2a1418;
+      --clay:      #d09263;
+      --shadow:    0 1px 0 var(--chalk);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:     #101713;
+    --paper-2:   #16201a;
+    --ink:       #e8efe8;
+    --ink-2:     #a3b4a8;
+    --ink-3:     #74857a;
+    --field:     #4fbb85;
+    --field-2:   #7fd6a6;
+    --chalk:     #2a382f;
+    --stitch:    #ff6b7e;
+    --stitch-bg: #2a1418;
+    --clay:      #d09263;
+    --shadow:    0 1px 0 var(--chalk);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* ── 名鑑の見開き。左に索引、右に本文 ── */
+  .wrap {
+    display: grid;
+    grid-template-columns: 12.5rem minmax(0, 1fr);
+    gap: 0 3rem;
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 1.15rem 4rem; }
+    .rail { position: static; border-right: 0; border-bottom: 1px solid var(--chalk); padding: 0 0 1.2rem; margin-bottom: 2rem; }
+    .rail ol { display: flex; flex-wrap: wrap; gap: .1rem 1.1rem; }
+  }
+
+  /* ── 題字 ── */
+  header { grid-column: 1 / -1; padding: 3.5rem 0 2.25rem; border-bottom: 3px double var(--chalk); margin-bottom: 2.5rem; }
+  .eyebrow {
+    font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--field); font-weight: 700; margin-bottom: .7rem;
+  }
+  h1 {
+    font-family: "Shippori Mincho", serif; font-weight: 800;
+    font-size: clamp(2.1rem, 6vw, 3.4rem); line-height: 1.15; margin: 0 0 .8rem;
+    text-wrap: balance; letter-spacing: .02em;
+  }
+  .lede { font-size: 1.06rem; color: var(--ink-2); max-width: 34em; margin: 0; }
+  .lede strong { color: var(--ink); font-weight: 700; }
+
+  /* ── 索引 ── */
+  .rail { position: sticky; top: 0; align-self: start; padding: 2.6rem 0 2rem; }
+  .rail p { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 .7rem; font-weight: 700; }
+  .rail ol { list-style: none; margin: 0; padding: 0; font-size: .87rem; line-height: 2.05; }
+  .rail a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid transparent; }
+  .rail a:hover, .rail a:focus-visible { color: var(--field); border-bottom-color: var(--field); }
+
+  main { grid-column: 2; min-width: 0; }
+  @media (max-width: 900px) { main { grid-column: 1; } }
+
+  section { margin-bottom: 4.5rem; scroll-margin-top: 1.5rem; }
+  h2 {
+    font-family: "Shippori Mincho", serif; font-weight: 800; font-size: 1.7rem;
+    margin: 0 0 .35rem; letter-spacing: .02em; text-wrap: balance;
+  }
+  .sub { color: var(--ink-3); font-size: .9rem; margin: 0 0 1.6rem; padding-bottom: .9rem; border-bottom: 1px solid var(--chalk); }
+  h3 { font-family: "Shippori Mincho", serif; font-weight: 600; font-size: 1.16rem; margin: 2.2rem 0 .6rem; }
+  p { margin: 0 0 1rem; max-width: 38em; }
+  a { color: var(--field); }
+  strong { font-weight: 700; }
+  em { font-style: normal; background: linear-gradient(transparent 62%, var(--chalk) 62%); font-weight: 500; }
+
+  /* ── 打席の進行。ゲートは実際の順序なので番号が意味を持つ ── */
+  .gates { list-style: none; margin: 0; padding: 0; }
+  .gate { display: grid; grid-template-columns: 2.6rem minmax(0,1fr); gap: 0 1.1rem; padding-bottom: 1.7rem; position: relative; }
+  .gate:not(:last-child)::before {
+    content: ""; position: absolute; left: 1.28rem; top: 2.5rem; bottom: 0;
+    border-left: 1px dashed var(--chalk);
+  }
+  .gate-n {
+    width: 2.6rem; height: 2.6rem; border-radius: 50%;
+    background: var(--field); color: var(--paper);
+    display: grid; place-items: center;
+    font-family: "Shippori Mincho", serif; font-size: 1.15rem; font-weight: 800;
+    position: relative; z-index: 1;
+  }
+  .gate-b { padding-top: .18rem; }
+  .gate-t { font-weight: 700; font-size: 1.02rem; margin-bottom: .15rem; }
+  .gate-d { color: var(--ink-2); font-size: .93rem; margin: 0 0 .6rem; max-width: 36em; }
+
+  /* 数式は罫線で囲んで質感を出す（和文と欧文モノスペースの混植を避ける） */
+  .fx {
+    display: block; background: var(--paper-2);
+    border-left: 3px solid var(--field);
+    padding: .6rem .85rem; margin: 0 0 .55rem;
+    font-size: .93rem; font-variant-numeric: tabular-nums;
+    letter-spacing: .03em; line-height: 1.7;
+    overflow-x: auto; white-space: nowrap;
+  }
+  .fx b { color: var(--field); font-weight: 700; }
+  .feeds { font-size: .82rem; color: var(--ink-3); }
+  .feeds span {
+    display: inline-block; border: 1px solid var(--chalk); padding: .04rem .45rem;
+    margin: 0 .25rem .25rem 0; color: var(--ink-2); font-weight: 500; font-size: .8rem;
+  }
+
+  /* ── 道具（シミュレーター） ── */
+  .tool { background: var(--paper-2); border-top: 3px solid var(--field); padding: 1.5rem 1.4rem 1.6rem; margin: 1.8rem 0; }
+  .tool-h { font-family: "Shippori Mincho", serif; font-weight: 800; font-size: 1.12rem; margin: 0 0 .2rem; }
+  .tool-s { font-size: .84rem; color: var(--ink-3); margin: 0 0 1.2rem; }
+  .dials { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: .9rem 1.5rem; margin-bottom: 1.4rem; }
+  .dial label { display: flex; justify-content: space-between; align-items: baseline; font-size: .84rem; font-weight: 500; margin-bottom: .1rem; }
+  .dial label b { font-family: "Shippori Mincho", serif; font-size: 1.15rem; font-variant-numeric: tabular-nums; color: var(--field); }
+  input[type=range] { width: 100%; accent-color: var(--field); height: 1.4rem; }
+  input[type=range]:focus-visible { outline: 2px solid var(--field); outline-offset: 3px; }
+
+  .out { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: 1rem; border-top: 1px solid var(--chalk); padding-top: 1.1rem; }
+  .out div { min-width: 0; }
+  .out dt { font-size: .76rem; letter-spacing: .1em; color: var(--ink-3); font-weight: 700; }
+  .out dd { margin: 0; font-family: "Shippori Mincho", serif; font-size: 1.85rem; font-weight: 800; line-height: 1.25; font-variant-numeric: tabular-nums; }
+  .out dd small { font-size: .8rem; font-family: "Zen Kaku Gothic New", sans-serif; font-weight: 500; color: var(--ink-3); margin-left: .15rem; }
+  .npb { font-size: .78rem; color: var(--ink-3); margin-top: .1rem; }
+
+  /* 球場の柵。横棒で飛距離と必要距離を並べる */
+  .parks { margin: 1.2rem 0 0; }
+  .park { display: grid; grid-template-columns: 8.5rem minmax(0,1fr) 6rem; gap: .55rem; align-items: center; font-size: .84rem; padding: .22rem 0; }
+  .park-n { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .park-bar { position: relative; height: .95rem; background: var(--chalk); }
+  .park-fill { position: absolute; inset: 0 auto 0 0; background: var(--field); }
+  .park-fill.over { background: var(--stitch); }
+  .park-v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-3); }
+  .park-tag { font-size: .74rem; font-weight: 700; }
+  .park-tag.yes { color: var(--stitch); }
+  .park-tag.no { color: var(--ink-3); }
+  @media (max-width: 560px) { .park { grid-template-columns: 6rem minmax(0,1fr) 5.4rem; font-size: .78rem; } }
+
+  /* ── 表 ── */
+  .scroll { overflow-x: auto; margin: 0 0 1.2rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .89rem; min-width: 34rem; }
+  th, td { text-align: left; padding: .55rem .7rem .55rem 0; border-bottom: 1px solid var(--chalk); vertical-align: top; }
+  thead th { font-size: .74rem; letter-spacing: .1em; color: var(--field); border-bottom: 2px solid var(--field); white-space: nowrap; font-weight: 700; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pname { font-weight: 700; white-space: nowrap; }
+  .dead td { color: var(--ink-3); }
+  .dead .pname { color: var(--stitch); }
+
+  /* 効きの強さ。3段の点で示す */
+  .pips { display: inline-flex; gap: .18rem; }
+  .pip { width: .42rem; height: .42rem; border-radius: 50%; background: var(--chalk); }
+  .pip.on { background: var(--field); }
+
+  /* ── 検印（効かないもの・注意） ── */
+  .stamp { border: 2px solid var(--stitch); background: var(--stitch-bg); padding: 1.2rem 1.3rem; margin: 1.6rem 0; }
+  .stamp-h { font-family: "Shippori Mincho", serif; font-weight: 800; color: var(--stitch); font-size: 1.05rem; margin: 0 0 .7rem; letter-spacing: .04em; }
+  .stamp ul { margin: 0; padding-left: 1.15rem; }
+  .stamp li { margin-bottom: .5rem; font-size: .92rem; }
+  .stamp li:last-child { margin-bottom: 0; }
+  .stamp li b { color: var(--stitch); }
+
+  .note { border-left: 3px solid var(--clay); background: var(--paper-2); padding: .8rem 1rem; font-size: .9rem; margin: 1.2rem 0; }
+  .note b { color: var(--clay); }
+
+  /* 疲労の棒 */
+  .decay { margin: 1rem 0 1.4rem; }
+  .decay-row { display: grid; grid-template-columns: 7.5rem minmax(0,1fr) 3.5rem; gap: .6rem; align-items: center; font-size: .86rem; padding: .25rem 0; }
+  .decay-bar { height: 1.05rem; background: var(--chalk); position: relative; }
+  .decay-fill { position: absolute; inset: 0 auto 0 0; background: var(--clay); }
+  .decay-fill.zero { background: transparent; border-left: 2px solid var(--field); width: 2px !important; }
+  .decay-v { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+
+  ul.plain { padding-left: 1.15rem; margin: 0 0 1.1rem; }
+  ul.plain li { margin-bottom: .4rem; max-width: 37em; }
+
+  footer { grid-column: 1 / -1; border-top: 3px double var(--chalk); margin-top: 2rem; padding-top: 1.6rem; font-size: .86rem; color: var(--ink-3); }
+  footer p { max-width: 40em; }
+
+  .toggle {
+    position: fixed; right: 1rem; top: 1rem; z-index: 20;
+    background: var(--paper-2); color: var(--ink-2); border: 1px solid var(--chalk);
+    padding: .35rem .7rem; font-size: .78rem; cursor: pointer;
+    font-family: inherit;
+  }
+  .toggle:hover { color: var(--field); border-color: var(--field); }
+  .toggle:focus-visible { outline: 2px solid var(--field); outline-offset: 2px; }
+</style>
+<style>
+  /* 単体で開くとき用の最小リセット（artifact ホストが当てていたぶん） */
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+</style>
+</head>
+<body>
+
+<button class="toggle" id="themeBtn" type="button">昼／夜</button>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">BBP ペナントレース</div>
+    <h1>パラメータ名鑑</h1>
+    <p class="lede">
+      どの数値が、試合のどこで効くのか。<strong>数式はすべて実装から写したもの</strong>で、
+      推測は入っていません。<strong>上げても何も変わらない数値</strong>もあるので、
+      調整する前にそこだけは読んでおいてください。
+    </p>
+  </header>
+
+  <nav class="rail" aria-label="目次">
+    <p>目次</p>
+    <ol>
+      <li><a href="#start">はじめかた</a></li>
+      <li><a href="#play">遊びの流れ</a></li>
+      <li><a href="#pa">打席はこう進む</a></li>
+      <li><a href="#sim1">打席の道具</a></li>
+      <li><a href="#ball">打球が飛んでから</a></li>
+      <li><a href="#sim2">飛距離の道具</a></li>
+      <li><a href="#run">走塁と守備</a></li>
+      <li><a href="#batter">野手の一覧</a></li>
+      <li><a href="#pitcher">投手の一覧</a></li>
+      <li><a href="#dead">効かないもの</a></li>
+      <li><a href="#cond">調子と疲労</a></li>
+      <li><a href="#order">触る順番</a></li>
+      <li><a href="#trouble">困ったとき</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- ══ はじめかた ══ -->
+    <section id="start">
+      <h2>はじめかた</h2>
+      <p class="sub">6球団・各140試合・全163節。うち23節は試合の無い休養日です</p>
+
+      <p>
+        配信中の URL をブラウザで開き、読み込みが終わるまで待ちます（初回は約10MB）。
+        そのあと<em>ホーム画面に追加</em>すると、アプリのように起動できます。
+      </p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>端末</th><th>操作</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">Android (Chrome)</td><td>右上の <b>⋮</b> →「アプリをインストール」</td></tr>
+            <tr><td class="pname">iPhone</td><td><b>Safari で開いて</b> 共有ボタン（□に↑）→「ホーム画面に追加」</td></tr>
+            <tr><td class="pname">PC</td><td>アドレスバーの「インストール」ボタン</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        一度読み込めば<em>オフラインで遊べます</em>。機内モードで起動できることを
+        一度確かめておくと安心です。
+      </p>
+
+      <div class="note">
+        <b>進行データは端末の中だけ</b>にあります。どこにも送信されませんが、そのぶん
+        <b>端末ごと・ブラウザごとに別のペナント</b>になり、ブラウザのサイトデータを消すと
+        進行状況も消えます。スマホと PC で共有はされません。
+      </div>
+    </section>
+
+    <!-- ══ 遊びの流れ ══ -->
+    <section id="play">
+      <h2>遊びの流れ</h2>
+      <p class="sub">決めるのは3つ。采配の深さと試合の見え方は別の軸です</p>
+
+      <h3>① 采配する球団</h3>
+      <p>選ばないと全球団おまかせ（自動進行）。選ぶとその球団の試合であなたに采配が回ります。</p>
+
+      <h3>② どこまで聞くか</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>設定</th><th class="n">1試合の問い</th><th>中身</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">おまかせ</td><td class="n">0回</td><td>すべて自動</td></tr>
+            <tr><td class="pname">要所だけ</td><td class="n">3〜7回</td><td>コンピュータが「やる」と言った場面＋投手交代</td></tr>
+            <tr><td class="pname">全部</td><td class="n">40回前後</td><td>走者が出るたび</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        「全部」でも打席ごとには聞かれません。走者なし・2アウトでの守備位置のように、
+        何を選んでも1球も変わらない問いは出さないようにしています。
+      </p>
+
+      <h3>③ 試合の見え方</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>設定</th><th>動き</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">一気に</td><td>止まらずに流れる（既定）</td></tr>
+            <tr><td class="pname">タップで進む</td><td>1プレーごとに「次へ」。1試合およそ80プレー</td></tr>
+            <tr><td class="pname">自動・ゆっくり／普通／速い</td><td>2.0／1.2／0.6 秒ごとに勝手に進む</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        観戦で止まるのは<em>あなたの球団の試合だけ</em>。止まるたびに「この回まで」
+        「試合の最後まで」で飛ばせます。<strong>まとめ消化（1週間・シーズン終了まで）では
+        采配も観戦も止まりません</strong> — 実況を残していないので、止めても読むものがないためです。
+      </p>
+
+      <h3>ログは3種類</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>タブ</th><th>中身</th><th>注意</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">プレー</td><td>1プレーずつの一覧。種類で色分け、得点した場面を強調</td><td><b>節の3試合を選んで読み返せる</b></td></tr>
+            <tr><td class="pname">実況</td><td>文字の実況</td><td>末尾200行だけ。前へは戻れない</td></tr>
+            <tr><td class="pname">進行・診断</td><td>節の進行、故障や継投の警告、順位表</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>実況タブに前の試合が出ないのは仕様です。</b>1節の実況は約1,400行あり、全文を出すと
+        采配のたびに画面が重くなります。読み返したいときは「プレー」タブへ。
+      </div>
+
+      <h3>中断しても続きから戻れます</h3>
+      <p>
+        保存しているのは<em>その節の乱数の種</em>と<em>あなたが出した答え</em>の2つだけ。
+        再開すると節を最初から再生して答えを流し込むので、同じ試合が再現されます（実測1秒未満）。
+        節の途中では成績が保存されていないため、再生しても二重には記録されません。
+      </p>
+    </section>
+
+    <!-- ══ 打席 ══ -->
+    <section id="pa">
+      <h2>打席はこう進む</h2>
+      <p class="sub">1球ごとに6つの関門を通ります。番号は実際の判定順です</p>
+
+      <ol class="gates">
+        <li class="gate">
+          <div class="gate-n">1</div>
+          <div class="gate-b">
+            <div class="gate-t">ゾーンに入ったか</div>
+            <p class="gate-d">制球が高く、打者の選球眼が低いほどストライクゾーンへ入ります。</p>
+            <div class="fx">ゾーン率(%) = <b>制球</b> + 15 − <b>選球</b> ÷ 2</div>
+            <div class="feeds">効くもの <span>投手・制球</span><span>打者・選球</span></div>
+          </div>
+        </li>
+        <li class="gate">
+          <div class="gate-n">2</div>
+          <div class="gate-b">
+            <div class="gate-t">打者が振ったか</div>
+            <p class="gate-d">
+              選球眼が高いほど、ストライクは振ってボール球は見送ります。
+              <strong>この2つを分けているのが四球の源</strong>で、混ぜるとゾーン外の投球まで
+              打てる球になり、四球が発生しなくなります。
+            </p>
+            <div class="fx">ゾーン内(%) = 64 + (<b>選球</b> − 60) ÷ 4 　（40〜95）</div>
+            <div class="fx">ゾーン外(%) = 34 − (<b>選球</b> − 60) ÷ 3 　（5〜60）</div>
+            <div class="feeds">効くもの <span>打者・選球</span></div>
+          </div>
+        </li>
+        <li class="gate">
+          <div class="gate-n">3</div>
+          <div class="gate-b">
+            <div class="gate-t">見送ったら、ストライクかボール</div>
+            <p class="gate-d">3ストライクで三振、4ボールで四球。ここで打席が終わることもあります。</p>
+            <div class="feeds">効くもの <span>1と2の結果だけ</span></div>
+          </div>
+        </li>
+        <li class="gate">
+          <div class="gate-n">4</div>
+          <div class="gate-b">
+            <div class="gate-t">振ったら、当たったか</div>
+            <p class="gate-d">キレが巧打を上回るほど空振りします。球種の奪三振補正もここに乗ります。</p>
+            <div class="fx">空振り率 = 0.18 + (<b>キレ</b> − <b>巧打</b>) × 0.003 + <b>奪三振補正</b> × 0.002 　（5〜45%）</div>
+            <div class="feeds">効くもの <span>投手・キレ</span><span>打者・巧打</span><span>球種・奪三振補正</span></div>
+          </div>
+        </li>
+        <li class="gate">
+          <div class="gate-n">5</div>
+          <div class="gate-b">
+            <div class="gate-t">当たった球の44%はファウル</div>
+            <p class="gate-d">2ストライク後のファウルは打席が続きます（カウントは増えません）。</p>
+            <div class="feeds">効くもの <span>なし（固定44%）</span></div>
+          </div>
+        </li>
+        <li class="gate">
+          <div class="gate-n">6</div>
+          <div class="gate-b">
+            <div class="gate-t">飛んだ球がヒットになるか</div>
+            <p class="gate-d">
+              基準打率に補正を足したものがヒット率です。打率は三振も分母に含む値なので、
+              インプレー時は 1.21 倍して釣り合わせています。
+            </p>
+            <div class="fx">基準 = <b>対右</b>／<b>対左</b> ＋ <b>対左○</b>0.025 ＋ <b>チャンス○</b>0.030 − <b>威圧感</b>0.025 ＋ (<b>巧打</b> − <b>制球</b>) × 0.001</div>
+            <div class="fx">ヒット率 = 基準（0.15〜0.55）× 1.21　＋ 前進守備の内野なら +0.08</div>
+            <div class="feeds">効くもの <span>打者・対右／対左</span><span>打者・巧打</span><span>投手・制球</span><span>対左○</span><span>チャンス○</span><span>威圧感</span><span>決定力</span></div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="stamp">
+        <p class="stamp-h">守備範囲はここに出てきません</p>
+        <ul>
+          <li><b>打球がヒットになるかどうかは、打者側の数値だけで決まります。</b>
+            守備範囲が効くのは内野安打率と併殺率だけ。守備を固めてもヒットの数は減りません
+            （守備固めの効き目が半分に感じるのはこれが理由です）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ 道具1 ══ -->
+    <section id="sim1">
+      <h2>打席の道具</h2>
+      <p class="sub">上の6つの関門をそのまま2万打席ぶん回します</p>
+
+      <div class="tool">
+        <p class="tool-h">この対戦なら、どうなるか</p>
+        <p class="tool-s">
+          実装と同じ式・同じ定数で試算しています（死球・敬遠・エンドランは含みません）。
+          数値を動かすとその場で回り直します。
+        </p>
+        <div class="dials">
+          <div class="dial">
+            <label for="s_eye">打者・選球 <b id="v_eye">60</b></label>
+            <input type="range" id="s_eye" min="20" max="99" value="60">
+          </div>
+          <div class="dial">
+            <label for="s_con">打者・巧打 <b id="v_con">60</b></label>
+            <input type="range" id="s_con" min="20" max="99" value="60">
+          </div>
+          <div class="dial">
+            <label for="s_ctl">投手・制球 <b id="v_ctl">60</b></label>
+            <input type="range" id="s_ctl" min="20" max="99" value="60">
+          </div>
+          <div class="dial">
+            <label for="s_stf">投手・キレ <b id="v_stf">60</b></label>
+            <input type="range" id="s_stf" min="20" max="99" value="60">
+          </div>
+        </div>
+        <dl class="out">
+          <div><dt>四球率</dt><dd id="o_bb">—</dd><div class="npb">NPB 約 8.5%</div></div>
+          <div><dt>三振率</dt><dd id="o_so">—</dd><div class="npb">NPB 約 20%</div></div>
+          <div><dt>打球が飛ぶ</dt><dd id="o_ip">—</dd><div class="npb">残りが打席の中身</div></div>
+          <div><dt>ゾーン率</dt><dd id="o_zone">—</dd><div class="npb">1球あたり</div></div>
+          <div><dt>空振り率</dt><dd id="o_miss">—</dd><div class="npb">振ったとき</div></div>
+          <div><dt>1打席の球数</dt><dd id="o_pit">—</dd><div class="npb">平均</div></div>
+        </dl>
+      </div>
+
+      <p>
+        <strong>選球を動かすと四球と三振が同時に動きます。</strong>
+        巧打とキレは三振に、制球は四球に強く出ます。
+        <em>この4つは連動している</em>ので、1つだけ合わせると必ずどこかが現実から外れます。
+      </p>
+    </section>
+
+    <!-- ══ 打球 ══ -->
+    <section id="ball">
+      <h2>打球が飛んでから</h2>
+      <p class="sub">ヒットの「数」と「内訳」は別のパラメータが決めます</p>
+
+      <p>
+        ヒットになると決まったあと、<em>飛距離</em>を計算して単打・二塁打・三塁打・本塁打を
+        振り分けます。つまり<strong>長打を上げてもヒットの数は増えません。内訳が長打側へ寄るだけです</strong>。
+        打率を動かさずに長打だけを増減できる唯一の場所がここです。
+      </p>
+
+      <div class="fx">飛距離 = 70 + (<b>長打</b> × 1.1 + 乱数(−10〜+14) − <b>キレ</b> × 0.3) × 0.59 + 風</div>
+      <div class="fx">本塁打の必要距離 = <b>フェンス距離</b> + <b>フェンス高</b> × 0.8</div>
+      <div class="fx">二塁打 = 飛距離が「フェンス距離 − 26」を超えたとき</div>
+
+      <div class="note">
+        <b>同じ距離でもフェンスが高いほど不利です。</b>高さ5mの横浜スタジアムは、
+        距離94mでも必要距離は98.0m。距離95mの甲子園（高さ3.2m）は97.6mで、
+        <b>距離が長いのに本塁打は出やすい</b>という逆転が起きます。
+      </div>
+
+      <h3>打球の種類はゴロ率が決めます</h3>
+      <div class="fx"><b>ゴロ率</b>% がゴロ　／　次の 20% がライナー　／　残りがフライ</div>
+      <p>
+        ライナーは<em>常に20%固定</em>で、ゴロ率を上げたぶんフライが減ります。
+        そして<strong>ゴロのヒットは長打になりません</strong>（外野へ抜けた扱いでも単打）。
+        ゴロ率が高い打者は、内野安打と併殺が増えて長打が減ります。
+      </p>
+    </section>
+
+    <!-- ══ 道具2 ══ -->
+    <section id="sim2">
+      <h2>飛距離の道具</h2>
+      <p class="sub">7球場の実データで、コーナー（左翼・右翼）へ運んだ場合を並べます</p>
+
+      <div class="tool">
+        <p class="tool-h">この打者は、どこで本塁打になるか</p>
+        <p class="tool-s">棒は平均飛距離。<b>赤く伸びきった球場は本塁打圏内</b>です（風は含めていません）。</p>
+        <div class="dials">
+          <div class="dial">
+            <label for="s_pow">打者・長打 <b id="v_pow">60</b></label>
+            <input type="range" id="s_pow" min="20" max="99" value="60">
+          </div>
+          <div class="dial">
+            <label for="s_stf2">投手・キレ <b id="v_stf2">60</b></label>
+            <input type="range" id="s_stf2" min="20" max="99" value="60">
+          </div>
+        </div>
+        <dl class="out">
+          <div><dt>平均飛距離</dt><dd id="o_dist">—<small>m</small></dd><div class="npb">乱数の中央</div></div>
+          <div><dt>振れ幅</dt><dd id="o_range">—</dd><div class="npb">乱数の下限〜上限</div></div>
+          <div><dt>本塁打圏内</dt><dd id="o_hr">—<small>／7球場</small></dd><div class="npb">コーナーへの打球</div></div>
+        </dl>
+        <div class="parks" id="parks"></div>
+      </div>
+
+      <p>
+        <strong>キレの高い投手が相手だと飛距離が落ちます</strong>（キレ×0.3 が引かれる）。
+        長打80の打者でも、キレ90の投手からは平均で7m近く損をします。
+      </p>
+    </section>
+
+    <!-- ══ 走塁と守備 ══ -->
+    <section id="run">
+      <h2>走塁と守備</h2>
+      <p class="sub">得点は「出塁の量」より「走者を還す率」で決まります</p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>場面</th><th>式</th><th>効くもの</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">盗塁の成功率</td><td>80 + (走力 − 捕手の肩) ÷ 2 − 制球 ÷ 5　（15〜95%）</td><td>走力／捕手の肩／投手の制球</td></tr>
+            <tr><td class="pname">内野安打</td><td>(走力 − 守備範囲) × 0.005</td><td>走力／守備範囲</td></tr>
+            <tr><td class="pname">併殺になる</td><td>50 − 走力 ÷ 2 + 守備範囲 ÷ 4　（10%以上）</td><td>走力／守備範囲</td></tr>
+            <tr><td class="pname">三塁打</td><td>0.13 + (走力 − 肩) × 0.005　（1〜20%）</td><td>走力／外野の肩</td></tr>
+            <tr><td class="pname">失策</td><td>(100 − 捕球) ÷ 1400　（0.3〜6.0%）</td><td>捕球</td></tr>
+            <tr><td class="pname">単打で2塁走者が生還</td><td>基準 + (走力 − <b>打球位置の</b>外野手の肩) ÷ 2</td><td>走力／その位置の肩</td></tr>
+            <tr><td class="pname">犠飛で本塁刺殺</td><td>基準 + (肩 − 走力) ÷ 5　（1〜15%）</td><td>外野の肩／3塁走者の走力</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <strong>失策は「無償の走者」です。</strong>インプレーの打球ごとに判定するので、
+        率がそのまま出塁になります。捕球60なら 2.9%、捕球80なら 1.4% —
+        この差が1シーズンで積み上がります。
+      </p>
+
+      <h3>守備は位置ごとに設定します</h3>
+      <div class="fx">実際の守備範囲 = <b>守備能力の範囲</b> × (<b>守備適性</b>% ÷ 100) + 調子 × 4　（10〜99）</div>
+      <div class="fx">実際の肩 = <b>守備能力の肩</b> × (<b>守備適性</b>% ÷ 100) + 調子 × 4　（10〜99）</div>
+
+      <div class="stamp">
+        <p class="stamp-h">守備適性0%の位置に就かせると守備力が下限まで落ちます</p>
+        <ul>
+          <li>9ポジション分を定義してください。<b>未定義は適性0%扱い</b>で、
+            守備範囲・肩が<b>下限10</b>（本来80前後）になります。警告は出ません。</li>
+          <li>オーダー編成で0%の位置に就かせることはできます（止めません）。
+            打力を採る判断はありうるので、数値を赤くするだけにしています。</li>
+        </ul>
+      </div>
+
+      <h3>肩は位置ごとに別の役目があります</h3>
+      <ul class="plain">
+        <li><strong>捕手の肩</strong> — 盗塁を刺す。ここだけで盗塁成功率が大きく動きます</li>
+        <li><strong>打球が飛んだ位置の外野手の肩</strong> — 単打での2塁走者の生還・刺殺、1塁走者の3塁進塁、二塁打での生還。<strong>レフト前ならレフトの肩</strong></li>
+        <li><strong>各位置の肩</strong> — 犠飛での本塁刺殺、三塁打の成立</li>
+      </ul>
+
+      <div class="note">
+        <b>以前は打球方向を見ていませんでした。</b>単打・二塁打の走者判定が、どこへ飛んでも
+        右翼手の肩で固定されていたため、左翼・中堅の肩を上げても走者を止められませんでした
+        （2026-09-08 に修正）。左翼の肩を10・右翼を99にして測ると、単打で本塁補殺になる割合は
+        <b>左 0.34% ／ 中 2.10% ／ 右 3.26%</b> と肩に追従します。修正前はどこへ飛んでも
+        2.7〜3.5% でした。
+      </div>
+    </section>
+
+    <!-- ══ 野手 ══ -->
+    <section id="batter">
+      <h2>野手の一覧</h2>
+      <p class="sub">名前は xlsx の列名。値の範囲は 0〜99</p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>列名</th><th class="n">効き</th><th>効くところ</th><th>上げるとどうなるか</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="pname">対右／対左</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>基準打率。すべての打撃補正の出発点</td>
+              <td><strong>打率がそのまま動く。</strong>打撃で一番強いレバー</td>
+            </tr>
+            <tr>
+              <td class="pname">巧打</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>ヒット率と空振り率の両方</td>
+              <td>打率が上がり、三振が減る</td>
+            </tr>
+            <tr>
+              <td class="pname">選球</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>ゾーン率とスイング率</td>
+              <td><strong>四球が増え、三振が減る</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">長打</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>飛距離だけ</td>
+              <td><strong>ヒットの数は変わらず、内訳が長打へ寄る</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">走力</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>盗塁・内野安打・三塁打・併殺回避・進塁・生還</td>
+              <td>出塁と進塁がじわじわ増える。<strong>70 が盗塁のしきい値</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">捕球</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>失策率。捕手は暴投・捕逸にも</td>
+              <td>失策が減る。無償の走者が減るので影響は見た目より大きい</td>
+            </tr>
+            <tr>
+              <td class="pname">ゴロ率</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>打球の種類（ゴロ／ライナー／フライ）</td>
+              <td>内野安打と併殺が増え、<strong>長打とフライアウトが減る</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">チャンス○</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>得点圏で基準打率 +0.030（固定）</td>
+              <td>勝負強くなる。<strong>付けると決定力は読まれません</strong>（値は残るが無意味）</td>
+            </tr>
+            <tr>
+              <td class="pname">対左○</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>左投手のとき基準打率 +0.025</td>
+              <td>左投手に強くなる</td>
+            </tr>
+            <tr>
+              <td class="pname">決定力</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>得点圏でヒット率に (決定力 − 50) × 0.001。<strong>50 が基準（±0）</strong></td>
+              <td><strong>意味があるのは 80 未満まで。</strong>80 でチャンス○と並び、81以上で追い越します。<strong>チャンス○が付いている打者では読まれません</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">傾向</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>打球方向の分布</td>
+              <td><strong>引っ張り</strong>は 55% が引っ張り側の外野、30% がその側の内野、15% が中堅</td>
+            </tr>
+            <tr>
+              <td class="pname">打席（右／左）</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>打球方向の左右、相手の利き腕との対応</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="pname">年齢</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>オフシーズンの成長・衰え</td>
+              <td>28以下 → 巧打 +1〜3・長打 +1〜2 ／ 33以上 → 巧打 −1〜3・走力 −1〜3</td>
+            </tr>
+            <tr>
+              <td class="pname">故障耐性</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>故障の発生</td>
+              <td><strong>高いほど丈夫。</strong>140試合なら 95〜99 が目安</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>決定力とチャンス○の関係</h3>
+      <p>
+        得点圏での上乗せは<strong>どちらか一方だけ</strong>が効きます。
+        チャンス○が付いていれば <b>+0.030 の固定値</b>、付いていなければ
+        <b>(決定力 − 50) × 0.001</b> です。
+      </p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>出荷データの96名</th><th class="n">人数</th><th>得点圏での上乗せ</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">チャンス○ あり</td><td class="n">24名</td><td><b>+0.030 固定</b>（決定力は 50〜79 を持っているが読まれない）</td></tr>
+            <tr><td class="pname">チャンス○ なし</td><td class="n">72名</td><td>+0.000 〜 <b>+0.029</b>（決定力 50〜79。中央値 63）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>出荷データでは、チャンス○の打者が常にいちばん強くなります。</b>
+        非○で最も高い決定力は 79 で +0.029、○の +0.030 をわずかに下回るためです。
+        並ぶのは決定力80、追い越すのは81以上ですが、<b>該当する打者は0名</b>です。
+      </div>
+      <div class="stamp">
+        <p class="stamp-h">決定力を80以上にしないこと</p>
+        <ul>
+          <li><b>80 でチャンス○と並び、81 以上で追い越します。</b>特殊能力が数値に抜かれる形になるので、
+            設計外の値です。上げるなら 79 まで。</li>
+          <li><b>チャンス○を付けた打者の決定力は捨てられます。</b>「○持ちで決定力も高い打者」は作れません。
+            ○を付けた24名が 50〜79 の値を持っていますが、試合では読まれていません。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══ 投手 ══ -->
+    <section id="pitcher">
+      <h2>投手の一覧</h2>
+      <p class="sub">球種は1つ以上必要です（0だと動きません）</p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>列名</th><th class="n">効き</th><th>効くところ</th><th>上げるとどうなるか</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="pname">制球</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>ゾーン率・被打率・死球・暴投・盗塁成功率</td>
+              <td><strong>与四球と死球が減り、被打率も下がる。</strong>投手で一番効く</td>
+            </tr>
+            <tr>
+              <td class="pname">キレ</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>空振り率と、浴びる打球の飛距離</td>
+              <td><strong>奪三振が増え、長打を浴びにくくなる</strong></td>
+            </tr>
+            <tr>
+              <td class="pname">スタミナ</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>投球数がスタミナ×1.3 を超えると、<strong>1球ごとに制球とキレが −0.6</strong></td>
+              <td>長いイニングを投げられる。降板が遅くなる</td>
+            </tr>
+            <tr>
+              <td class="pname">威圧感</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>相手の基準打率 −0.025</td>
+              <td>被打率が下がる</td>
+            </tr>
+            <tr>
+              <td class="pname">役割</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
+              <td>先発選択・継投・回復量・セーブ判定のすべて</td>
+              <td>先発5／中継ぎ4／抑え1を崩すと節が止まります</td>
+            </tr>
+            <tr>
+              <td class="pname">利き腕</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>打者の「対右／対左」「対左○」の切り替え</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td class="pname">年齢</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
+              <td>オフシーズンの成長・衰え</td>
+              <td>28以下 → 制球 +1〜3・キレ +1〜3 ／ 33以上 → 制球 −1〜2・スタミナ −2〜4</td>
+            </tr>
+            <tr>
+              <td class="pname">故障耐性</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>疲労80超か4連投で故障判定</td>
+              <td><strong>高いほど丈夫。</strong>140試合なら 93〜98 が目安</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>球種</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>列名</th><th>効くところ</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">質</td><td><strong>どの球種を投げるかの重み。</strong>合計に対する比率で選ばれます。<strong>球の「強さ」ではありません</strong></td></tr>
+            <tr><td class="pname">奪三振補正</td><td>空振り率に + 補正 × 0.002</td></tr>
+            <tr><td class="pname">ゴロ補正</td><td>ゴロ率に + 補正（そのまま % として足される）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        つまり<strong>強い球を1つ持たせる</strong>のではなく、
+        <strong>質の配分で「決め球をどれだけ使うか」を決める</strong>という読み方になります。
+      </p>
+    </section>
+
+    <!-- ══ 効かないもの ══ -->
+    <section id="dead">
+      <h2>効かないもの</h2>
+      <p class="sub">ここを誤解すると、時間をかけて調整しても結果が変わりません</p>
+
+      <div class="stamp">
+        <p class="stamp-h">値を変えても結果は1バイトも変わりません</p>
+        <ul>
+          <li><b>走塁</b> — データにはありますが、エンジンが一度も読んでいません</li>
+          <li><b>成長型（早熟／標準／晩成）</b> — 同じく未使用。成長は<b>年齢だけ</b>で決まります</li>
+        </ul>
+      </div>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>誤解</th><th>実際</th></tr></thead>
+          <tbody>
+            <tr class="dead">
+              <td class="pname">球種の質を上げると<br>その球が良くなる</td>
+              <td><strong>投げる回数が増えるだけ</strong>です。強さは「奪三振補正」と「ゴロ補正」</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">守備範囲を上げると<br>ヒットが減る</td>
+              <td><strong>減りません。</strong>内野安打率と併殺率にしか効きません</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">故障耐性を下げると<br>丈夫になる</td>
+              <td><strong>逆です。高いほど丈夫。</strong>50 にすると疲労が閾値を超えた瞬間から毎試合およそ半分の確率で故障します</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">決定力を上げれば<br>いくらでも勝負強くなる</td>
+              <td><strong>80 未満でしか意味がありません。</strong>チャンス○（+0.030）が付いている打者では読まれず、付いていない打者でも 80 で並んで 81 以上で追い越すため、<strong>80 以上は設計外</strong>です</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">走力を上げれば<br>盗塁するようになる</td>
+              <td><strong>70 未満はコンピュータが試みません。</strong>あなたが指示すれば走ります</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">ゴロ率を上げると<br>打率が上がる</td>
+              <td>内野安打は増えますが<strong>長打が減ります</strong>（ゴロのヒットは単打止まり）</td>
+            </tr>
+            <tr class="dead">
+              <td class="pname">29〜32歳でも<br>少しは成長する</td>
+              <td><strong>何も起きません。</strong>成長は28歳以下、衰えは33歳以上でだけ</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══ 調子と疲労 ══ -->
+    <section id="cond">
+      <h2>調子と疲労</h2>
+      <p class="sub">同じ選手でも、その日と時期で別人になります</p>
+
+      <p>
+        <em>調子は試合開始時に毎回引き直されます</em>（絶好調 +2 〜 絶不調 −2）。
+      </p>
+      <div class="fx">実際の能力 = 素の能力 + <b>調子</b> × 4　（捕球だけ 調子 × 3）</div>
+
+      <h3>疲労はどの能力に効くかが違います</h3>
+      <p>棒は<strong>疲労70のとき</strong>に引かれる量です。</p>
+
+      <div class="decay">
+        <div class="decay-row"><div>走力</div><div class="decay-bar"><div class="decay-fill" style="width:100%"></div></div><div class="decay-v">−14</div></div>
+        <div class="decay-row"><div>投手・キレ</div><div class="decay-bar"><div class="decay-fill" style="width:100%"></div></div><div class="decay-v">−14</div></div>
+        <div class="decay-row"><div>巧打・長打</div><div class="decay-bar"><div class="decay-fill" style="width:50%"></div></div><div class="decay-v">−7</div></div>
+        <div class="decay-row"><div>投手・制球</div><div class="decay-bar"><div class="decay-fill" style="width:50%"></div></div><div class="decay-v">−7</div></div>
+        <div class="decay-row"><div>選球</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
+        <div class="decay-row"><div>決定力</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
+        <div class="decay-row"><div>捕球</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
+      </div>
+
+      <p>
+        <strong>疲れて最初に落ちるのは走力とキレ</strong>（他の2倍のペース）。
+        選球・決定力・捕球は<em>まったく影響を受けません</em>。
+        疲れた主砲は打てるが走れない、という形になります。
+      </p>
+
+      <div class="note">
+        <b>投手はさらに2つ引かれます。</b>投球数がスタミナ×1.3 を超えると1球ごとに −0.6、
+        3連投以上で <b>(連投日数 − 2) × 12</b>（4連投なら −24）。どちらも制球とキレの両方から引かれます。
+      </div>
+
+      <p>
+        野手の疲労は1試合 +5、出場者は −4、非出場者は −12 回復するので、
+        <strong>出続けると実質 +1／試合</strong>。65 を超えたあたりから危険域で、
+        そのまま起用すると故障します（コンピュータは自動で休ませます）。
+      </p>
+    </section>
+
+    <!-- ══ 触る順番 ══ -->
+    <section id="order">
+      <h2>触る順番</h2>
+      <p class="sub">得点を動かしたいとき、打率から触ると必ず他が壊れます</p>
+
+      <ol class="plain">
+        <li><strong>走塁・戦術・失策</strong> — 出塁は足りているのに点が入らないとき</li>
+        <li><strong>長打（＝飛距離）</strong> — 打率を動かさずに長打の割合だけ変えられる唯一の場所</li>
+        <li><strong>選球・キレ</strong> — 四球率と三振率。ただし<em>打率にも効きます</em></li>
+        <li><strong>対右・対左（＝打率そのもの）</strong> — 最後。ここから始めると他が全部ずれます</li>
+      </ol>
+
+      <h3>いまの水準</h3>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>1球団1試合あたり</th><th class="n">BBP</th><th class="n">NPB (2019頃)</th></tr></thead>
+          <tbody>
+            <tr><td>得点</td><td class="n">4.216</td><td class="n">4.20</td></tr>
+            <tr><td>打率 ／ 出塁率</td><td class="n">.246 ／ .316</td><td class="n">.250 ／ .315</td></tr>
+            <tr><td>四球率 ／ 三振率</td><td class="n">8.2% ／ 20.2%</td><td class="n">8.5% ／ 20%</td></tr>
+            <tr><td>本塁打（1球団1年）</td><td class="n">135</td><td class="n">約130</td></tr>
+            <tr><td>失策</td><td class="n">0.52</td><td class="n">0.55</td></tr>
+            <tr><td>死球 ／ 暴投 ／ 捕逸</td><td class="n">0.39 ／ 0.41 ／ 0.06</td><td class="n">0.38 ／ 0.35 ／ 0.05</td></tr>
+            <tr><td>犠飛 ／ 併殺</td><td class="n">0.21 ／ 0.58</td><td class="n">0.28 ／ 0.75</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>シーズンごとに 0.3 点以上は振れます</b>（6シードで 4.07〜4.40）。1シーズンの結果だけで
+        「良くなった」と判断しないでください。
+      </div>
+    </section>
+
+    <!-- ══ 困ったとき ══ -->
+    <section id="trouble">
+      <h2>困ったとき</h2>
+      <p class="sub">よくある症状と、その原因</p>
+
+      <div class="scroll">
+        <table>
+          <thead><tr><th>症状</th><th>原因と対処</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">「試合を消化しています」から進まない</td><td>采配の問いを見落としています。「進まないときはここ」を押してください</td></tr>
+            <tr><td class="pname">併殺が出ない／走者が必ず進む</td><td><strong>エンドランを使っていないか</strong>確認してください。初球でだけ効きますが、併殺率が 35% → 10%、進塁が 41% → 80% と大きく変わります</td></tr>
+            <tr><td class="pname">実況タブに前の試合が出ない</td><td>仕様です（末尾200行のみ）。「プレー」タブで読み返してください</td></tr>
+            <tr><td class="pname">オーダーを編集できない</td><td>采配する球団に選んでいない、または節の消化中です</td></tr>
+            <tr><td class="pname">節がまるごと止まる</td><td>データの検査で弾かれています。打順の重複・投手の役割の構成（5／4／1）・球種0 が典型です</td></tr>
+            <tr><td class="pname">オフラインで開けない</td><td>一度オンラインで開き切って（約10MB）から、ホーム画面に追加してください</td></tr>
+            <tr><td class="pname">iPhone で xlsx が保存されない</td><td>ホーム画面のアイコンではなく <strong>Safari</strong> で開いてください（iOS の制約）</td></tr>
+            <tr><td class="pname">進行状況が消えた</td><td>ブラウザのサイトデータが消えた可能性があります。端末ごとに別データなので他端末からは戻せません</td></tr>
+            <tr><td class="pname">数値を変えたのに結果が変わらない</td><td><a href="#dead">効かないもの</a>を確認してください</td></tr>
+            <tr><td class="pname">選手を増やせない</td><td>野手16名・投手10名で固定です</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      この名鑑の数式と定数は、すべて実装から写したものです。
+      仕様を変えたときは、この文書と <b>MANUAL.md</b> も一緒に直してください
+      — 「効かないもの」の一覧が入っているので、放置すると嘘になります。
+    </p>
+  </footer>
+</div>
+
+<script>
+  // ── 昼／夜 ────────────────────────────────────────────
+  (function () {
+    var btn = document.getElementById('themeBtn');
+    btn.addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme');
+      if (!cur) {
+        var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        cur = dark ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    });
+  })();
+
+  // ── 打席の試算 ─────────────────────────────────────────
+  // エンジンと同じ式・同じ定数。C# の整数除算に合わせて Math.trunc を使う。
+  (function () {
+    var TRIALS = 20000;
+    var ids = ['eye', 'con', 'ctl', 'stf'];
+    var el = {};
+    ids.forEach(function (k) {
+      el['s_' + k] = document.getElementById('s_' + k);
+      el['v_' + k] = document.getElementById('v_' + k);
+    });
+    var out = {
+      bb: document.getElementById('o_bb'), so: document.getElementById('o_so'),
+      ip: document.getElementById('o_ip'), zone: document.getElementById('o_zone'),
+      miss: document.getElementById('o_miss'), pit: document.getElementById('o_pit')
+    };
+
+    function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+    function pct(x) { return (x * 100).toFixed(1) + '%'; }
+
+    function run(eye, con, ctl, stf) {
+      var zoneRate = ctl + 15 - Math.trunc(eye / 2);                    // %
+      var swingIn = clamp(64 + Math.trunc((eye - 60) / 4), 40, 95);     // %
+      var swingOut = clamp(34 - Math.trunc((eye - 60) / 3), 5, 60);     // %
+      var miss = clamp(0.18 + (stf - con) * 0.003, 0.05, 0.45);         // 球種補正は 0 とする
+
+      var bb = 0, so = 0, ip = 0, pitches = 0;
+      for (var t = 0; t < TRIALS; t++) {
+        var balls = 0, strikes = 0, n = 0;
+        for (;;) {
+          n++;
+          if (n > 15) { ip++; break; }                                  // 安全弁（実装と同じ）
+          var inZone = Math.random() * 100 < zoneRate;
+          var swing = Math.random() * 100 < (inZone ? swingIn : swingOut);
+          if (!swing) {
+            if (inZone) { if (++strikes === 3) { so++; break; } }
+            else { if (++balls === 4) { bb++; break; } }
+            continue;
+          }
+          if (Math.random() < miss) { if (++strikes === 3) { so++; break; } continue; }
+          if (Math.random() * 100 < 44) { if (strikes < 2) strikes++; continue; }  // ファウル
+          ip++; break;
+        }
+        pitches += n;
+      }
+      return {
+        bb: bb / TRIALS, so: so / TRIALS, ip: ip / TRIALS,
+        zone: zoneRate / 100, miss: miss, pit: pitches / TRIALS
+      };
+    }
+
+    function refresh() {
+      var v = {};
+      ids.forEach(function (k) {
+        v[k] = parseInt(el['s_' + k].value, 10);
+        el['v_' + k].textContent = v[k];
+      });
+      var r = run(v.eye, v.con, v.ctl, v.stf);
+      out.bb.textContent = pct(r.bb);
+      out.so.textContent = pct(r.so);
+      out.ip.textContent = pct(r.ip);
+      out.zone.textContent = pct(clamp(r.zone, 0, 1));
+      out.miss.textContent = pct(r.miss);
+      out.pit.textContent = r.pit.toFixed(2);
+    }
+
+    ids.forEach(function (k) { el['s_' + k].addEventListener('input', refresh); });
+    refresh();
+  })();
+
+  // ── 飛距離と球場 ────────────────────────────────────────
+  (function () {
+    // Stadiums.json の実データ。必要距離 = 距離 + フェンス高 × 0.8
+    var PARKS = [
+      { n: '甲子園球場',   corner: 95,   center: 118, h: 3.2, dome: false },
+      { n: '横浜スタジアム', corner: 94,   center: 118, h: 5.0, dome: false },
+      { n: '坊っちゃんスタジアム', corner: 99.1, center: 122, h: 2.5, dome: false },
+      { n: '野球場F',      corner: 100,  center: 122, h: 3.5, dome: false },
+      { n: '野球場E',      corner: 101,  center: 122, h: 2.6, dome: false },
+      { n: '東京ドーム',    corner: 100,  center: 122, h: 4.0, dome: true },
+      { n: 'ドーム球場D',   corner: 100,  center: 122, h: 4.8, dome: true }
+    ];
+    var sPow = document.getElementById('s_pow'), vPow = document.getElementById('v_pow');
+    var sStf = document.getElementById('s_stf2'), vStf = document.getElementById('v_stf2');
+    var oDist = document.getElementById('o_dist'), oRange = document.getElementById('o_range'), oHr = document.getElementById('o_hr');
+    var box = document.getElementById('parks');
+
+    function dist(pow, stf, r) { return 70 + (pow * 1.1 + r - stf * 0.3) * 0.59; }
+
+    // 棒の伸びを見せるための表示上の上限（最長の必要距離より少し広く取る）
+    var SCALE_MIN = 88, SCALE_MAX = 110;
+
+    function refresh() {
+      var pow = parseInt(sPow.value, 10), stf = parseInt(sStf.value, 10);
+      vPow.textContent = pow; vStf.textContent = stf;
+
+      var mean = dist(pow, stf, 2);      // 乱数 −10〜+14 の中央は +2
+      var lo = dist(pow, stf, -10), hi = dist(pow, stf, 14);
+
+      oDist.innerHTML = mean.toFixed(1) + '<small>m</small>';
+      oRange.innerHTML = lo.toFixed(0) + '〜' + hi.toFixed(0) + '<small>m</small>';
+
+      var hrCount = 0, html = '';
+      PARKS.forEach(function (p) {
+        var need = p.corner + p.h * 0.8;
+        var over = mean > need;
+        if (over) hrCount++;
+        var w = clampPct((mean - SCALE_MIN) / (SCALE_MAX - SCALE_MIN) * 100);
+        var mark = clampPct((need - SCALE_MIN) / (SCALE_MAX - SCALE_MIN) * 100);
+        html += '<div class="park">'
+          + '<div class="park-n">' + p.n + (p.dome ? '（ドーム）' : '') + '</div>'
+          + '<div class="park-bar">'
+          + '<div class="park-fill' + (over ? ' over' : '') + '" style="width:' + w + '%"></div>'
+          + '<div style="position:absolute;top:-2px;bottom:-2px;left:' + mark + '%;width:2px;background:var(--ink)"></div>'
+          + '</div>'
+          + '<div class="park-v">' + need.toFixed(1) + 'm '
+          + '<span class="park-tag ' + (over ? 'yes' : 'no') + '">' + (over ? 'HR' : '—') + '</span></div>'
+          + '</div>';
+      });
+      box.innerHTML = html;
+      oHr.innerHTML = hrCount + '<small>／7球場</small>';
+    }
+    function clampPct(x) { return Math.min(100, Math.max(0, x)).toFixed(1); }
+
+    sPow.addEventListener('input', refresh);
+    sStf.addEventListener('input', refresh);
+    refresh();
+  })();
+</script>
+</body>
+</html>

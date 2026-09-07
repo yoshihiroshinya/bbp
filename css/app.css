@@ -226,6 +226,42 @@ input[type="file"] {
     padding: .8rem 1rem 1rem;
 }
 
+/* ---- 観戦モードの一時停止 ----
+   采配パネルと同じ位置に出るが、性格が違う（答えが試合を変えない区切り）。
+   色を分けて、采配を求められているのか眺めているだけなのかが一目で分かるようにする。
+   1試合で約80回出るので、**背が低いこと**が何より大事。 */
+.tactics-sheet.observe {
+    border-top-color: #4a6b8a;
+    background: #131c24;
+}
+.ob-head {
+    display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap;
+    font-size: .8rem; color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+.ob-inn { font-weight: 700; color: var(--fg); }
+.ob-score { margin-left: auto; }
+.ob-play {
+    margin: .45rem 0 .35rem;
+    padding: .45rem .6rem;
+    border-left: 3px solid transparent;
+    background: #0f171d;
+}
+.ob-who { font-size: .78rem; color: var(--muted); }
+/* 結果はこのパネルの主役なので、プレー一覧より大きく出す */
+.ob-what { font-size: 1.05rem; line-height: 1.35; overflow-wrap: anywhere; }
+.ob-play.k-hit .ob-what { color: var(--accent); }
+.ob-play.k-onbase .ob-what { color: #9ecbff; }
+.ob-play.k-steal .ob-what { color: #ffd479; }
+.ob-play.k-tactic .ob-what { color: #c9a0ff; }
+.ob-play.scored { background: #16261f; border-left-color: var(--accent); }
+.ob-bases { display: flex; align-items: center; gap: .3rem; font-size: .78rem; }
+.ob-bases .bs {
+    width: 9px; height: 9px; transform: rotate(45deg);
+    border: 1px solid var(--muted);
+}
+.ob-bases .bs.on { background: var(--accent); border-color: var(--accent); }
+
 /* ---- 場面のスコアボード ----
    シートの中で上に貼り付ける（position: sticky）。継投は選択肢が10件あり
    シートがスクロールするので、貼り付けないと「どういう場面か」が見えなくなる。
@@ -328,3 +364,27 @@ input[type="file"] {
 .tbl tr.sel td { background: #1d3329; }
 .tbl tr.now td { color: var(--accent); }
 .tbl tr.total td { border-top: 1px solid var(--line); font-weight: 600; }
+
+/* ---- 選手データ一覧（/players）----
+   列が20近くあるので、まず横スクロール（.scroll-x）に載せる前提。
+   見出しは押して並び替えるので、押せることが分かる見た目にする。 */
+.tbl.data th { position: sticky; top: 0; background: var(--bg); z-index: 1; }
+.tbl.data th.sortable { cursor: pointer; user-select: none; }
+.tbl.data th.sortable:hover { color: var(--accent); }
+.tbl.data th.sorted { color: var(--accent); font-weight: 700; }
+/* チャンス○が付いていて読まれない決定力。消さずに「効いていない」と分かるように落とす */
+.tbl.data td.dim { color: var(--muted); }
+.tbl.data td.sp { color: #c9a0ff; font-size: .78rem; }
+
+/* 選手名の絞り込み。素の input はダークな地で読めないので指定する */
+.txt {
+    width: 100%;
+    padding: .45rem .6rem;
+    font: inherit;
+    color: var(--fg);
+    background: #0b1116;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+.txt::placeholder { color: var(--muted); }
+.txt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
