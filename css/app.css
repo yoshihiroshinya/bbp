@@ -255,12 +255,25 @@ input[type="file"] {
 .ob-play.k-steal .ob-what { color: #ffd479; }
 .ob-play.k-tactic .ob-what { color: #c9a0ff; }
 .ob-play.scored { background: #16261f; border-left-color: var(--accent); }
-.ob-bases { display: flex; align-items: center; gap: .3rem; font-size: .78rem; }
-.ob-bases .bs {
-    width: 9px; height: 9px; transform: rotate(45deg);
+/* アウトと走者。**1試合80回見るものなので、ここの読みやすさが体験を決める。**
+   以前はアウトを .78rem の灰色の文字（「1 死」）で出していて見づらかった。
+   采配パネルと同じ丸3つ（.outs / .o）に揃え、数字も添える。 */
+.ob-state {
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: .35rem 1.4rem;
+    padding: .1rem 0 .15rem;
+}
+.ob-item { display: flex; align-items: center; gap: .35rem; }
+.ob-lbl { font-size: .68rem; letter-spacing: .08em; color: var(--muted); }
+/* 塗りつぶしがアウト。丸は采配パネルより一段大きくする（.outs .o は 9px） */
+.ob-state .outs .o { width: 11px; height: 11px; }
+.ob-num { font-size: 1.05rem; font-variant-numeric: tabular-nums; color: var(--danger); }
+.ob-state .bs {
+    width: 11px; height: 11px; transform: rotate(45deg);
     border: 1px solid var(--muted);
 }
-.ob-bases .bs.on { background: var(--accent); border-color: var(--accent); }
+.ob-state .bs.on { background: var(--accent); border-color: var(--accent); }
+.ob-runners { font-size: .82rem; color: var(--fg); }
 
 /* ---- 場面のスコアボード ----
    シートの中で上に貼り付ける（position: sticky）。継投は選択肢が10件あり
@@ -388,3 +401,28 @@ input[type="file"] {
 }
 .txt::placeholder { color: var(--muted); }
 .txt:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* ---- 観戦パネルのスコアボードと選手の成績 ----
+   スコアボードは采配パネルの table.line を使い回す（見た目を揃える）。
+   ただし貼り付け（sticky）はしない — 観戦パネルは選択肢が1〜3件で
+   スクロールしないので、貼り付ける必要が無い。 */
+.ob-board { margin: .1rem 0 .45rem; }
+.ob-board .line { width: 100%; }
+.ob-board .line th:first-child { text-align: left; padding-right: .4rem; }
+/* いま攻撃している側の行を強調する。どちらの回か一目で分かるように */
+.ob-board .line tr.bat th { color: var(--accent); }
+.ob-board .line .r { border-left: 1px solid var(--line); font-weight: 700; }
+
+/* 打者・投手の1行。**1試合80回見るので、詰めすぎず伸ばしすぎない。** */
+.ob-lines { display: flex; flex-direction: column; gap: .15rem; margin: .1rem 0 .3rem; }
+.ob-line { display: flex; align-items: baseline; gap: .4rem; font-size: .78rem; }
+.ob-nm { font-weight: 700; white-space: nowrap; }
+.ob-stat { color: var(--muted); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+/* 決着したカウント。結果の行に添えるので、名前より弱く見せる */
+.ob-cnt {
+    margin-left: .5rem;
+    font-size: .72rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
