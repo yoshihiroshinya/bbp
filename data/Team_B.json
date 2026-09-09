@@ -32,6 +32,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -119,6 +120,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -206,6 +208,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 72,
         "Pos1B": 0,
@@ -293,6 +296,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 100,
@@ -380,6 +384,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -467,6 +472,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -554,6 +560,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -641,6 +648,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 100,
         "Pos1B": 0,
@@ -728,6 +736,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -815,6 +824,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 100,
         "Pos1B": 57,
@@ -902,6 +912,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 100,
@@ -989,6 +1000,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -1076,6 +1088,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 80,
@@ -1163,6 +1176,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 44,
         "Pos1B": 0,
@@ -1250,6 +1264,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 57,
@@ -1337,6 +1352,7 @@
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "PositionAptitude": {
         "C": 74,
         "Pos1B": 33,
@@ -1420,6 +1436,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1480,6 +1497,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1540,6 +1558,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1600,6 +1619,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1660,6 +1680,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1720,6 +1741,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1774,6 +1796,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1828,6 +1851,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1882,6 +1906,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1936,6 +1961,7 @@
       "DaysPitchedInRow": 0,
       "RestDays": 6,
       "InjuryStatus": 0,
+      "FarmDays": 0,
       "Pitches": [
         {
           "Name": "豪速球",
@@ -1952,6 +1978,813 @@
         {
           "Name": "スライダー",
           "Quality": 73,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmBatters": [
+    {
+      "Name": "Bファーム1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 20,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 58,
+      "Power": 56,
+      "Eye": 60,
+      "Speed": 64,
+      "Clutch": 52,
+      "Catching": 59,
+      "GroundBallRate": 46,
+      "Baserunning": 56,
+      "AvgVsRight": 0.234,
+      "AvgVsLeft": 0.224,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 62,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 53,
+          "ArmStrength": 55
+        },
+        "Pos1B": {
+          "DefenseRange": 59,
+          "ArmStrength": 62
+        },
+        "Pos2B": {
+          "DefenseRange": 63,
+          "ArmStrength": 58
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 61
+        },
+        "SS": {
+          "DefenseRange": 64,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 61,
+          "ArmStrength": 58
+        },
+        "CF": {
+          "DefenseRange": 58,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 61,
+          "ArmStrength": 59
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム2(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 21,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Contact": 59,
+      "Power": 52,
+      "Eye": 59,
+      "Speed": 60,
+      "Clutch": 57,
+      "Catching": 59,
+      "GroundBallRate": 53,
+      "Baserunning": 76,
+      "AvgVsRight": 0.229,
+      "AvgVsLeft": 0.225,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 46,
+        "SS": 49,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 54,
+          "ArmStrength": 56
+        },
+        "Pos1B": {
+          "DefenseRange": 54,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 59
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 62
+        },
+        "SS": {
+          "DefenseRange": 63,
+          "ArmStrength": 54
+        },
+        "LF": {
+          "DefenseRange": 64,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 57,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 61,
+          "ArmStrength": 58
+        },
+        "DH": {
+          "DefenseRange": 59,
+          "ArmStrength": 56
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム3(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 24,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Contact": 59,
+      "Power": 53,
+      "Eye": 57,
+      "Speed": 62,
+      "Clutch": 53,
+      "Catching": 63,
+      "GroundBallRate": 55,
+      "Baserunning": 60,
+      "AvgVsRight": 0.232,
+      "AvgVsLeft": 0.228,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 69,
+        "Pos3B": 52,
+        "SS": 100,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 55
+        },
+        "Pos1B": {
+          "DefenseRange": 58,
+          "ArmStrength": 64
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 61
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 60
+        },
+        "SS": {
+          "DefenseRange": 64,
+          "ArmStrength": 53
+        },
+        "LF": {
+          "DefenseRange": 60,
+          "ArmStrength": 57
+        },
+        "CF": {
+          "DefenseRange": 56,
+          "ArmStrength": 66
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 60
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 60
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム4(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 27,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 61,
+      "Power": 54,
+      "Eye": 62,
+      "Speed": 65,
+      "Clutch": 54,
+      "Catching": 62,
+      "GroundBallRate": 48,
+      "Baserunning": 64,
+      "AvgVsRight": 0.243,
+      "AvgVsLeft": 0.223,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 51,
+        "RF": 47,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 55,
+          "ArmStrength": 59
+        },
+        "Pos1B": {
+          "DefenseRange": 59,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 62,
+          "ArmStrength": 59
+        },
+        "Pos3B": {
+          "DefenseRange": 62,
+          "ArmStrength": 59
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 54
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 59,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 62,
+          "ArmStrength": 62
+        },
+        "DH": {
+          "DefenseRange": 61,
+          "ArmStrength": 58
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム5(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 31,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Contact": 56,
+      "Power": 55,
+      "Eye": 60,
+      "Speed": 65,
+      "Clutch": 56,
+      "Catching": 61,
+      "GroundBallRate": 58,
+      "Baserunning": 70,
+      "AvgVsRight": 0.241,
+      "AvgVsLeft": 0.231,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 47,
+        "CF": 100,
+        "RF": 52,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 59
+        },
+        "Pos1B": {
+          "DefenseRange": 58,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 60
+        },
+        "Pos3B": {
+          "DefenseRange": 62,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 61,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 59,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 61,
+          "ArmStrength": 57
+        },
+        "DH": {
+          "DefenseRange": 62,
+          "ArmStrength": 60
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム6(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 34,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 61,
+      "Power": 52,
+      "Eye": 58,
+      "Speed": 61,
+      "Clutch": 56,
+      "Catching": 63,
+      "GroundBallRate": 59,
+      "Baserunning": 79,
+      "AvgVsRight": 0.239,
+      "AvgVsLeft": 0.22,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 59,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 47,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 55
+        },
+        "Pos1B": {
+          "DefenseRange": 55,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 61
+        },
+        "Pos3B": {
+          "DefenseRange": 64,
+          "ArmStrength": 60
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 57
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 58,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 62,
+          "ArmStrength": 57
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 58
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmPitchers": [
+    {
+      "Name": "Bファーム先発1",
+      "Role": "Starter",
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Control": 58,
+      "Stuff": 66,
+      "Stamina": 74,
+      "HasIntimidation": false,
+      "Age": 21,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 69,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 69,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム先発2",
+      "Role": "Starter",
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Control": 59,
+      "Stuff": 66,
+      "Stamina": 79,
+      "HasIntimidation": false,
+      "Age": 25,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シンカー",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム救援1",
+      "Role": "Reliever",
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Control": 58,
+      "Stuff": 69,
+      "Stamina": 38,
+      "HasIntimidation": false,
+      "Age": 28,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 6
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム救援2",
+      "Role": "Reliever",
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Control": 61,
+      "Stuff": 67,
+      "Stamina": 48,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シンカー",
+          "Quality": 67,
+          "StrikeoutBoost": 6,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 69,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Bファーム救援3",
+      "Role": "Reliever",
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Control": 63,
+      "Stuff": 68,
+      "Stamina": 47,
+      "HasIntimidation": false,
+      "Age": 23,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 66,
+          "StrikeoutBoost": 6,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 15
+        },
+        {
+          "Name": "シンカー",
+          "Quality": 69,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         }
