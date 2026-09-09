@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_A",
   "TeamName": "チームA",
+  "HomeStadiumId": "ST01",
   "Manager": {
     "Name": "A監督",
     "ReliefTendency": "Aggressive",
@@ -1640,10 +1641,10 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "シュート",
           "Quality": 45,
           "StrikeoutBoost": 0,
-          "GroundBallBoost": 10
+          "GroundBallBoost": 14
         }
       ],
       "Stats": {
@@ -1701,10 +1702,10 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "ナックルカーブ",
           "Quality": 62,
-          "StrikeoutBoost": 0,
-          "GroundBallBoost": 10
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 8
         }
       ],
       "Stats": {
@@ -1921,9 +1922,9 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "チェンジアップ",
+          "Name": "パーム",
           "Quality": 50,
-          "StrikeoutBoost": 8,
+          "StrikeoutBoost": 12,
           "GroundBallBoost": 0
         }
       ],
@@ -2557,16 +2558,10 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "スライダー",
-          "Quality": 65,
-          "StrikeoutBoost": 11,
-          "GroundBallBoost": 0
-        },
-        {
           "Name": "カーブ",
-          "Quality": 63,
-          "StrikeoutBoost": 11,
-          "GroundBallBoost": 0
+          "Quality": 65,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
         }
       ],
       "Stats": {
@@ -2590,10 +2585,10 @@
       "Name": "Aファーム先発2",
       "Role": "Starter",
       "RotationOrder": 0,
-      "Hand": "左",
-      "Control": 65,
+      "Hand": "右",
+      "Control": 64,
       "Stuff": 67,
-      "Stamina": 70,
+      "Stamina": 77,
       "HasIntimidation": false,
       "Age": 25,
       "InjuryProne": 95,
@@ -2607,15 +2602,21 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 66,
+          "Quality": 64,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "チェンジアップ",
-          "Quality": 63,
+          "Name": "シュート",
+          "Quality": 66,
           "StrikeoutBoost": 0,
-          "GroundBallBoost": 0
+          "GroundBallBoost": 14
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
         }
       ],
       "Stats": {
@@ -2639,13 +2640,13 @@
       "Name": "Aファーム救援1",
       "Role": "Reliever",
       "RotationOrder": 0,
-      "Hand": "右",
-      "Control": 64,
-      "Stuff": 65,
+      "Hand": "左",
+      "Control": 66,
+      "Stuff": 64,
       "Stamina": 45,
       "HasIntimidation": false,
       "Age": 28,
-      "InjuryProne": 93,
+      "InjuryProne": 95,
       "Growth": "Normal",
       "Condition": 0,
       "Fatigue": 0,
@@ -2656,15 +2657,21 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 62,
+          "Quality": 63,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "シュート",
+          "Quality": 65,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        },
+        {
+          "Name": "スライダー",
           "Quality": 62,
           "StrikeoutBoost": 0,
-          "GroundBallBoost": 9
+          "GroundBallBoost": 0
         }
       ],
       "Stats": {
@@ -2688,10 +2695,10 @@
       "Name": "Aファーム救援2",
       "Role": "Reliever",
       "RotationOrder": 0,
-      "Hand": "右",
-      "Control": 63,
-      "Stuff": 64,
-      "Stamina": 41,
+      "Hand": "左",
+      "Control": 65,
+      "Stuff": 62,
+      "Stamina": 48,
       "HasIntimidation": false,
       "Age": 31,
       "InjuryProne": 94,
@@ -2705,20 +2712,14 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 63,
+          "Quality": 65,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "フォーク",
-          "Quality": 63,
-          "StrikeoutBoost": 0,
-          "GroundBallBoost": 0
-        },
-        {
-          "Name": "カーブ",
+          "Name": "チェンジアップ",
           "Quality": 64,
-          "StrikeoutBoost": 0,
+          "StrikeoutBoost": 8,
           "GroundBallBoost": 0
         }
       ],
@@ -2743,13 +2744,13 @@
       "Name": "Aファーム救援3",
       "Role": "Reliever",
       "RotationOrder": 0,
-      "Hand": "右",
+      "Hand": "左",
       "Control": 62,
       "Stuff": 64,
-      "Stamina": 34,
+      "Stamina": 40,
       "HasIntimidation": false,
       "Age": 23,
-      "InjuryProne": 95,
+      "InjuryProne": 97,
       "Growth": "Normal",
       "Condition": 0,
       "Fatigue": 0,
@@ -2760,25 +2761,25 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 65,
+          "Quality": 64,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
         },
         {
           "Name": "チェンジアップ",
-          "Quality": 67,
-          "StrikeoutBoost": 0,
+          "Quality": 63,
+          "StrikeoutBoost": 8,
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
-          "Quality": 67,
-          "StrikeoutBoost": 0,
-          "GroundBallBoost": 12
-        },
-        {
-          "Name": "シンカー",
-          "Quality": 67,
+          "Name": "カットボール",
+          "Quality": 64,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         }

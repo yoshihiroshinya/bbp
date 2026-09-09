@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_E",
   "TeamName": "チームE",
+  "HomeStadiumId": "ST05",
   "Manager": {
     "Name": "E監督",
     "ReliefTendency": "Normal",
@@ -1640,10 +1641,10 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "シュート",
           "Quality": 52,
           "StrikeoutBoost": 0,
-          "GroundBallBoost": 10
+          "GroundBallBoost": 14
         }
       ],
       "Stats": {
@@ -1701,10 +1702,10 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "ナックルカーブ",
           "Quality": 61,
-          "StrikeoutBoost": 0,
-          "GroundBallBoost": 10
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 8
         }
       ],
       "Stats": {
@@ -1921,9 +1922,9 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "チェンジアップ",
+          "Name": "パーム",
           "Quality": 62,
-          "StrikeoutBoost": 8,
+          "StrikeoutBoost": 12,
           "GroundBallBoost": 0
         }
       ],
@@ -2557,16 +2558,16 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "シンカー",
+          "Name": "フォーク",
           "Quality": 67,
-          "StrikeoutBoost": 0,
+          "StrikeoutBoost": 15,
           "GroundBallBoost": 0
         },
         {
           "Name": "カットボール",
           "Quality": 62,
           "StrikeoutBoost": 0,
-          "GroundBallBoost": 5
+          "GroundBallBoost": 0
         }
       ],
       "Stats": {
@@ -2590,13 +2591,13 @@
       "Name": "Eファーム先発2",
       "Role": "Starter",
       "RotationOrder": 0,
-      "Hand": "左",
-      "Control": 61,
-      "Stuff": 62,
-      "Stamina": 79,
+      "Hand": "右",
+      "Control": 62,
+      "Stuff": 66,
+      "Stamina": 70,
       "HasIntimidation": false,
       "Age": 25,
-      "InjuryProne": 95,
+      "InjuryProne": 94,
       "Growth": "Normal",
       "Condition": 0,
       "Fatigue": 0,
@@ -2607,15 +2608,27 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 63,
+          "Quality": 62,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "カットボール",
+          "Name": "フォーク",
           "Quality": 65,
-          "StrikeoutBoost": 11,
-          "GroundBallBoost": 6
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 67,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
         }
       ],
       "Stats": {
@@ -2640,12 +2653,12 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "右",
-      "Control": 65,
-      "Stuff": 64,
-      "Stamina": 45,
+      "Control": 66,
+      "Stuff": 67,
+      "Stamina": 47,
       "HasIntimidation": false,
       "Age": 28,
-      "InjuryProne": 98,
+      "InjuryProne": 94,
       "Growth": "Normal",
       "Condition": 0,
       "Fatigue": 0,
@@ -2661,21 +2674,21 @@
           "GroundBallBoost": 0
         },
         {
-          "Name": "カーブ",
+          "Name": "フォーク",
           "Quality": 64,
-          "StrikeoutBoost": 0,
+          "StrikeoutBoost": 15,
           "GroundBallBoost": 0
         },
         {
-          "Name": "チェンジアップ",
-          "Quality": 62,
-          "StrikeoutBoost": 15,
-          "GroundBallBoost": 15
+          "Name": "パーム",
+          "Quality": 66,
+          "StrikeoutBoost": 12,
+          "GroundBallBoost": 0
         },
         {
-          "Name": "フォーク",
-          "Quality": 62,
-          "StrikeoutBoost": 5,
+          "Name": "カットボール",
+          "Quality": 65,
+          "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         }
       ],
@@ -2701,8 +2714,8 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "右",
-      "Control": 65,
-      "Stuff": 62,
+      "Control": 61,
+      "Stuff": 67,
       "Stamina": 49,
       "HasIntimidation": false,
       "Age": 31,
@@ -2717,14 +2730,14 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 64,
+          "Quality": 62,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "スライダー",
-          "Quality": 63,
-          "StrikeoutBoost": 7,
+          "Name": "フォーク",
+          "Quality": 67,
+          "StrikeoutBoost": 15,
           "GroundBallBoost": 0
         }
       ],
@@ -2749,10 +2762,10 @@
       "Name": "Eファーム救援3",
       "Role": "Reliever",
       "RotationOrder": 0,
-      "Hand": "左",
-      "Control": 63,
+      "Hand": "右",
+      "Control": 61,
       "Stuff": 66,
-      "Stamina": 36,
+      "Stamina": 48,
       "HasIntimidation": false,
       "Age": 23,
       "InjuryProne": 98,
@@ -2766,14 +2779,20 @@
       "Pitches": [
         {
           "Name": "ストレート",
-          "Quality": 67,
+          "Quality": 66,
           "StrikeoutBoost": 0,
           "GroundBallBoost": 0
         },
         {
-          "Name": "カットボール",
-          "Quality": 64,
+          "Name": "シンカー",
+          "Quality": 67,
           "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        },
+        {
+          "Name": "パーム",
+          "Quality": 66,
+          "StrikeoutBoost": 12,
           "GroundBallBoost": 0
         }
       ],

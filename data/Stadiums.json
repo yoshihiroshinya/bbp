@@ -9,7 +9,8 @@
       "RightDist": 100,
       "FenceHeight": 4,
       "BaseWindSpeed": 0,
-      "WindDirection": "None"
+      "WindDirection": "None",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST02",
@@ -20,7 +21,8 @@
       "RightDist": 95,
       "FenceHeight": 3.2,
       "BaseWindSpeed": 3,
-      "WindDirection": "RightToLeft"
+      "WindDirection": "RightToLeft",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST03",
@@ -31,7 +33,8 @@
       "RightDist": 94,
       "FenceHeight": 5,
       "BaseWindSpeed": 2,
-      "WindDirection": "InfieldToOutfield"
+      "WindDirection": "InfieldToOutfield",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST04",
@@ -42,7 +45,8 @@
       "RightDist": 100,
       "FenceHeight": 4.8,
       "BaseWindSpeed": 0,
-      "WindDirection": "None"
+      "WindDirection": "None",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST05",
@@ -53,7 +57,8 @@
       "RightDist": 97.5,
       "FenceHeight": 2.6,
       "BaseWindSpeed": 4,
-      "WindDirection": "OutfieldToInfield"
+      "WindDirection": "OutfieldToInfield",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST06",
@@ -64,7 +69,8 @@
       "RightDist": 100,
       "FenceHeight": 3.5,
       "BaseWindSpeed": 2,
-      "WindDirection": "Random"
+      "WindDirection": "Random",
+      "IsNeutral": false
     },
     {
       "StadiumId": "ST07",
@@ -75,7 +81,8 @@
       "RightDist": 99.1,
       "FenceHeight": 2.5,
       "BaseWindSpeed": 2,
-      "WindDirection": "Random"
+      "WindDirection": "Random",
+      "IsNeutral": true
     }
   ]
 }
