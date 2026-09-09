@@ -29,7 +29,6 @@
       "AvgVsRight": 0.289,
       "AvgVsLeft": 0.257,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -90,8 +89,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン2(二)",
@@ -106,14 +109,13 @@
       "Power": 78,
       "Eye": 61,
       "Speed": 65,
-      "Clutch": 75,
+      "Clutch": 80,
       "Catching": 69,
       "GroundBallRate": 39,
       "Baserunning": 77,
       "AvgVsRight": 0.279,
       "AvgVsLeft": 0.279,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -174,8 +176,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン3(左)",
@@ -190,14 +196,13 @@
       "Power": 67,
       "Eye": 79,
       "Speed": 74,
-      "Clutch": 50,
+      "Clutch": 80,
       "Catching": 69,
       "GroundBallRate": 51,
       "Baserunning": 72,
       "AvgVsRight": 0.247,
       "AvgVsLeft": 0.25,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -258,8 +263,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン4(一)",
@@ -274,14 +283,13 @@
       "Power": 81,
       "Eye": 78,
       "Speed": 58,
-      "Clutch": 73,
+      "Clutch": 80,
       "Catching": 66,
       "GroundBallRate": 60,
       "Baserunning": 84,
       "AvgVsRight": 0.253,
       "AvgVsLeft": 0.251,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -342,8 +350,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン5(三)",
@@ -365,7 +377,6 @@
       "AvgVsRight": 0.278,
       "AvgVsLeft": 0.255,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -426,8 +437,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン6(右)",
@@ -442,14 +457,13 @@
       "Power": 58,
       "Eye": 60,
       "Speed": 59,
-      "Clutch": 59,
+      "Clutch": 80,
       "Catching": 65,
       "GroundBallRate": 57,
       "Baserunning": 75,
       "AvgVsRight": 0.271,
       "AvgVsLeft": 0.238,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -510,8 +524,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン7(遊)",
@@ -533,7 +551,6 @@
       "AvgVsRight": 0.253,
       "AvgVsLeft": 0.271,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -594,8 +611,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン8(捕)",
@@ -617,7 +638,6 @@
       "AvgVsRight": 0.269,
       "AvgVsLeft": 0.262,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -678,8 +698,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Dスタメン9(指)",
@@ -694,14 +718,13 @@
       "Power": 84,
       "Eye": 76,
       "Speed": 67,
-      "Clutch": 70,
+      "Clutch": 80,
       "Catching": 81,
       "GroundBallRate": 36,
       "Baserunning": 70,
       "AvgVsRight": 0.276,
       "AvgVsLeft": 0.281,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -762,8 +785,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控1(捕)",
@@ -778,14 +805,13 @@
       "Power": 71,
       "Eye": 56,
       "Speed": 51,
-      "Clutch": 69,
+      "Clutch": 80,
       "Catching": 77,
       "GroundBallRate": 42,
       "Baserunning": 69,
       "AvgVsRight": 0.231,
       "AvgVsLeft": 0.223,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -846,8 +872,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控2(一)",
@@ -862,14 +892,13 @@
       "Power": 46,
       "Eye": 65,
       "Speed": 67,
-      "Clutch": 67,
+      "Clutch": 80,
       "Catching": 71,
       "GroundBallRate": 57,
       "Baserunning": 57,
       "AvgVsRight": 0.246,
       "AvgVsLeft": 0.229,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -930,8 +959,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控3(二)",
@@ -953,7 +986,6 @@
       "AvgVsRight": 0.261,
       "AvgVsLeft": 0.23,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1014,8 +1046,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控4(三)",
@@ -1037,7 +1073,6 @@
       "AvgVsRight": 0.222,
       "AvgVsLeft": 0.216,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1098,8 +1133,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控5(遊)",
@@ -1121,7 +1160,6 @@
       "AvgVsRight": 0.226,
       "AvgVsLeft": 0.229,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1182,8 +1220,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控6(左)",
@@ -1205,7 +1247,6 @@
       "AvgVsRight": 0.226,
       "AvgVsLeft": 0.227,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1266,8 +1307,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D控7(中)",
@@ -1289,7 +1334,6 @@
       "AvgVsRight": 0.236,
       "AvgVsLeft": 0.245,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1350,14 +1394,19 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     }
   ],
   "Pitchers": [
     {
       "Name": "D先発1",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 78,
       "Stuff": 76,
@@ -1411,11 +1460,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D先発2",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 83,
       "Stuff": 68,
@@ -1469,11 +1520,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D先発3",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 75,
       "Stuff": 69,
@@ -1527,11 +1580,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D先発4",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 75,
       "Stuff": 73,
@@ -1585,11 +1640,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D先発5",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 82,
       "Stuff": 80,
@@ -1643,11 +1700,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D中継ぎ1",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 71,
       "Stuff": 71,
@@ -1695,11 +1754,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D中継ぎ2",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 69,
       "Stuff": 62,
@@ -1747,11 +1808,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D中継ぎ3",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 77,
       "Stuff": 80,
@@ -1799,11 +1862,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D中継ぎ4",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 60,
       "Stuff": 76,
@@ -1851,11 +1916,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "D抑え",
       "Role": "Closer",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 86,
       "Stuff": 91,
@@ -1903,7 +1970,8 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     }
   ]
 }

@@ -385,8 +385,6 @@ input[type="file"] {
 .tbl.data th.sortable { cursor: pointer; user-select: none; }
 .tbl.data th.sortable:hover { color: var(--accent); }
 .tbl.data th.sorted { color: var(--accent); font-weight: 700; }
-/* チャンス○が付いていて読まれない決定力。消さずに「効いていない」と分かるように落とす */
-.tbl.data td.dim { color: var(--muted); }
 .tbl.data td.sp { color: #c9a0ff; font-size: .78rem; }
 
 /* 選手名の絞り込み。素の input はダークな地で読めないので指定する */

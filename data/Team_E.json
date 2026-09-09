@@ -22,14 +22,13 @@
       "Power": 56,
       "Eye": 70,
       "Speed": 64,
-      "Clutch": 77,
+      "Clutch": 80,
       "Catching": 80,
       "GroundBallRate": 60,
       "Baserunning": 53,
       "AvgVsRight": 0.274,
       "AvgVsLeft": 0.287,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -90,8 +89,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン2(二)",
@@ -113,7 +116,6 @@
       "AvgVsRight": 0.242,
       "AvgVsLeft": 0.243,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -174,8 +176,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン3(左)",
@@ -197,7 +203,6 @@
       "AvgVsRight": 0.27,
       "AvgVsLeft": 0.274,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -258,8 +263,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン4(一)",
@@ -281,7 +290,6 @@
       "AvgVsRight": 0.257,
       "AvgVsLeft": 0.24,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -342,8 +350,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン5(三)",
@@ -365,7 +377,6 @@
       "AvgVsRight": 0.286,
       "AvgVsLeft": 0.271,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -426,8 +437,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン6(右)",
@@ -449,7 +464,6 @@
       "AvgVsRight": 0.243,
       "AvgVsLeft": 0.251,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -510,8 +524,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン7(遊)",
@@ -533,7 +551,6 @@
       "AvgVsRight": 0.278,
       "AvgVsLeft": 0.252,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -594,8 +611,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン8(捕)",
@@ -617,7 +638,6 @@
       "AvgVsRight": 0.248,
       "AvgVsLeft": 0.265,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -678,8 +698,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Eスタメン9(指)",
@@ -701,7 +725,6 @@
       "AvgVsRight": 0.249,
       "AvgVsLeft": 0.264,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -762,8 +785,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控1(捕)",
@@ -785,7 +812,6 @@
       "AvgVsRight": 0.223,
       "AvgVsLeft": 0.244,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -846,8 +872,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控2(一)",
@@ -862,14 +892,13 @@
       "Power": 59,
       "Eye": 73,
       "Speed": 61,
-      "Clutch": 74,
+      "Clutch": 80,
       "Catching": 75,
       "GroundBallRate": 54,
       "Baserunning": 65,
       "AvgVsRight": 0.263,
       "AvgVsLeft": 0.243,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -930,8 +959,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控3(二)",
@@ -953,7 +986,6 @@
       "AvgVsRight": 0.223,
       "AvgVsLeft": 0.242,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1014,8 +1046,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控4(三)",
@@ -1030,14 +1066,13 @@
       "Power": 50,
       "Eye": 68,
       "Speed": 78,
-      "Clutch": 51,
+      "Clutch": 80,
       "Catching": 63,
       "GroundBallRate": 44,
       "Baserunning": 74,
       "AvgVsRight": 0.259,
       "AvgVsLeft": 0.226,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1098,8 +1133,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控5(遊)",
@@ -1121,7 +1160,6 @@
       "AvgVsRight": 0.238,
       "AvgVsLeft": 0.216,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1182,8 +1220,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控6(左)",
@@ -1205,7 +1247,6 @@
       "AvgVsRight": 0.227,
       "AvgVsLeft": 0.217,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1266,8 +1307,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E控7(中)",
@@ -1289,7 +1334,6 @@
       "AvgVsRight": 0.223,
       "AvgVsLeft": 0.255,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1350,14 +1394,19 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     }
   ],
   "Pitchers": [
     {
       "Name": "E先発1",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 60,
       "Stuff": 68,
@@ -1411,11 +1460,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E先発2",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 76,
       "Stuff": 69,
@@ -1469,11 +1520,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E先発3",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 78,
       "Stuff": 76,
@@ -1527,11 +1580,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E先発4",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 77,
       "Stuff": 61,
@@ -1585,11 +1640,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E先発5",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 73,
       "Stuff": 61,
@@ -1643,11 +1700,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E中継ぎ1",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 60,
       "Stuff": 74,
@@ -1695,11 +1754,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E中継ぎ2",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 70,
       "Stuff": 74,
@@ -1747,11 +1808,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E中継ぎ3",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 65,
       "Stuff": 73,
@@ -1799,11 +1862,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E中継ぎ4",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 70,
       "Stuff": 71,
@@ -1851,11 +1916,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "E抑え",
       "Role": "Closer",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 85,
       "Stuff": 88,
@@ -1903,7 +1970,8 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     }
   ]
 }

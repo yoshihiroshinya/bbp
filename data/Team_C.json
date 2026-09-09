@@ -22,14 +22,13 @@
       "Power": 50,
       "Eye": 72,
       "Speed": 57,
-      "Clutch": 74,
+      "Clutch": 80,
       "Catching": 83,
       "GroundBallRate": 62,
       "Baserunning": 66,
       "AvgVsRight": 0.257,
       "AvgVsLeft": 0.248,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -90,8 +89,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン2(二)",
@@ -113,7 +116,6 @@
       "AvgVsRight": 0.291,
       "AvgVsLeft": 0.274,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -174,8 +176,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン3(左)",
@@ -190,14 +196,13 @@
       "Power": 72,
       "Eye": 72,
       "Speed": 56,
-      "Clutch": 67,
+      "Clutch": 80,
       "Catching": 65,
       "GroundBallRate": 51,
       "Baserunning": 73,
       "AvgVsRight": 0.253,
       "AvgVsLeft": 0.24,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -258,8 +263,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン4(一)",
@@ -281,7 +290,6 @@
       "AvgVsRight": 0.241,
       "AvgVsLeft": 0.259,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -342,8 +350,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン5(三)",
@@ -365,7 +377,6 @@
       "AvgVsRight": 0.244,
       "AvgVsLeft": 0.281,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -426,8 +437,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン6(右)",
@@ -449,7 +464,6 @@
       "AvgVsRight": 0.243,
       "AvgVsLeft": 0.257,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -510,8 +524,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン7(遊)",
@@ -533,7 +551,6 @@
       "AvgVsRight": 0.284,
       "AvgVsLeft": 0.255,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -594,8 +611,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン8(捕)",
@@ -617,7 +638,6 @@
       "AvgVsRight": 0.258,
       "AvgVsLeft": 0.276,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -678,8 +698,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Cスタメン9(指)",
@@ -701,7 +725,6 @@
       "AvgVsRight": 0.295,
       "AvgVsLeft": 0.251,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -762,8 +785,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控1(捕)",
@@ -778,14 +805,13 @@
       "Power": 61,
       "Eye": 55,
       "Speed": 56,
-      "Clutch": 69,
+      "Clutch": 80,
       "Catching": 78,
       "GroundBallRate": 40,
       "Baserunning": 59,
       "AvgVsRight": 0.264,
       "AvgVsLeft": 0.234,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -846,8 +872,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控2(一)",
@@ -869,7 +899,6 @@
       "AvgVsRight": 0.232,
       "AvgVsLeft": 0.241,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -930,8 +959,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控3(二)",
@@ -953,7 +986,6 @@
       "AvgVsRight": 0.254,
       "AvgVsLeft": 0.238,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1014,8 +1046,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控4(三)",
@@ -1037,7 +1073,6 @@
       "AvgVsRight": 0.269,
       "AvgVsLeft": 0.218,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1098,8 +1133,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控5(遊)",
@@ -1121,7 +1160,6 @@
       "AvgVsRight": 0.226,
       "AvgVsLeft": 0.237,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1182,8 +1220,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控6(左)",
@@ -1205,7 +1247,6 @@
       "AvgVsRight": 0.228,
       "AvgVsLeft": 0.238,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1266,8 +1307,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C控7(中)",
@@ -1289,7 +1334,6 @@
       "AvgVsRight": 0.26,
       "AvgVsLeft": 0.238,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1350,14 +1394,19 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     }
   ],
   "Pitchers": [
     {
       "Name": "C先発1",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 70,
       "Stuff": 60,
@@ -1411,11 +1460,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C先発2",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 77,
       "Stuff": 71,
@@ -1469,11 +1520,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C先発3",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 73,
       "Stuff": 60,
@@ -1527,11 +1580,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C先発4",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 63,
       "Stuff": 60,
@@ -1585,11 +1640,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C先発5",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 75,
       "Stuff": 66,
@@ -1643,11 +1700,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C中継ぎ1",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 71,
       "Stuff": 63,
@@ -1695,11 +1754,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C中継ぎ2",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 63,
       "Stuff": 68,
@@ -1747,11 +1808,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C中継ぎ3",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 64,
       "Stuff": 76,
@@ -1799,11 +1862,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C中継ぎ4",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 63,
       "Stuff": 66,
@@ -1851,11 +1916,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "C抑え",
       "Role": "Closer",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 81,
       "Stuff": 85,
@@ -1903,7 +1970,8 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     }
   ]
 }

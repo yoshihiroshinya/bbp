@@ -424,9 +424,9 @@
           <div class="gate-n">4</div>
           <div class="gate-b">
             <div class="gate-t">振ったら、当たったか</div>
-            <p class="gate-d">キレが巧打を上回るほど空振りします。球種の奪三振補正もここに乗ります。</p>
-            <div class="fx">空振り率 = 0.18 + (<b>キレ</b> − <b>巧打</b>) × 0.003 + <b>奪三振補正</b> × 0.002 　（5〜45%）</div>
-            <div class="feeds">効くもの <span>投手・キレ</span><span>打者・巧打</span><span>球種・奪三振補正</span></div>
+            <p class="gate-d">キレがミートを上回るほど空振りします。球種の奪三振補正もここに乗ります。</p>
+            <div class="fx">空振り率 = 0.18 + (<b>キレ</b> − <b>ミート</b>) × 0.003 + <b>奪三振補正</b> × 0.002 　（5〜45%）</div>
+            <div class="feeds">効くもの <span>投手・キレ</span><span>打者・ミート</span><span>球種・奪三振補正</span></div>
           </div>
         </li>
         <li class="gate">
@@ -445,9 +445,9 @@
               基準打率に補正を足したものがヒット率です。打率は三振も分母に含む値なので、
               インプレー時は 1.21 倍して釣り合わせています。
             </p>
-            <div class="fx">基準 = <b>対右</b>／<b>対左</b> ＋ <b>対左○</b>0.025 ＋ <b>チャンス○</b>0.030 − <b>威圧感</b>0.025 ＋ (<b>巧打</b> − <b>制球</b>) × 0.001</div>
+            <div class="fx">基準 = <b>対右</b>／<b>対左</b> ＋ <b>対左○</b>0.025 − <b>威圧感</b>0.025 ＋ (<b>ミート</b> − <b>制球</b>) × 0.001</div>
             <div class="fx">ヒット率 = 基準（0.15〜0.55）× 1.21　＋ 前進守備の内野なら +0.08</div>
-            <div class="feeds">効くもの <span>打者・対右／対左</span><span>打者・巧打</span><span>投手・制球</span><span>対左○</span><span>チャンス○</span><span>威圧感</span><span>決定力</span></div>
+            <div class="feeds">効くもの <span>打者・対右／対左</span><span>打者・ミート</span><span>投手・制球</span><span>対左○</span><span>威圧感</span><span>チャンス</span></div>
           </div>
         </li>
       </ol>
@@ -479,7 +479,7 @@
             <input type="range" id="s_eye" min="20" max="99" value="60">
           </div>
           <div class="dial">
-            <label for="s_con">打者・巧打 <b id="v_con">60</b></label>
+            <label for="s_con">打者・ミート <b id="v_con">60</b></label>
             <input type="range" id="s_con" min="20" max="99" value="60">
           </div>
           <div class="dial">
@@ -503,7 +503,7 @@
 
       <p>
         <strong>選球を動かすと四球と三振が同時に動きます。</strong>
-        巧打とキレは三振に、制球は四球に強く出ます。
+        ミートとキレは三振に、制球は四球に強く出ます。
         <em>この4つは連動している</em>ので、1つだけ合わせると必ずどこかが現実から外れます。
       </p>
     </section>
@@ -515,11 +515,11 @@
 
       <p>
         ヒットになると決まったあと、<em>飛距離</em>を計算して単打・二塁打・三塁打・本塁打を
-        振り分けます。つまり<strong>長打を上げてもヒットの数は増えません。内訳が長打側へ寄るだけです</strong>。
+        振り分けます。つまり<strong>パワーを上げてもヒットの数は増えません。内訳が長打側へ寄るだけです</strong>。
         打率を動かさずに長打だけを増減できる唯一の場所がここです。
       </p>
 
-      <div class="fx">飛距離 = 70 + (<b>長打</b> × 1.1 + 乱数(−10〜+14) − <b>キレ</b> × 0.3) × 0.59 + 風</div>
+      <div class="fx">飛距離 = 70 + (<b>パワー</b> × 1.1 + 乱数(−10〜+14) − <b>キレ</b> × 0.3) × 0.59 + 風</div>
       <div class="fx">本塁打の必要距離 = <b>フェンス距離</b> + <b>フェンス高</b> × 0.8</div>
       <div class="fx">二塁打 = 飛距離が「フェンス距離 − 26」を超えたとき</div>
 
@@ -548,7 +548,7 @@
         <p class="tool-s">棒は平均飛距離。<b>赤く伸びきった球場は本塁打圏内</b>です（風は含めていません）。</p>
         <div class="dials">
           <div class="dial">
-            <label for="s_pow">打者・長打 <b id="v_pow">60</b></label>
+            <label for="s_pow">打者・パワー <b id="v_pow">60</b></label>
             <input type="range" id="s_pow" min="20" max="99" value="60">
           </div>
           <div class="dial">
@@ -566,7 +566,7 @@
 
       <p>
         <strong>キレの高い投手が相手だと飛距離が落ちます</strong>（キレ×0.3 が引かれる）。
-        長打80の打者でも、キレ90の投手からは平均で7m近く損をします。
+        パワー80の打者でも、キレ90の投手からは平均で7m近く損をします。
       </p>
     </section>
 
@@ -642,7 +642,7 @@
               <td><strong>打率がそのまま動く。</strong>打撃で一番強いレバー</td>
             </tr>
             <tr>
-              <td class="pname">巧打</td>
+              <td class="pname">ミート</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip on"></i></span></td>
               <td>ヒット率と空振り率の両方</td>
               <td>打率が上がり、三振が減る</td>
@@ -654,7 +654,7 @@
               <td><strong>四球が増え、三振が減る</strong></td>
             </tr>
             <tr>
-              <td class="pname">長打</td>
+              <td class="pname">パワー</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
               <td>飛距離だけ</td>
               <td><strong>ヒットの数は変わらず、内訳が長打へ寄る</strong></td>
@@ -678,22 +678,16 @@
               <td>内野安打と併殺が増え、<strong>長打とフライアウトが減る</strong></td>
             </tr>
             <tr>
-              <td class="pname">チャンス○</td>
-              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
-              <td>得点圏で基準打率 +0.030（固定）</td>
-              <td>勝負強くなる。<strong>付けると決定力は読まれません</strong>（値は残るが無意味）</td>
-            </tr>
-            <tr>
               <td class="pname">対左○</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
               <td>左投手のとき基準打率 +0.025</td>
               <td>左投手に強くなる</td>
             </tr>
             <tr>
-              <td class="pname">決定力</td>
+              <td class="pname">チャンス</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
-              <td>得点圏でヒット率に (決定力 − 50) × 0.001。<strong>50 が基準（±0）</strong></td>
-              <td><strong>意味があるのは 80 未満まで。</strong>80 でチャンス○と並び、81以上で追い越します。<strong>チャンス○が付いている打者では読まれません</strong></td>
+              <td>得点圏でヒット率に (チャンス − 50) × 0.001。<strong>50 が基準（±0）</strong>。<strong>調子は乗りません</strong></td>
+              <td>得点圏で強くなる。<strong>0〜99 を全部使えます</strong>（99 なら +0.049）</td>
             </tr>
             <tr>
               <td class="pname">傾向</td>
@@ -711,7 +705,7 @@
               <td class="pname">年齢</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
               <td>オフシーズンの成長・衰え</td>
-              <td>28以下 → 巧打 +1〜3・長打 +1〜2 ／ 33以上 → 巧打 −1〜3・走力 −1〜3</td>
+              <td>28以下 → ミート +1〜3・パワー +1〜2 ／ 33以上 → ミート −1〜3・走力 −1〜3</td>
             </tr>
             <tr>
               <td class="pname">故障耐性</td>
@@ -723,34 +717,30 @@
         </table>
       </div>
 
-      <h3>決定力とチャンス○の関係</h3>
+      <h3>チャンス○は廃止しました（2026-09-09）</h3>
       <p>
-        得点圏での上乗せは<strong>どちらか一方だけ</strong>が効きます。
-        チャンス○が付いていれば <b>+0.030 の固定値</b>、付いていなければ
-        <b>(決定力 − 50) × 0.001</b> です。
+        以前は「チャンス」（数値）と「チャンス○」（TRUE / FALSE）の2つがあり、
+        <strong>○が付いていると数値が読まれない</strong>という分かりにくい関係でした。
+        ○は得点圏で <b>+0.030 の固定値</b>、数値側は <b>(チャンス − 50) × 0.001</b> なので
+        <strong>チャンス 80 がちょうど +0.030</strong> — 同じことを二重に持っていただけです。
+        そこでフラグを消して<strong>チャンスの数値1本にしました</strong>。
       </p>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>出荷データの96名</th><th class="n">人数</th><th>得点圏での上乗せ</th></tr></thead>
-          <tbody>
-            <tr><td class="pname">チャンス○ あり</td><td class="n">24名</td><td><b>+0.030 固定</b>（決定力は 50〜79 を持っているが読まれない）</td></tr>
-            <tr><td class="pname">チャンス○ なし</td><td class="n">72名</td><td>+0.000 〜 <b>+0.029</b>（決定力 50〜79。中央値 63）</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="note">
-        <b>出荷データでは、チャンス○の打者が常にいちばん強くなります。</b>
-        非○で最も高い決定力は 79 で +0.029、○の +0.030 をわずかに下回るためです。
-        並ぶのは決定力80、追い越すのは81以上ですが、<b>該当する打者は0名</b>です。
-      </div>
+      <ul>
+        <li><b>○が付いていた24名は、取り込み時にチャンス 80 へ引き上げます。</b>
+          効き目は以前とまったく同じ（+0.030）です。</li>
+        <li><b>上限の制約が消えました。</b>以前は「80 で○と並び 81 以上で追い越す」ため
+          80 以上は設計外でしたが、いまは <b>0〜99 を全部使えます</b>（99 なら +0.049）。</li>
+        <li>旧いファイル（<code>チャンス○</code> 列がある xlsx、旧データ）もそのまま取り込めます。</li>
+      </ul>
+
       <div class="stamp">
-        <p class="stamp-h">決定力を80以上にしないこと</p>
-        <ul>
-          <li><b>80 でチャンス○と並び、81 以上で追い越します。</b>特殊能力が数値に抜かれる形になるので、
-            設計外の値です。上げるなら 79 まで。</li>
-          <li><b>チャンス○を付けた打者の決定力は捨てられます。</b>「○持ちで決定力も高い打者」は作れません。
-            ○を付けた24名が 50〜79 の値を持っていますが、試合では読まれていません。</li>
-        </ul>
+        <p class="stamp-h">チャンスだけは調子が乗りません</p>
+        <p>
+          ほかの能力は調子で ±8 動きますが、ここに調子を乗せると
+          <b>得点が 4.14 → 4.31 に上がってしまいます</b>（8シードすべてで上振れ）。
+          期待値は同じなのに上がるのは、<strong>得点が「走者を還す率」に対して凸</strong>だからです —
+          平均が同じでも振れ幅が増えると得点は増えます。だから素の値をそのまま使っています。
+        </p>
       </div>
     </section>
 
@@ -862,8 +852,8 @@
               <td><strong>逆です。高いほど丈夫。</strong>50 にすると疲労が閾値を超えた瞬間から毎試合およそ半分の確率で故障します</td>
             </tr>
             <tr class="dead">
-              <td class="pname">決定力を上げれば<br>いくらでも勝負強くなる</td>
-              <td><strong>80 未満でしか意味がありません。</strong>チャンス○（+0.030）が付いている打者では読まれず、付いていない打者でも 80 で並んで 81 以上で追い越すため、<strong>80 以上は設計外</strong>です</td>
+              <td class="pname">チャンスは調子が良い日に<br>もっと効く</td>
+              <td><strong>効きません。</strong>チャンスだけは調子の補正（±8）が乗らず、素の値がそのまま使われます。ほかの打撃能力とここだけ違います</td>
             </tr>
             <tr class="dead">
               <td class="pname">走力を上げれば<br>盗塁するようになる</td>
@@ -898,16 +888,16 @@
       <div class="decay">
         <div class="decay-row"><div>走力</div><div class="decay-bar"><div class="decay-fill" style="width:100%"></div></div><div class="decay-v">−14</div></div>
         <div class="decay-row"><div>投手・キレ</div><div class="decay-bar"><div class="decay-fill" style="width:100%"></div></div><div class="decay-v">−14</div></div>
-        <div class="decay-row"><div>巧打・長打</div><div class="decay-bar"><div class="decay-fill" style="width:50%"></div></div><div class="decay-v">−7</div></div>
+        <div class="decay-row"><div>ミート・パワー</div><div class="decay-bar"><div class="decay-fill" style="width:50%"></div></div><div class="decay-v">−7</div></div>
         <div class="decay-row"><div>投手・制球</div><div class="decay-bar"><div class="decay-fill" style="width:50%"></div></div><div class="decay-v">−7</div></div>
         <div class="decay-row"><div>選球</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
-        <div class="decay-row"><div>決定力</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
+        <div class="decay-row"><div>チャンス</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
         <div class="decay-row"><div>捕球</div><div class="decay-bar"><div class="decay-fill zero" style="width:2px"></div></div><div class="decay-v">0</div></div>
       </div>
 
       <p>
         <strong>疲れて最初に落ちるのは走力とキレ</strong>（他の2倍のペース）。
-        選球・決定力・捕球は<em>まったく影響を受けません</em>。
+        選球・チャンス・捕球は<em>まったく影響を受けません</em>。
         疲れた主砲は打てるが走れない、という形になります。
       </p>
 
@@ -930,7 +920,7 @@
 
       <ol class="plain">
         <li><strong>走塁・戦術・失策</strong> — 出塁は足りているのに点が入らないとき</li>
-        <li><strong>長打（＝飛距離）</strong> — 打率を動かさずに長打の割合だけ変えられる唯一の場所</li>
+        <li><strong>パワー（＝飛距離）</strong> — 打率を動かさずに長打の割合だけ変えられる唯一の場所</li>
         <li><strong>選球・キレ</strong> — 四球率と三振率。ただし<em>打率にも効きます</em></li>
         <li><strong>対右・対左（＝打率そのもの）</strong> — 最後。ここから始めると他が全部ずれます</li>
       </ol>

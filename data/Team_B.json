@@ -29,7 +29,6 @@
       "AvgVsRight": 0.286,
       "AvgVsLeft": 0.275,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -90,8 +89,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン2(二)",
@@ -106,14 +109,13 @@
       "Power": 80,
       "Eye": 66,
       "Speed": 70,
-      "Clutch": 59,
+      "Clutch": 80,
       "Catching": 79,
       "GroundBallRate": 50,
       "Baserunning": 59,
       "AvgVsRight": 0.295,
       "AvgVsLeft": 0.245,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -174,8 +176,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン3(左)",
@@ -190,14 +196,13 @@
       "Power": 81,
       "Eye": 79,
       "Speed": 84,
-      "Clutch": 55,
+      "Clutch": 80,
       "Catching": 69,
       "GroundBallRate": 48,
       "Baserunning": 73,
       "AvgVsRight": 0.287,
       "AvgVsLeft": 0.256,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -258,8 +263,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン4(一)",
@@ -281,7 +290,6 @@
       "AvgVsRight": 0.293,
       "AvgVsLeft": 0.287,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -342,8 +350,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン5(三)",
@@ -365,7 +377,6 @@
       "AvgVsRight": 0.295,
       "AvgVsLeft": 0.241,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -426,8 +437,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン6(右)",
@@ -449,7 +464,6 @@
       "AvgVsRight": 0.267,
       "AvgVsLeft": 0.277,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -510,8 +524,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン7(遊)",
@@ -533,7 +551,6 @@
       "AvgVsRight": 0.246,
       "AvgVsLeft": 0.233,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -594,8 +611,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン8(捕)",
@@ -617,7 +638,6 @@
       "AvgVsRight": 0.272,
       "AvgVsLeft": 0.281,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -678,8 +698,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "Bスタメン9(指)",
@@ -694,14 +718,13 @@
       "Power": 61,
       "Eye": 67,
       "Speed": 58,
-      "Clutch": 63,
+      "Clutch": 80,
       "Catching": 81,
       "GroundBallRate": 49,
       "Baserunning": 79,
       "AvgVsRight": 0.272,
       "AvgVsLeft": 0.235,
       "HasVsLeftBoost": true,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -762,8 +785,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控1(捕)",
@@ -785,7 +812,6 @@
       "AvgVsRight": 0.267,
       "AvgVsLeft": 0.231,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -846,8 +872,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控2(一)",
@@ -869,7 +899,6 @@
       "AvgVsRight": 0.252,
       "AvgVsLeft": 0.22,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -930,8 +959,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控3(二)",
@@ -953,7 +986,6 @@
       "AvgVsRight": 0.252,
       "AvgVsLeft": 0.222,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1014,8 +1046,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控4(三)",
@@ -1037,7 +1073,6 @@
       "AvgVsRight": 0.23,
       "AvgVsLeft": 0.238,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1098,8 +1133,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控5(遊)",
@@ -1121,7 +1160,6 @@
       "AvgVsRight": 0.262,
       "AvgVsLeft": 0.249,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1182,8 +1220,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控6(左)",
@@ -1205,7 +1247,6 @@
       "AvgVsRight": 0.241,
       "AvgVsLeft": 0.253,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": false,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1266,8 +1307,12 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B控7(中)",
@@ -1282,14 +1327,13 @@
       "Power": 47,
       "Eye": 65,
       "Speed": 73,
-      "Clutch": 65,
+      "Clutch": 80,
       "Catching": 71,
       "GroundBallRate": 40,
       "Baserunning": 79,
       "AvgVsRight": 0.23,
       "AvgVsLeft": 0.258,
       "HasVsLeftBoost": false,
-      "HasClutchBoost": true,
       "Condition": 0,
       "Fatigue": 0,
       "InjuryStatus": 0,
@@ -1350,14 +1394,19 @@
         "HR": 0,
         "RBI": 0,
         "Walks": 0,
-        "SO": 0
-      }
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
     }
   ],
   "Pitchers": [
     {
       "Name": "B先発1",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 81,
       "Stuff": 69,
@@ -1411,11 +1460,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B先発2",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 64,
       "Stuff": 81,
@@ -1469,11 +1520,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B先発3",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 62,
       "Stuff": 70,
@@ -1527,11 +1580,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B先発4",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 79,
       "Stuff": 68,
@@ -1585,11 +1640,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B先発5",
       "Role": "Starter",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 73,
       "Stuff": 77,
@@ -1643,11 +1700,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B中継ぎ1",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 63,
       "Stuff": 75,
@@ -1695,11 +1754,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B中継ぎ2",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 59,
       "Stuff": 79,
@@ -1747,11 +1808,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B中継ぎ3",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 62,
       "Stuff": 70,
@@ -1799,11 +1862,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B中継ぎ4",
       "Role": "Reliever",
+      "RotationOrder": 0,
       "Hand": "左",
       "Control": 58,
       "Stuff": 80,
@@ -1851,11 +1916,13 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     },
     {
       "Name": "B抑え",
       "Role": "Closer",
+      "RotationOrder": 0,
       "Hand": "右",
       "Control": 78,
       "Stuff": 88,
@@ -1903,7 +1970,8 @@
         "HRAllowed": 0,
         "WalksAllowed": 0,
         "Strikeouts": 0
-      }
+      },
+      "CareerHistory": []
     }
   ]
 }
