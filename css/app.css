@@ -113,6 +113,21 @@ h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
 .tbl .score { text-align: center; font-variant-numeric: tabular-nums; padding: .4rem .8rem; }
 .tbl tr.hurt td { color: var(--danger); }
 
+/*
+    一軍とファームの区切り（球団画面・選手データ）。
+
+    【なぜ区切り行を入れるか】ファームの選手は**試合に出られない**ので、
+    一軍と同じ見た目で混ぜると「なぜ使われないのか」が読めない。
+    列を1つ増やすより、間に見出しを挟むほうが表の幅を食わない。
+*/
+.tbl tr.tier td {
+    color: var(--muted);
+    background: var(--panel);
+    font-size: .75rem;
+    font-weight: 600;
+    white-space: normal;
+}
+
 /* 能力値の表は列が多い。ページ全体ではなく表だけを横スクロールさせる。 */
 .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
