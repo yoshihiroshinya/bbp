@@ -820,6 +820,38 @@
         つまり<strong>強い球を1つ持たせる</strong>のではなく、
         <strong>質の配分で「決め球をどれだけ使うか」を決める</strong>という読み方になります。
       </p>
+
+      <h3>投手タイプ</h3>
+      <p class="sub">データではなく、制球・キレと球種からその場で導いた「見方」です</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>タイプ</th><th>条件</th><th>意味</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">パワー型</td><td>キレ − 制球 ≧ 6</td><td>力で押して空振りを取る</td></tr>
+            <tr><td class="pname">制球型</td><td>制球 − キレ ≧ 3</td><td>四球を出さず打たせて取る</td></tr>
+            <tr><td class="pname">三振型</td><td>決め球の奪三振補正 ≧ 4.0</td><td>空振り率が上がる</td></tr>
+            <tr><td class="pname">ゴロ型</td><td>決め球のゴロ補正 ≧ 2.9</td><td>本塁打と長打が減る</td></tr>
+            <tr><td class="pname">K-G型</td><td>三振型とゴロ型の両方<br><span class="sub">K は奪三振、G はゴロ</span></td><td><strong>各球団の抑えがこれ</strong></td></tr>
+            <tr><td class="pname">決め球なし</td><td>どちらも 1.0 未満</td><td>補正のある球種を実質持っていない</td></tr>
+            <tr><td class="pname">バランス型</td><td>どれも突出しない</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        押し方（パワー型／制球型）と決め球（三振型／ゴロ型）は<strong>別々に付きます</strong>ので、
+        「制球型・三振型」のように2語で出ることがあります。
+        <strong>上手さの等級ではありません</strong> — 強さは制球・キレ・決め球の数字をそのまま見てください。
+      </p>
+      <p>
+        <strong>決め球は「質」で重み付けしています。</strong>
+        投手は質に比例して球種を選ぶので、<strong>フォークを質20で持つ投手と質80で持つ投手では
+        投げる回数が4倍違います</strong>。単純に平均すると同じ評価になってしまうためです。
+      </p>
+      <p>
+        <strong>スタミナはタイプに入れていません。</strong>
+        先発は全員60以上・救援と抑えは全員60未満で<strong>役割とぴったり一致する</strong>ので、
+        入れても「先発か救援か」を言い換えるだけになります。
+      </p>
     </section>
 
     <!-- ══ 効かないもの ══ -->
