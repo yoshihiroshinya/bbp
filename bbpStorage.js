@@ -35,8 +35,13 @@ window.bbpStorage = {
         }
     },
 
-    // 開発時にストレージを空にして初回シードを再確認するための補助。
-    // C# からは呼んでいない。ブラウザのコンソールで bbpStorage.clear() と打つ。
+    // 保存データを全部消す（bbp: で始まるキーだけ）。消した件数を返す。
+    //
+    // 【呼び元は進行画面の「保存データを消して最初から」】
+    //   BbpApp.ResetStorageAsync -> IJsInterop -> ここ。
+    //   ★取り消しがきかないので、**画面側で確認シートを挟んでいる**
+    //   （Home.razor の _confirmReset）。ここに confirm() を置かないこと —
+    //   Blazor WebAssembly は単一スレッドで、同期の confirm は処理ごと止めうる。
     clear: function () {
         var keys = [];
         for (var i = 0; i < window.localStorage.length; i++) {

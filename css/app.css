@@ -387,6 +387,29 @@ input[type="file"] {
 .p-head .btn { flex: 0 0 auto; }
 .p-name { font-weight: 700; color: var(--accent); margin-right: .5rem; }
 
+/* ---- 取り消しのきかない操作の確認 ----
+   采配パネル・年度別成績と同じ位置と形。**色だけを赤に分ける。**
+   あの2つは「読む／答える」ものだが、こちらは**押すと戻せない**。
+   同じ色にすると、いつもの問いと同じ勢いで押される。 */
+.confirm-sheet {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));   /* 下タブの上 */
+    z-index: 11;                /* 采配パネル(10)より前。両方出たら確認を先に読ませる */
+    max-height: 70dvh;
+    overflow-y: auto;
+    background: #2a1618;
+    border-top: 2px solid var(--danger, #b04a4a);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .6);
+    padding: .8rem 1rem 1rem;
+}
+.c-title { font-weight: 700; color: #ff9a9a; margin-bottom: .4rem; }
+.c-list { margin: .4rem 0 .6rem 1.1rem; padding: 0; font-size: .9rem; }
+.c-list li { margin: .15rem 0; }
+/* 【ボタンの並びは「やめる」を先に置く】指はまず左端へ行くので、
+   取り消しのきかないほうを先頭に置かない。 */
+.c-btns { display: flex; gap: .5rem; margin-top: .6rem; }
+
 /* 開いている行が分かるようにする。表は横に長いので、色だけで示す。 */
 .tbl tr.tap { cursor: pointer; }
 .tbl tr.sel td { background: #1d3329; }
