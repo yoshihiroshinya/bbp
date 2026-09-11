@@ -34,6 +34,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -122,6 +123,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -210,6 +212,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 72,
         "Pos1B": 0,
@@ -298,6 +301,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 100,
@@ -386,6 +390,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -474,6 +479,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -562,6 +568,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -650,6 +657,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 100,
         "Pos1B": 0,
@@ -738,6 +746,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -826,6 +835,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 100,
         "Pos1B": 57,
@@ -914,6 +924,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 100,
@@ -1002,6 +1013,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -1090,6 +1102,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 80,
@@ -1178,6 +1191,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 44,
         "Pos1B": 0,
@@ -1266,6 +1280,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 57,
@@ -1354,6 +1369,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 74,
         "Pos1B": 33,
@@ -1425,6 +1441,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "オーバー",
       "Control": 81,
       "Stuff": 69,
       "Stamina": 69,
@@ -1438,6 +1455,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1486,6 +1504,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "スリークォーター",
       "Control": 64,
       "Stuff": 81,
       "Stamina": 82,
@@ -1499,6 +1518,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1547,6 +1567,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "オーバー",
       "Control": 62,
       "Stuff": 70,
       "Stamina": 70,
@@ -1560,6 +1581,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1608,6 +1630,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "スリークォーター",
       "Control": 79,
       "Stuff": 68,
       "Stamina": 80,
@@ -1621,6 +1644,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1669,6 +1693,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "アンダー",
       "Control": 73,
       "Stuff": 77,
       "Stamina": 72,
@@ -1682,6 +1707,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1730,6 +1756,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "オーバー",
       "Control": 63,
       "Stuff": 75,
       "Stamina": 46,
@@ -1743,6 +1770,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1785,6 +1813,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "スリークォーター",
       "Control": 59,
       "Stuff": 79,
       "Stamina": 45,
@@ -1798,6 +1827,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1840,6 +1870,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "サイド",
       "Control": 62,
       "Stuff": 70,
       "Stamina": 41,
@@ -1853,6 +1884,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1895,6 +1927,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "スリークォーター",
       "Control": 58,
       "Stuff": 80,
       "Stamina": 49,
@@ -1908,6 +1941,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -1950,6 +1984,7 @@
       "Role": "Closer",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "オーバー",
       "Control": 78,
       "Stuff": 88,
       "Stamina": 34,
@@ -1963,6 +1998,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "豪速球",
@@ -2026,6 +2062,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 100,
         "Pos1B": 62,
@@ -2114,6 +2151,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -2202,6 +2240,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -2290,6 +2329,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -2378,6 +2418,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 0,
@@ -2466,6 +2507,7 @@
       "Fatigue": 0,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "PositionAptitude": {
         "C": 0,
         "Pos1B": 59,
@@ -2537,6 +2579,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "スリークォーター",
       "Control": 58,
       "Stuff": 66,
       "Stamina": 74,
@@ -2550,6 +2593,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -2592,6 +2636,7 @@
       "Role": "Starter",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "オーバー",
       "Control": 61,
       "Stuff": 67,
       "Stamina": 77,
@@ -2605,6 +2650,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -2653,6 +2699,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "サイド",
       "Control": 58,
       "Stuff": 69,
       "Stamina": 38,
@@ -2666,6 +2713,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -2708,6 +2756,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "右",
+      "Delivery": "スリークォーター",
       "Control": 61,
       "Stuff": 67,
       "Stamina": 48,
@@ -2721,6 +2770,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",
@@ -2769,6 +2819,7 @@
       "Role": "Reliever",
       "RotationOrder": 0,
       "Hand": "左",
+      "Delivery": "アンダー",
       "Control": 58,
       "Stuff": 67,
       "Stamina": 44,
@@ -2782,6 +2833,7 @@
       "RestDays": 6,
       "InjuryStatus": 0,
       "FarmDays": 0,
+      "JustSwapped": false,
       "Pitches": [
         {
           "Name": "ストレート",

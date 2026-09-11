@@ -530,7 +530,7 @@
       </div>
 
       <h3>打球の種類はゴロ率が決めます</h3>
-      <div class="fx"><b>ゴロ率</b>% がゴロ　／　次の 20% がライナー　／　残りがフライ</div>
+      <div class="fx"><b>ゴロ率</b>% ＋ <b>球種のゴロ補正</b> ＋ <b>投法のゴロ補正</b> がゴロ　／　次の 20% がライナー　／　残りがフライ</div>
       <p>
         ライナーは<em>常に20%固定</em>で、ゴロ率を上げたぶんフライが減ります。
         そして<strong>ゴロのヒットは長打になりません</strong>（外野へ抜けた扱いでも単打）。
@@ -790,6 +790,12 @@
               <td>—</td>
             </tr>
             <tr>
+              <td class="pname">投法</td>
+              <td class="n"><span class="pips"><i class="pip on"></i><i class="pip on"></i><i class="pip"></i></span></td>
+              <td>ゴロ率に <code>+ 投法のゴロ補正</code>（オーバー −2 ／ スリークォーター 0 ／ サイド +3 ／ アンダー +5）。球速の表示にも（+3 ／ 0 ／ −5 ／ −13 km/h）</td>
+              <td><strong>アンダー・サイドはゴロが増え、オーバーはフライが増えます。</strong>得点水準は動きません</td>
+            </tr>
+            <tr>
               <td class="pname">年齢</td>
               <td class="n"><span class="pips"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></td>
               <td>オフシーズンの成長・衰え</td>
@@ -825,7 +831,7 @@
       <p class="sub">データではなく、キレからその場で導いた表示です</p>
       <div class="scroll">
         <table>
-          <thead><tr><th>キレ</th><th>最速</th><th>出荷データでの位置</th></tr></thead>
+          <thead><tr><th>キレ</th><th>最速（スリークォーター＝基準）</th><th>出荷データでの位置</th></tr></thead>
           <tbody>
             <tr><td class="pname">60</td><td>137 km/h</td><td>最低。ファームや技巧的な先発</td></tr>
             <tr><td class="pname">69</td><td>144 km/h</td><td>中央</td></tr>
@@ -835,15 +841,65 @@
         </table>
       </div>
       <p>
-        <code>最速km/h = 92 ＋ キレ × 0.75</code>（125〜165 に収めます）。
+        <code>最速km/h = 92 ＋ キレ × 0.75 ＋ 投法のずれ</code>（118〜165 に収めます）。
         <strong>キレを上げれば球速も上がります。</strong>
         球速だけを別に持たせていないのは、<strong>そうすると「変えても結果が変わらない数値」が
         1つ増える</strong>ためです（走塁・成長型と同じ扱いになってしまいます）。
+      </p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>投法</th><th>ずれ</th><th>出荷データの球速</th><th>NPB の実際</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">オーバー</td><td><strong>+3</strong></td><td>140〜163（平均 150.2）</td><td>140〜160</td></tr>
+            <tr><td class="pname">スリークォーター</td><td>0（基準）</td><td>137〜153（平均 143.9）</td><td>140〜160。<strong>NPB で一番多い</strong></td></tr>
+            <tr><td class="pname">サイド</td><td><strong>−5</strong></td><td>134〜147（平均 138.7）</td><td>130〜150</td></tr>
+            <tr><td class="pname">アンダー</td><td><strong>−13</strong></td><td>125〜139（平均 131.0）</td><td>115〜135</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        役割ごとでは <strong>一軍先発 125〜157</strong>（平均 144.6）／<strong>中継ぎ 134〜152</strong>（144.8）／
+        <strong>抑え 155〜163</strong>（159.5）／<strong>ファーム 125〜146</strong>（138.4）。
+        <strong>先発の下限 125km/h はアンダースローの先発です</strong>（各球団の先発5）ので、
+        役割の帯だけを見て「先発に 125km/h がいる」と読まないでください。
       </p>
       <p>
         <strong>制球は球速に混ぜていません。</strong>
         制球はゾーン率と打率に効く別の軸で、「速い投手は制球が悪い（良い）」という関係は
         このゲームの中にありません。
+      </p>
+
+      <h3>投法（オーバー／スリークォーター／サイド／アンダー）</h3>
+      <p class="sub">xlsx の「投手」シートで選べます。<strong>試合に効きます</strong></p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>投法</th><th>ゴロ補正</th><th>球速</th><th>性格</th></tr></thead>
+          <tbody>
+            <tr><td class="pname">オーバー</td><td><strong>−2</strong></td><td>+3</td><td>上から投げ下ろす。速球派で<strong>フライが多い</strong></td></tr>
+            <tr><td class="pname">スリークォーター</td><td>0（基準）</td><td>0（基準）</td><td>斜め上から。<strong>NPB で一番多い</strong></td></tr>
+            <tr><td class="pname">サイド</td><td><strong>+3</strong></td><td>−5</td><td>横手投げ。ゴロ寄り</td></tr>
+            <tr><td class="pname">アンダー</td><td><strong>+5</strong></td><td>−13</td><td>下手投げ。<strong>いちばん遅く、いちばんゴロが多い</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>ゴロが増えることは、得とも損とも言えません。</strong>
+        ゴロのヒットは（外野へ抜けても）長打になりません。だから<strong>本塁打と長打を減らせます</strong>が、
+        内野安打は増えます。フライはアウトになりやすい代わりに、入れば長打です。
+        <strong>球場が広ければフライ型が有利、狭ければゴロ型が効きます。</strong>
+      </p>
+      <p>
+        <strong>得点水準は動きません。</strong>4つを合わせるとリーグ全体で釣り合うように決めてあります
+        （一軍10名は オーバー4／スリークォーター4／サイド1／アンダー1 なので
+        <code>4×(−2) + 1×(+3) + 1×(+5) = 0</code>）。8シード × 163節で測って、
+        打率・出塁率・四球率・三振率・得点・本塁打はすべて勝ち負けの混ざる範囲でした。
+        動いたのは<strong>ゴロアウトとフライアウトの入れ替わりだけ</strong>です。
+      </p>
+      <p>
+        <strong>遊んでいる途中のシーズンには入りません。</strong>
+        端末の保存データに投法の欄がないので<strong>全員「オーバー」</strong>になります
+        （全員同じなので有利不利は付きません）。変えるには xlsx を書き出して
+        「投法」列を埋めて取り込んでください。
       </p>
 
       <h3>投手タイプ</h3>
