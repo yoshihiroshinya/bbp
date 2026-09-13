@@ -375,6 +375,72 @@ input[type="file"] {
 .diamond .b3 { top: 16px; left: 0; }
 .diamond .b1 { top: 16px; left: 32px; }
 
+/* ---- 盤面のタブ（盤面 / オーダー / ベンチ）----
+   ★**別画面にしないこと。** 采配の問いは await の最中に出ているので、
+   ページ遷移させると「必ず戻ってくる」保証を自前で作ることになる。
+   差し替えなら問いと選択肢が出たままなので、見てそのまま答えられる。 */
+.t-tabs { display: flex; gap: .3rem; margin-bottom: .4rem; }
+.t-tab {
+    flex: 0 0 auto;
+    padding: .2rem .6rem;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: transparent; color: var(--muted);
+    font-size: .72rem; font-family: inherit; cursor: pointer;
+}
+.t-tab.on { background: var(--accent-dark); border-color: var(--accent); color: var(--accent); }
+
+/* ★盤面は sticky でシートの上に貼り付くので、名簿をそのまま伸ばすと
+   **問いと選択肢が画面の外へ押し出される**（ベンチ表は両軍で30行を超える）。
+   中でスクロールさせて、シートの高さを盤面タブとだいたい揃える。 */
+.t-pane { max-height: 42vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+/* 打順表。左＝後攻・右＝先攻で、盤面の打者・投手の左右と揃えてある。 */
+.t-ord { border-collapse: collapse; font-size: .76rem; width: 100%; }
+.t-ord th, .t-ord td {
+    padding: .12rem .3rem;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--line);
+}
+.t-ord thead th { color: var(--muted); font-weight: 500; font-size: .7rem; }
+.t-ord thead th.atk { color: var(--accent); }
+/* 打順の番号。幅を固定しないと両軍の名前の長さで左右にずれる */
+.t-ord .o-n {
+    width: 1.6rem; text-align: right; padding-right: .35rem;
+    color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums;
+}
+/* 指名打者制なので投手は打順の外。区切って最終行に置く */
+.t-ord tr.pit th, .t-ord tr.pit td { border-top: 1px solid var(--line); }
+.t-ord .o-p { color: var(--muted); margin-right: .3rem; }
+/* いま打席に立っている打者／いま投げている投手 */
+.t-ord td.now { color: var(--accent); }
+.t-ord td.now .o-p { color: var(--accent); }
+.t-ord td.now .o-nm { font-weight: 700; }
+.t-ord td.now::before { content: "▶"; color: var(--accent); margin-right: .15rem; }
+
+/* ベンチ表。**幅が要るので左右に並べない**（チームごとに縦に積む）。 */
+.t-bn { margin-top: .5rem; }
+.t-bn-h { font-size: .76rem; font-weight: 700; }
+.t-bn-s { font-size: .68rem; color: var(--muted); margin-top: .3rem; }
+.t-bn-r {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem;
+    font-size: .76rem; padding: .1rem 0;
+}
+/* ★退いた選手・登板済の投手も消さずに薄く残す。消すと「もういない」のか
+   「見落としたのか」が読み手に区別できない。 */
+.t-bn-r.used { opacity: .45; }
+.t-bn-r.now { color: var(--accent); }
+.t-bn-p { color: var(--muted); font-size: .7rem; flex: 0 0 auto; }
+.t-bn-n { font-weight: 700; flex: 0 0 auto; }
+.t-bn-g {
+    flex: 0 0 auto;
+    font-size: .64rem; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 4px; padding: 0 .25rem;
+}
+/* ★添え物は行末へ寄せて、縮ませない。**名前の幅を奪わせないこと** —
+   .pl-pitch で同じ組み合わせを誤って本文を 27px まで潰した（CLAUDE.md 参照）。 */
+.t-bn-d { flex: 0 0 auto; margin-left: auto; font-size: .7rem; color: var(--muted); }
+
 
 /* ---- 中断した節の再開 ---- */
 .card.resume { border-color: var(--accent); }
