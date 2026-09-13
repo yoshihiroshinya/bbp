@@ -409,6 +409,7 @@
             </p>
             <div class="fx">ゾーン内(%) = 64 + (<b>選球</b> − 60) ÷ 4 　（40〜95）</div>
             <div class="fx">ゾーン外(%) = 34 − (<b>選球</b> − 60) ÷ 3 　（5〜60）</div>
+            <div class="fx">2ストライクからは ゾーン内 <b>+20</b> ／ ゾーン外 <b>+10</b>（追い込まれると振りにいく）</div>
             <div class="feeds">効くもの <span>打者・選球</span></div>
           </div>
         </li>
@@ -425,7 +426,7 @@
           <div class="gate-b">
             <div class="gate-t">振ったら、当たったか</div>
             <p class="gate-d">キレがミートを上回るほど空振りします。球種の奪三振補正もここに乗ります。</p>
-            <div class="fx">空振り率 = 0.18 + (<b>キレ</b> − <b>ミート</b>) × 0.003 + <b>奪三振補正</b> × 0.002 　（5〜45%）</div>
+            <div class="fx">空振り率 = 0.268 + (<b>キレ</b> − <b>ミート</b>) × 0.003 + <b>奪三振補正</b> × 0.002 　（5〜45%）</div>
             <div class="feeds">効くもの <span>投手・キレ</span><span>打者・ミート</span><span>球種・奪三振補正</span></div>
           </div>
         </li>
@@ -846,6 +847,37 @@
         球速だけを別に持たせていないのは、<strong>そうすると「変えても結果が変わらない数値」が
         1つ増える</strong>ためです（走塁・成長型と同じ扱いになってしまいます）。
       </p>
+      <p>
+        <strong>実況には「その球の球速」が出ます。</strong>
+        打席が決まった球の球種と球速が、打撃結果のうしろに添えられます
+        （<code>【空振り三振】（フォーク 135km/h）</code>）。
+        これは <strong>最速 × 球種ごとの比</strong>です —
+        最速をそのまま出すとカーブの横に 152km/h が並んで嘘になります。
+      </p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>球種</th><th>最速に対する比</th><th>最速148の投手なら</th></tr></thead>
+          <tbody>
+            <tr><td>ストレート / 豪速球</td><td>1.00</td><td>148</td></tr>
+            <tr><td>シュート</td><td>0.96</td><td>142</td></tr>
+            <tr><td>カットボール</td><td>0.95</td><td>141</td></tr>
+            <tr><td>SFF</td><td>0.94</td><td>139</td></tr>
+            <tr><td>フォーク</td><td>0.92</td><td>136</td></tr>
+            <tr><td>スライダー</td><td>0.91</td><td>135</td></tr>
+            <tr><td>シンカー</td><td>0.89</td><td>132</td></tr>
+            <tr><td>チェンジアップ</td><td>0.87</td><td>129</td></tr>
+            <tr><td>パーム</td><td>0.84</td><td>124</td></tr>
+            <tr><td>ナックルカーブ</td><td>0.82</td><td>121</td></tr>
+            <tr><td>カーブ</td><td>0.80</td><td>118</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>球速は試合に効きません。</strong> 空振り率もゴロ率も、キレ・ミート・球種の
+        補正だけで決まります。球速はそれを読みやすくするための表示です。
+        <strong>送りバント・スクイズ・敬遠・死球には球種が出ません</strong> —
+        打席の手前で決まる手で、1球も投げていないからです。
+      </p>
       <div class="scroll">
         <table>
           <thead><tr><th>投法</th><th>ずれ</th><th>出荷データの球速</th><th>NPB の実際</th></tr></thead>
@@ -1131,7 +1163,10 @@
       var zoneRate = ctl + 15 - Math.trunc(eye / 2);                    // %
       var swingIn = clamp(64 + Math.trunc((eye - 60) / 4), 40, 95);     // %
       var swingOut = clamp(34 - Math.trunc((eye - 60) / 3), 5, 60);     // %
-      var miss = clamp(0.18 + (stf - con) * 0.003, 0.05, 0.45);         // 球種補正は 0 とする
+      // 2ストライクからは振りにいく（実装と同じ。クランプの前に足す）
+      var swingIn2 = clamp(64 + Math.trunc((eye - 60) / 4) + 20, 40, 95);
+      var swingOut2 = clamp(34 - Math.trunc((eye - 60) / 3) + 10, 5, 60);
+      var miss = clamp(0.268 + (stf - con) * 0.003, 0.05, 0.45);        // 球種補正は 0 とする
 
       var bb = 0, so = 0, ip = 0, pitches = 0;
       for (var t = 0; t < TRIALS; t++) {
@@ -1140,7 +1175,9 @@
           n++;
           if (n > 15) { ip++; break; }                                  // 安全弁（実装と同じ）
           var inZone = Math.random() * 100 < zoneRate;
-          var swing = Math.random() * 100 < (inZone ? swingIn : swingOut);
+          var two = strikes >= 2;
+          var swing = Math.random() * 100 < (inZone ? (two ? swingIn2 : swingIn)
+                                                    : (two ? swingOut2 : swingOut));
           if (!swing) {
             if (inZone) { if (++strikes === 3) { so++; break; } }
             else { if (++balls === 4) { bb++; break; } }

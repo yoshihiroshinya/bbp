@@ -424,3 +424,10 @@ input[type="file"] {
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
 }
+
+/* 決着した球（球種と球速）。**打撃結果より一段弱く出す** —
+   結果が主で、球種は添え物。同じ強さにすると行のどちらを読むのか迷う。
+   ★色を種類ごとに変えないこと（`.pl-what` は種類で色が付くが、こちらは常に同じ）。
+   球種は結果の良し悪しと関係が無いので、色を付けると意味を読み取ろうとしてしまう。 */
+.pl-pitch, .ob-pitch { color: var(--muted); font-size: 0.92em; white-space: nowrap; }
+.ob-pitch { display: block; margin-top: 0.15rem; }
