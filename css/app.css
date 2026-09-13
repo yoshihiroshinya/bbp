@@ -40,13 +40,13 @@ html, body {
 .app-header {
     position: sticky; top: 0; z-index: 5;
     display: flex; align-items: baseline; gap: .5rem;
-    padding: .7rem 1rem;
-    padding-top: calc(.7rem + env(safe-area-inset-top));
+    padding: .45rem 1rem;
+    padding-top: calc(.45rem + env(safe-area-inset-top));
     background: var(--accent-dark);
     border-bottom: 1px solid var(--line);
 }
-.brand { font-weight: 700; font-size: 1.1rem; }
-.brand-sub { color: var(--muted); font-size: .8rem; }
+.brand { font-weight: 700; font-size: 1rem; }
+.brand-sub { color: var(--muted); font-size: .74rem; }
 
 .app-body {
     flex: 1;
@@ -70,7 +70,7 @@ html, body {
 .app-nav a span { font-size: 1.15rem; }
 .app-nav a.active { color: var(--accent); }
 
-h1 { font-size: 1.25rem; margin: 0 0 .8rem; }
+h1 { font-size: 1.1rem; margin: 0 0 .45rem; }
 h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
 .muted { color: var(--muted); font-size: .82rem; }
 
@@ -79,12 +79,12 @@ h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: 10px;
-    padding: .9rem 1rem;
+    padding: .6rem .8rem;
     margin-bottom: .7rem;
 }
 .card.link { color: inherit; text-decoration: none; }
 .card.busy { color: var(--accent); }
-.big { font-size: 1.15rem; font-weight: 600; }
+.big { font-size: 1.1rem; font-weight: 600; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
 .btn {
@@ -241,7 +241,7 @@ input[type="file"] {
     left: 0; right: 0;
     bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));   /* 下タブの上 */
     z-index: 10;
-    max-height: 60dvh;
+    max-height: 82dvh;
     overflow-y: auto;
     background: #16261f;
     border-top: 2px solid var(--accent);
