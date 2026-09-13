@@ -155,6 +155,10 @@ h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
 .pl-inning:first-child { border-top: 0; }
 .pl {
     display: flex; align-items: baseline; gap: .4rem;
+    /* ★`flex-wrap` を外さないこと。球種（`.pl-pitch`）は `nowrap` なので、
+       折り返せないと**結果のテキストから幅を全部奪い、1文字ずつ縦に折り返す**
+       （実機でそうなった）。収まらないときは球種ごと次の行へ落とす。 */
+    flex-wrap: wrap;
     padding: .35rem .6rem;
     font-size: .78rem; line-height: 1.35;
     border-top: 1px solid #1b242b;
@@ -162,7 +166,11 @@ h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
 }
 .pl-out { color: var(--muted); flex: 0 0 auto; font-variant-numeric: tabular-nums; }
 .pl-who { flex: 0 0 auto; }
-.pl-what { flex: 1 1 auto; min-width: 0; overflow-wrap: anywhere; }
+/* ★`min-width` を 0 に戻さないこと。`overflow-wrap: anywhere` と組み合わさると
+   min-content 幅が**1文字**になり、`.pl-pitch`（`nowrap`）に幅を全部奪われて
+   結果が1文字ずつ縦に折り返す（実機でそうなった）。下限を与えておくと、
+   収まらないときに球種のほうが次の行へ落ちる。 */
+.pl-what { flex: 1 1 auto; min-width: 9rem; overflow-wrap: anywhere; }
 .pl-runs { flex: 0 0 auto; font-weight: 700; color: var(--accent); }
 
 /* 塁（プレー前）。左から1塁・2塁・3塁 */
@@ -430,4 +438,8 @@ input[type="file"] {
    ★色を種類ごとに変えないこと（`.pl-what` は種類で色が付くが、こちらは常に同じ）。
    球種は結果の良し悪しと関係が無いので、色を付けると意味を読み取ろうとしてしまう。 */
 .pl-pitch, .ob-pitch { color: var(--muted); font-size: 0.92em; white-space: nowrap; }
+/* ★`.pl-pitch` は縮ませない（`flex: 0 0 auto`）。縮ませると `.pl-what` と
+   奪い合って、どちらも中途半端な幅で折り返す。`.pl` の `flex-wrap` と組で、
+   1行に収まらなければ**球種だけ次の行へ**落ちる。 */
+.pl-pitch { flex: 0 0 auto; margin-left: auto; }
 .ob-pitch { display: block; margin-top: 0.15rem; }
