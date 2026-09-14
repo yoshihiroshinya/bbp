@@ -499,6 +499,12 @@ input[type="file"] {
     padding: .8rem 1rem 1rem;
 }
 .c-title { font-weight: 700; color: #ff9a9a; margin-bottom: .4rem; }
+
+/* ★赤は「データが消える」ために取ってある。**戻せないが何も消えない**操作
+   （シーズン終了まで）は琥珀で分ける。3色が意味を持つ:
+   緑＝読む／答える（.tactics-sheet）／琥珀＝戻せない／赤＝消える。 */
+.confirm-sheet.warn { background: #2a2418; border-top-color: #e0a33a; }
+.confirm-sheet.warn .c-title { color: #f0c674; }
 .c-list { margin: .4rem 0 .6rem 1.1rem; padding: 0; font-size: .9rem; }
 .c-list li { margin: .15rem 0; }
 /* 【ボタンの並びは「やめる」を先に置く】指はまず左端へ行くので、
