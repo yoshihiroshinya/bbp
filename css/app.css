@@ -243,6 +243,13 @@ input[type="file"] {
     z-index: 10;
     max-height: 82dvh;
     overflow-y: auto;
+    /* ★**縦の flex にして、足りないぶんを盤面から取る。** 盤面は `sticky` なので、
+       シートをスクロールしても**背の高さぶんは居座る** — 満塁で盤面が 458px になると
+       623px のシートに選択肢のぶんが 165px しか残らず、スクロールしても増えない
+       （実機で「采配のボタンがほぼ見えない」と報告された）。
+       下の `.t-board { flex: 0 1 auto }` だけが縮むので、
+       **収まるときは1px も縮まない**（観戦パネルは中身が 623px 未満なので影響なし）。 */
+    display: flex; flex-direction: column;
     background: #16261f;
     border-top: 2px solid var(--accent);
     box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
@@ -263,6 +270,14 @@ input[type="file"] {
    シートがスクロールするので、貼り付けないと「どういう場面か」が見えなくなる。
    シートの padding ぶん外へ広げてから塗り直し、下の行が透けないようにする。 */
 .t-board {
+    /* ★**ここだけ縮む**（シートの `display: flex` の相方）。`min-height` は下限。
+       ★**下限は「ダイヤモンドが切れない高さ」で決めてある**（タブ26 ＋ スコア71 ＋
+       直前のプレー88〜110 ＋ ダイヤ134 ＋ 余白 ≒ 376px）。40dvh（304px）にしたら
+       **ダイヤモンドの下（本塁と打者）が切れた** — 実測で確かめること。
+       切れてよいのは一番下の打者・投手の行だけで、あそこは問いの文に
+       だいたい同じことが書いてある。`overflow-y` は縮んだときだけ効く。 */
+    flex: 0 1 auto; min-height: min(23.5rem, 55dvh); overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     /* top を 0 にすると、貼り付く位置がシートの**内容の上端**になり、
        padding-top（.8rem）のぶんだけ上に隙間が残って、そこを選択肢が
        通り抜けて見える（実際にそう見えていた）。padding と同じだけ引き上げる。 */
@@ -272,6 +287,9 @@ input[type="file"] {
     background: #16261f;
     border-bottom: 1px solid var(--line);
 }
+
+/* 盤面以外は縮ませない（問いの文と選択肢は読めなくなると困る）。 */
+.tactics-sheet > *:not(.t-board) { flex: 0 0 auto; }
 
 .line { border-collapse: collapse; font-size: .78rem; font-variant-numeric: tabular-nums; }
 .line th, .line td {
@@ -287,6 +305,16 @@ input[type="file"] {
 /* 攻撃中のチームを1行だけ強調する。どちらの回かが一目で分かる */
 .line tr.atbat .tname { color: var(--accent); }
 .line tr.atbat .tname::before { content: "▶ "; }
+
+/* 得点が入ったイニングのマス。★ダイヤモンドの `+N` と同時に光らせて、
+   **どの回に入ったのか**を繋ぐ（1試合7回ある）。
+   ★要素が挿入されたときにしか走らないので、Razor 側が `@key` に `Seq` を混ぜている。 */
+.line td.got { animation: cellGot 1.1s ease-out both; }
+@keyframes cellGot {
+    from { background: var(--accent); color: var(--accent-dark); }
+    35%  { background: var(--accent); color: var(--accent-dark); }
+    to   { background: transparent; }
+}
 
 /* ---- 盤面の中身（采配・観戦で共通。`SituationBoard.razor`）----
    上から スコアボード / 直前のプレー / カウント(BSO) / 走者 / 打者・投手。
@@ -304,25 +332,41 @@ input[type="file"] {
 .t-last-w { margin-left: .5rem; }
 .t-last-t { font-size: 1.05rem; line-height: 1.35; overflow-wrap: anywhere; }
 .t-last-p { font-size: .78rem; color: var(--muted); overflow-wrap: anywhere; }
+/* 決着したカウント。**丸は下の B-S-O と同じ `.d` を使い回す**（写しを作らない）。
+   ★**この枠の中に置くこと。** 下の行のアウトとは時点が違う（あちらは
+     「次の打者が立つ場面」、こちらは「終わった打席」）。 */
+.t-last-c { display: flex; align-items: center; gap: .2rem; margin-top: .15rem; }
+.t-last-c .c-l { color: var(--muted); font-size: .68rem; }
+.t-last-c .c-l.s { margin-left: .35rem; }   /* B の3個と S の2個を目で分ける */
 .t-last.k-hit .t-last-t { color: var(--accent); }
 .t-last.k-onbase .t-last-t { color: #9ecbff; }
 .t-last.k-steal .t-last-t { color: #ffd479; }
 .t-last.k-tactic .t-last-t { color: #c9a0ff; }
 .t-last.scored { background: #16261f; border-left-color: var(--accent); }
 
-/* 走者とカウントを横に並べる。★**縦に積まないこと** — 盤面が伸びて、
+/* いまの状況（回・アウト）と走者を横に並べる。★**縦に積まないこと** — 盤面が伸びて、
    選択肢まで指が届かなくなる（実機で「全体的に縦長」と報告された）。 */
 .t-mid {
-    display: flex; align-items: center; justify-content: center; gap: 1.1rem;
+    /* ★**3列にしてダイヤモンドを真ん中の列に置く。** 左に回・アウトを置くだけだと
+       flex の中央寄せでは**ダイヤモンドが右へずれる**（右の列が空いたため）。
+       右の `1fr` は空のまま — 絵の中心を盤面の中心に通すための場所。 */
+    display: grid; grid-template-columns: 1fr auto 1fr;
+    align-items: center; gap: 1.1rem;
     margin-top: .5rem; padding: .4rem 0;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 }
 
-/* カウント（B-S-O）。**行ごとに縦積み**にして、ダイヤモンドの右へ置く。
-   ★**B と S は当面ずっと空。** 打席と打席のあいだでしか止まらないので
-   「この打者のいまのカウント」が存在しない。枠だけ先に置いてある。
-   決着した球数は上の「直前のプレー」の行（時点が違うので混ぜない）。
+/* 【いまの状況】回とアウトを縦に積んでダイヤモンドの左へ置く。
+   ★**アウトはここ**（走者と同じ「いま」の話）。「直前のプレー」の枠にある
+   決着したカウントは**終わった打席**の話なので、並べると半イニングの先頭で
+   食い違う（`SituationBoard.razor` に実測つきで書いてある）。 */
+.t-now { display: flex; flex-direction: column; gap: .3rem; justify-self: end; }
+
+/* カウント。**行ごとに縦積み**。いまはアウトの1行だけ。
+   ★**1球ごとに止める作りを入れたらここが B-S-O になる** —
+   `.c-row` を2本足してラベルを B / S / O に揃える（4行でも約56px なので
+   ダイヤモンド 120px の中に収まる）。そのときは下の `width` も戻す。
    ★**`justify-content: space-between` で横へ伸ばさないこと** —
    3〜5個の点が画面幅いっぱいに散って間延びして見える（実際にそうなった）。 */
 .t-count { display: flex; flex-direction: column; gap: .18rem; }
@@ -331,13 +375,16 @@ input[type="file"] {
     color: var(--muted); font-size: .68rem;
     width: .85rem;                 /* B/S/O の幅を揃えて点の左端を縦に通す */
 }
-.t-count .d {
+/* ★**丸は「直前のプレー」の中のカウント（`.t-last-c`）と共有する。**
+   写しを作ると、片方だけ色を直したときにずれる。 */
+.t-count .d, .t-last-c .d {
     width: 9px; height: 9px; border-radius: 50%;
     border: 1px solid var(--muted);
+    flex: 0 0 auto;                /* flex 行の中で潰れないこと */
 }
-.t-count .d.ball.on   { background: #9ecbff; border-color: #9ecbff; }
-.t-count .d.strike.on { background: #ffd479; border-color: #ffd479; }
-.t-count .d.out.on    { background: var(--danger); border-color: var(--danger); }
+.t-count .d.ball.on,   .t-last-c .d.ball.on   { background: #9ecbff; border-color: #9ecbff; }
+.t-count .d.strike.on, .t-last-c .d.strike.on { background: #ffd479; border-color: #ffd479; }
+.t-count .d.out.on,    .t-last-c .d.out.on    { background: var(--danger); border-color: var(--danger); }
 .t-inn { color: var(--muted); font-size: .78rem; white-space: nowrap; }
 
 /* 打者・投手。★**左＝後攻・右＝先攻でチーム固定**（攻撃側で入れ替えない）。
@@ -362,18 +409,326 @@ input[type="file"] {
 .t-p-r { font-size: .72rem; margin-top: .2rem; }
 .t-side.atk .t-p-d, .t-side.atk .t-p-r { color: var(--accent); }
 
-/* 走者の図。上が2塁・左が3塁・右が1塁。画像を使わずに正方形を45度回す。 */
-.diamond { position: relative; width: 46px; height: 46px; flex: 0 0 46px; }
+/* ---- 走者の図 ----
+   上が2塁・左が3塁・右が1塁・下が本塁。画像を使わずに正方形を45度回す。
+
+   【塁と走者は別の要素】`.b` は**いつもそこにある枠**、`.r` は**動くもの**。
+   1つに兼ねさせると、走者を動かすたびに塁の位置ごと消える。
+
+   塁の中心（128×120 の箱）: 本塁 (64,110) / 1塁 (96,78) / 2塁 (64,46) / 3塁 (32,78)。
+   ★**塁間の縦横の差は 32px。** 走者の keyframes はこの差だけで書いてあるので、
+     箱を広げても**中身をずらす限り keyframes は引き直さなくてよい**
+     （2026-09-15 に外野を足したときは、実際に 1px も触っていない）。
+     32 を変えるなら keyframes の px を全部引き直すこと。
+
+   打球の飛び先（本塁からの差）は下の `.to-*` が持つ。
+   ★**座標を C# 側にも書かないこと。** Razor が渡すのは位置の呼び名だけ。 */
+.diamond { position: relative; width: 128px; height: 120px; flex: 0 0 128px; }
+
+/* 外野のフェンス。本塁 (64,110) を中心とする半径 90px の円を、
+   ファウルゾーンより上（y <= 47）だけ見せる。
+   ★**両端はちょうど箱の左右端に来る**（45度の地点が x = 0.3 と 127.7）ので、
+     はみ出さない。半径を変えたら clip の % も引き直すこと。
+   ★**打球の絵の背景**で、これが無いと球が「何も無いところ」へ飛ぶ。 */
+.diamond .fence {
+    position: absolute; left: -26px; top: 20px; width: 180px; height: 180px;
+    border: 1px solid var(--line); border-radius: 50%;
+    clip-path: inset(0 0 85% 0);
+}
+/* ファウルライン。本塁から1塁・3塁を通ってフェンスの両端へ届く（45度）。
+   長さ 91px = √(64² + 64²)。**塁を通る**ので、内野の菱形と自然につながる。 */
+.diamond .foul {
+    position: absolute; left: 64px; top: 110px; width: 1px; height: 91px;
+    background: var(--line); transform-origin: 0 0;
+}
+.diamond .foul.fl { transform: rotate(135deg); }    /* 左（3塁側） */
+.diamond .foul.fr { transform: rotate(-135deg); }   /* 右（1塁側） */
+
+/* 内野のライン。正方形を45度回して菱形にし、4隅を4つの塁にちょうど合わせる。
+   ★**一辺は 45px**（対角の半分 = 22.5 × √2 = 31.8 ≒ 塁間の 32）。
+     64px にすると隅が塁の外側 13px へはみ出す。 */
+.diamond .infield {
+    position: absolute; left: 41.5px; top: 55.5px; width: 45px; height: 45px;
+    transform: rotate(45deg);
+    border: 1px solid var(--line);
+}
+/* ★塁は**埋まっていても枠のまま**（走者が上に重なる）。`--line` まで落とすと
+   空の塁がほとんど見えず、ダイヤモンドの形が読めなくなる。 */
 .diamond .b {
-    position: absolute; width: 13px; height: 13px;
+    position: absolute; width: 12px; height: 12px;
     transform: rotate(45deg);
     border: 1px solid var(--muted);
     background: transparent;
 }
-.diamond .b.on { background: var(--accent); border-color: var(--accent); }
-.diamond .b2 { top: 0; left: 16px; }
-.diamond .b3 { top: 16px; left: 0; }
-.diamond .b1 { top: 16px; left: 32px; }
+.diamond .b2 { top: 40px; left: 58px; }
+.diamond .b3 { top: 72px; left: 26px; }
+.diamond .b1 { top: 72px; left: 90px; }
+/* 本塁だけ形が違う。★**四角ではなく五角形。** 三つの塁は正方形だが、
+   本塁は五角形で、**尖った側が捕手（バックネット）を向く** — この絵では下。
+   投手を向く辺が平ら（ホームベースの前縁）で、そこから両脇が下がって一点に集まる。
+
+   ★**`.b` の `rotate(45deg)` を打ち消すこと。** 回すと五角形が傾いて別物になる。
+   ★**枠線では描けない。** `clip-path` は border ごと切るので尖った先の線が欠ける。
+     塗りつぶしにする（実際のスコアボードでも本塁は塗りで描かれる）。
+   中心は (64,110) のまま — 打球の出発点と人物の位置がここを基準にしている。 */
+.diamond .bh {
+    top: 105.5px; left: 59.5px; width: 9px; height: 9px;
+    transform: none;
+    border: 0;
+    background: var(--muted);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 55%, 50% 100%, 0% 55%);
+}
+
+/* 走者。塁の枠より一回り小さい丸を中心へ重ねる。 */
+.diamond .r {
+    position: absolute; width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 2px var(--panel);
+}
+.diamond .r1 { top: 71px; left: 89px; }
+.diamond .r2 { top: 39px; left: 57px; }
+.diamond .r3 { top: 71px; left: 25px; }
+
+/* ---- 走者の動き ----
+   ★**要素が挿入されたときにしか走らない。** クラスだけ差し替えても2度目は動かないので、
+     Razor 側が `@key` に `Seq` を混ぜて DOM ノードを作り直させている。
+   ★**塁を飛ばす動きは途中の塁を通らせる。** 1塁→3塁を直線で結ぶとマウンドを突っ切る。
+   ★**速さの上限は「自動・速い」の 1200ms**（`HumanTactics.PaceFastMs`）。
+     結果を読む時間を残すため、一番長い三塁打でも 760ms に収めてある。
+   ★**下の6行で `animation` の一括指定を使わないこと。** この規則と詳細度が同じなので、
+     一括指定を書くと後勝ちで `animation-timing-function` と `-fill-mode` が既定値へ戻り、
+     跳ねるような動きが平坦になる。**名前と長さだけを指定すること。** */
+.diamond .mv { animation-timing-function: cubic-bezier(.3, .7, .3, 1); animation-fill-mode: both; }
+
+.diamond .mv-3-0 { animation-name: run30; animation-duration: .42s; }   /* 打者 → 1塁 */
+.diamond .mv-0-1 { animation-name: run01; animation-duration: .42s; }   /* 1塁 → 2塁 */
+.diamond .mv-1-2 { animation-name: run12; animation-duration: .42s; }   /* 2塁 → 3塁 */
+.diamond .mv-3-1 { animation-name: run31; animation-duration: .60s; }   /* 打者 → 2塁（二塁打） */
+.diamond .mv-0-2 { animation-name: run02; animation-duration: .60s; }   /* 1塁 → 3塁 */
+.diamond .mv-3-2 { animation-name: run32; animation-duration: .76s; }   /* 打者 → 3塁（三塁打） */
+
+@keyframes run30 { from { transform: translate(-32px,  32px); } }
+@keyframes run01 { from { transform: translate( 32px,  32px); } }
+@keyframes run12 { from { transform: translate( 32px, -32px); } }
+@keyframes run31 {
+    from { transform: translate(  0px,  64px); }   /* 本塁 */
+    50%  { transform: translate( 32px,  32px); }   /* 1塁 */
+}
+@keyframes run02 {
+    from { transform: translate( 64px,   0px); }   /* 1塁 */
+    50%  { transform: translate( 32px, -32px); }   /* 2塁 */
+}
+@keyframes run32 {
+    from { transform: translate( 32px,  32px); }   /* 本塁 */
+    33%  { transform: translate( 64px,   0px); }   /* 1塁 */
+    66%  { transform: translate( 32px, -32px); }   /* 2塁 */
+}
+
+/* 入った点。★**どの塁から還ったかは出さない** — 走者が消えた理由が「生還」か
+   「アウト」かは写しから区別できない（本塁打なら打者が還る）。
+   分かっているのは点数だけなので、本塁のところに出す。 */
+.diamond .scored {
+    position: absolute; top: 92px; left: 50%;
+    transform: translateX(-50%);
+    font-size: .72rem; font-weight: 700; color: var(--accent);
+    white-space: nowrap;
+    animation: scored 1s ease-out both;
+}
+@keyframes scored {
+    from { opacity: 0; transform: translate(-50%, 10px) scale(.7); }
+    25%  { opacity: 1; transform: translate(-50%, 0)    scale(1.15); }
+    70%  { opacity: 1; transform: translate(-50%, 0)    scale(1); }
+    to   { opacity: 0; transform: translate(-50%, -8px) scale(1); }
+}
+
+/* ---- 打球（2026-09-15。アニメーションの段階2）----
+
+   飛び先は**本塁 (64,110) からの差**で持つ。★**この座標を C# 側にも書かないこと** —
+   Razor が渡すのは位置の呼び名（`to-ss` など）だけ。両方に持つと
+   「盤面は遊撃、打球は二塁へ飛ぶ」という食い違いを作れてしまう。
+
+   ★**出る位置は7つだけ**（`BattedBallEngine.DetermineBallDirection`）。
+     捕手・投手は打球の位置にならないので、増やす必要は無い。
+   ★**併殺打と犠飛は位置を持たない**（`PlayResult.Of` なので `Position.DH`）。
+     40節で 147件ある。**描かないのが正解** — モデルが持っていない。 */
+.diamond .ball, .diamond .spot { --dp: 1; }
+
+.diamond .to-3b { --tx: -26px; --ty: -38px; }
+.diamond .to-ss { --tx: -16px; --ty: -52px; }
+.diamond .to-2b { --tx:  16px; --ty: -52px; }
+.diamond .to-1b { --tx:  26px; --ty: -38px; }
+.diamond .to-lf { --tx: -44px; --ty: -69px; }
+.diamond .to-cf { --tx:   0px; --ty: -82px; }
+.diamond .to-rf { --tx:  44px; --ty: -69px; }
+
+/* 深さ。**フライ・ライナーのヒットだけ**（飛距離を持っているのがそこだけなので）。
+   ★ゴロには付けない。あの飛距離は「飛んでいれば届いた距離」で、転がった距離ではない。 */
+.diamond .dp-s { --dp: .85; }      /* 〜95m  */
+.diamond .dp-d { --dp: 1.12; }     /* 110m〜 */
+
+/* 球そのもの。本塁に置いて、transform で飛ばす。
+   ★**真上から見た絵なので、高さは向きでは出せない。** 大きさ（scale）で出す。 */
+.diamond .ball {
+    position: absolute; left: 61px; top: 107px;    /* 中心を本塁 (64,110) に置く */
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #ffd479; z-index: 3;
+    animation-timing-function: cubic-bezier(.25, .6, .35, 1);
+    animation-fill-mode: both;
+    /* ★**バットに当たる瞬間まで待たせる**（段階4）。スイングの 40% ＝ 0.12s が接触で、
+       ここを 0 のままにすると**球がバットより先に飛ぶ**。
+       一番長い本塁打でも 0.12 + 0.62 = 0.74s で、「自動・速い」の 1200ms に収まる。 */
+    animation-delay: .12s;
+}
+/* ★**`animation` の一括指定を使わないこと**（走者と同じ理由。詳細度が同じなので
+     後勝ちで timing-function と fill-mode が既定へ戻る）。名前と長さだけ。 */
+.diamond .ball.bt-g { animation-name: ballGround; animation-duration: .38s; }
+.diamond .ball.bt-l { animation-name: ballLine;   animation-duration: .26s; }
+.diamond .ball.bt-f { animation-name: ballFly;    animation-duration: .48s; }
+/* 本塁打は弾道より後に置く（同じ詳細度なので後勝ちで上書きする）。 */
+.diamond .ball.hr   { animation-name: ballHr;     animation-duration: .62s; }
+
+/* ゴロ: 低いまま真っ直ぐ転がる。**大きさを変えない**（上がらないので）。 */
+@keyframes ballGround {
+    from { transform: translate(0, 0) scale(.6); }
+    to   { transform: translate(var(--tx), var(--ty)) scale(.6); }
+}
+/* ライナー: 一番速い。わずかに浮いて伸びる。 */
+@keyframes ballLine {
+    from { transform: translate(0, 0) scale(.6); }
+    35%  { transform: translate(calc(var(--tx) * var(--dp) * .35), calc(var(--ty) * var(--dp) * .35)) scale(1); }
+    to   { transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp))) scale(.75); }
+}
+/* フライ: 高く上がって落ちてくる。**大きさの山が滞空**にあたる。 */
+@keyframes ballFly {
+    from { transform: translate(0, 0) scale(.5); }
+    45%  { transform: translate(calc(var(--tx) * var(--dp) * .5), calc(var(--ty) * var(--dp) * .5)) scale(1.7); }
+    to   { transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp))) scale(.8); }
+}
+/* 本塁打: フェンスを越えて消える。★**1.25倍まで**（1.4倍だと箱の外へ出て
+   隣の「N回表」に重なる）。深さのクラスは付かないので `--dp` は使わない。 */
+@keyframes ballHr {
+    from { transform: translate(0, 0) scale(.5); opacity: 1; }
+    45%  { transform: translate(calc(var(--tx) * .6), calc(var(--ty) * .6)) scale(1.8); opacity: 1; }
+    to   { transform: translate(calc(var(--tx) * 1.25), calc(var(--ty) * 1.25)) scale(.6); opacity: 0; }
+}
+
+/* ---- 打者と投手（2026-09-15。アニメーションの段階4）----
+
+   ★**画像を1枚も使わない。** `app.css` 冒頭の「オフラインで動く PWA にしたいので
+     配布物を増やさない」に従う（PNG はサービスワーカーの全件照合に載る資産になる）。
+     しかもこの大きさでは人物は 7px の点にしかならず、ドット絵より図形のほうが読める。
+
+   ★**真上から見た絵なので「立ち姿」は描けない。** 読めるのは
+     **点から伸びた線の回転**だけ — 打者はバット、投手は腕。
+
+   位置は本塁 (64,110) と マウンド (64,78)。打者は打席の側に立つ:
+   **右打者は三塁側＝画面の左**（3塁が x=32 なので）、左打者はその逆。 */
+.diamond .fig {
+    position: absolute; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--muted); z-index: 2;
+}
+.diamond .fig .arm, .diamond .fig .stick {
+    position: absolute; left: 3px; top: 2px;      /* 点の中心から生やす */
+    width: 9px; height: 2px; background: var(--muted);
+    transform-origin: 0 50%;
+}
+
+/* 投手はマウンド (64,78) の上。腕を後ろから前（本塁の向き＝下）へ振る。 */
+.diamond .fig.pit { left: 60px; top: 71px; }
+.diamond .fig.pit .arm { animation: armThrow .20s ease-in both; }
+.diamond .fig.pit.lh .arm { animation-name: armThrowL; }
+@keyframes armThrow  { from { transform: rotate(-120deg); } to { transform: rotate(60deg); } }
+@keyframes armThrowL { from { transform: rotate(-60deg); }  to { transform: rotate(120deg); } }
+
+/* 打者は本塁 (64,110) の脇。★**打席の側に立たせること** — `Bats` は持っている値なので、
+   左打者を右打席に置くと**モデルが否定していることを描く**ことになる。 */
+.diamond .fig.bat { left: 50px; top: 107px; }
+.diamond .fig.bat.lh { left: 71px; }
+
+/* 構えたまま（見送り・采配パネル）。**動かさない。** */
+.diamond .fig.bat .stick { transform: rotate(-115deg); }
+.diamond .fig.bat.lh .stick { transform: rotate(-65deg); }
+
+/* 振った。★**接触は 0.12s**（下の打球の遅れと揃えてある。ずらすと球が
+   バットより先に飛ぶ）。 */
+.diamond .fig.bat.swing .stick { animation: swingR .30s cubic-bezier(.3,.8,.4,1) both; }
+.diamond .fig.bat.lh.swing .stick { animation-name: swingL; }
+@keyframes swingR {
+    from { transform: rotate(-115deg); }
+    40%  { transform: rotate(-10deg); }     /* 0.12s ＝ 接触 */
+    to   { transform: rotate(55deg); }
+}
+@keyframes swingL {
+    from { transform: rotate(-65deg); }
+    40%  { transform: rotate(-170deg); }
+    to   { transform: rotate(-235deg); }
+}
+
+/* 本塁打でフェンスを光らせる。**球が越えたのがそこ**なので、専用の図形を足さずに
+   `.fence` と同じクラスを付けた要素をもう1枚重ねる（位置・円弧・clip を借りる）。
+   ★`.fence` より後に書くこと — 枠線の色を上書きするため。 */
+.diamond .hr-flash {
+    border-color: var(--accent);
+    animation: hrFence .9s ease-out both;
+    pointer-events: none;
+}
+@keyframes hrFence {
+    from { opacity: 0; transform: scale(.94); }
+    30%  { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(1.04); }
+}
+
+/* 打球が止まったところの印（＝さばいた野手のいるあたり）。
+   ★**球より遅れて出すこと。** 同時に出すと、球がまだ飛んでいる先に
+     着地点が見えていて「どこへ行くか」が先に分かってしまう。 */
+.diamond .spot {
+    position: absolute; left: 59px; top: 105px;     /* 中心を本塁に置く（10px 幅） */
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 1px solid var(--accent); z-index: 1;
+    transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp)));
+    animation: ballSpot .55s ease-out .40s both;   /* 球の遅れ .12s ぶん後ろへ */
+}
+@keyframes ballSpot {
+    from { opacity: 0; }
+    35%  { opacity: .9; }
+    to   { opacity: 0; }
+}
+
+/* 動きを減らす設定を尊重する。**位置は正しいまま**で、移動の演出だけ消える。
+   ★打球は**動きそのものが情報**（どこへ飛んだか）なので、消さずに
+     着地点へ置いたままにする — `animation-fill-mode: both` が効いているので、
+     `animation-play-state: paused` ではなく**終了状態で止める**形にする。 */
+/* ---- サヨナラ（2026-09-15。アニメーションの段階3）----
+   ★**消さないこと。** このあとエンジンは即 `return` し、次に出るのは「試合終了」の
+     区切り（盤面を持たない）なので、**これが最後の1枚**になる。出して残す。
+   ★色は `--accent`（読む／答えるの緑）で、`.confirm-sheet` の赤・琥珀とは別物
+     — 消えるわけでも戻せないわけでもなく、ただの見せ場。 */
+.t-walkoff {
+    margin-bottom: .45rem; padding: .35rem .6rem;
+    border-radius: .3rem;
+    background: var(--accent); color: var(--accent-dark);
+    font-weight: 700; font-size: .84rem; text-align: center;
+    animation: walkoff .5s cubic-bezier(.2, .8, .3, 1) both;
+}
+@keyframes walkoff {
+    from { opacity: 0; transform: scale(.9); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .diamond .mv, .diamond .scored { animation: none; }
+    .diamond .scored { opacity: 1; }
+    .diamond .ball { animation-duration: .01s; }
+    .diamond .spot { animation: none; opacity: .9; }
+    /* ★**帯とマスの色は残すこと。** 動きだけを消す — どの回に入ったか・
+       サヨナラかどうかは**動きではなく情報**なので、消すと読めなくなる。 */
+    .t-walkoff { animation: none; }
+    .diamond .hr-flash { animation: none; opacity: .9; }
+    .line td.got { animation: none; background: var(--accent); color: var(--accent-dark); }
+    /* 人物は**構えたまま**にする。バットの向き（＝打席の左右）は情報なので残す。 */
+    .diamond .fig .arm, .diamond .fig .stick { animation: none; }
+}
 
 /* ---- 盤面のタブ（盤面 / オーダー / ベンチ）----
    ★**別画面にしないこと。** 采配の問いは await の最中に出ているので、
