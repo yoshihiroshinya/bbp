@@ -1,9 +1,9 @@
 self.assetsManifest = {
-  "version": "AZI3vNXs",
+  "version": "wl7OwJ9Q",
   "assets": [
     {
-      "hash": "sha256-CYl+5WHGQktPWGOGYWUiy4YqmnzShrqVaTVjyvqcTck=",
-      "url": "_framework/BBP.Web.5tbphks5f2.wasm"
+      "hash": "sha256-RIS7j3xy+zdR2hq2pLffYtbp40ctL2HJPSUKpRVgMN4=",
+      "url": "_framework/BBP.Web.of9ulpw35w.wasm"
     },
     {
       "hash": "sha256-tsf9I/McCCsCufx/RGc4pk8ajUd3bpTSS71bpZsCJJE=",
@@ -166,8 +166,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.w3qd1tpl0e.js"
     },
     {
-      "hash": "sha256-Urj1ak0fKA9NfbXy9DcPOKmin0oInwIDYA2aCynnBWo=",
-      "url": "_framework/dotnet.ehizgo8q0q.js"
+      "hash": "sha256-fYeiYCsTwh6d8omT1w6GDaG0SifYD+uLSUy/SRB4cOo=",
+      "url": "_framework/dotnet.ftu6zxfmpd.js"
     },
     {
       "hash": "sha256-hYigRhIZKHyCXxXWqL/yR3ZWzZhV2oSi+2N3/UPeoxk=",
@@ -206,7 +206,7 @@ self.assetsManifest = {
       "url": "bbpStorage.js"
     },
     {
-      "hash": "sha256-qB8FqtYX4TH3XFK4GhlNlpk6F+4nIdn8iTY+p/CjV+8=",
+      "hash": "sha256-XqsOwXtqIBod+WdzIVPuB6EHRtirRMLiWEnlrsDn8Rs=",
       "url": "css/app.css"
     },
     {
@@ -258,7 +258,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Q51rg+H9+Ck3XG5dzwI8EgE6pe9huLt5mO53fWamVAI=",
+      "hash": "sha256-y3P67Lw0TrKbVOx7mzZOEamdnq1+PcgzfqA2JF4svV8=",
       "url": "index.html"
     },
     {
