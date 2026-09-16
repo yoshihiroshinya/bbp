@@ -463,26 +463,87 @@ input[type="file"] {
 .t-mid.zoom { grid-template-columns: 1fr; justify-items: center; gap: .5rem; }
 .t-mid.zoom .t-now { flex-direction: row; align-items: center; gap: .9rem; justify-self: center; }
 .t-mid.zoom .dia-wrap { --z: 2.4; }
+
+/* 球場と風（段階9 の配管。2026-09-16）。**「球場」タブの `.t-now` の中**に出す。
+   ★**別の行にしないこと。** `.t-mid.zoom` では `.t-now` が横一列になるので、
+     回・アウトの隣なら**盤面が 1px も伸びない**。行を足すと 18px 伸びて
+     シートが上限（82dvh）を越え、「次へ」が画面から押し出される。
+   ★**`t-park-n` は縮めてよい**（球場名は長い）。風は短いので縮ませない。 */
+.t-park { display: flex; align-items: baseline; gap: .35rem; min-width: 0; }
+.t-park-n { font-size: .74rem; color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-park-w { font-size: .68rem; color: var(--muted); flex: 0 0 auto; white-space: nowrap; }
 .diamond { position: relative; width: 128px; height: 120px; flex: 0 0 128px; }
 
-/* 外野のフェンス。本塁 (64,110) を中心とする半径 90px の円を、
-   ファウルゾーンより上（y <= 47）だけ見せる。
-   ★**両端はちょうど箱の左右端に来る**（45度の地点が x = 0.3 と 127.7）ので、
-     はみ出さない。半径を変えたら clip の % も引き直すこと。
-   ★**打球の絵の背景**で、これが無いと球が「何も無いところ」へ飛ぶ。 */
-.diamond .fence {
-    position: absolute; left: -26px; top: 20px; width: 180px; height: 180px;
-    border: 1px solid var(--line); border-radius: 50%;
-    clip-path: inset(0 0 85% 0);
+/* ---- 球場の寸法 → px（2026-09-16。段階9）----
+
+   ★**換算はここ1箇所（`--pxpm`）。** フェンス・ファウルライン・外野手の定位置・
+     打球の到達点が**全部これを読む**。別々に書くと
+     **「フェンスの手前に落ちた本塁打」「フェンスを越えた単打」**を描けてしまう。
+
+   `--mL` / `--mC` / `--mR` は球場の実寸(m)。Razor が停止ごとに inline style で入れる
+   （`SituationView.LeftDist` ほか ＝ **エンジンが実際にこの試合で使っている値**）。
+   ★**既定値を置くこと** — 球場が来ない経路（配管より前の停止・守備固めの問い）で
+     フェンスが消えないように。出荷7球場の中央値を入れてある。
+
+   ★**倍率 .86 の決め方（箱の大きさが上限）。**
+     一番深い中堅 122m が `122 × .86 = 105px` で、本塁 (64,110) から上へ y=5 に収まる。
+     一番広い両翼 100m が `100 × .86 = 86px` で、45度の地点が `86/√2 = 60.8px`
+     ＝ x 3.2〜124.8 に収まる。**どちらも 128×120 の箱ぎりぎり。**
+
+   ★★**内野とは縮尺が違う。** 塁間 32px は 27.43m ＝ **1.65 px/m** だが、外野は **0.86 px/m**
+     で**約2倍に圧縮している**。実寸で描くと中堅が 201px になり箱に入らない
+     （スコアボードの絵はどれもこうなっている）。**「1つの縮尺で描いている」と
+     書かないこと** — 嘘になる。ここで1本化したのは**外野の縮尺**。 */
+.diamond {
+    --mL: 99; --mC: 121; --mR: 99;               /* 出荷7球場の中央値 */
+    --pxpm: .86;
+    --fl: calc(var(--mL) * var(--pxpm) * 1px);   /* 左翼のフェンス（45度の距離） */
+    --fc: calc(var(--mC) * var(--pxpm) * 1px);   /* 中堅のフェンス（真上の距離） */
+    --fr: calc(var(--mR) * var(--pxpm) * 1px);   /* 右翼のフェンス（45度の距離） */
+    /* 外野手の伸縮（フェンスの楕円と同じ比）。旧フェンス 90px の円が基準。 */
+    --sxl: calc(var(--mL) * var(--pxpm) * .862 / 90);
+    --sxr: calc(var(--mR) * var(--pxpm) * .862 / 90);
+    --sy:  calc(var(--mC) * var(--pxpm)         / 90);
 }
-/* ファウルライン。本塁から1塁・3塁を通ってフェンスの両端へ届く（45度）。
-   長さ 91px = √(64² + 64²)。**塁を通る**ので、内野の菱形と自然につながる。 */
+
+/* 外野のフェンス。**楕円**にする — 中堅は両翼より 20m 以上深いので、円では描けない
+   （直す前は半径 90px の真円で、**モデルと食い違っていた**）。
+
+   ★**左右を別の要素にしてある。** 出荷7球場はすべて左右対称だが、
+     `Stadiums.json` は `LeftDist` と `RightDist` を別に持っている。
+     1つの楕円で描くと、非対称な球場を足したときに**黙って対称に描く**ことになる。
+   ★**横半径は `45度の距離 × .862`。** 楕円の45度の半径は `ab√2/√(a²+b²)` なので、
+     そこから逆算した近似（中堅/両翼 が 1.22〜1.26 の範囲で誤差 ±0.3%）。
+     **CSS に `sqrt()` を持ち込まないための近似**なので、
+     ★**ブラウザで「フェンスの端が本塁から 両翼×--pxpm の距離にあるか」を毎回測ること。**
+   ★**上下の切り取り。** 楕円の上から「45度の地点の高さ」までを見せる。
+     その高さは本塁から `両翼/√2` なので、下から `b + 両翼 × .7071` を切る。
+     **半径を変えたら自動で追従する**（直す前は `85%` の直書きで、引き直しが要った）。 */
+.diamond .fence {
+    position: absolute; top: calc(110px - var(--fc));
+    height: calc(var(--fc) * 2);
+    border: 1px solid var(--line); border-radius: 50%;
+}
+.diamond .fence-l {
+    left: calc(64px - var(--fl) * .862);
+    width: calc(var(--fl) * .862 * 2);
+    clip-path: inset(0 50% calc(var(--fc) + var(--fl) * .7071) 0);
+}
+.diamond .fence-r {
+    left: calc(64px - var(--fr) * .862);
+    width: calc(var(--fr) * .862 * 2);
+    clip-path: inset(0 0 calc(var(--fc) + var(--fr) * .7071) 50%);
+}
+
+/* ファウルライン。本塁から1塁・3塁を通って**フェンスの端（ファウルポール）**へ届く。
+   ★**長さは両翼そのもの**（45度の距離）。直す前は 91px の直書きで、
+     フェンスの半径 90px と手で合わせてあった。**球場ごとに変わるので式にする。** */
 .diamond .foul {
-    position: absolute; left: 64px; top: 110px; width: 1px; height: 91px;
+    position: absolute; left: 64px; top: 110px; width: 1px;
     background: var(--line); transform-origin: 0 0;
 }
-.diamond .foul.fl { transform: rotate(135deg); }    /* 左（3塁側） */
-.diamond .foul.fr { transform: rotate(-135deg); }   /* 右（1塁側） */
+.diamond .foul.fl { height: var(--fl); transform: rotate(135deg); }    /* 左（3塁側） */
+.diamond .foul.fr { height: var(--fr); transform: rotate(-135deg); }   /* 右（1塁側） */
 
 /* 内野のライン。正方形を45度回して菱形にし、4隅を4つの塁にちょうど合わせる。
    ★**一辺は 45px**（対角の半分 = 22.5 × √2 = 31.8 ≒ 塁間の 32）。
@@ -623,9 +684,14 @@ input[type="file"] {
 .diamond .to-ss { --tx: -16px; --ty: -52px; }
 .diamond .to-2b { --tx:  16px; --ty: -52px; }
 .diamond .to-1b { --tx:  26px; --ty: -38px; }
-.diamond .to-lf { --tx: -44px; --ty: -69px; }
-.diamond .to-cf { --tx:   0px; --ty: -82px; }
-.diamond .to-rf { --tx:  44px; --ty: -69px; }
+/* 外野手の定位置。★**フェンスと同じ楕円の上に乗せる。**
+   横を `a/90`、縦を `b/90` で伸縮させると、**フェンスに対する相対位置が変わらない**
+   （旧フェンス 90px の円に対して3人とも 91% だった。楕円は線形写像なので比が保たれる）。
+   狭い球場では前へ、広い球場では後ろへ下がる。
+   ★**内野手と捕手には掛けない。** 塁間 27.43m・マウンド 18.44m は球場が変わっても同じ。 */
+.diamond .to-lf { --tx: calc(-44px * var(--sxl)); --ty: calc(-69px * var(--sy)); }
+.diamond .to-cf { --tx:   0px;                    --ty: calc(-82px * var(--sy)); }
+.diamond .to-rf { --tx: calc( 44px * var(--sxr)); --ty: calc(-69px * var(--sy)); }
 
 /* 【守備位置の実効座標】`--tx` / `--ty` が定位置、`--fs` が
    **本塁からの距離の倍率**（前進守備で内野だけ 1 → .75 になる）。
@@ -742,7 +808,7 @@ input[type="file"] {
 /* 深さ。**フライ・ライナーのヒットだけ**（飛距離を持っているのがそこだけなので）。
    ★ゴロには付けない。あの飛距離は「飛んでいれば届いた距離」で、転がった距離ではない。 */
 .diamond .dp-s { --dp: .85; }      /* 〜95m  */
-.diamond .dp-d { --dp: 1.12; }     /* 110m〜 */
+.diamond .dp-d { --dp: 1.05; }    /* 110m〜。★1.12 だとフェンスの外へ出る（下記） */
 
 /* 球そのもの。本塁に置いて、transform で飛ばす。
    ★**真上から見た絵なので、高さは向きでは出せない。** 大きさ（scale）で出す。 */
