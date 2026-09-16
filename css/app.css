@@ -426,6 +426,43 @@ input[type="file"] {
 
    打球の飛び先（本塁からの差）は下の `.to-*` が持つ。
    ★**座標を C# 側にも書かないこと。** Razor が渡すのは位置の呼び名だけ。 */
+
+/* ---- 拡大（2026-09-16。段階8）----
+
+   **箱を大きくするのであって、絵を描き直すのではない。** `.diamond` は 128×120 の
+   ままにして、**外側で `transform: scale(var(--z))` を掛ける**。中身はすべて
+   この箱の中に絶対配置＋`translate(px)` なので、**座標の表も keyframes も
+   1行も書き換えずに丸ごと大きくなる**（段階1〜7 の実測もそのまま生きる）。
+
+   ★**入れ物（`.dia-wrap`）が要る。** `transform` は**レイアウトの大きさを変えない**ので、
+     包まずに拡大すると隣（回・アウト）や下の行と重なる。場所を取るのはこの箱の役目。
+   ★**`transform-origin: top left`。** 既定の中心にすると、箱の左上と絵の左上がずれて
+     「中心のずれ 0.0px」の測定が通らなくなる。
+   ★**倍率は `--z` ただ1つ。** px を球場ごとに書き分け始めると座標の表が2つになる。
+
+   【なぜ拡大が要るか】人物 7px・野手 5px では、画像に替えても 7px の画像にしかならない。
+   2.4倍で 人物 17px・野手 12px・球 14px になり、**そこで初めて描き込む意味が出る**。 */
+.dia-wrap {
+    --z: 1;
+    position: relative;
+    overflow: hidden;   /* ★フェンスの円は 180px あり、箱の外へ 26px はみ出す（clip-path は
+                            塗りを切るだけで箱は残る）。2.4倍だと 63px になり、
+                            `.t-board` に横スクロールが出る。見える円弧は箱の左右端
+                            ぴったり（-0.3〜128.3px）なので、切っても 0.3px しか失わない。 */
+    width:  calc(128px * var(--z));
+    height: calc(120px * var(--z));
+    flex: 0 0 auto;
+}
+.dia-wrap .diamond { transform: scale(var(--z)); transform-origin: top left; }
+
+/* 「球場」タブ（`Tab == 3`）。**スコアボードと打者・投手を出さず**、絵に場所を譲る。
+   ★**回・アウトは絵の上へ積む。** 横に並べたままだと 48.8px ＋ 307px = 356px で、
+     375px の盤面（内側 約343px）からはみ出す。
+   ★**「直前のプレー」は残す。** 観戦でいちばん読まれる行で、消すと何が起きたか分からない。
+   ★**2.4倍**: 128×120 → 307×288。375px でも 360px でも横スクロールが出ない上限。 */
+.t-mid.zoom { grid-template-columns: 1fr; justify-items: center; gap: .5rem; }
+.t-mid.zoom .t-now { flex-direction: row; align-items: center; gap: .9rem; justify-self: center; }
+.t-mid.zoom .dia-wrap { --z: 2.4; }
 .diamond { position: relative; width: 128px; height: 120px; flex: 0 0 128px; }
 
 /* 外野のフェンス。本塁 (64,110) を中心とする半径 90px の円を、
