@@ -493,6 +493,31 @@ input[type="file"] {
 .diamond .r2 { top: 39px; left: 57px; }
 .diamond .r3 { top: 71px; left: 25px; }
 
+/* 走者のリード（2026-09-16。薬味）。塁から**次の塁の方向へ 4px** だけ離れて構える。
+   ★**モデルは何も言っていないが、矛盾もしない。** リードは投球の前に必ず取るもので、
+     エンジンが「走者は塁に立っている」と言っているわけではない
+     （「モデルが黙っていることと矛盾することは違う」）。
+   ★**このプレーで進んだ走者には付けない**（Razor の `LeadClass` が `ld` を外す）。
+     塁に着いたばかりで、リードを取るのは**次の投球の前＝次の停止から**。
+     ついでに `transform` の取り合いも起きない（`.mv` と同時に付かない）。
+   ★**3アウトで終わった半イニングでも付けない。** 走者は引き上げるので嘘になる。
+   ★**向きは「動きの向き」と揃っていること。** 下の3行は `run01` / `run12` / `run30`
+     の `from`（＝出てくる方向）の**符号を反転したもの**で、二重の真実になりうる。
+     ずれていないことはブラウザで測って確かめる（リードの向き × 動きの向き > 0）。 */
+.diamond .r { --lx: 0px; --ly: 0px; }               /* ★既定は 0 ＝ 動かない（付け忘れても壊れない） */
+.diamond .r1 { --lx: -4px; --ly: -4px; }            /* 1塁走者 → 2塁 */
+.diamond .r2 { --lx: -4px; --ly:  4px; }            /* 2塁走者 → 3塁 */
+.diamond .r3 { --lx:  4px; --ly:  4px; }            /* 3塁走者 → 本塁 */
+.diamond .r.ld {
+    animation-name: lead; animation-duration: .55s;
+    animation-timing-function: cubic-bezier(.3, .7, .3, 1);
+    animation-fill-mode: both;
+}
+@keyframes lead {
+    from { transform: translate(0, 0); }
+    to   { transform: translate(var(--lx), var(--ly)); }
+}
+
 /* ---- 走者の動き ----
    ★**要素が挿入されたときにしか走らない。** クラスだけ差し替えても2度目は動かないので、
      Razor 側が `@key` に `Seq` を混ぜて DOM ノードを作り直させている。
@@ -565,6 +590,28 @@ input[type="file"] {
 .diamond .to-cf { --tx:   0px; --ty: -82px; }
 .diamond .to-rf { --tx:  44px; --ty: -69px; }
 
+/* 【守備位置の実効座標】`--tx` / `--ty` が定位置、`--fs` が
+   **本塁からの距離の倍率**（前進守備で内野だけ 1 → .75 になる）。
+   ★**使う側は必ず `--fx` / `--fy` を読むこと。** `--tx` を直に読むと、
+     前進守備のとき**野手だけ前に出て、打球と送球は定位置のまま**になる。
+   ★倍率なので**本塁から見た向きは変わらない**（座標の表は1つのまま）。 */
+.diamond { --fs: 1; }
+/* ★**位置を増やしたらこの並びにも足すこと。** 抜けると `--fx` が未定義になり、
+   その野手・その打球だけ**本塁に張り付く**（エラーは出ない）。 */
+.diamond .to-c,  .diamond .to-1b, .diamond .to-2b, .diamond .to-3b,
+.diamond .to-ss, .diamond .to-lf, .diamond .to-cf, .diamond .to-rf {
+    --fx: calc(var(--tx) * var(--fs));
+    --fy: calc(var(--ty) * var(--fs));
+}
+
+/* 前進守備（`InfieldShift.InfieldIn`）。**内野4人だけ**が本塁寄りへ出る。
+   ★外野・捕手・投手は動かさない（前進守備は内野の手）。
+   ★`.fd`（野手）だけでなく `.thr`（送球の始点）・`.ball`・`.spot` にも同時に効く —
+     どれも同じ `.to-*` を付けているので、1つの倍率で揃う。
+   ★**塁は動かない**（送球の行き先は `--bx` / `--by` で別に持っている）。 */
+.diamond.sh-in .to-1b, .diamond.sh-in .to-2b,
+.diamond.sh-in .to-3b, .diamond.sh-in .to-ss { --fs: .75; }
+
 /* 【捕った時刻】球の待ち時間 .12s ＋ 弾道の長さ。**ここ1箇所だけで持つ** —
    野手の光り・球を消す時刻・送球の出発が、どれもこの変数を読む。
    ★**弾道の長さ（下の `.ball.bt-*`）を変えたらここも直すこと。** */
@@ -587,7 +634,7 @@ input[type="file"] {
 .diamond .to-c  { --tx:   0px; --ty:   8px; }
 
 /* ---- 野手（段階5） ----
-   ★**位置は打球の飛び先と同じ `--tx` / `--ty`。** 本塁に置いて transform で動かすので、
+   ★**位置は打球の飛び先と同じ `--fx` / `--fy`。** 本塁に置いて transform で動かすので、
    座標は上の表の1箇所にしかない。**絶対座標をここへ書き足さないこと** —
    書いた瞬間に「盤面は遊撃、打球は二塁へ飛ぶ」を作れてしまう。
    ★**投手は描かない**（マウンドの `.fig.pit` が既にいる）。 */
@@ -595,7 +642,7 @@ input[type="file"] {
     position: absolute; left: 61.5px; top: 107.5px;   /* 中心を本塁 (64,110) に置く */
     width: 5px; height: 5px; border-radius: 50%;
     background: #55636f; z-index: 1;
-    transform: translate(var(--tx), var(--ty));
+    transform: translate(var(--fx), var(--fy));
 }
 /* 捕った野手。★**球が届いてから光らせる** — `animation-delay` は
    「球の待ち時間 .12s ＋ 弾道の長さ」。**弾道の長さを変えたらここも直すこと**
@@ -608,13 +655,13 @@ input[type="file"] {
 .diamond .fd.got { animation-delay: var(--catch, 0s); }
 /* ★**どの keyframe にも translate を書くこと。** 書かないと光った瞬間に本塁へ飛ぶ。 */
 @keyframes fdGot {
-    0%   { transform: translate(var(--tx), var(--ty)) scale(1); }
-    35%  { transform: translate(var(--tx), var(--ty)) scale(2.2); }
-    100% { transform: translate(var(--tx), var(--ty)) scale(1.3); }
+    0%   { transform: translate(var(--fx), var(--fy)) scale(1); }
+    35%  { transform: translate(var(--fx), var(--fy)) scale(2.2); }
+    100% { transform: translate(var(--fx), var(--fy)) scale(1.3); }
 }
 
 /* ---- 送球（段階6）----
-   捕った野手（`.to-*` の `--tx` / `--ty`）から塁（`--bx` / `--by`）へ球が渡る。
+   捕った野手（`.to-*` の `--fx` / `--fy`）から塁（`--bx` / `--by`）へ球が渡る。
    ★**出発点は打球の飛び先と同じクラス**を付けてもらうので、座標は増えていない。
    ★**盗塁死だけは打球が無い**ので出発点は捕手（`.to-c`）。`--catch` も無いので
      `var(--catch, 0s)` の既定側に落ちて、止まった直後に走り出す。 */
@@ -632,13 +679,13 @@ input[type="file"] {
 
 /* ★**着いたら消すこと。** 残すと塁に球が置きっぱなしの絵になる。 */
 @keyframes thrOne {
-    from { transform: translate(var(--tx), var(--ty)) scale(.8); opacity: 1; }
+    from { transform: translate(var(--fx), var(--fy)) scale(.8); opacity: 1; }
     92%  { transform: translate(var(--bx), var(--by)) scale(.8); opacity: 1; }
     to   { transform: translate(var(--bx), var(--by)) scale(.8); opacity: 0; }
 }
 /* ★**中間に二塁を書くこと。** 書かないと二塁を通らずに一塁へ直行する。 */
 @keyframes thrDp {
-    from { transform: translate(var(--tx), var(--ty)) scale(.8); opacity: 1; }
+    from { transform: translate(var(--fx), var(--fy)) scale(.8); opacity: 1; }
     45%  { transform: translate(var(--b2x), var(--b2y)) scale(.8); opacity: 1; }
     92%  { transform: translate(var(--b1x), var(--b1y)) scale(.8); opacity: 1; }
     to   { transform: translate(var(--b1x), var(--b1y)) scale(.8); opacity: 0; }
@@ -681,29 +728,44 @@ input[type="file"] {
 /* 本塁打は弾道より後に置く（同じ詳細度なので後勝ちで上書きする）。 */
 .diamond .ball.hr   { animation-name: ballHr;     animation-duration: .62s; }
 
+/* 残像（2026-09-16。薬味）。**同じ弾道の球をもう2つ、少し遅らせて重ねる**だけ。
+   画像も新しい keyframes も要らず、前進守備の倍率（`--fx`）にもそのまま乗る。
+   ★**薄くするのは `opacity` ではなく背景の alpha。** `opacity` は `ballHr` と
+     `ballGone` が動かしているので、そちらで指定すると本塁打と送球で上書きされる。
+   ★**`z-index` は本体(3)より下の 2。** 同じにすると後ろの粒が本体を隠す。
+   ★**送球には付けない。** あれは .26s の短い1本で、粒を足すと塁のまわりが散らかる。 */
+.diamond .ball.trail    { background: rgba(255, 212, 121, .42); z-index: 2; animation-delay: .17s; }
+.diamond .ball.trail.t2 { background: rgba(255, 212, 121, .20);             animation-delay: .22s; }
+/* ★**送球があるときは「消える時刻」も同じだけ遅らせること。** 本体と同じ `--catch` に
+     すると、残像だけ**野手に着く手前で消える**（.05s / .10s ぶん足りない）。
+   ★この2行は上の2行と詳細度が並ぶ（`.thrown.trail` 対 `.trail.t2`）ので、
+     **必ず後ろに置く**こと。 */
+.diamond .ball.thrown.trail    { animation-delay: .17s, calc(var(--catch) + .05s); }
+.diamond .ball.thrown.trail.t2 { animation-delay: .22s, calc(var(--catch) + .10s); }
+
 /* ゴロ: 低いまま真っ直ぐ転がる。**大きさを変えない**（上がらないので）。 */
 @keyframes ballGround {
     from { transform: translate(0, 0) scale(.6); }
-    to   { transform: translate(var(--tx), var(--ty)) scale(.6); }
+    to   { transform: translate(var(--fx), var(--fy)) scale(.6); }
 }
 /* ライナー: 一番速い。わずかに浮いて伸びる。 */
 @keyframes ballLine {
     from { transform: translate(0, 0) scale(.6); }
-    35%  { transform: translate(calc(var(--tx) * var(--dp) * .35), calc(var(--ty) * var(--dp) * .35)) scale(1); }
-    to   { transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp))) scale(.75); }
+    35%  { transform: translate(calc(var(--fx) * var(--dp) * .35), calc(var(--fy) * var(--dp) * .35)) scale(1); }
+    to   { transform: translate(calc(var(--fx) * var(--dp)), calc(var(--fy) * var(--dp))) scale(.75); }
 }
 /* フライ: 高く上がって落ちてくる。**大きさの山が滞空**にあたる。 */
 @keyframes ballFly {
     from { transform: translate(0, 0) scale(.5); }
-    45%  { transform: translate(calc(var(--tx) * var(--dp) * .5), calc(var(--ty) * var(--dp) * .5)) scale(1.7); }
-    to   { transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp))) scale(.8); }
+    45%  { transform: translate(calc(var(--fx) * var(--dp) * .5), calc(var(--fy) * var(--dp) * .5)) scale(1.7); }
+    to   { transform: translate(calc(var(--fx) * var(--dp)), calc(var(--fy) * var(--dp))) scale(.8); }
 }
 /* 本塁打: フェンスを越えて消える。★**1.25倍まで**（1.4倍だと箱の外へ出て
    隣の「N回表」に重なる）。深さのクラスは付かないので `--dp` は使わない。 */
 @keyframes ballHr {
     from { transform: translate(0, 0) scale(.5); opacity: 1; }
-    45%  { transform: translate(calc(var(--tx) * .6), calc(var(--ty) * .6)) scale(1.8); opacity: 1; }
-    to   { transform: translate(calc(var(--tx) * 1.25), calc(var(--ty) * 1.25)) scale(.6); opacity: 0; }
+    45%  { transform: translate(calc(var(--fx) * .6), calc(var(--fy) * .6)) scale(1.8); opacity: 1; }
+    to   { transform: translate(calc(var(--fx) * 1.25), calc(var(--fy) * 1.25)) scale(.6); opacity: 0; }
 }
 
 /* ---- 打者と投手（2026-09-15。アニメーションの段階4）----
@@ -779,13 +841,34 @@ input[type="file"] {
     position: absolute; left: 59px; top: 105px;     /* 中心を本塁に置く（10px 幅） */
     width: 10px; height: 10px; border-radius: 50%;
     border: 1px solid var(--accent); z-index: 1;
-    transform: translate(calc(var(--tx) * var(--dp)), calc(var(--ty) * var(--dp)));
+    transform: translate(calc(var(--fx) * var(--dp)), calc(var(--fy) * var(--dp)));
     animation: ballSpot .55s ease-out .40s both;   /* 球の遅れ .12s ぶん後ろへ */
 }
 @keyframes ballSpot {
     from { opacity: 0; }
     35%  { opacity: .9; }
     to   { opacity: 0; }
+}
+
+/* 打った瞬間の閃き（2026-09-16。薬味）。本塁で輪が一瞬広がる。
+   ★**位置も時刻も球から借りる。** 置き場所は球の出発点（本塁 64,110）そのもので、
+     `animation-delay` も球と同じ **.12s**（＝スイングの 40% ＝ バットに当たる瞬間）。
+     **新しい座標も新しい時刻も増えない。**
+   ★**出す条件は「球を出すとき」と同じ**（Razor で同じ `if` の中に置いてある）。
+     別の条件を書くと、空振り三振で光ったり打球で光らなかったりし始める。
+   ★**1試合に約54回出る。** 段階3 の「1試合15回出るものに演出を付けるな」は
+     **見せ場（beat）の話**で、これは**スイングと打球をつなぐ線**だから背景でよい —
+     むしろ目立たせないこと。薄く・小さく・短く。 */
+.diamond .crack {
+    position: absolute; left: 59px; top: 105px;    /* 中心を本塁 (64,110) に置く（10px 幅） */
+    width: 10px; height: 10px; border-radius: 50%;
+    border: 1px solid #ffd479; z-index: 2;
+    animation: crack .22s ease-out .12s both;
+    pointer-events: none;
+}
+@keyframes crack {
+    from { opacity: .9; transform: scale(.35); }
+    to   { opacity: 0;  transform: scale(2); }
 }
 
 /* 動きを減らす設定を尊重する。**位置は正しいまま**で、移動の演出だけ消える。
@@ -823,12 +906,20 @@ input[type="file"] {
     .diamond .fig .arm, .diamond .fig .stick { animation: none; }
     /* ★**捕った野手の色は残す。** 「誰が捕ったか」は動きではなく情報。
        弾ける動きだけを消して、位置と色はそのままにする。 */
-    .diamond .fd.got { animation: none; transform: translate(var(--tx), var(--ty)) scale(1.3); }
+    .diamond .fd.got { animation: none; transform: translate(var(--fx), var(--fy)) scale(1.3); }
     /* 送球は**動きそのもの**なので走らせない。ただし**球を行き先へ置いたまま残す** —
        「どこへ投げてアウトにしたか」は動きではなく情報。 */
     .diamond .thr { animation: none; transform: translate(var(--bx), var(--by)) scale(.8); opacity: 1; }
     /* 送球を出すぶん、打球のほうは**すぐ消す**（2つ並べない）。 */
     .diamond .ball.thrown { animation-delay: 0s, 0s; }
+    /* ★**薬味は3つとも「動きそのもの」なので消す。** 段階1〜7 で残してきたもの
+       （どの回に入ったか・誰が捕ったか・どこへ投げたか）は**動きではなく情報**
+       だったが、こちらは違う。
+       - 残像・閃き: 打球が出たことは**球そのもの**が伝えている（重複）
+       - リード: 走者の**正しい位置は塁の上**。離して止めるほうが嘘に近い */
+    .diamond .ball.trail { display: none; }
+    .diamond .crack { display: none; }
+    .diamond .r.ld { animation: none; }
 }
 
 /* ---- 盤面のタブ（盤面 / オーダー / ベンチ）----
