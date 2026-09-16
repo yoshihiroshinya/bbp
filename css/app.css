@@ -14,6 +14,13 @@
     --accent-dark: #0f2f24;
     --danger: #ff6b6b;
 
+    /* 球場の地面（段階10）。★**明るくしないこと** — 走者（--accent の緑）・球（琥珀）・
+       野手（灰）が 5〜14px の点なので、地面が主張すると点が読めなくなる。
+       パネル (#18222a) からわずかに色を振るだけにしてある。 */
+    --turf:  #16281f;   /* フェアグラウンドの芝 */
+    --dirt:  #33291f;   /* 塁間の土・マウンド・本塁の周り */
+    --stand: #131a20;   /* フェンスの外側のスタンド */
+
     /* 下タブ（.app-nav）の高さ。画面下に固定するシートはここから上へ置く。
        .app-nav は rem 指定だけで組んであるので、この比率は端末が変わっても保たれる。
        実測 65px / ルート 15px = 4.33rem。**目分量で 3.6rem としていたときは
@@ -486,9 +493,11 @@ input[type="file"] {
      フェンスが消えないように。出荷7球場の中央値を入れてある。
 
    ★**倍率 .86 の決め方（箱の大きさが上限）。**
-     一番深い中堅 122m が `122 × .86 = 105px` で、本塁 (64,110) から上へ y=5 に収まる。
-     一番広い両翼 100m が `100 × .86 = 86px` で、45度の地点が `86/√2 = 60.8px`
-     ＝ x 3.2〜124.8 に収まる。**どちらも 128×120 の箱ぎりぎり。**
+     一番深い中堅 122m が `122 × .80 = 97.6px`、その外のスタンド 7px を足して 104.6px で、
+     本塁 (64,110) から上へ y=5.4 に収まる。一番広い両翼 100m は `100 × .80 = 80px` で、
+     45度の地点が `80/√2 = 56.6px` ＝ x 7.4〜120.6。**どちらも 128×120 の箱の中。**
+   ★**段階9 では .86 だった。** スタンドを描く場所が無かったので下げてある
+     （.86 だと中堅のフェンスが y=5 で、外に 5px しか残らない）。
 
    ★★**内野とは縮尺が違う。** 塁間 32px は 27.43m ＝ **1.65 px/m** だが、外野は **0.86 px/m**
      で**約2倍に圧縮している**。実寸で描くと中堅が 201px になり箱に入らない
@@ -496,7 +505,8 @@ input[type="file"] {
      書かないこと** — 嘘になる。ここで1本化したのは**外野の縮尺**。 */
 .diamond {
     --mL: 99; --mC: 121; --mR: 99;               /* 出荷7球場の中央値 */
-    --pxpm: .86;
+    --pxpm: .80;   /* ★段階10 でスタンドのぶん .86 から下げた（下記） */
+    --stw: 7px;    /* スタンドの帯の幅 */
     --fl: calc(var(--mL) * var(--pxpm) * 1px);   /* 左翼のフェンス（45度の距離） */
     --fc: calc(var(--mC) * var(--pxpm) * 1px);   /* 中堅のフェンス（真上の距離） */
     --fr: calc(var(--mR) * var(--pxpm) * 1px);   /* 右翼のフェンス（45度の距離） */
@@ -523,6 +533,7 @@ input[type="file"] {
     position: absolute; top: calc(110px - var(--fc));
     height: calc(var(--fc) * 2);
     border: 1px solid var(--line); border-radius: 50%;
+    background: var(--turf);   /* ★ファウルポールより上のフェアグラウンド（段階10） */
 }
 .diamond .fence-l {
     left: calc(64px - var(--fl) * .862);
@@ -535,23 +546,79 @@ input[type="file"] {
     clip-path: inset(0 0 calc(var(--fc) + var(--fr) * .7071) 50%);
 }
 
+/* ---- 地面とスタンド（2026-09-16。段階10）----
+
+   ★**明るくしないこと。** 走者（緑 14px）・球（琥珀 6px）・野手（灰 5px）が
+     点なので、地面が主張すると点が読めなくなる。パネルからわずかに色を振るだけ。
+   ★**新しい座標を1つも増やしていない。** フェアグラウンドの形も、スタンドの位置も、
+     フェンスと同じ `--fl` / `--fc` / `--fr` から出している。
+   ★**画像を使わない**（`app.css` 冒頭の「配布物を増やさない」）。 */
+
+/* スタンド。フェンスの外側を `--stw` だけ広げた楕円を**後ろに**敷く。
+   ★**フェンスより前に書くこと**（この順に塗られる）。 */
+.diamond .stand {
+    position: absolute; top: calc(110px - var(--fc) - var(--stw));
+    height: calc((var(--fc) + var(--stw)) * 2);
+    background: var(--stand); border-radius: 50%;
+}
+.diamond .stand-l {
+    left: calc(64px - var(--fl) * .862 - var(--stw));
+    width: calc((var(--fl) * .862 + var(--stw)) * 2);
+    clip-path: inset(0 50% calc(var(--fc) + var(--stw) + var(--fl) * .7071) 0);
+}
+.diamond .stand-r {
+    left: calc(64px - var(--fr) * .862 - var(--stw));
+    width: calc((var(--fr) * .862 + var(--stw)) * 2);
+    clip-path: inset(0 0 calc(var(--fc) + var(--stw) + var(--fr) * .7071) 50%);
+}
+
+/* フェアグラウンドの芝は**2つに分かれる**。
+   ・**ファウルポールより上** … フェンスの楕円そのもの（`.fence-*` の背景で塗る）
+   ・**ファウルポールより下** … 本塁と左右のポールを結ぶ**三角形**（ここ）
+   ★**上下は継ぎ目なくつながる。** 楕円の切り口の高さ（`両翼/√2`）と
+     三角形の上辺が同じ式から出ているため。
+   ★★**楕円の切り口より上は、必ずファウルラインの内側に入る。**
+     切り口の高さ h では楕円の半幅＝ファウルラインの半幅＝h で一致し、
+     そこから上は楕円が細く・ファウルゾーンが広がるだけ。だから
+     **「フェアグラウンドを塗ったらファウルゾーンまで緑になった」が起きない。** */
+.diamond .turf {
+    position: absolute; inset: 0;
+    background: var(--turf);
+    clip-path: polygon(64px 110px,
+        calc(64px - var(--fl) * .7071) calc(110px - var(--fl) * .7071),
+        calc(64px + var(--fr) * .7071) calc(110px - var(--fr) * .7071));
+}
+
+/* マウンドと本塁の周りの土。**1要素に2つの円**（`radial-gradient` を2枚重ねる）。
+   ★**要素を2つ足さないこと** — ダイヤモンドの中の要素は停止のたびに作り直される。
+   ★**塁間の土は `.infield` の枠を太くして出す**（下記）。専用の図形を足さない。 */
+.diamond .dirt {
+    position: absolute; inset: 0;
+    background:
+        radial-gradient(circle 7px at 64px 78px,  var(--dirt) 98%, transparent 100%),
+        radial-gradient(circle 9px at 64px 110px, var(--dirt) 98%, transparent 100%);
+}
+
 /* ファウルライン。本塁から1塁・3塁を通って**フェンスの端（ファウルポール）**へ届く。
    ★**長さは両翼そのもの**（45度の距離）。直す前は 91px の直書きで、
      フェンスの半径 90px と手で合わせてあった。**球場ごとに変わるので式にする。** */
 .diamond .foul {
     position: absolute; left: 64px; top: 110px; width: 1px;
-    background: var(--line); transform-origin: 0 0;
+    background: var(--muted); transform-origin: 0 0;   /* ★芝を敷いたら線が沈んだので白寄りへ（段階10。実際はチョークの線） */
 }
 .diamond .foul.fl { height: var(--fl); transform: rotate(135deg); }    /* 左（3塁側） */
 .diamond .foul.fr { height: var(--fr); transform: rotate(-135deg); }   /* 右（1塁側） */
 
 /* 内野のライン。正方形を45度回して菱形にし、4隅を4つの塁にちょうど合わせる。
    ★**一辺は 45px**（対角の半分 = 22.5 × √2 = 31.8 ≒ 塁間の 32）。
-     64px にすると隅が塁の外側 13px へはみ出す。 */
+     64px にすると隅が塁の外側 13px へはみ出す。
+   ★**枠を太い土色にして「塁間の土」を出す**（段階10）。専用の図形を足さない。
+     1px の線のままだと内野が芝のままになり、NPB の球場と食い違う。
+     `box-sizing: border-box` なので**枠は内側へ太る** ＝ 4隅と塁の対応は変わらない。 */
 .diamond .infield {
     position: absolute; left: 41.5px; top: 55.5px; width: 45px; height: 45px;
     transform: rotate(45deg);
-    border: 1px solid var(--line);
+    border: 3px solid var(--dirt);
 }
 /* ★塁は**埋まっていても枠のまま**（走者が上に重なる）。`--line` まで落とすと
    空の塁がほとんど見えず、ダイヤモンドの形が読めなくなる。 */
@@ -928,6 +995,7 @@ input[type="file"] {
    ★`.fence` より後に書くこと — 枠線の色を上書きするため。 */
 .diamond .hr-flash {
     border-color: var(--accent);
+    background: transparent;   /* ★芝を二度塗りしない（段階10。scale で塗りがずれる） */
     animation: hrFence .9s ease-out both;
     pointer-events: none;
 }
