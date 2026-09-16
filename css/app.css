@@ -405,6 +405,9 @@ input[type="file"] {
 .t-p-o { color: var(--muted); font-size: .72rem; margin-right: .2rem; }
 /* ★名前は太字。このパネルで最初に探すのが「誰か」なので、能力の数字に埋もれさせない */
 .t-p-n { font-weight: 700; }
+/* 左右の札（`右投` / `左打`）。★**名前と競らせない** — 太字にせず薄くする。
+   ★`(右)` と書かないこと（選手名の `(左)` は左翼＝守備位置と読める）。 */
+.t-p-h { font-size: .68rem; color: var(--muted); margin-left: .3rem; white-space: nowrap; }
 .t-p-d { font-size: .72rem; color: var(--muted); }
 .t-p-r { font-size: .72rem; margin-top: .2rem; }
 .t-side.atk .t-p-d, .t-side.atk .t-p-r { color: var(--accent); }
