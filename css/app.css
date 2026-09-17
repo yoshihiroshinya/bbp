@@ -1106,7 +1106,8 @@ input[type="file"] {
    ★**頭は `::after` で重ねる。** 肩の真ん中に一回り小さい明るい丸を置くと、
      真上から見て「頭が肩に乗っている」ように読める。
      **要素を増やさないこと** — ダイヤモンドの中の要素は停止のたびに作り直される。
-   ★**投手のグラブ側の腕は `::before`。** 投げる腕（`.arm`）だけだと片腕の人になる。
+   ★**腕は投げる腕の1本だけ**（2026-09-17）。グラブ側の腕も足してみたが、
+     **長さの違う線が2本あるとどちらで投げているか分からない**と実機で言われて外した。
 
    位置は本塁 (64,110) と マウンド (64,78)。打者は打席の側に立つ:
    **右打者は三塁側＝画面の左**（3塁が x=32 なので）、左打者はその逆。 */
@@ -1127,19 +1128,28 @@ input[type="file"] {
     transform-origin: 0 50%;
 }
 
-/* 投手はマウンド (64,78) の上。腕を後ろから前（本塁の向き＝下）へ振る。 */
+/* 投手はマウンド (64,78) の上。腕を後ろから前（本塁の向き＝下）へ振る。
+
+   ★★**利き腕は「投手から見た右左」で描く**（2026-09-17。実機で
+     「右投げの投手が左手で投げている」と指摘された）。真上から見た絵で、
+     **投手は本塁＝画面の下を向いている**。南を向いた人の右手は西 ＝ **画面の左**。
+     **本塁から見た左右と逆になる**ので、素直に書くと必ず裏返る。
+
+     | | 利き腕の側 | 振り終わり |
+     |---|---|---|
+     | 右投げ | 画面の**左** | `rotate(-235deg)`（左下＝本塁の向き） |
+     | 左投げ | 画面の**右** | `rotate(55deg)`（右下） |
+
+   ★**腕は1本だけ**（2026-09-17。グラブ側の腕はやめた）。長さの違う線が2本あると
+     **どちらが投げている腕か分からない**と実機で言われた。1本なら迷いようがない。
+   ★**振り終わりの向きを `transform` にも書くこと。** `animation` を切ったとき
+     （動きを減らす設定）に戻る先で、書かないと `rotate(0)` ＝ 画面の右を向いて
+     **利き腕が読めなくなる**。利き腕は動きではなく情報。 */
 .diamond .fig.pit { left: 60px; top: 72px; }
-.diamond .fig.pit .arm { animation: armThrow .20s ease-in both; }
-.diamond .fig.pit.lh .arm { animation-name: armThrowL; }
-/* グラブ側の腕。**動かさない**（本塁の向きへ構えたまま）。右投げは左手が前。 */
-.diamond .fig.pit::before {
-    content: ""; position: absolute; left: 50%; top: 50%; margin-top: -1px;
-    width: 6px; height: 2px; background: var(--muted);
-    transform-origin: 0 50%; transform: rotate(100deg);
-}
-.diamond .fig.pit.lh::before { transform: rotate(80deg); }
-@keyframes armThrow  { from { transform: rotate(-120deg); } to { transform: rotate(60deg); } }
-@keyframes armThrowL { from { transform: rotate(-60deg); }  to { transform: rotate(120deg); } }
+.diamond .fig.pit .arm { transform: rotate(-235deg); animation: armThrow .20s ease-in both; }
+.diamond .fig.pit.lh .arm { transform: rotate(55deg); animation-name: armThrowL; }
+@keyframes armThrow  { from { transform: rotate(-145deg); } to { transform: rotate(-235deg); } }  /* 右投げ＝画面の左側で振る */
+@keyframes armThrowL { from { transform: rotate(-35deg); }  to { transform: rotate(55deg); }   }  /* 左投げ＝画面の右側で振る */
 
 /* 打者は本塁 (64,110) の脇。★**打席の側に立たせること** — `Bats` は持っている値なので、
    左打者を右打席に置くと**モデルが否定していることを描く**ことになる。
