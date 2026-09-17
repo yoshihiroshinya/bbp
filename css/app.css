@@ -429,11 +429,11 @@ input[type="file"] {
    【塁と走者は別の要素】`.b` は**いつもそこにある枠**、`.r` は**動くもの**。
    1つに兼ねさせると、走者を動かすたびに塁の位置ごと消える。
 
-   塁の中心（128×120 の箱）: 本塁 (64,110) / 1塁 (96,78) / 2塁 (64,46) / 3塁 (32,78)。
-   ★**塁間の縦横の差は 32px。** 走者の keyframes はこの差だけで書いてあるので、
+   塁の中心（128×120 の箱）: 本塁 (64,110) / 1塁 (88,86) / 2塁 (64,62) / 3塁 (40,86)。
+   ★★**塁間の縦横の差は 24px**（2026-09-17。32px から 0.75倍にした。下記）。
      箱を広げても**中身をずらす限り keyframes は引き直さなくてよい**
      （2026-09-15 に外野を足したときは、実際に 1px も触っていない）。
-     32 を変えるなら keyframes の px を全部引き直すこと。
+     24 を変えるなら keyframes の px を全部引き直すこと。
 
    打球の飛び先（本塁からの差）は下の `.to-*` が持つ。
    ★**座標を C# 側にも書かないこと。** Razor が渡すのは位置の呼び名だけ。 */
@@ -503,8 +503,9 @@ input[type="file"] {
    ★**段階9 では .86 だった。** スタンドを描く場所が無かったので下げてある
      （.86 だと中堅のフェンスが y=5 で、外に 5px しか残らない）。
 
-   ★★**内野とは縮尺が違う。** 塁間 32px は 27.43m ＝ **1.65 px/m** だが、外野は **0.86 px/m**
-     で**約2倍に圧縮している**。実寸で描くと中堅が 201px になり箱に入らない
+   ★★**内野とは縮尺が違う。** 塁間 33.9px は 27.43m ＝ **1.24 px/m** だが、外野は **0.80 px/m**
+     で**約1.5倍に圧縮している**（2026-09-17 に内野を 0.75倍にして 2.1倍から縮めた）。
+     実寸で描くと中堅が 151px になり箱に入らない
      （スコアボードの絵はどれもこうなっている）。**「1つの縮尺で描いている」と
      書かないこと** — 嘘になる。ここで1本化したのは**外野の縮尺**。 */
 .diamond {
@@ -692,11 +693,11 @@ input[type="file"] {
     /* ★**5点の多角形**（2026-09-17）。上の辺は**フェンスの切り口と同じ高さ**に置く —
        三角形のまま角を外へ出すと、上の辺も一緒に下がって**フェアの真ん中に横一本の
        継ぎ目**ができる（実機で見えた）。左右だけラインの 3px 外まで伸ばす。 */
-    clip-path: polygon(64px 115px,
-        calc(64px - var(--fl) * .7071 - 2.12px) calc(110px - var(--fl) * .7071 + 2.12px),
+    clip-path: polygon(64px 114px,
+        calc(64px - var(--fl) * .7071 - 1.59px) calc(110px - var(--fl) * .7071 + 1.59px),
         calc(64px - var(--fl) * .7071)          calc(110px - var(--fl) * .7071),
         calc(64px + var(--fr) * .7071)          calc(110px - var(--fr) * .7071),
-        calc(64px + var(--fr) * .7071 + 2.12px) calc(110px - var(--fr) * .7071 + 2.12px));
+        calc(64px + var(--fr) * .7071 + 1.59px) calc(110px - var(--fr) * .7071 + 1.59px));
 }
 
 /* 内野の土の面（**天然芝の球場だけ**）。
@@ -710,7 +711,7 @@ input[type="file"] {
    ★**人工芝では敷かない**（内野にも芝があり、土はベースとマウンドの周りだけ。
      Razor 側で出し分け）。★**屋根の有無ではない** — 横浜・神宮は屋外だが人工芝。 */
 .diamond .skin {
-    position: absolute; left: 16.2px; top: 30.2px; width: 95.6px; height: 95.6px;
+    position: absolute; left: 28.15px; top: 50.15px; width: 71.7px; height: 71.7px;
     border-radius: 50%;
     background: var(--skin);
 }
@@ -725,11 +726,11 @@ input[type="file"] {
 .diamond .dirt {
     position: absolute; inset: 0;
     background:
-        radial-gradient(circle 7px at 64px 78px,  var(--dirt) 98%, transparent 100%),
-        radial-gradient(circle 9px at 64px 110px, var(--dirt) 98%, transparent 100%),
-        radial-gradient(circle 8px at 96px 78px,  var(--cut)  98%, transparent 100%),
-        radial-gradient(circle 8px at 64px 46px,  var(--cut)  98%, transparent 100%),
-        radial-gradient(circle 8px at 32px 78px,  var(--cut)  98%, transparent 100%);
+        radial-gradient(circle 5.25px at 64px 86px,  var(--dirt) 98%, transparent 100%),
+        radial-gradient(circle 6.75px at 64px 110px, var(--dirt) 98%, transparent 100%),
+        radial-gradient(circle 6px at 88px 86px,  var(--cut)  98%, transparent 100%),
+        radial-gradient(circle 6px at 64px 62px,  var(--cut)  98%, transparent 100%),
+        radial-gradient(circle 6px at 40px 86px,  var(--cut)  98%, transparent 100%);
 }
 
 /* ファウルライン。**本塁の後ろの頂点**から1塁・3塁の**外側の辺**を通ってフェンスの端
@@ -750,8 +751,8 @@ input[type="file"] {
     position: absolute; left: 64px; top: 110px; width: 1px;
     background: var(--muted); transform-origin: 0 0;   /* ★芝を敷いたら線が沈んだので白寄りへ（段階10。実際はチョークの線） */
 }
-.diamond .foul.fl { height: calc(var(--fl) - 3px); transform: rotate(135deg)  translateX(2.5px);  }  /* 左（3塁側）。+x がファウル側 */
-.diamond .foul.fr { height: calc(var(--fr) - 3px); transform: rotate(-135deg) translateX(-3.5px); }  /* 右（1塁側）。−x がファウル側 */
+.diamond .foul.fl { height: calc(var(--fl) - 2.25px); transform: rotate(135deg)  translateX(1.75px);  }  /* 左（3塁側）。+x がファウル側 */
+.diamond .foul.fr { height: calc(var(--fr) - 2.25px); transform: rotate(-135deg) translateX(-2.75px); }  /* 右（1塁側）。−x がファウル側 */
 
 /* 打席（バッターボックス。2026-09-17）。**実際の球場に引いてある白線**なので、
    モデルが黙っていることを補うのではなく**そこにあるものを描いている**。
@@ -768,22 +769,23 @@ input[type="file"] {
    ★**常に描く**（打者がいない停止でも）。チョークの線は消えないので、
      出したり消したりするほうが嘘になる。 */
 .diamond .box {
-    position: absolute; top: 104.5px; width: 7px; height: 12px;
+    position: absolute; top: 105.875px; width: 5.25px; height: 9px;
     border: 1px solid var(--muted); opacity: .45;
 }
-.diamond .box-l { left: 50px; }
-.diamond .box-r { left: 71px; }
-
-/* スリーフィートライン（走者用の走路。2026-09-17）。本塁〜1塁の**後ろ半分**だけ、
-   ファウルラインの 3フィート（0.914m）外に平行に引く。
-   ★**塁間 27.43m が 45.25px** なので、後ろ半分は 22.6px、3フィートは 1.5px。
-     1.5px では 2.4倍でも 3.6px しか離れず線が重なって見えるので **2px** にしてある
-     （塁・本塁と同じで、この絵の線はどれも記号）。
+.diamond .box-l { left: 53.5px; }
+.diamond .box-r { left: 69.25px; }
+/* スリーフィートライン（走者用の走路。2026-09-17）。本塁〜1塁の**後ろ半分**から、
+   **1塁を 3フィート行き過ぎたところ**まで、ファウルラインの外に平行に引く。
+   ★寸法は規則そのまま（キャプチャーの数字）: 始点 **13.72m（45ft）**／
+     長さ **14.63m（48ft）** ＝ 1塁の 0.914m 先まで／ラインからの距離 **0.914m（3ft）**。
+     塁間 27.43m が 45.25px なので **22.6px / 24.1px / 1.5px**。
+   ★**ラインからの距離だけ 2px にしてある。** 実寸の 1.5px だと 2.4倍でも 1.2px しか
+     空かず、ファウルラインと1本に見える（塁・本塁と同じで、この絵の線は記号）。
    ★**1塁の側だけ。** 三塁線には無い（実物にも無い）。 */
 .diamond .lane {
-    position: absolute; left: 64px; top: 110px; width: 1px; height: 22.6px;
+    position: absolute; left: 64px; top: 110px; width: 1px; height: 18.08px;
     background: var(--muted); opacity: .6; transform-origin: 0 0;
-    transform: rotate(-135deg) translateX(-5.5px) translateY(22.6px);
+    transform: rotate(-135deg) translateX(-4.75px) translateY(16.95px);
 }
 
 /* キャッチャーボックス（2026-09-17）。**打席の枠のあいだ**にぴったり収まる幅
@@ -793,19 +795,29 @@ input[type="file"] {
      実物の 8フィート（この縮尺で 40px 相当）は入らない。**切れて正しい** —
      絵の外まで球場が続いているという見え方になる。 */
 .diamond .cbox {
-    position: absolute; left: 57px; top: 116.5px; width: 14px; height: 9px;
+    position: absolute; left: 58.75px; top: 114.875px; width: 10.5px; height: 6.75px;
     border: 1px solid var(--muted); border-top: 0; opacity: .45;
 }
 
-/* コーチャーズボックス（2026-09-17）。1塁・3塁の**ファウル側**に、
-   ファウルラインと平行に置く。★**45度に回すこと** — 線と平行でないと
-   「たまたま置いた四角」に見える。 */
+/* コーチャーズボックス（2026-09-17）。★**「コ」の字**で、フィールド側（ファウルライン側）
+   が開いている。閉じた四角にすると実物と違ううえ、審判や走者の点と見分けがつかない。
+
+   寸法と位置は規則そのまま（キャプチャーの数字）:
+   ・**6.096m × 3.048m**（20ft × 10ft）→ 塁間 27.43m が 45.25px なので **10 × 5px**
+   ・**ファウルラインから 4.572m（15ft）**（手前の辺まで）→ **7.5px**
+     ＝ 箱の中心はラインから **10px**（＝塁の中心からは 13px。塁自体がラインの 3px 内側にいる）
+   ・**塁と同じ位置から本塁側へ伸びる**（奥の辺が塁の高さ）→ 中心は塁から
+     本塁側へ **5px**
+
+   ★**45度に回すこと** — 線と平行でないと「たまたま置いた四角」に見える。
+   ★**開ける辺は回す前の上（`border-top`）。** 左右どちらも、回したあとの
+     ローカル +y が「ファウル側（外）」を向くので、上の辺がフィールド側になる。 */
 .diamond .coach {
-    position: absolute; width: 9px; height: 5px;
-    border: 1px solid var(--muted); opacity: .38;
+    position: absolute; width: 7.5px; height: 3.75px;
+    border: 1px solid var(--muted); border-top: 0; opacity: .38;
 }
-.diamond .coach-l { left: 17px;  top: 77.5px; transform: rotate(45deg); }
-.diamond .coach-r { left: 102px; top: 77.5px; transform: rotate(-45deg); }
+.diamond .coach-l { left: 32px;   top: 93.7px; transform: rotate(45deg); }
+.diamond .coach-r { left: 88.5px; top: 93.7px; transform: rotate(-45deg); }
 
 /* 審判（2026-09-17）。球審は捕手の後ろ（内角側）、塁審は1塁・3塁のファウル側と
    2塁の後ろ（遊撃寄り）。
@@ -818,10 +830,10 @@ input[type="file"] {
     position: absolute; width: 4px; height: 4px; border-radius: 50%;
     background: var(--ump);
 }
-.diamond .ump-h { left: 67px;   top: 115px; }     /* 球審（捕手の後ろ・内角側） */
-.diamond .ump-1 { left: 98.2px; top: 80.2px; }    /* 1塁審 */
-.diamond .ump-3 { left: 25.8px; top: 80.2px; }    /* 3塁審 */
-.diamond .ump-2 { left: 54px;   top: 40px;   }    /* 2塁審（遊撃寄り） */
+.diamond .ump-h { left: 65.75px; top: 113.25px; }   /* 球審（捕手の後ろ・内角側） */
+.diamond .ump-1 { left: 89.15px; top: 87.15px;  }   /* 1塁審 */
+.diamond .ump-3 { left: 34.85px; top: 87.15px;  }   /* 3塁審 */
+.diamond .ump-2 { left: 56px;    top: 57px;     }   /* 2塁審（遊撃寄り） */
 
 /* 内野のライン。正方形を45度回して菱形にし、4隅を4つの塁にちょうど合わせる。
    ★**一辺は 45px**（対角の半分 = 22.5 × √2 = 31.8 ≒ 塁間の 32）。
@@ -832,21 +844,21 @@ input[type="file"] {
    ★**色は `--path`。人工芝では transparent になる**（2026-09-17）— 人工芝の球場に
      土の走路は無く、ベースの周りだけ土（`.dirt` の `--cut`）。 */
 .diamond .infield {
-    position: absolute; left: 41.5px; top: 55.5px; width: 45px; height: 45px;
+    position: absolute; left: 47.125px; top: 69.125px; width: 33.75px; height: 33.75px;
     transform: rotate(45deg);
-    border: 3px solid var(--path);
+    border: 2.25px solid var(--path);
 }
 /* 塁。★**白く塗る**（2026-09-17。それまで枠だけで中は透明だった）。
    実物のベースは白いキャンバスで、土の上でも芝の上でもいちばん目立つ。
    ★**一辺は 6px**（12px → 8px → 6px と下げた）。実物の塁は 45.7cm で塁間 27.43m の
      1.7% ＝ この絵では 0.5px なので**どのみち記号**だが、12px は対角が 17px あって
-     **塁間 32px の 53% を塁が占めて**いた。6px なら対角 8.5px ＝ **26%**（8px ＝ 35% でもまだ大きいと言われた）。
+     **塁間の 53% を塁が占めて**いた。いまは 4.5px ＝ 対角 6.4px で**塁間 33.9px の 19%**（2026-09-17 に内野ごと 0.75倍）。
    ★**45度に回すのは正しい。** 実物のベースは**辺がラインと塁間の方向に沿う**ので、
      真上から見ると角が上下左右を向く。
-   ★**走者（9px）より小さい。** 走者が乗ると白が緑に隠れるが、それで
+   ★**走者（6.75px）より小さい。** 走者が乗ると白が緑に隠れるが、それで
      「塁にいる」は読める（空の塁が見えることだけが要件）。 */
 .diamond .b {
-    position: absolute; width: 6px; height: 6px;
+    position: absolute; width: 4.5px; height: 4.5px;
     transform: rotate(45deg);
     border: 0;
     background: var(--base);
@@ -855,9 +867,9 @@ input[type="file"] {
    走者・送球の終点・`mv-*` の keyframes が全部この点を基準にしている。
    ★**1塁・3塁がフェア側に収まって見えるのは、ベースを動かしたからではなく
      ファウルラインを 3px 外へ出したから**（上記 `.foul`）。 */
-.diamond .b2 { top: 43px; left: 61px; }
-.diamond .b3 { top: 75px; left: 29px; }
-.diamond .b1 { top: 75px; left: 93px; }
+.diamond .b2 { top: 59.75px; left: 61.75px; }
+.diamond .b3 { top: 83.75px; left: 37.75px; }
+.diamond .b1 { top: 83.75px; left: 85.75px; }
 /* 本塁だけ形が違う。★**四角ではなく五角形。** 三つの塁は正方形だが、
    本塁は五角形で、**尖った側が捕手（バックネット）を向く** — この絵では下。
    投手を向く辺が平ら（ホームベースの前縁）で、そこから両脇が下がって一点に集まる。
@@ -875,26 +887,26 @@ input[type="file"] {
    ★**(64,110) は動かさない** — 打球の出発点と人物の位置がここを基準にしている。
      五角形はそこを内側に含んだまま、頂点だけ後ろへ下がる。 */
 .diamond .bh {
-    top: 106.24px; left: 60px; width: 8px; height: 8px;
+    top: 107.18px; left: 61px; width: 6px; height: 6px;
     transform: none;
     border: 0;
     background: var(--base);
     clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* 走者。★**9px**（2026-09-17。14px → 11px → 9px と下げた）。塁（対角 8.5px）と
+/* 走者。★**6.75px**（2026-09-17。14px → 11px → 9px → 内野ごと 0.75倍）。塁（対角 6.4px）と
    ほぼ同じで、下の白が縁から覗く。**大きすぎると内野が丸で埋まる**と実機で2度言われた。 */
 .diamond .r {
-    position: absolute; width: 9px; height: 9px;
+    position: absolute; width: 6.75px; height: 6.75px;
     border-radius: 50%;
     background: var(--accent);
     box-shadow: 0 0 0 1.5px rgba(0, 0, 0, .45);   /* ★地面がどの色でも縁が立つ（前はパネル色だった） */
 }
 /* ★中心は塁と同じ（1塁 (96,78) / 2塁 (64,46) / 3塁 (32,78)）。大きさを変えたら
    `top` / `left` も半分だけ動かすこと（`mv-*` は差分なので触らなくてよい）。 */
-.diamond .r1 { top: 73.5px; left: 91.5px; }
-.diamond .r2 { top: 41.5px; left: 59.5px; }
-.diamond .r3 { top: 73.5px; left: 27.5px; }
+.diamond .r1 { top: 82.625px; left: 84.625px; }
+.diamond .r2 { top: 58.625px; left: 60.625px; }
+.diamond .r3 { top: 82.625px; left: 36.625px; }
 
 /* 走者のリード（2026-09-16。薬味）。塁から**次の塁の方向へ 4px** だけ離れて構える。
    ★**モデルは何も言っていないが、矛盾もしない。** リードは投球の前に必ず取るもので、
@@ -908,9 +920,9 @@ input[type="file"] {
      の `from`（＝出てくる方向）の**符号を反転したもの**で、二重の真実になりうる。
      ずれていないことはブラウザで測って確かめる（リードの向き × 動きの向き > 0）。 */
 .diamond .r { --lx: 0px; --ly: 0px; }               /* ★既定は 0 ＝ 動かない（付け忘れても壊れない） */
-.diamond .r1 { --lx: -4px; --ly: -4px; }            /* 1塁走者 → 2塁 */
-.diamond .r2 { --lx: -4px; --ly:  4px; }            /* 2塁走者 → 3塁 */
-.diamond .r3 { --lx:  4px; --ly:  4px; }            /* 3塁走者 → 本塁 */
+.diamond .r1 { --lx: -3px; --ly: -3px; }            /* 1塁走者 → 2塁 */
+.diamond .r2 { --lx: -3px; --ly:  3px; }            /* 2塁走者 → 3塁 */
+.diamond .r3 { --lx:  3px; --ly:  3px; }            /* 3塁走者 → 本塁 */
 .diamond .r.ld {
     animation-name: lead; animation-duration: .55s;
     animation-timing-function: cubic-bezier(.3, .7, .3, 1);
@@ -939,21 +951,21 @@ input[type="file"] {
 .diamond .mv-0-2 { animation-name: run02; animation-duration: .60s; }   /* 1塁 → 3塁 */
 .diamond .mv-3-2 { animation-name: run32; animation-duration: .76s; }   /* 打者 → 3塁（三塁打） */
 
-@keyframes run30 { from { transform: translate(-32px,  32px); } }
-@keyframes run01 { from { transform: translate( 32px,  32px); } }
-@keyframes run12 { from { transform: translate( 32px, -32px); } }
+@keyframes run30 { from { transform: translate(-24px,  24px); } }
+@keyframes run01 { from { transform: translate( 24px,  24px); } }
+@keyframes run12 { from { transform: translate( 24px, -24px); } }
 @keyframes run31 {
-    from { transform: translate(  0px,  64px); }   /* 本塁 */
-    50%  { transform: translate( 32px,  32px); }   /* 1塁 */
+    from { transform: translate(  0px,  48px); }   /* 本塁 */
+    50%  { transform: translate( 24px,  24px); }   /* 1塁 */
 }
 @keyframes run02 {
-    from { transform: translate( 64px,   0px); }   /* 1塁 */
-    50%  { transform: translate( 32px, -32px); }   /* 2塁 */
+    from { transform: translate( 48px,   0px); }   /* 1塁 */
+    50%  { transform: translate( 24px, -24px); }   /* 2塁 */
 }
 @keyframes run32 {
-    from { transform: translate( 32px,  32px); }   /* 本塁 */
-    33%  { transform: translate( 64px,   0px); }   /* 1塁 */
-    66%  { transform: translate( 32px, -32px); }   /* 2塁 */
+    from { transform: translate( 24px,  24px); }   /* 本塁 */
+    33%  { transform: translate( 48px,   0px); }   /* 1塁 */
+    66%  { transform: translate( 24px, -24px); }   /* 2塁 */
 }
 
 /* 入った点。★**どの塁から還ったかは出さない** — 走者が消えた理由が「生還」か
@@ -985,10 +997,10 @@ input[type="file"] {
      40節で 147件ある。**描かないのが正解** — モデルが持っていない。 */
 .diamond .ball, .diamond .spot { --dp: 1; }
 
-.diamond .to-3b { --tx: -26px; --ty: -38px; }
-.diamond .to-ss { --tx: -16px; --ty: -52px; }
-.diamond .to-2b { --tx:  16px; --ty: -52px; }
-.diamond .to-1b { --tx:  26px; --ty: -38px; }
+.diamond .to-3b { --tx: -19.5px; --ty: -28.5px; }
+.diamond .to-ss { --tx: -12px;   --ty: -39px;   }
+.diamond .to-2b { --tx:  12px;   --ty: -39px;   }
+.diamond .to-1b { --tx:  19.5px; --ty: -28.5px; }
 /* 外野手の定位置。★**フェンスと同じ楕円の上に乗せる。**
    横を `a/90`、縦を `b/90` で伸縮させると、**フェンスに対する相対位置が変わらない**
    （旧フェンス 90px の円に対して3人とも 91% だった。楕円は線形写像なので比が保たれる）。
@@ -1030,8 +1042,8 @@ input[type="file"] {
 /* 【送球の行き先】本塁 (64,110) からの差。
    ★**塁の位置は `.b1` / `.b2` / `.bh` が正。** ここはそこから導いた差で、
      ずれていないことは「**送球の終点が塁の中心に重なるか**」で測れる（実測すること）。 */
-.diamond { --b1x: 32px; --b1y: -32px;     /* 1塁 (96,78)  */
-           --b2x:  0px; --b2y: -64px;     /* 2塁 (64,46)  */
+.diamond { --b1x: 24px; --b1y: -24px;     /* 1塁 (88,86)  */
+           --b2x:  0px; --b2y: -48px;     /* 2塁 (64,62)  */
            --bhx:  0px; --bhy:   0px; }   /* 本塁 (64,110) */
 .diamond .tb-1b { --bx: var(--b1x); --by: var(--b1y); }
 .diamond .tb-2b { --bx: var(--b2x); --by: var(--b2y); }
@@ -1039,7 +1051,7 @@ input[type="file"] {
 .diamond .tb-dp { --bx: var(--b1x); --by: var(--b1y); }   /* 二塁を経由して一塁 */
 /* ★捕手には打球が飛んでこないが、**座標の表を1つに保つ**ためにここへ置く
    （段階6で「捕手からの送球」を描くときに要る）。本塁 (64,110) のすぐ後ろ。 */
-.diamond .to-c  { --tx:   0px; --ty:   8px; }
+.diamond .to-c  { --tx:   0px; --ty:   6px; }
 
 /* ---- 野手（段階5） ----
    ★**位置は打球の飛び先と同じ `--fx` / `--fy`。** 本塁に置いて transform で動かすので、
@@ -1248,7 +1260,7 @@ input[type="file"] {
    ★**振り終わりの向きを `transform` にも書くこと。** `animation` を切ったとき
      （動きを減らす設定）に戻る先で、書かないと `rotate(0)` ＝ 画面の右を向いて
      **利き腕が読めなくなる**。利き腕は動きではなく情報。 */
-.diamond .fig.pit { left: 60px; top: 72px; }
+.diamond .fig.pit { left: 60.1px; top: 80.9px; }
 .diamond .fig.pit .arm { transform: rotate(-235deg); animation: armThrow .20s ease-in both; }
 .diamond .fig.pit.lh .arm { transform: rotate(55deg); animation-name: armThrowL; }
 @keyframes armThrow  { from { transform: rotate(-145deg); } to { transform: rotate(-235deg); } }  /* 右投げ＝画面の左側で振る */
@@ -1257,8 +1269,8 @@ input[type="file"] {
 /* 打者は本塁 (64,110) の脇。★**打席の側に立たせること** — `Bats` は持っている値なので、
    左打者を右打席に置くと**モデルが否定していることを描く**ことになる。
    ★体は**縦長**（5×7）＝ 本塁のほうを向いている。 */
-.diamond .fig.bat { left: 51px; top: 107px; width: 5px; height: 7px; }
-.diamond .fig.bat.lh { left: 72px; }
+.diamond .fig.bat { left: 53.6px; top: 106.9px; width: 5px; height: 7px; }
+.diamond .fig.bat.lh { left: 69.4px; }
 
 /* 構えたまま（見送り・采配パネル）。**動かさない。** */
 .diamond .fig.bat .stick { transform: rotate(-115deg); }
