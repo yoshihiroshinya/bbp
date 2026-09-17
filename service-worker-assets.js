@@ -1,9 +1,9 @@
 self.assetsManifest = {
-  "version": "EH+NXFCb",
+  "version": "1IvywLmK",
   "assets": [
     {
-      "hash": "sha256-5mixPVd+qffFTfaFhGTRFlthlZd14sryDSRXPX1sOEk=",
-      "url": "_framework/BBP.Web.mt3fm0w4hx.wasm"
+      "hash": "sha256-KSoZJxnPyZ7XwNEakeKZMZ0rUAuvfua4NNHxjIcp5Pg=",
+      "url": "_framework/BBP.Web.br04trfqlh.wasm"
     },
     {
       "hash": "sha256-tsf9I/McCCsCufx/RGc4pk8ajUd3bpTSS71bpZsCJJE=",
@@ -166,10 +166,6 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.w3qd1tpl0e.js"
     },
     {
-      "hash": "sha256-4RW9X2DYAsUJdBvHsyQBygk/sjK+n8tIBYs0EgRyjJs=",
-      "url": "_framework/dotnet.lfjmezdc7b.js"
-    },
-    {
       "hash": "sha256-hYigRhIZKHyCXxXWqL/yR3ZWzZhV2oSi+2N3/UPeoxk=",
       "url": "_framework/dotnet.native.nxw7lo0lh5.wasm"
     },
@@ -180,6 +176,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
       "url": "_framework/dotnet.runtime.zbexyp8zrs.js"
+    },
+    {
+      "hash": "sha256-6HLGPj3TSSAq/Zsp5VcN9l7ZG1RWEINzpkrYXMz6ykw=",
+      "url": "_framework/dotnet.waidxhj82q.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -206,7 +206,7 @@ self.assetsManifest = {
       "url": "bbpStorage.js"
     },
     {
-      "hash": "sha256-pwFtaNYIZIgFbxSBvpVb59S4U57UsppLKtHOnxJJGwY=",
+      "hash": "sha256-o+BoC9KnkPHXuPtN3qkcBEZPAFMqyKspg2g0XYtPA0A=",
       "url": "css/app.css"
     },
     {
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "data/LeagueStandings.json"
     },
     {
-      "hash": "sha256-xaVu8MygjuRM4gz5J3eCaxGRRndBkEclNDcd68Op2PE=",
+      "hash": "sha256-CoRqQxnGBp3WLheGLtW4g9aEv/p57bW5r4heBE2SMYM=",
       "url": "data/Stadiums.json"
     },
     {
@@ -258,7 +258,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-tsBCNCDjQfeDwSwO/NaSA7NX4f8gbUFrVksBNSQC0Gk=",
+      "hash": "sha256-0zuwpnMKa0J3XaPe4JM0Bu4MNcNM7SFrAkKNfCS3j0s=",
       "url": "index.html"
     },
     {
