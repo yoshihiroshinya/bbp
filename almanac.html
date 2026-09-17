@@ -526,8 +526,9 @@
 
       <div class="note">
         <b>同じ距離でもフェンスが高いほど不利です。</b>高さ5mの横浜スタジアムは、
-        距離94mでも必要距離は98.0m。距離95mの甲子園（高さ3.2m）は97.6mで、
+        距離94.2mでも必要距離は98.2m。距離95mの甲子園（高さ3.0m）は97.4mで、
         <b>距離が長いのに本塁打は出やすい</b>という逆転が起きます。
+        なお<b>マツダスタジアムだけ左翼101m・右翼100m</b>と左右が違います（この先の道具は右翼で計算しています）。
       </div>
 
       <h3>打球の種類はゴロ率が決めます</h3>
@@ -1222,13 +1223,13 @@
   (function () {
     // Stadiums.json の実データ。必要距離 = 距離 + フェンス高 × 0.8
     var PARKS = [
-      { n: '甲子園球場',   corner: 95,   center: 118, h: 3.2, dome: false },
-      { n: '横浜スタジアム', corner: 94,   center: 118, h: 5.0, dome: false },
-      { n: '坊っちゃんスタジアム', corner: 99.1, center: 122, h: 2.5, dome: false },
-      { n: '野球場F',      corner: 100,  center: 122, h: 3.5, dome: false },
-      { n: '野球場E',      corner: 101,  center: 122, h: 2.6, dome: false },
-      { n: '東京ドーム',    corner: 100,  center: 122, h: 4.0, dome: true },
-      { n: 'ドーム球場D',   corner: 100,  center: 122, h: 4.8, dome: true }
+      { n: '甲子園球場',   corner: 95,   center: 118,   h: 3.0,  dome: false },
+      { n: '横浜スタジアム', corner: 94.2, center: 117.7, h: 5.0,  dome: false },
+      { n: '神宮球場',      corner: 97.5, center: 120,   h: 3.3,  dome: false },
+      { n: 'マツダスタジアム', corner: 100,  center: 122,   h: 2.5,  dome: false },
+      { n: 'バンテリンドーム ナゴヤ', corner: 100, center: 122, h: 3.6, dome: true },
+      { n: '坊っちゃんスタジアム', corner: 99.1, center: 122,   h: 4.9,  dome: false },
+      { n: '東京ドーム',    corner: 100,  center: 122,   h: 4.24, dome: true }
     ];
     var sPow = document.getElementById('s_pow'), vPow = document.getElementById('v_pow');
     var sStf = document.getElementById('s_stf2'), vStf = document.getElementById('v_stf2');
