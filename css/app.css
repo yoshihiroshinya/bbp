@@ -302,6 +302,25 @@ input[type="file"] {
 /* 盤面以外は縮ませない（問いの文と選択肢は読めなくなると困る）。 */
 .tactics-sheet > *:not(.t-board) { flex: 0 0 auto; }
 
+/* 【球場タブの並び】絵 → 直前のプレー → 回・得点・アウト（→ その下が「次へ」）。
+   2026-09-17。実機で「目の動きの順に上から並べたほうが疲れない」と言われた。
+
+   ★**マークアップは1つのまま。** `.t-mid.zoom` を `display: contents` で**箱だけ消す**と、
+     中の `.t-now` と `.dia-wrap` が `.t-board` の直接の子になり、
+     `order` で `.t-last` と混ぜて並べられる。**写しを作らずに順番だけ変えられる**
+     （子の親が違うままだと `order` では混ぜられない）。
+   ★**`.t-mid.zoom` の箱が消えるので、あれが持っていた上下の区切り線と余白も消える。**
+     代わりに `.t-board.zoom` の `gap` で間隔を取る。
+   ★**`.t-mid.zoom .t-now` などの指定はそのまま効く**（子孫セレクタなので、
+     `.t-mid` の箱が無くなっても一致する）。
+   ★**盤面タブは 1px も変えない** — `.t-board` に `zoom` が付かない。 */
+.t-board.zoom { display: flex; flex-direction: column; gap: .45rem; }
+.t-board.zoom .t-mid.zoom { display: contents; }
+.t-board.zoom .t-tabs   { order: 0; }
+.t-board.zoom .dia-wrap { order: 1; align-self: center; }
+.t-board.zoom .t-last   { order: 2; margin-top: 0; }   /* gap で取るので二重に空けない */
+.t-board.zoom .t-now    { order: 3; align-self: center; }
+
 .line { border-collapse: collapse; font-size: .78rem; font-variant-numeric: tabular-nums; }
 .line th, .line td {
     padding: .15rem .34rem;
@@ -333,11 +352,18 @@ input[type="file"] {
 
 /* 直前のプレー。★観戦では「いま起きたプレー」、采配では「1つ前の打席」。
    このパネルの主役なので、プレー一覧（.pl）より大きく出す。 */
+/* ★**中身は中央寄せ**（2026-09-17。実機で「枠の中が左寄り」と指摘された）。
+   盤面タブと球場タブで同じ枠を使っているので、**ここ1箇所で両方が直る**。
+   ★**左の 3px の帯を打ち消すこと。** あれは「得点が入ったプレー」の印
+   （`.t-last.scored` が色を付ける）で、片側だけだと**中心が 1.5px 右へずれる**。
+   透明の右枠を同じ幅だけ足して左右対称にする（帯の見た目は変わらない）。 */
 .t-last {
     margin-top: .5rem;
     padding: .4rem .55rem;
-    border-left: 3px solid transparent;
+    border-left:  3px solid transparent;
+    border-right: 3px solid transparent;
     background: #0f171d;
+    text-align: center;
 }
 .t-last-h { font-size: .72rem; color: var(--muted); }
 .t-last-w { margin-left: .5rem; }
@@ -346,7 +372,8 @@ input[type="file"] {
 /* 決着したカウント。**丸は下の B-S-O と同じ `.d` を使い回す**（写しを作らない）。
    ★**この枠の中に置くこと。** 下の行のアウトとは時点が違う（あちらは
      「次の打者が立つ場面」、こちらは「終わった打席」）。 */
-.t-last-c { display: flex; align-items: center; gap: .2rem; margin-top: .15rem; }
+/* ★`text-align` は flex の中身には効かないので、丸の行だけ別に中央へ寄せる。 */
+.t-last-c { display: flex; align-items: center; justify-content: center; gap: .2rem; margin-top: .15rem; }
 .t-last-c .c-l { color: var(--muted); font-size: .68rem; }
 .t-last-c .c-l.s { margin-left: .35rem; }   /* B の3個と S の2個を目で分ける */
 .t-last.k-hit .t-last-t { color: var(--accent); }
@@ -361,7 +388,10 @@ input[type="file"] {
     /* ★**3列にしてダイヤモンドを真ん中の列に置く。** 左に回・アウトを置くだけだと
        flex の中央寄せでは**ダイヤモンドが右へずれる**（右の列が空いたため）。
        右の `1fr` は空のまま — 絵の中心を盤面の中心に通すための場所。 */
-    display: grid; grid-template-columns: 1fr auto 1fr;
+    /* ★**`minmax(0, 1fr)` にすること。** ただの `1fr` は `minmax(auto, 1fr)` なので、
+       左の列の中身が広いと**左だけ太ってダイヤモンドが右へずれる**
+       （得点行を入れたとき実測で 25.45px ずれた）。0 を下限にすると左右が必ず等しくなる。 */
+    display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center; gap: 1.1rem;
     margin-top: .5rem; padding: .4rem 0;
     border-top: 1px solid var(--line);
@@ -398,6 +428,17 @@ input[type="file"] {
 .t-count .d.out.on,    .t-last-c .d.out.on    { background: var(--danger); border-color: var(--danger); }
 .t-inn { color: var(--muted); font-size: .78rem; white-space: nowrap; }
 
+/* 得点（回とアウトのあいだ）。2026-09-17。
+   ★**盤面タブでは縦の列の中**なので、球団名が長いと左の列が太って
+     `.t-mid` の `1fr auto 1fr` が 128px のダイヤモンドを押し出す。
+     だから**球団名だけ縮ませる**（`min-width: 0` ＋ 省略記号）。点差は縮ませない。
+   ★**攻撃中の側を太字に。** 「球場」タブにはスコアボードが無いので、
+     攻撃中の行を示す `▶` の代わりがここしかない。 */
+.t-score { display: flex; align-items: baseline; gap: .3rem; min-width: 0; font-size: .72rem; }
+.t-sc-n { color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t-sc-n.atk { color: var(--fg); font-weight: 700; }
+.t-sc-v { color: var(--fg); font-weight: 700; flex: 0 0 auto; white-space: nowrap; }
+
 /* 打者・投手。★**左＝後攻・右＝先攻でチーム固定**（攻撃側で入れ替えない）。
    スコアボードの ▶ と左右が対応して読める。守備側は薄くする —
    采配で読みたいのは攻撃側なので、同じ濃さだとどちらを見るのか迷う。 */
@@ -419,9 +460,65 @@ input[type="file"] {
 /* 左右の札（`右投` / `左打`）。★**名前と競らせない** — 太字にせず薄くする。
    ★`(右)` と書かないこと（選手名の `(左)` は左翼＝守備位置と読める）。 */
 .t-p-h { font-size: .68rem; color: var(--muted); margin-left: .3rem; white-space: nowrap; }
-.t-p-d { font-size: .72rem; color: var(--muted); }
+/* ---- 成績の行（2026-09-18。実機の「もう少し分かりやすく」）----
+
+   ★★**ラベルと数値を分けて出す。** 直す前は `.t-p-d` に
+     `打率 .284　3本　12点 ／ 今日 1打数0安打` という**1本の文字列**が入っていたので、
+     全体を .72rem の薄い字で出すしかなく、**数値だけ大きくできなかった**。
+     いまはラベルを .62rem の薄い字、数値を .95rem の太字にしてある。
+   ★**数値は等幅（`tabular-nums`）にすること。** 打率は毎プレー変わるので、
+     字幅が動くと行全体がガタつく。
+   ★**`flex-wrap: wrap` を外さないこと。** 列の幅は 360px 幅で約 165px しかなく、
+     投手の `防御率 2.45 / 回 5.1 / 球 78` は 149px でぎりぎり。
+     球数が3桁になったら折り返して逃げる（潰れさせない）。 */
+.t-st {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    column-gap: .5rem; row-gap: .1rem; margin-top: .15rem;
+}
+.t-st-i { display: inline-flex; align-items: baseline; gap: .15rem; white-space: nowrap; }
+.t-st-k { font-size: .62rem; color: var(--muted); }
+/* ★色を指定しないこと。`.t-side.atk`（緑）と `.t-side.def`（薄い既定色）を
+   そのまま継ぐので、攻守の区別が自動で付く。 */
+.t-st-v { font-size: .95rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+/* 「今日 3打数1安打」。成績より一段落として添える。 */
+.t-p-sub { font-size: .66rem; color: var(--muted); margin-top: .1rem; }
 .t-p-r { font-size: .72rem; margin-top: .2rem; }
-.t-side.atk .t-p-d, .t-side.atk .t-p-r { color: var(--accent); }
+.t-side.atk .t-p-r { color: var(--accent); }
+
+/* 名前のタップ（能力のポップアップ）。★**ボタンは font も color も継がない**ので
+   明示すること。継がせないと 360px でここだけ別の書体になる。
+   ★点線の下線を付ける — 押せることが分からないと誰もタップしない。 */
+button.t-p-n {
+    appearance: none; -webkit-appearance: none;
+    background: none; border: 0; padding: 0;
+    font-family: inherit; font-size: inherit; line-height: inherit;
+    color: inherit; cursor: pointer;
+    border-bottom: 1px dotted currentColor;
+}
+
+/* ---- 走者のミニダイヤ（2026-09-18。実機の要望）----
+
+   【なぜ要るか】1倍の盤面では走者は **6.75px の点**で、内野を 0.75倍にしてから
+   「どの塁にいるか」が読み取りにくくなっていた。スコアボードのベース表示と同じ形を
+   回・アウトの下に置く。**上が2塁・左が3塁・右が1塁**（絵のダイヤモンドと同じ向き）。
+
+   ★★**幅を 48.8px より太らせないこと。** ここは横一列の左の列で、太ると
+     **ダイヤモンドの中心が右へずれる**（得点に球団名を入れて 25.45px ずれたのと同じ）。
+     箱は 34px にしてある。**ラベル（`走`）を付けると 15.75px 増えて溢れる**ので付けない。
+   ★**高さも増やさない。** 左の列は 回19 ＋ 得点17 ＋ O16 ＋ これ26 ＋ 余白 ≒ 92px で、
+     ダイヤモンド 120px より低い ＝ **横一列の高さ 134px は変わらない**。
+   ★**四角は 10px（対角 14.1px）。** 箱 34×26 に3つとも収まる
+     （2塁 y 0.4〜14.6 / 1塁・3塁 y 10.9〜25.1）。大きくすると箱からはみ出す。 */
+.t-bases { position: relative; width: 34px; height: 26px; flex: 0 0 auto; }
+.t-bases .bsq {
+    position: absolute; width: 10px; height: 10px;
+    transform: rotate(45deg);
+    border: 1px solid var(--line);
+}
+.t-bases .bsq.on { background: var(--accent); border-color: var(--accent); }
+.t-bases .q2 { left: 12px; top: 2.5px; }
+.t-bases .q3 { left: 3px;  top: 13px; }
+.t-bases .q1 { left: 21px; top: 13px; }
 
 /* ---- 走者の図 ----
    上が2塁・左が3塁・右が1塁・下が本塁。画像を使わずに正方形を45度回す。
@@ -461,9 +558,24 @@ input[type="file"] {
                             `.t-board` に横スクロールが出る。見える円弧は箱の左右端
                             ぴったり（-0.3〜128.3px）なので、切っても 0.3px しか失わない。 */
     width:  calc(128px * var(--z));
-    height: calc(120px * var(--z));
+    height: calc(120px * var(--z) - var(--crop, 0px));
     flex: 0 0 auto;
 }
+/* ★**上の黒い帯（外野スタンドより外）だけを削る**（2026-09-17。実機の要望）。
+   得点の行を2行にしたぶんを、絵を上へずらして取り返す。
+
+   ★★**削ってよいのは 5.4px まで**（1倍）。スタンドの上端は `110 − (中堅×0.80 + 7)` で、
+     **一番深い 122m の球場で 5.40px** しかない（118m なら 8.6px）。
+     **採用は 4px** — 5px にすると余白が **0.40px** しか残らず、
+     **中堅が 123m の球場を足した瞬間に弧のてっぺんが切れる**。1.4px は残す。
+   ★**`--crop` は「見た目の px」。** `.diamond` は `transform: scale` なので
+     レイアウト上は 120px のまま。**負の `margin-top` は拡大後の量で効く**ので、
+     1倍で 4px 削るには `4px × --z` を指定する。
+   ★**1倍の「盤面」タブでは削らない**（`--crop` の既定は 0px）。あちらは
+     絵が小さく、黒い帯も 5px しかないので削る意味が無い。
+   ★**測るときの原点が変わる。** 絵の左上が `.dia-wrap` の左上と一致しなくなるので、
+     座標の検査は **`.diamond` の矩形**を基準にすること（`.dia-wrap` だと 12px ずれる）。 */
+.dia-wrap .diamond { margin-top: calc(var(--crop, 0px) * -1); }
 .dia-wrap .diamond { transform: scale(var(--z)); transform-origin: top left; }
 
 /* 「球場」タブ（`Tab == 3`）。**スコアボードと打者・投手を出さず**、絵に場所を譲る。
@@ -471,9 +583,25 @@ input[type="file"] {
      375px の盤面（内側 約343px）からはみ出す。
    ★**「直前のプレー」は残す。** 観戦でいちばん読まれる行で、消すと何が起きたか分からない。
    ★**2.4倍**: 128×120 → 307×288。375px でも 360px でも横スクロールが出ない上限。 */
-.t-mid.zoom { grid-template-columns: 1fr; justify-items: center; gap: .5rem; }
-.t-mid.zoom .t-now { flex-direction: row; align-items: center; gap: .9rem; justify-self: center; }
-.t-mid.zoom .dia-wrap { --z: 2.4; }
+/* ★**ここも `minmax(0, 1fr)`。** ただの `1fr` は `minmax(auto, 1fr)` なので、
+   中に `white-space: nowrap` があると**列が中身の幅まで勝手に広がる**。
+   実測（2026-09-17）: `坊っちゃんスタジアム（地方）` で球場名が 207px になり、
+   得点を足した `.t-now` が **440px** → 列も 440px → `.t-mid`（330px）からあふれ、
+   **ダイヤモンドが 55px 右へずれた**。0 を下限にすると `.t-park-n` の省略記号が効く。 */
+.t-mid.zoom { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: .5rem; }
+/* ★**2行に折り返してよい**（2026-09-17。実機で「球団名が見切れる」と言われた）。
+   回 ＋ 得点 ＋ O ＋ 球場名 を1行に詰めると、球場名に残るのが 97px しかなく、
+   **バンテリンドーム ナゴヤ（124px）と坊っちゃんスタジアム（地方）（154px）が切れていた**。
+   折り返せば 2行目に球場名が丸ごと入る（154px < 330px）。
+   ★**`row-gap` を `gap` と同じにしないこと。** `.9rem`（13.5px）だと2行で 51.5px になり、
+     絵の上を削った 12px では足りない。行間は `.15rem` に絞る。
+   ★**増えたぶんは `--crop` で取り返す**（`.dia-wrap` の注記）。 */
+.t-mid.zoom .t-now {
+    flex-direction: row; align-items: center; justify-self: center;
+    column-gap: .9rem; row-gap: .15rem; flex-wrap: wrap; justify-content: center;
+    min-width: 0; max-width: 100%;      /* ★これが無いと中の nowrap が押し広げる */
+}
+.t-mid.zoom .dia-wrap { --z: 2.4; --crop: calc(4px * var(--z)); }   /* 1倍で 4px ぶん上を削る */
 
 /* 球場と風（段階9 の配管。2026-09-16）。**「球場」タブの `.t-now` の中**に出す。
    ★**別の行にしないこと。** `.t-mid.zoom` では `.t-now` が横一列になるので、
@@ -1122,6 +1250,25 @@ input[type="file"] {
      アウト・セーフの結果とは無関係（「送球があったか」は描いていない）。
    ★**行き先は送球と同じ `--b2x` / `--b2y`。** 二塁の座標を2箇所に書かない。
    ★**0.45s。** 「自動・速い」の 1200ms に収まる。 */
+/* 一塁手が**自分で一塁ベースを踏む**ゴロアウト（2026-09-17。実機の要望）。
+   直す前は**送球が無いので球が一塁手のところで止まり、光るだけ**で、
+   どうアウトになったのかが絵から読めなかった。
+
+   ★**`.got` と1本にまとめること。** どちらも `transform` を動かすので、
+     別々の animation にすると後勝ちで片方が消える。光り（scale）と
+     ベースへの移動を同じ keyframes に書く。
+   ★**`animation-delay` は `.fd.got` の `var(--catch)` をそのまま使う**
+     （球が届いてから動き出す）。ここでは名前と長さだけを指定する。
+   ★**行き先は送球と同じ `--b1x` / `--b1y`。** 一塁の座標を2箇所に書かない。
+   ★**投手ゴロは存在しない**ので、踏むのは一塁手だけ
+     （`DetermineBallDirection` は一・二・三・遊・左・中・右の7つしか返さない）。 */
+.diamond .fd.got.step { animation-name: fdStep; animation-duration: .50s; }
+@keyframes fdStep {
+    0%   { transform: translate(var(--fx), var(--fy)) scale(1); }
+    30%  { transform: translate(var(--fx), var(--fy)) scale(2.2); }
+    100% { transform: translate(var(--b1x), var(--b1y)) scale(1.3); }
+}
+
 .diamond .fd.cov { animation: fdCover .45s ease-out both; }
 @keyframes fdCover {
     from { transform: translate(var(--fx), var(--fy)); }
@@ -1301,7 +1448,12 @@ input[type="file"] {
      （動きを減らす設定）に戻る先で、書かないと `rotate(0)` ＝ 画面の右を向いて
      **利き腕が読めなくなる**。利き腕は動きではなく情報。 */
 .diamond .fig.pit { left: 60.1px; top: 80.9px; }
-.diamond .fig.pit .arm { transform: rotate(-235deg); animation: armThrow .20s ease-in both; }
+/* ★腕はバットより短くする（9px → 6px。2026-09-18 に実機で「長い」と言われた）。
+   体は 7×5 なので、中心から生やす 6px は体の外へ 2.5px 出る。
+   ★バット（`.stick` 9px）を一緒に縮めないこと — バットは腕より長いのが正しく、
+     同じ長さにすると「投手がバットを持っている」ように見える。
+   ★回転の角度（keyframes）は長さを読まないので、利き腕の向きはそのまま。 */
+.diamond .fig.pit .arm { width: 6px; transform: rotate(-235deg); animation: armThrow .20s ease-in both; }
 .diamond .fig.pit.lh .arm { transform: rotate(55deg); animation-name: armThrowL; }
 @keyframes armThrow  { from { transform: rotate(-145deg); } to { transform: rotate(-235deg); } }  /* 右投げ＝画面の左側で振る */
 @keyframes armThrowL { from { transform: rotate(-35deg); }  to { transform: rotate(55deg); }   }  /* 左投げ＝画面の右側で振る */
@@ -1422,6 +1574,9 @@ input[type="file"] {
     .diamond .fd.got { animation: none; transform: translate(var(--fx), var(--fy)) scale(1.3); }
     /* ★カバーは**二塁に着いたところで止める** — 「誰が入ったか」は動きではなく情報。 */
     .diamond .fd.cov { animation: none; transform: translate(var(--b2x), var(--b2y)); }
+    /* ★一塁ベースを踏んだところで止める。「どうアウトになったか」は動きではなく情報。
+       ★`.fd.got` より後ろに置くこと（詳細度は (0,3,0) で勝つが、順番も揃えておく）。 */
+    .diamond .fd.got.step { animation: none; transform: translate(var(--b1x), var(--b1y)) scale(1.3); }
     /* 送球は**動きそのもの**なので走らせない。ただし**球を行き先へ置いたまま残す** —
        「どこへ投げてアウトにしたか」は動きではなく情報。 */
     .diamond .thr { animation: none; transform: translate(var(--bx), var(--by)) scale(.8); opacity: 1; }
@@ -1540,6 +1695,82 @@ input[type="file"] {
     box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
     padding: .8rem 1rem 1rem;
 }
+
+/* ---- 選手の詳細（盤面の名前をタップすると出る。2026-09-18）----
+
+   【なぜ要るか】盤面に出せるのは3〜4項目までで、ミート・パワー以外の能力
+   （選球眼・チャンス・守備・球種）が**試合中どこからも読めなかった**。
+
+   ★★**横に長く並べないこと**（そう指示された）。能力は**1行に1つ、縦に積む**。
+     横に並べると 360px では必ず横スクロールになるし、数字だけ並べても大小が読めない。
+     **棒を添える**と「74 と 61 のどちらが上か」を読まずに分かる。
+   ★**横スクロールを出さないこと。** `.pc-b` は4列の固定グリッドで、
+     360px のとき ラベル84 ＋ 数値31.5 ＋ 素36 ＋ 余白15.75 ＝ 167px を引いた
+     **166px が棒**。`minmax(0, 1fr)` にしてあるので中身で広がらない
+     （`1fr` は `minmax(auto, 1fr)` ＝ 中身の幅まで広がる、を毎回踏んでいる）。
+   ★**ラベルの列は 5.6rem（84px）。** 一番長い球種名
+     `ナックルカーブ` / `チェンジアップ`（7文字 ＝ .72rem で約76px）が入る幅。
+     4.6rem にすると球種名だけ溢れる。
+   ★**高さは `max-height` で切って中で縦にスクロールさせる。** 打者は能力8本＋状態4＋
+     成績8項目あるので、画面に収める唯一の方法。**横だけは絶対に出さない。**
+
+   ★★**`z-index` は采配シート(10)・確認シート(11) より前**にすること。
+     采配の最中に開くので、後ろに回ると選択肢の下に隠れて「押しても出ない」に見える。
+   ★**背景（`.pc-back`）を必ず置く。** 外側をタップして閉じられないと、
+     采配の選択肢が背後にあるぶん**閉じようとして誤って答えてしまう**。 */
+.pc-back { position: fixed; inset: 0; z-index: 12; background: rgba(0, 0, 0, .55); }
+.pc {
+    position: fixed;
+    left: 0; right: 0;
+    bottom: calc(var(--nav-h) + env(safe-area-inset-bottom));   /* 下タブの上 */
+    z-index: 13;
+    max-height: 78dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #16261f;
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .5);
+    padding: .7rem .9rem 1rem;
+}
+.pc-head { display: flex; align-items: flex-start; gap: .5rem; }
+.pc-ttl { flex: 1 1 auto; min-width: 0; }
+.pc-name { font-size: 1.05rem; font-weight: 700; overflow-wrap: anywhere; }
+.pc-sub { font-size: .72rem; color: var(--muted); margin-top: .1rem; }
+.pc-x {
+    flex: 0 0 auto;
+    appearance: none; -webkit-appearance: none;
+    font-family: inherit; font-size: .72rem;
+    color: var(--muted); background: #0f171d;
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: .3rem .6rem; cursor: pointer;
+}
+.pc-traits { margin-top: .35rem; font-size: .72rem; color: var(--accent); }
+.pc-h {
+    margin: .7rem 0 .25rem; padding-bottom: .15rem;
+    font-size: .68rem; color: var(--muted);
+    border-bottom: 1px solid var(--line);
+}
+/* ★**「質」は強さではなく投げる頻度の重み**（`SelectPitch` は質に比例して選ぶ）。
+   見出しに書いておかないと、能力の棒と同じ意味に読まれる。 */
+.pc-h-n { font-size: .62rem; opacity: .8; margin-left: .3rem; }
+.pc-b {
+    display: grid;
+    grid-template-columns: 5.6rem minmax(0, 1fr) 2.1rem 2.4rem;
+    align-items: center; gap: .35rem;
+    padding: .13rem 0;
+}
+.pc-b-k { font-size: .72rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pc-b-t { height: 7px; border-radius: 4px; background: #0f171d; overflow: hidden; }
+.pc-b-f { display: block; height: 100%; border-radius: 4px; background: var(--accent); }
+/* 球種は能力と別の色。同じ緑だと「質85 のフォーク」が能力85 と並んで見える。 */
+.pc-b-f.pit { background: #ffd479; }
+.pc-b-v { font-size: 1rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+/* 素の値。★**補正後と違うときだけ出す**（いつも出すと同じ数字が2つ並ぶ）。 */
+.pc-b-r { font-size: .62rem; color: var(--muted); text-align: right; white-space: nowrap; }
+.pc-kv { display: flex; flex-wrap: wrap; gap: .25rem .9rem; }
+.pc-kv-i { display: inline-flex; align-items: baseline; gap: .25rem; white-space: nowrap; }
+.pc-k { font-size: .66rem; color: var(--muted); }
+.pc-v { font-size: .86rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .p-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .6rem; margin-bottom: .5rem; }
 .p-head .btn { flex: 0 0 auto; }
 .p-name { font-weight: 700; color: var(--accent); margin-right: .5rem; }
