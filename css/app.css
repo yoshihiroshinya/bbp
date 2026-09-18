@@ -1848,3 +1848,40 @@ button.t-p-n {
    奪い合って、どちらも中途半端な幅で折り返す。`.pl` の `flex-wrap` と組で、
    1行に収まらなければ**球種だけ次の行へ**落ちる。 */
 .pl-pitch { flex: 0 0 auto; margin-left: auto; }
+
+/* ---- 実機の要望4件（2026-09-18 の2回目）------------------------------------
+
+   1. 名簿（オーダー／ベンチ）の名前もタップで能力を出す
+   2. 「結果の文には出ないのに起きたこと」（本塁補殺）を画面へ出す
+
+   ★**規則をここへ足したのは、隣に置くと `.t-p-n` / `.pl-pitch` の近くが
+     いっそう読みにくくなるから。** 上の該当箇所からは名前で辿れる。 */
+
+/* 名簿の名前ボタン。★**`button.t-p-n` を使い回さないこと** — あちらには
+   `.t-p-n { font-weight: 700 }` が一緒に付いてくるので、打順表の
+   「いま打席に立っている人だけ太字」（`.t-ord td.now .o-nm`）が効かなくなる。
+   ★**`font-weight` をここで指定しないこと。** 指定すると `button.nm-tap`（0,1,1）が
+   `.t-bn-n`（0,1,0）に勝ってしまい、ベンチ表の名前が細くなる。
+   ★**ボタンは font も color も継がない**ので、family / size / line-height は明示する。
+   ★点線の下線を付ける — 押せることが分からないと誰もタップしない。 */
+button.nm-tap {
+    appearance: none; -webkit-appearance: none;
+    background: none; border: 0; padding: 0;
+    font-family: inherit; font-size: inherit; line-height: inherit;
+    color: inherit; text-align: left; cursor: pointer;
+    border-bottom: 1px dotted currentColor;
+}
+
+/* 「直前のプレー」の枠の中の追記（`2塁走者・X 本塁でタッチアウト`）。
+   ★**結果の文（`.t-last-t`）より小さく薄く。** 主役は打撃結果のほう。
+   ★**枠の中に置くこと** — 外へ出すと「いつの話か」が読めなくなる
+     （采配パネルでは1つ前の打席の話になる）。 */
+.t-last-n { font-size: .76rem; color: var(--accent); overflow-wrap: anywhere; }
+
+/* 「プレー」タブの同じ追記。★**`.pl` の中（flex の行）へ入れないこと** —
+   `.pl-pitch` で一度やって、本文（`.pl-what`）が 27px まで潰れた。 */
+.pl-note {
+    font-size: .76rem; color: var(--muted);
+    margin: -.1rem 0 .25rem 2.9rem;
+    overflow-wrap: anywhere;
+}
