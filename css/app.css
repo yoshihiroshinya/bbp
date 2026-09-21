@@ -331,7 +331,12 @@ input[type="file"] {
 .line thead th { color: var(--muted); font-weight: 500; font-size: .7rem; }
 .line thead th.now { color: var(--accent); }
 .line .tname { text-align: left; font-weight: 500; padding-right: .5rem; }
-.line .rhe { border-left: 1px solid var(--line); font-weight: 700; }
+/* R・H・E の3列。★**左右の余白を回の列より詰めてある**（.34rem → .22rem）。
+   H を足したら **12回（`GameState.MaxInnings`）の表が 360px で 6px はみ出した**
+   （`.scroll-x` が横スクロールで吸収するが、延長のたびに指でなぞることになる）。
+   3列 × 左右で 10.8px 戻るので収まる。★**回の列の余白は詰めないこと** —
+   あちらは9〜12個あるので、詰めると表全体の印象が変わる。 */
+.line .rhe { border-left: 1px solid var(--line); font-weight: 700; padding-left: .22rem; padding-right: .22rem; }
 /* 攻撃中のチームを1行だけ強調する。どちらの回かが一目で分かる */
 .line tr.atbat .tname { color: var(--accent); }
 .line tr.atbat .tname::before { content: "▶ "; }
@@ -779,13 +784,19 @@ button.t-p-n {
      **1つでも忘れると、そこだけ縞が切れる。**
    ★**人工芝では `--mow` が transparent** なので、同じ規則のまま縞が消える。
      ★屋根の有無（`IsDomed`）ではない — 横浜・神宮は屋外だが人工芝（2026-09-17）。 */
-/* 人工芝の球場は、この3つが天然芝と違う（2026-09-17。実際の球場に合わせた）。
+/* 人工芝の球場が天然芝と違うのは**2つだけ**（2026-09-21 に直した）。
    ★**刈り跡が無い**（`--mow`）… 刈るものが無いので当然。
-   ★**塁間が芝**（`--path`）… 人工芝の球場に土の走路は無い。
-   ★**ベースの周りだけ土**（`--cut`）… スライディングエリア。
-   規則を3本に分けず、**色の変数を差し替えるだけ**にしてあるので図形は1組で済む。 */
-.diamond      { --path: var(--dirt); --cut: transparent; }
-.diamond.art  { --mow: transparent; --path: transparent; --cut: var(--dirt); }
+   ★**内野の土の面が無い**（`.skin`。Razor 側で出し分け）… 天然芝の内野は全面が土だが、
+     人工芝の球場は**塁の内側が芝**で、そこが一番大きな違いになる。
+
+   ★★**塁間の走路は人工芝の球場にもある**（`--path`）。**2026-09-17 はここを取り違えて
+     `transparent` にしていた** — 「人工芝なのだから土は無い」という理屈で書いたが、
+     実際の球場を見ると**塁と塁を結ぶ土の帯はある**（無いのは塁の内側の面のほう）。
+     直した結果、人工芝と天然芝の差は「内野の内側が芝か土か」に集約された。
+   ★**`--cut`（ベースの周りだけ四角く土）は消した。** 走路が土になったので、
+     その上に同じ色の丸を重ねても何も見えない ＝ 効かない指定になる。 */
+.diamond      { --path: var(--dirt); }
+.diamond.art  { --mow: transparent; }
 
 /* ---- 観客席とファウルグラウンド（2026-09-17）----
 
@@ -846,19 +857,16 @@ button.t-p-n {
 
 /* 土の丸。**1要素にまとめて radial-gradient を重ねる**。
    ★**要素を足さないこと** — ダイヤモンドの中の要素は停止のたびに作り直される。
-   ・マウンドと本塁の周り … どの球場にもある
-   ・1塁・2塁・3塁の周り（`--cut`）… **人工芝の球場だけ**。実際の人工芝球場は
-     塁間が芝で、**ベースの周りだけ四角く土**（スライディングエリア）になっている。
+   ・マウンドと本塁の周り … **どの球場にもある**（人工芝でもここは土）。
    ★**天然芝では `.skin` が上に乗るので見えない**（描く順が `.dirt` → `.skin`）。
-     それでよい — 天然芝の内野は全面が土で、丸を分ける意味がない。 */
+     それでよい — 天然芝の内野は全面が土で、丸を分ける意味がない。
+   ★**塁の周りの丸（`--cut`）は 2026-09-21 に消した。** 塁間の走路を土に戻したので、
+     同じ色の丸を重ねても何も見えない（上記 `.diamond.art`）。 */
 .diamond .dirt {
     position: absolute; inset: 0;
     background:
         radial-gradient(circle 5.25px at 64px 86px,  var(--dirt) 98%, transparent 100%),
-        radial-gradient(circle 6.75px at 64px 110px, var(--dirt) 98%, transparent 100%),
-        radial-gradient(circle 6px at 88px 86px,  var(--cut)  98%, transparent 100%),
-        radial-gradient(circle 6px at 64px 62px,  var(--cut)  98%, transparent 100%),
-        radial-gradient(circle 6px at 40px 86px,  var(--cut)  98%, transparent 100%);
+        radial-gradient(circle 6.75px at 64px 110px, var(--dirt) 98%, transparent 100%);
 }
 
 /* ファウルライン。**本塁の後ろの頂点**から1塁・3塁の**外側の辺**を通ってフェンスの端
@@ -881,6 +889,36 @@ button.t-p-n {
 }
 .diamond .foul.fl { height: calc(var(--fl) - 2.25px); transform: rotate(135deg)  translateX(1.75px);  }  /* 左（3塁側）。+x がファウル側 */
 .diamond .foul.fr { height: calc(var(--fr) - 2.25px); transform: rotate(-135deg) translateX(-2.75px); }  /* 右（1塁側）。−x がファウル側 */
+
+/* 一塁線・三塁線の**ファウル側**の土（2026-09-21。実機でマツダについて指摘された）。
+
+   走路の土は**ラインでぴたりと止まらない**。参考にした画を分類すると、白線は
+   土の帯の**中**にあり、帯の全幅は約4m（ラインの外側に約2m）だった。
+   直す前は `.infield` の枠（2.25px）が `box-sizing: border-box` で**内側にだけ**太っており、
+   土がフェア側で切れていた。
+
+   ★**`.foul` とまったく同じ作り**（原点 (64,110)・同じ回転）にする。座標を別に持たない —
+     持つと「線と帯がずれている球場」を作れてしまう。
+   ★★**帯は菱形の縁（ずらし 0）から始めること。** 白線の外側（2.75px）から始めると、
+     **`.infield` の枠（内側へ 2.25px）と白線のあいだに 1.75px の芝が残る** —
+     走路が線の手前で一度切れて見える。実測で見つけた（`elementFromPoint` の断面が
+     `IIIIIddWDDD` ＝ 枠・芝・芝・白線・帯 になっていた）。
+     幅に 2.75px を足して**白線の下をくぐらせる**。白線は後から描くので土の上に乗る。
+   ★**長さは塁間の 1.5倍**（33.94px ＝ 本塁〜1塁・3塁）。参考の画でも帯は
+     ベースの少し先まで伸びて、そこで切れていた。**フェンスまで引かないこと** —
+     外野のファウル地域は芝で、引くと嘘になる。
+   ★**幅は球場ごと**（`--fd10` ＝ m の10倍）。内野の縮尺は塁間 33.94px ÷ 27.43m
+     ＝ **1.2374 px/m** なので、`m × 10` に 0.12374px を掛けて戻す。
+     ★**外野の `--pxpm`（0.80）ではない。** 盤面は内野と外野で縮尺が違う。
+   ★**`--dirt` を使う**（走路と同じ色）。帯は走路の続きなので、別の色にしない。 */
+.diamond .fdirt {
+    position: absolute; left: 64px; top: 110px;
+    width: calc(2.75px + var(--fd10, 0) * .12374px);   /* 2.75px ＝ 菱形の縁から白線の外端まで */
+    height: calc(33.94px * 1.5);
+    background: var(--dirt); transform-origin: 0 0;
+}
+.diamond .fdirt.fl { transform: rotate(135deg);  }                                                    /* 左（3塁側）。+x がファウル側 */
+.diamond .fdirt.fr { transform: rotate(-135deg) translateX(calc(-2.75px - var(--fd10, 0) * .12374px)); }  /* 右（1塁側）は −x がファウル側 */
 
 /* 打席（バッターボックス。2026-09-17）。**実際の球場に引いてある白線**なので、
    モデルが黙っていることを補うのではなく**そこにあるものを描いている**。
@@ -981,8 +1019,8 @@ button.t-p-n {
    ★**枠を太い土色にして「塁間の土」を出す**（段階10）。専用の図形を足さない。
      1px の線のままだと内野が芝のままになり、NPB の球場と食い違う。
      `box-sizing: border-box` なので**枠は内側へ太る** ＝ 4隅と塁の対応は変わらない。
-   ★**色は `--path`。人工芝では transparent になる**（2026-09-17）— 人工芝の球場に
-     土の走路は無く、ベースの周りだけ土（`.dirt` の `--cut`）。 */
+   ★**色は `--path`。全球場で土**（2026-09-21 に直した）— 人工芝の球場にも塁間の走路はある。
+     2026-09-17 はここを `transparent` にしていたが、取り違えだった（上記 `.diamond.art`）。 */
 .diamond .infield {
     position: absolute; left: 47.125px; top: 69.125px; width: 33.75px; height: 33.75px;
     transform: rotate(45deg);
@@ -1956,3 +1994,204 @@ button.nm-tap {
 }
 .diamond .bn { left: 2px;  max-width: 56px; color: var(--accent); }
 .diamond .pn { right: 2px; max-width: 36px; color: #cfe0d8; text-align: right; }
+
+/* ---- 「球場」タブの斜め俯瞰（段階15）------------------------------------
+
+   ★★**ここに px を書かないこと。** 遠近は CSS では計算できないので、座標は
+     `Web/ParkView.cs` の射影が**唯一の持ち主**になる。C# が要素ごとに
+     `--ax/--ay/--as`（始点）・`--bx/--by/--bs`（中間）を出し、CSS は
+     **keyframes の形と時間だけ**を持つ。
+   ★**真上盤面（`.diamond`）の規則には一切触らない。** あちらは 128×120 の別の絵。 */
+.pv { display: block; width: 100%; height: auto; }
+.pv text { fill: var(--muted); font-family: inherit; }
+
+/* 3点の動き（始点 → 中間 → 終点）。終点に描いた要素を、始点から動かして戻す。
+   ★**中間を書くこと。** 書かないと走者が塁を飛ばし、併殺の送球が二塁を通らない。 */
+@keyframes pvMove {
+    0%   { transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); }
+    50%  { transform: translate(var(--bx), var(--by)) scale(var(--bs, 1)); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+.pv .pv-mv, .pv .pv-ball, .pv .pv-thr, .pv .pv-lead, .pv .pv-walk {
+    animation: pvMove var(--dur) var(--dl, 0s) linear both;
+    /* ★★**SVG の `transform-origin` の既定は viewBox の原点（左上）。**
+         `scale()` を使う以上これを書かないと、縮んだぶんだけ要素が左上へ引き寄せられて
+         **画面の外から飛んでくる**。`.pv-spot` にだけ書いてあって、動く4つが漏れていた
+         （実機で「打球も走者も画面外から出てくる」と報告された）。
+       ★`translate` の px は user unit のままなので、C# 側の差分は 1つも変えなくてよい。 */
+    transform-box: fill-box; transform-origin: center;
+}
+.pv .pv-mv { animation-timing-function: ease-out; }
+
+/* 捕った野手の光り。★球が届くまで待たせる（`--dl` ＝ 球の待ち .12s ＋ 弾道の長さ）。 */
+@keyframes pvGot { 0% { opacity: 1; } 35% { opacity: .45; } 100% { opacity: 1; } }
+.pv .pv-got { animation: pvGot .34s var(--dl, 0s) ease-out both; }
+
+/* 打球が止まったところの印と、入った点。どちらも遅れて出す。 */
+@keyframes pvPop { 0% { opacity: 0; transform: scale(.3); } 100% { opacity: 1; transform: none; } }
+.pv .pv-spot { animation: pvPop .2s var(--dl, 0s) ease-out both; transform-box: fill-box; transform-origin: center; }
+@keyframes pvRun { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 1; } }
+.pv .pv-run { animation: pvRun .9s ease-out both; }
+
+/* 札。★下地を敷くこと — 地面はわざと暗くしてあるので、直に置くと沈む。 */
+.pv .pv-nm { fill: var(--accent); paint-order: stroke; stroke: rgba(9, 14, 18, .85); stroke-width: 2.2; }
+.pv .pv-chip { fill: #cfe0d8; paint-order: stroke; stroke: rgba(9, 14, 18, .8); stroke-width: 2.2; font-weight: 700; }
+.pv .pv-chip.atk { fill: var(--accent); }
+
+/* ★動きを減らす設定では**位置は正しいまま動きだけ消す**。
+   どこへ飛んで誰が捕り、どこへ投げたかは**動きではなく情報**なので残す。 */
+@media (prefers-reduced-motion: reduce) {
+    .pv .pv-mv, .pv .pv-ball, .pv .pv-thr, .pv .pv-got, .pv .pv-spot, .pv .pv-run { animation: none; }
+}
+
+/* ★入れ物は `.dia-wrap`（128×120 × --z ＝ 307×288）のままだと縦が 80px 余る。
+   斜め俯瞰は 330×208 なので、**幅いっぱい・高さは比で決める**に差し替える。
+   ★ここが段階15 の狙いどおり**盤面を 80px 低くする**ところ
+     （sticky の盤面が縮むぶん采配の選択肢が増える）。 */
+.dia-wrap.pv-wrap {
+    width: 100%; max-width: 330px; height: auto;
+    margin: 0 auto; overflow: hidden;
+}
+
+/* 薬味3つと本塁打の光り（段階15-4）。
+   ★★**動きを減らす設定では3つとも消す。** 段階1〜7 では「動きではなく情報」だから
+     残すものが多かったが、**薬味は3つとも情報ではない** —
+     打球が出たことは球そのものが伝えており（残像・閃き）、
+     走者の正しい位置は塁の上（リード）。 */
+.pv .pv-lead { animation-timing-function: ease-out; }
+.pv .pv-trail { }                                  /* 位置と時間は --ax… で来る（pv-ball と同じ規則） */
+
+@keyframes pvCrack { 0% { r: 1; opacity: .9; } 100% { r: 7; opacity: 0; } }
+.pv .pv-crack { animation: pvCrack .22s var(--dl, .34s) ease-out both; opacity: 0; }
+
+/* ★本塁打は**色を残して動きだけ消す** — 越えたかどうかは動きではなく情報。 */
+@keyframes pvHr { 0% { opacity: 0; } 25% { opacity: .55; } 100% { opacity: .18; } }
+.pv .pv-hr { animation: pvHr 1s ease-out both; opacity: .18; }
+
+@media (prefers-reduced-motion: reduce) {
+    .pv .pv-lead, .pv .pv-trail, .pv .pv-crack { animation: none; }
+    .pv .pv-trail, .pv .pv-crack { display: none; }   /* 重複なので出さない */
+    .pv .pv-hr { animation: none; opacity: .18; }     /* 色は残す */
+}
+
+/* ★★投球・打撃・打席へ入る動き（2026-09-21。実機で「投手が投げていない」と指摘された）。
+   ★★**ポーズは C# が焼き込んでいる**（腕・脚・バットの角度）ので、`Phase` を 0 のまま
+     置くと**1枚絵で止まる**。動かすには CSS で関節を回すしかない。
+   ★**支点は C# が `transform-origin` に px で出す**（肩・手の位置）。
+     `transform` 属性の `rotate(deg cx cy)` は焼き込んだ初期の姿勢で、
+     CSS の `rotate` はそこへ**同じ支点で合成される**（個別変形は transform より先に当たる）。
+   ★**振り幅は `--sw`。** 左打者は `dir = -1` で符号が反転するので、C# が向きごと渡す。 */
+@keyframes pvArm { 0% { rotate: 0deg; } 100% { rotate: var(--sw, 0deg); } }
+/* ★★**打者が打席へ入り終えてから**（`TWalk` = .12s）。実機で「打者が打席へ入る前から
+     投球が始まっている」と指摘された。**腕・スイング・投げた球の3つとも .12s 以降**にする。 */
+.pv .pv-arm { animation: pvArm .18s .12s ease-in both; }
+
+/* ★★スイングは「等速で回す」と**ぎこちない**（実機で指摘された）。直したのは3つ。
+   ① **テイクバックを入れる。** いきなり前へ出ると機械が回っているように見える。
+      28% まで **逆へ 10%** 引いてから出す。
+   ② **接触の手前で加速する。** 40% で 18%、50%（接触）で 60.2% ＝
+      **後ろ 1/4 の時間に半分を振る**。等速だと「押している」ように見える。
+   ③ **振り抜きは減速する。** 50% 以降は 60.2% → 100% を倍の時間で。
+   ★**長さは .36s、開始は .12s**（接触は **50% ＝ .30s** ＝ `TBall`）。
+     .30s より短くすると ①〜③ を入れる余地が無く、テイクバックが見えなくなる。
+   ★★**開始を `TWalk`（.12s）より早めないこと** — 打席へ入り終える前に振り始める。
+   ★★**接触の位置（`.602`）は姿勢の差そのもの**（構え −128° → 接触 −10° → 振り抜き +68°）。
+     ここを動かすとバットの当たる角度が嘘になる。**変えてよいのは時刻の割り振りだけ。**
+   ★★**`--dl` と必ず揃えること** — 接触（50% ＝ .12 + .18 = .30s）と球の出る時刻が
+     ずれると、当たる前に球が飛ぶ。 */
+@keyframes pvBat {
+    0%   { rotate: 0deg; }
+    28%  { rotate: calc(var(--sw, 0deg) * -.10); }   /* テイクバック */
+    40%  { rotate: calc(var(--sw, 0deg) * .18); }
+    50%  { rotate: calc(var(--sw, 0deg) * .602); }   /* ★接触（= --dl） */
+    70%  { rotate: calc(var(--sw, 0deg) * .86); }
+    100% { rotate: var(--sw, 0deg); }
+}
+.pv .pv-bat { animation: pvBat .36s .12s linear both; }
+
+/* ★★**腕と体も一緒に回すこと。** バットだけ回すと**棒が体のまわりを回る**だけで、
+     これが「ぎこちない」の正体だった。腕は肩を支点に、体は足元を支点に、
+     **同じ keyframes を振り幅だけ変えて**当てる（形が揃うので自然に見える）。
+   ★振り幅は C# が `--sw` で渡す（腕 56°・体 20°。左打者は符号が反転する）。 */
+.pv .pv-swa, .pv .pv-swb { animation: pvBat .36s .12s linear both; }
+
+/* ★★**投げた球そのものを描く**（2026-09-21）。腕だけ振っても「投げた」とは読めない
+     （実機の指摘の本体はここだった）。★到達は `TBall` ＝ バットの接触と同じ瞬間。
+   ★消えるのも同じ瞬間。残すと**打球と2つ並ぶ**。 */
+@keyframes pvGone { 0%, 88% { opacity: 1; } 100% { opacity: 0; } }
+.pv .pv-pit {
+    animation: pvMove var(--dur) var(--dl, 0s) linear both,
+               pvGone var(--dur) var(--dl, 0s) linear both;
+    transform-box: fill-box; transform-origin: center;
+}
+
+/* 打席へ歩いて入る。★薄いところから寄ってくるので「出てきた」と読める。 */
+@keyframes pvWalk {
+    0%   { transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); opacity: .15; }
+    60%  { opacity: 1; }
+    100% { transform: none; opacity: 1; }
+}
+.pv .pv-walk { animation: pvWalk var(--dur, .24s) linear both; }
+
+/* ★4点の動き（打者 → 1塁 → 2塁 → 3塁）。三塁打だけ使う。
+   ★3点で済ませると 1塁から3塁へ内野を突っ切る（走者の `mv-0-2` と同じ話）。 */
+@keyframes pvMove4 {
+    0%   { transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); }
+    33%  { transform: translate(var(--bx), var(--by)) scale(var(--bs, 1)); }
+    66%  { transform: translate(var(--cx), var(--cy)) scale(var(--cs, 1)); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+.pv .pv-mv4 {
+    animation: pvMove4 var(--dur) var(--dl, 0s) ease-out both;
+    transform-box: fill-box; transform-origin: center;
+}
+
+/* 転がり（段階20）。落ちた点から止まる点へ。
+   ★★**遅延のあいだは見えないこと。** `both` は遅延中に 0% のフレームを当てるので、
+     0% に `opacity: 0` を置き、1% で 1 に上げる。こうしないと**落ちる前から
+     止まる点に球が置いてあるように見える**（球が2つに見える原因になる）。 */
+@keyframes pvRoll {
+    0%   { opacity: 0; transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); }
+    1%   { opacity: 1; transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); }
+    50%  { transform: translate(var(--bx), var(--by)) scale(var(--bs, 1)); }
+    100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+.pv .pv-roll {
+    animation: pvRoll var(--dur) var(--dl, 0s) ease-out both;
+    transform-box: fill-box; transform-origin: center;
+}
+
+/* ★★**次の球へ渡したら消す**（段階20）。`--dl` の時刻で切るだけ（長さ .01s）。
+     転がりの手前の飛球と、併殺の1本目の送球に付ける。
+     **消さないと球が2つ並ぶ**（真上盤面で `ballGone` を重ねたのと同じ話）。 */
+@keyframes pvCut { 0% { opacity: 1; } 100% { opacity: 0; } }
+.pv .pv-cut { animation: pvCut .01s var(--dl, 0s) linear both; }
+
+/* ★動きを減らす設定では3つとも消す。**構えた姿勢のまま止まる**ので情報は落ちない。 */
+@media (prefers-reduced-motion: reduce) {
+    .pv .pv-arm, .pv .pv-bat, .pv .pv-swa, .pv .pv-swb, .pv .pv-walk, .pv .pv-mv4 { animation: none; }
+    .pv .pv-pit { display: none; }   /* 投げた球は打球と重複するので出さない */
+    /* ★**位置は情報なので残す。** 転がった先の球は濃いまま、手前の球（落ちた点・
+       併殺の二塁）は**薄く**して「そこを通った」だけを伝える。 */
+    .pv .pv-roll { animation: none; }
+    .pv .pv-cut { animation: none; opacity: .35; }
+}
+
+/* ★★斜め俯瞰の配色（段階16。2026-09-21 に明るくした）。
+   ★★**真上盤面（`.diamond`）の変数を書き換えないこと。** あちらは地面をわざと
+     暗くしてある — 走者・球・野手が 5〜7px の**点**なので、地面が主張すると点が
+     読めなくなる。斜め俯瞰は人物が 17px あるので同じ理由が当たらない。
+     **名前を `--pv-*` と分けてあるので盤面は 1px も動かない。**
+   ★**球場ごとの色（座席・壁・土・広告）はここに無い。** あれは `ParkView.Look` が
+     球場ID で引く — CSS の変数にすると球場ごとに切り替えられない。
+   ★`.pv` に置く（`.pv-wrap` ではない）。SVG の中で解決されればよい。 */
+.pv {
+    --pv-turf: #2d7a3e;      /* フェアとファウルの芝 */
+    --pv-turf2: #358c48;     /* 刈り跡（濃い側。opacity は球場ごと） */
+    --pv-base: #ffffff;      /* 塁・本塁・投手板 */
+    --pv-chalk: #ffffff;     /* 白線 */
+    --pv-sky: #0f2030;       /* 夜空 */
+    --pv-daysky: #8fbfe3;    /* 昼（坊っちゃんだけ） */
+    --pv-roof: #7f8a96;      /* ドームの屋根 */
+    --pv-standt: #525f6c;    /* スタンドの上端の線 */
+}
