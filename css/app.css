@@ -2025,7 +2025,7 @@ button.nm-tap {
 
 /* 捕った野手の光り。★球が届くまで待たせる（`--dl` ＝ 球の待ち .12s ＋ 弾道の長さ）。 */
 @keyframes pvGot { 0% { opacity: 1; } 35% { opacity: .45; } 100% { opacity: 1; } }
-.pv .pv-got { animation: pvGot .34s var(--dl, 0s) ease-out both; }
+.pv .pv-got { animation: pvGot var(--gd, .34s) var(--dl, 0s) ease-out both; }
 
 /* 打球が止まったところの印と、入った点。どちらも遅れて出す。 */
 @keyframes pvPop { 0% { opacity: 0; transform: scale(.3); } 100% { opacity: 1; transform: none; } }
@@ -2035,13 +2035,28 @@ button.nm-tap {
 
 /* 札。★下地を敷くこと — 地面はわざと暗くしてあるので、直に置くと沈む。 */
 .pv .pv-nm { fill: var(--accent); paint-order: stroke; stroke: rgba(9, 14, 18, .85); stroke-width: 2.2; }
-.pv .pv-chip { fill: #cfe0d8; paint-order: stroke; stroke: rgba(9, 14, 18, .8); stroke-width: 2.2; font-weight: 700; }
+.pv .pv-chip { fill: #eef5f1; stroke: none; font-weight: 700; }
 .pv .pv-chip.atk { fill: var(--accent); }
+/* ★2行目以降（成績）は一段小さく薄く。1行目（名前）と同じ濃さだと、
+   どこを読めばよいか分からなくなる。 */
+.pv .pv-chip.sub { font-weight: 600; opacity: .88; }
+/* ★★打者・投手の札は**背景の箱**の上に置く（2026-09-21。実機で「文字がはっきり
+   見えやすい色に」と言われた）。下の隅は席の点描と広告帯の上なので、
+   縁取り（`paint-order: stroke`）だけでは沈む。★箱があるので縁取りは外す
+   （二重にすると文字が太って読みにくい）。 */
+.pv .pv-chip-bg { fill: rgba(7, 12, 16, .84); stroke: rgba(255, 255, 255, .22); stroke-width: .5; }
+/* ★打者・投手が**入れ替わった停止だけ**、その札のある側から滑り込む。
+   ★`--sx` は札の幅ぶん（C# が出す）。`transform-box` は要らない（平行移動だけ）。 */
+@keyframes pvChipIn { 0% { transform: translateX(var(--sx, 0)); } 100% { transform: translateX(0); } }
+.pv .pv-chip-in { animation: pvChipIn .34s .04s cubic-bezier(.22, .8, .3, 1) both; }
 
 /* ★動きを減らす設定では**位置は正しいまま動きだけ消す**。
    どこへ飛んで誰が捕り、どこへ投げたかは**動きではなく情報**なので残す。 */
 @media (prefers-reduced-motion: reduce) {
     .pv .pv-mv, .pv .pv-ball, .pv .pv-thr, .pv .pv-got, .pv .pv-spot, .pv .pv-run { animation: none; }
+    /* ★札の滑り込みは**情報ではない**（誰が打席かは文字そのものが伝えている）ので消す。
+       薬味（残像・閃き・リード）と同じ扱い。 */
+    .pv .pv-chip-in { animation: none; }
 }
 
 /* ★入れ物は `.dia-wrap`（128×120 × --z ＝ 307×288）のままだと縦が 80px 余る。
