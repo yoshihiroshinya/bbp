@@ -1,9 +1,9 @@
 self.assetsManifest = {
-  "version": "neh3Aeeq",
+  "version": "Fofpb3m4",
   "assets": [
     {
-      "hash": "sha256-0ck2ThMoRllAzvZvs87pUjka2s3+G3Ja9RYnklcgAYQ=",
-      "url": "_framework/BBP.Web.hkn2m014he.wasm"
+      "hash": "sha256-n2/ayHMQ69qLdGlzDsa4lM3NQVRPTCtwsp8bBoVTewc=",
+      "url": "_framework/BBP.Web.xggwp3pt41.wasm"
     },
     {
       "hash": "sha256-3tQXiLd8S9r+hBucP/+PlhlwZQhPUXpiBQFba8YqAN8=",
@@ -166,10 +166,6 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.w3qd1tpl0e.js"
     },
     {
-      "hash": "sha256-Thns7uqKvOYc6w+qtpAV9kpRF1ITu9xJRVnn4Ynia2A=",
-      "url": "_framework/dotnet.iv6ufz076e.js"
-    },
-    {
       "hash": "sha256-hYigRhIZKHyCXxXWqL/yR3ZWzZhV2oSi+2N3/UPeoxk=",
       "url": "_framework/dotnet.native.nxw7lo0lh5.wasm"
     },
@@ -180,6 +176,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-MZMguyke9CroSQl+L/SHIGFkPTD+LtYGXkXjAvwWx40=",
       "url": "_framework/dotnet.runtime.zbexyp8zrs.js"
+    },
+    {
+      "hash": "sha256-d9qstvgeyFlIwSKTQSiaZLC6ebSuxxIkNsiWYcoNkaE=",
+      "url": "_framework/dotnet.v29qefohwi.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -194,7 +194,7 @@ self.assetsManifest = {
       "url": "_framework/icudt_no_CJK.lfu7j35m59.dat"
     },
     {
-      "hash": "sha256-minfbtinLXF0V5876F1PCKRmjZG1c0oJeJgQxOE+v+8=",
+      "hash": "sha256-CEUePoHrgA0l4e0WlZLAO2E7v5BLz6jC7uAPzoB8KhM=",
       "url": "almanac.html"
     },
     {
@@ -206,7 +206,7 @@ self.assetsManifest = {
       "url": "bbpStorage.js"
     },
     {
-      "hash": "sha256-CtHilZiFq2/0xM3iPNzdO7ZIz2CIInf5l/7GGUxMstY=",
+      "hash": "sha256-zebHA4TS6pKbi+2xbH3iv+8TV2rnCDNM84TIYMPHrIA=",
       "url": "css/app.css"
     },
     {
@@ -258,7 +258,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-CHDfjYmn0tOBVOriqhIqb5oAZwHNN1o2HhIYOmhGqNI=",
+      "hash": "sha256-PLpfwrKoDFAXIwJ5O2/Wg8Rma36ulkdGkGR7ZND8KyY=",
       "url": "index.html"
     },
     {

@@ -520,9 +520,18 @@
         打率を動かさずに長打だけを増減できる唯一の場所がここです。
       </p>
 
-      <div class="fx">飛距離 = 70 + (<b>パワー</b> × 1.1 + 乱数(−10〜+14) − <b>キレ</b> × 0.3) × 0.59 + 風</div>
-      <div class="fx">本塁打の必要距離 = <b>フェンス距離</b> + <b>フェンス高</b> × 0.8</div>
-      <div class="fx">二塁打 = 飛距離が「フェンス距離 − 26」を超えたとき</div>
+      <div class="fx">飛距離 = 77 + (<b>パワー</b> × 1.1 + 乱数(−28〜+32) − <b>キレ</b> × 0.3) × 0.59 + 風</div>
+      <div class="fx">本塁打の必要距離 = <b>その角度のフェンス距離</b> + <b>フェンス高</b> × 0.8</div>
+      <div class="fx">二塁打 = 飛距離が「その角度のフェンス距離 − 26」を超えたとき</div>
+
+      <div class="note">
+        <b>「レフト」「センター」「ライト」はそれぞれ 30度 の幅を持ちます。</b>（2026-09-22）
+        打球はその中のどこかへ飛び、<b>フェンスまでの距離はポール際がいちばん浅く、
+        左中間・右中間へ行くほど深くなります</b>（東京ドームなら ポール際100m / 左中間114m / 中堅122m）。
+        だから同じ「レフトへの当たり」でも、ポール寄りなら本塁打・左中間寄りなら二塁打になります。
+        <b>それまでは左翼＝ポールの距離・中堅＝最深部の距離で判定していた</b>ので、
+        両翼が易しすぎ、<b>中堅への本塁打は1シーズンに4本</b>しか出ませんでした（いまは約100本）。
+      </div>
 
       <div class="note">
         <b>同じ距離でもフェンスが高いほど不利です。</b>高さ5mの横浜スタジアムは、
@@ -543,7 +552,7 @@
     <!-- ══ 道具2 ══ -->
     <section id="sim2">
       <h2>飛距離の道具</h2>
-      <p class="sub">7球場の実データで、コーナー（左翼・右翼）へ運んだ場合を並べます</p>
+      <p class="sub">7球場の実データで、打球の角度を選んで並べます（0度＝中堅／45度＝ポール際）</p>
 
       <div class="tool">
         <p class="tool-h">この打者は、どこで本塁打になるか</p>
@@ -557,11 +566,15 @@
             <label for="s_stf2">投手・キレ <b id="v_stf2">60</b></label>
             <input type="range" id="s_stf2" min="20" max="99" value="60">
           </div>
+          <div class="dial">
+            <label for="s_deg">打球の角度 <b id="v_deg">40</b>度</label>
+            <input type="range" id="s_deg" min="0" max="45" value="40">
+          </div>
         </div>
         <dl class="out">
           <div><dt>平均飛距離</dt><dd id="o_dist">—<small>m</small></dd><div class="npb">乱数の中央</div></div>
           <div><dt>振れ幅</dt><dd id="o_range">—</dd><div class="npb">乱数の下限〜上限</div></div>
-          <div><dt>本塁打圏内</dt><dd id="o_hr">—<small>／7球場</small></dd><div class="npb">コーナーへの打球</div></div>
+          <div><dt>本塁打圏内</dt><dd id="o_hr">—<small>／7球場</small></dd><div class="npb">この角度への打球</div></div>
         </dl>
         <div class="parks" id="parks"></div>
       </div>
@@ -1233,27 +1246,36 @@
     ];
     var sPow = document.getElementById('s_pow'), vPow = document.getElementById('v_pow');
     var sStf = document.getElementById('s_stf2'), vStf = document.getElementById('v_stf2');
+    var sDeg = document.getElementById('s_deg'), vDeg = document.getElementById('v_deg');
     var oDist = document.getElementById('o_dist'), oRange = document.getElementById('o_range'), oHr = document.getElementById('o_hr');
     var box = document.getElementById('parks');
 
-    function dist(pow, stf, r) { return 70 + (pow * 1.1 + r - stf * 0.3) * 0.59; }
+    function dist(pow, stf, r) { return 77 + (pow * 1.1 + r - stf * 0.3) * 0.59; }
+
+    // その角度のフェンスまでの距離（Core の Stadium.FenceDistanceAt と同じ楕円）。
+    // 縦半径＝中堅、横半径は「45度の距離＝両翼」から逆算する。
+    function fenceAt(corner, center, deg) {
+      var a = corner * center / Math.sqrt(2 * center * center - corner * corner);
+      var t = deg * Math.PI / 180, s = Math.sin(t), c = Math.cos(t);
+      return 1 / Math.sqrt(s * s / (a * a) + c * c / (center * center));
+    }
 
     // 棒の伸びを見せるための表示上の上限（最長の必要距離より少し広く取る）
-    var SCALE_MIN = 88, SCALE_MAX = 110;
+    var SCALE_MIN = 85, SCALE_MAX = 130;
 
     function refresh() {
-      var pow = parseInt(sPow.value, 10), stf = parseInt(sStf.value, 10);
-      vPow.textContent = pow; vStf.textContent = stf;
+      var pow = parseInt(sPow.value, 10), stf = parseInt(sStf.value, 10), deg = parseInt(sDeg.value, 10);
+      vPow.textContent = pow; vStf.textContent = stf; vDeg.textContent = deg;
 
-      var mean = dist(pow, stf, 2);      // 乱数 −10〜+14 の中央は +2
-      var lo = dist(pow, stf, -10), hi = dist(pow, stf, 14);
+      var mean = dist(pow, stf, 2);        // 乱数 −28〜+32 の中央は +2
+      var lo = dist(pow, stf, -28), hi = dist(pow, stf, 32);
 
       oDist.innerHTML = mean.toFixed(1) + '<small>m</small>';
       oRange.innerHTML = lo.toFixed(0) + '〜' + hi.toFixed(0) + '<small>m</small>';
 
       var hrCount = 0, html = '';
       PARKS.forEach(function (p) {
-        var need = p.corner + p.h * 0.8;
+        var need = fenceAt(p.corner, p.center, deg) + p.h * 0.8;
         var over = mean > need;
         if (over) hrCount++;
         var w = clampPct((mean - SCALE_MIN) / (SCALE_MAX - SCALE_MIN) * 100);
@@ -1275,6 +1297,7 @@
 
     sPow.addEventListener('input', refresh);
     sStf.addEventListener('input', refresh);
+    sDeg.addEventListener('input', refresh);
     refresh();
   })();
 </script>
