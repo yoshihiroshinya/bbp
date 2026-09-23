@@ -1,9 +1,9 @@
 self.assetsManifest = {
-  "version": "WVOvUf9s",
+  "version": "vZ/grEUk",
   "assets": [
     {
-      "hash": "sha256-bgXGNQ5hJV6ChZ8WMlpXMVejsybF+9vHo9WkZcKw9uA=",
-      "url": "_framework/BBP.Web.auh1qore9m.wasm"
+      "hash": "sha256-ovZOn1bTAVRfKqyLxMXEio6HrP0s173kf1ir9Z85Odk=",
+      "url": "_framework/BBP.Web.u59tbmiwfo.wasm"
     },
     {
       "hash": "sha256-3tQXiLd8S9r+hBucP/+PlhlwZQhPUXpiBQFba8YqAN8=",
@@ -166,8 +166,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.w3qd1tpl0e.js"
     },
     {
-      "hash": "sha256-jbWdl8EpfFNAQ8OXjQgqoMIeZ3K4mMMxNoSLMoELiwU=",
-      "url": "_framework/dotnet.1jm62zpv3b.js"
+      "hash": "sha256-uXfWHf6duSokSEiDJw3xS41mqAc3W7hJlw8hG5uiBZA=",
+      "url": "_framework/dotnet.lpe5u0sws2.js"
     },
     {
       "hash": "sha256-hYigRhIZKHyCXxXWqL/yR3ZWzZhV2oSi+2N3/UPeoxk=",
@@ -218,7 +218,7 @@ self.assetsManifest = {
       "url": "data/LeagueStandings.json"
     },
     {
-      "hash": "sha256-9k5K7bb+wiu36VFJ9Xhso2+q+XmdMd2kR8oR8K1qK/8=",
+      "hash": "sha256-ZixW71GJG6tHiDH88QskRrs+7g9HPmwf1AL29a378Uo=",
       "url": "data/Stadiums.json"
     },
     {
@@ -258,7 +258,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-X8PT4zI6pFhbhy5hGG43xhSqS6N7Bie+Peja98+FrhM=",
+      "hash": "sha256-Vy98iAwJWVS1CP0Bu3oHjZ6yW/3XbHXFKWDpfCTvhgM=",
       "url": "index.html"
     },
     {
