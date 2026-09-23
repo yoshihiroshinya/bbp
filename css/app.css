@@ -1974,32 +1974,12 @@ button.nm-tap {
 .diamond .rn2 { top: 50px; left: 50%; transform: translateX(-50%); max-width: 40px; text-align: center; }
 .diamond .rn3 { top: 76px; left: 2px;  max-width: 38px; }
 
-/* 打者（次に打つ人）と投手の札（2026-09-19）。**上の隅に左右で並べる。**
-
-   ★★**どちらも「絵の中の人物」には付けられない。**
-     ・打者 … 本塁の figure は**いま終わったプレーの打者**で、`BatterName` は
-       2026-09-18 から**次に打つ人**＝**別人**。隣へ置くと嘘になる。
-       そもそも次の打者はまだフィールドにいないので、位置を持たない札が素直。
-     ・投手 … マウンドの figure は本人なので**意味の上では添えられる**が、
-       **置ける場所が本塁と塁を結ぶ通り道**（マウンドの下 y=94 に置いて実測したところ、
-       打球 22件・走者 28件・送球 2件が札の下を通った）。**動く物を隠すくらいなら
-       フィールドから出す。**
-   ★**左＝攻撃（`--accent`）／右＝守備（薄い白）。** 盤面タブの打者・投手の行と同じ色の
-     使い分けで、`打` / `投` の1文字を頭に付ける。
-   ★**上の隅はどの球場でも席。** 一番深い 122m でもスタンドの上端は y=5.4、
-     浅い球場なら 8.8 なので、地面の模様には載らない。
-   ★**幅は 56 / 36px。** `打 4番 Aスタメン4(一)` が 47.9px、`投 A中継ぎ3` が約 28px。
-     左右で 32px 空くので、長い名前でもぶつからない。 */
-.diamond .bn, .diamond .pn {
-    position: absolute; top: 4px;
-    font-size: .3rem; line-height: 1.15; font-weight: 700;
-    background: rgba(9, 14, 18, .72);
-    border-radius: 1.5px; padding: 0 1px;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    z-index: 4;
-}
-.diamond .bn { left: 2px;  max-width: 56px; color: var(--accent); }
-.diamond .pn { right: 2px; max-width: 36px; color: #cfe0d8; text-align: right; }
+/* ★打者・投手の札は**ここには無い**（2026-09-23 に消した）。
+   段階15 で「球場」タブが斜め俯瞰の SVG になり、`.diamond` は `ShownTab != 3` でしか
+   描かれないので、`ShownTab == 3` で包んでいた `.bn` / `.pn` は**到達しない枝**だった。
+   いまの札は `ParkView.ChipBox`（SVG の中・下の隅）。
+   ★**どちらも「絵の中の人物」には付けない**という判断はそのまま生きている —
+     打者は「次に打つ人」でフィールドにおらず、投手のまわりは本塁と塁を結ぶ通り道。 */
 
 /* ---- 「球場」タブの斜め俯瞰（段階15）------------------------------------
 
@@ -2041,11 +2021,11 @@ button.nm-tap {
 
 /* 札。★下地を敷くこと — 地面はわざと暗くしてあるので、直に置くと沈む。 */
 .pv .pv-nm { fill: var(--accent); paint-order: stroke; stroke: rgba(9, 14, 18, .85); stroke-width: 2.2; }
-.pv .pv-chip { fill: #eef5f1; stroke: none; font-weight: 700; }
-.pv .pv-chip.atk { fill: var(--accent); }
-/* ★2行目以降（成績）は一段小さく薄く。1行目（名前）と同じ濃さだと、
-   どこを読めばよいか分からなくなる。 */
-.pv .pv-chip.sub { font-weight: 600; opacity: .88; }
+/* ★★札の中身は**コマ（色の付いた小さな箱）を並べる**（2026-09-23。実機の絵のとおり）。
+   文字はどれも白で、**意味は箱の色が持つ** — ラベルと数値を色で分けると、
+   同じ幅でも「どこを読めばよいか」が一目で分かる。 */
+.pv .pv-chipt { fill: #ffffff; stroke: none; font-weight: 700; }
+.pv .pv-chipc { stroke: rgba(255, 255, 255, .34); stroke-width: .35; }
 /* ★★打者・投手の札は**背景の箱**の上に置く（2026-09-21。実機で「文字がはっきり
    見えやすい色に」と言われた）。下の隅は席の点描と広告帯の上なので、
    縁取り（`paint-order: stroke`）だけでは沈む。★箱があるので縁取りは外す
@@ -2255,4 +2235,15 @@ button.nm-tap {
     --pv-daysky: #8fbfe3;    /* 昼（坊っちゃんだけ） */
     --pv-roof: #7f8a96;      /* ドームの屋根 */
     --pv-standt: #525f6c;    /* スタンドの上端の線 */
+    /* 下端の札のコマ（2026-09-23。実機の絵に合わせた）。★どの球場でも同じ色なので
+       ここに置く（球場ごとに変わる色は `ParkView.Look`）。文字はどれも白。 */
+    --pv-chip-bh: #c8372c;   /* 打（打者の見出し） */
+    --pv-chip-bs: #a8442f;   /* 打順（9番） */
+    --pv-chip-bl: #d98a76;   /* 打者のラベル（打率・本・打点・今日） */
+    --pv-chip-ph: #2c7a35;   /* 投（投手の見出し） */
+    --pv-chip-ps: #6aa96e;   /* 役割（先発・中継ぎ・抑え） */
+    --pv-chip-pl: #9ac79c;   /* 投手のラベル（球数・防御率・回数・勝負SH） */
+    --pv-chip-nm: #4a4f55;   /* 選手名 */
+    --pv-chip-hn: #4a90e2;   /* 左右（左打・右投） */
+    --pv-chip-vl: #1a26c8;   /* 数値 */
 }
