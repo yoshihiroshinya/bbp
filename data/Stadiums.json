@@ -96,7 +96,7 @@
       "IsDomed": false,
       "IsArtificialTurf": false,
       "HasGrassInfield": false,
-      "FoulLineDirtM": 4.2,
+      "FoulLineDirtM": 0,
       "LeftDist": 99.1,
       "CenterDist": 122,
       "RightDist": 99.1,

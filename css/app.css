@@ -1967,6 +1967,51 @@ button.nm-tap {
 }
 .pv .pv-mv { animation-timing-function: ease-out; }
 
+/* ★★★**待っているあいだは走者を消す**（2026-09-26。実機で「打席でバッターが打つときに
+     バッターボックスに走者が重なって存在する」と指摘された）。
+   ★★`fill: both` は**遅延のあいだ 0% のフレームを当てる**ので、打者走者が
+     接触（0.30s）まで**打席に立ったまま**になり、打者と2人重なっていた。
+     `pvGone`（投げた球）・`pvRoll`（転がる球）で踏んだのとまったく同じ形で、**これで4回目**。
+   ★**長さに `--dl` を使う**（＝待ち時間そのもの）。`step-end` なので待ちのあいだ 0、
+     走り出した瞬間に 1 になり、`both` で以後 1 のまま。`--dl` が 0 なら最初から 1。
+   ★**`pv-mv` の中へ1枚入れる**（`transform` を動かす側とぶつけない）。 */
+@keyframes pvLate { 0% { opacity: 0; } 100% { opacity: 1; } }
+.pv .pv-late { animation: pvLate var(--dl, 0s) 0s step-end both; }
+
+/* ★★★**走者と、塁へ入る野手の脚と腕を振る**（2026-09-26。実機で「脚も動かしてほしい」）。
+   ★★**振り幅は「焼き込んだ角度の −2倍」**（`Joint` の `--sw`）。焼き込みは `RunPh`（片側の端）
+     なので、そこから反対の端まで振れば**歩幅が左右で揃う**。
+     ★**0% と 100% を 0 にしてあるので、止まった絵は焼き込んだ `RunPh` のまま** ——
+     動きを減らす設定でも段階34の A の形が残る（棒立ちに戻らない）。
+   ★★**長さは移動と同じ `--dur` / `--dl`**（`pv-mv` から継ぐ）。中で2往復 ＝ 4歩。
+     **別の長さにしないこと** —— 着いたあとも脚だけ動き続ける。
+   ★`rotate` は個別変形なので、焼き込んだ `transform="rotate(...)"` と**同じ支点で合成される**
+     （`pv-arm` とまったく同じ形）。 */
+/* ★★★**走りは「上下の踏み出し」も動かす**（2026-09-28。実機で「両足が左右に揺れている。
+     足は進行方向へ交互に踏み出しているはず」「走っているときに腕と胴体が離れている」）。
+   ★★**球審カメラでは進行方向が画面の上下に潰れる**ので、横へ回すと開閉するだけに見える。
+     `--lf` は**踏み出しの上下**（`Joint` の第6引数。焼き込みの −2倍 ＝ 反対の端まで）。
+   ★**`--lf` を書かない要素は `0px` に落ちる**ので、腕の回転だけを使う経路は 1px も変わらない。 */
+@keyframes pvStride { 0%, 50%, 100% { rotate: 0deg; translate: 0 0; }
+                      25%, 75% { rotate: var(--sw, 0deg); translate: 0 var(--lf, 0px); } }
+.pv .pv-rl, .pv .pv-ra { animation: pvStride var(--dur, .42s) var(--dl, 0s) ease-in-out both; }
+
+/* ★★★**滑り込む走者は「走る → 最後だけ滑る」の2枚**（2026-09-26。段階36）。
+     1枚にすると**塁を離れた瞬間から寝たまま滑って**行く（実機で動画にして見つけた）。
+   ★★**時間は移動そのものと同じ `--dur` / `--dl` を読む。** あれは `pv-mv` の style に
+     書いてあり、**中の要素へそのまま継がれる** —— 別の値を持たせると、
+     移動の長さを変えたときに**切り替わる位置だけ取り残される**。
+   ★★**`100%` を必ず書くこと。** 書かないと土台の `opacity` で暗黙の 100% が作られ、
+     `step-end` ＋ `both` で**着いた瞬間に走者が消える**（段階35 で投手と打者が消えたのと同じ）。
+   ★切り替えは **72%** —— 3〜4m 手前で、実際に滑り出す間合い。
+   ★動きを減らす設定では**走る姿のまま**（滑っている絵で止めると、動いていないのに
+     倒れている人になる）。 */
+@keyframes pvRunA { 0% { opacity: 1; } 72% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pvRunB { 0% { opacity: 0; } 72% { opacity: 1; } 100% { opacity: 1; } }
+.pv .pv-sl2 { opacity: 0; }
+.pv .pv-sl1 { animation: pvRunA var(--dur, .42s) var(--dl, 0s) step-end both; }
+.pv .pv-sl2 { animation: pvRunB var(--dur, .42s) var(--dl, 0s) step-end both; }
+
 /* 捕った野手の光り。★球が届くまで待たせる（`--dl` ＝ 球の待ち .12s ＋ 弾道の長さ）。 */
 @keyframes pvGot { 0% { opacity: 1; } 35% { opacity: .45; } 100% { opacity: 1; } }
 .pv .pv-got { animation: pvGot var(--gd, .34s) var(--dl, 0s) ease-out both; }
@@ -1983,6 +2028,10 @@ button.nm-tap {
    文字はどれも白で、**意味は箱の色が持つ** — ラベルと数値を色で分けると、
    同じ幅でも「どこを読めばよいか」が一目で分かる。 */
 .pv .pv-chipt { fill: #ffffff; stroke: none; font-weight: 700; }
+/* ★★**項目名だけ灰文字**（2026-09-29。実機の参考画像）。「成績の数値は大きく、
+   項目名の説明は灰色の文字にして背景を薄くし、より数値を目立たせたい」。
+   ★**大きさも `ChipFs` がコマごとに変える**（値 ×1.30／項目名 ×0.92）。 */
+.pv .pv-chipt-dim { fill: var(--pv-chip-tx, #6b7078); }
 .pv .pv-chipc { stroke: rgba(255, 255, 255, .34); stroke-width: .35; }
 /* ★★打者・投手の札は**背景の箱**の上に置く（2026-09-21。実機で「文字がはっきり
    見えやすい色に」と言われた）。下の隅は席の点描と広告帯の上なので、
@@ -1998,6 +2047,15 @@ button.nm-tap {
    どこへ飛んで誰が捕り、どこへ投げたかは**動きではなく情報**なので残す。 */
 @media (prefers-reduced-motion: reduce) {
     .pv .pv-mv, .pv .pv-ball, .pv .pv-thr, .pv .pv-got, .pv .pv-spot, .pv .pv-run { animation: none; }
+    /* ★★**走者まわりは全部止める** —— 脚の振り（`pv-rl` / `pv-ra`）は**止めても焼き込んだ
+         `RunPh` の形が残る**ので、走っていることは読める。
+       ★`pv-late`（待つあいだ消す）も止めて**最初から見える**ようにする ——
+         動かないのに 0.3秒 待って湧いて出るほうが不自然。
+       ★滑り込みは**走る姿のまま**（倒れた絵で止めない）。 */
+    .pv .pv-rl, .pv .pv-ra { animation: none; }
+    .pv .pv-late { animation: none; opacity: 1; }
+    .pv .pv-sl1 { animation: none; opacity: 1; }
+    .pv .pv-sl2 { animation: none; opacity: 0; }
     /* ★札の滑り込みは**情報ではない**（誰が打席かは文字そのものが伝えている）ので消す。
        薬味（残像・閃き・リード）と同じ扱い。 */
     .pv .pv-chip-in { animation: none; }
@@ -2108,12 +2166,77 @@ button.nm-tap {
 @keyframes pvSf2 { 0% { opacity: 0; } 40% { opacity: 1; } 50% { opacity: 0; } }
 @keyframes pvSf3 { 0% { opacity: 0; } 50% { opacity: 1; } 68% { opacity: 0; } }   /* ★接触 */
 @keyframes pvSf4 { 0% { opacity: 0; } 68% { opacity: 1; } 85% { opacity: 0; } }
-@keyframes pvSf5 { 0% { opacity: 0; } 85% { opacity: 1; } }
+/* ★★★**最後のコマには `100%` を必ず書くこと**（2026-09-26。動かして初めて見つけた）。
+     書かないと**暗黙の 100% が「アニメーションが無いときの値」＝ `.pv-sf { opacity: 0 }`** になり、
+     `step-end` ＋ `both` なので**終わった瞬間に打者・投手が消えて、プレーの残り 0.7〜0.9秒
+     いなくなる**。コマを並べて見る検査（`animation:none` のページ）では**絶対に出ない**。 */
+@keyframes pvSf5 { 0% { opacity: 0; } 85% { opacity: 1; } 100% { opacity: 1; } }
+
+/* ★★★**見逃し（振らない打席）は①〜③のテイクバックで止める**（2026-09-26。実機で
+     「見逃し三振の打者の動作は①〜③テイクバックまでで終わりでよい」と言われた）。
+   ★★**時刻はスイングと同じ**（`.36s` ＋ `.12s` の遅延、22% / 40% の境目）——
+     **振り始める手前で止まる**ので、同じ打席が途中まで同じに動く。
+   ★★**`pvTk2` に `100%` を書くこと。** 書かないと土台の `opacity: 0` で暗黙の 100% ができ、
+     `step-end` ＋ `both` で**打者が消える**（段階35 で投手と打者が消えたのと同じ）。
+   ★動きを減らす設定では①だけ（下の `@media` に足してある）。 */
+.pv .pv-tk  { opacity: 0; }
+.pv .pv-tk0 { animation: pvTk0 .36s .12s step-end both; }
+.pv .pv-tk1 { animation: pvTk1 .36s .12s step-end both; }
+.pv .pv-tk2 { animation: pvTk2 .36s .12s step-end both; }
+@keyframes pvTk0 { 0% { opacity: 1; } 22% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pvTk1 { 0% { opacity: 0; } 22% { opacity: 1; } 40% { opacity: 0; } 100% { opacity: 0; } }
+@keyframes pvTk2 { 0% { opacity: 0; } 40% { opacity: 1; } 100% { opacity: 1; } }
+
+/* ★★★**送球した野手は「捕る前 ＝ 構え」「捕ったあと ＝ 投げ終わり」の2枚**（2026-09-26。
+     実機の参考画像「送球方向へ体の正面が向き、右上で横に伸びた状態」）。
+   ★★**長さに `--dl`（＝球が届く時刻）を使う。** `step-end` なので**捕った瞬間に切り替わる**。
+     `pv-late`（打者走者を待たせる）とまったく同じ仕掛け。
+   ★★**`100%` を必ず書くこと。** 書かないと土台の `opacity` で暗黙の 100% ができ、
+     `both` で**野手が消える**（段階35 で投手と打者が消えたのと同じ）。
+   ★`--dl` はすぐ外の `pv-got`（光り）が持っているので、**時刻を2箇所に書かない**。
+   ★動きを減らす設定では**投げ終わりの形**を出す（どこへ投げたかは動きではなく情報）。 */
+@keyframes pvTh1 { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes pvTh2 { 0% { opacity: 0; } 100% { opacity: 1; } }
+.pv .pv-th2 { opacity: 0; }
+/* ★★★**切り替えの時刻は `--fd` を先に読む**（2026-09-26）。
+     送球した野手（段階41）は**すぐ外の `pv-got` の `--dl`** をそのまま使えるが、
+     **塁へ入る野手（段階42）は `pv-mv` の中にいる** —— ここへ `--dl` をインラインで置くと、
+     **中の走る脚と腕（`pv-rl` / `pv-ra`）がその遅延を継いで**、着いてから振り始める。
+     実測で **脚の振りが 0.8s 遅れて 1,600ms で終わっていた**（予算 1,200ms 超え）。
+   ★**`--fd` なら `--dl` を汚さない**ので、脚は `pv-mv` の遅延（0）のまま振れる。
+   ★**送球した野手は `--fd` を持たない** ＝ `--dl` へ落ちるので、段階41 の挙動は 1px も変わらない。 */
+.pv .pv-th1 { animation: pvTh1 var(--fd, var(--dl, .5s)) 0s step-end both; }
+.pv .pv-th2 { animation: pvTh2 var(--fd, var(--dl, .5s)) 0s step-end both; }
+/* ★★**投球の5コマ**（2026-09-24。段階34の B。実機の参考画像）。打者のスイングと同じコマ送り。
+     ① セット → ② 体をひねって踏み出す → ④ トップ → ⑤ 振り切り → ⑥ 投げ終わり。
+   ★★★**③（横向きで利き腕が隠れるコマ）は 2026-09-25 に外した。** ②で既に利き腕は体の陰にある。
+     ★**番号は参考の並びのまま**（①②④⑤⑥）で呼ぶ。実機とのやり取りが全部この番号なので振り直さない。
+   ★★**時間割は `Web/ParkView.cs` の `Pf` の注記と揃っていること。**
+     **1コマ 60ms ずつの5等分**（0.00–0.06 ①／0.06–0.12 ②／0.12–0.18 ④／0.18–0.24 ⑤／0.24–0.30 ⑥）。
+   ★★**④の終わり（60%）がリリース。** ここをずらすと**手から離れる前に球が飛ぶ**
+     （`pv-pit` の `--dl` は 0.18s。★③を外しても 60% のままなので、あちらは動かさなくてよい）。
+   ★遅延は 0 ＝ ①は最初から出ている。**「打者が入り終えてから投げ始める」は
+     `TWalk` を .06 に詰めて保っている**（動き出すのは 20% ＝ .06s から）。 */
+@keyframes pvPf0 { 0% { opacity: 1; } 20% { opacity: 0; } }
+@keyframes pvPf1 { 0% { opacity: 0; } 20% { opacity: 1; } 40% { opacity: 0; } }
+@keyframes pvPf2 { 0% { opacity: 0; } 40% { opacity: 1; } 60% { opacity: 0; } }   /* ★④＝トップ。終わりがリリース */
+@keyframes pvPf3 { 0% { opacity: 0; } 60% { opacity: 1; } 80% { opacity: 0; } }
+@keyframes pvPf4 { 0% { opacity: 0; } 80% { opacity: 1; } 100% { opacity: 1; } }   /* ★上記。100% を消さない */
+.pv .pv-pf  { opacity: 0; }
+.pv .pv-pf0 { animation: pvPf0 .3s step-end both; }
+.pv .pv-pf1 { animation: pvPf1 .3s step-end both; }
+.pv .pv-pf2 { animation: pvPf2 .3s step-end both; }
+.pv .pv-pf3 { animation: pvPf3 .3s step-end both; }
+.pv .pv-pf4 { animation: pvPf4 .3s step-end both; }
 
 /* ★★**投げた球そのものを描く**（2026-09-21）。腕だけ振っても「投げた」とは読めない
      （実機の指摘の本体はここだった）。★到達は `TBall` ＝ バットの接触と同じ瞬間。
-   ★消えるのも同じ瞬間。残すと**打球と2つ並ぶ**。 */
-@keyframes pvGone { 0%, 88% { opacity: 1; } 100% { opacity: 0; } }
+   ★消えるのも同じ瞬間。残すと**打球と2つ並ぶ**。
+   ★★★**遅延のあいだは見えないこと**（2026-09-26。実機で「①〜④で投手に白いボールが重なっている」
+     と言われた）。`both` は**遅延中に 0% のフレームを当てる**ので、素直に `0% { opacity: 1 }`
+     と書くと**投げる前から球が手のところに置いてある**（`pvRoll` で踏んだのとまったく同じ形）。
+     **`0%` を 0 にして `1%` で 1 にする**と、遅延のあいだだけ消える。 */
+@keyframes pvGone { 0% { opacity: 0; } 1%, 88% { opacity: 1; } 100% { opacity: 0; } }
 .pv .pv-pit {
     animation: pvMove var(--dur) var(--dl, 0s) linear both,
                pvGone var(--dur) var(--dl, 0s) linear both;
@@ -2164,9 +2287,12 @@ button.nm-tap {
 
 /* ★動きを減らす設定では3つとも消す。**構えた姿勢のまま止まる**ので情報は落ちない。 */
 @media (prefers-reduced-motion: reduce) {
-    .pv .pv-arm, .pv .pv-bat, .pv .pv-swa, .pv .pv-swb, .pv .pv-swl, .pv .pv-sf,
-    .pv .pv-walk, .pv .pv-mv4 { animation: none; }
-    .pv .pv-sf0 { opacity: 1; }        /* ★動きを減らす設定では構えのコマだけ出す */
+    .pv .pv-arm, .pv .pv-bat, .pv .pv-swa, .pv .pv-swb, .pv .pv-swl, .pv .pv-sf, .pv .pv-tk,
+    .pv .pv-walk, .pv .pv-mv4, .pv .pv-pf { animation: none; }
+    .pv .pv-sf0, .pv .pv-tk0, .pv .pv-pf0 { opacity: 1; }   /* ★動きを減らす設定では構え・セットのコマだけ出す */
+    /* ★送球は**投げ終わりの形**を出す（どこへ投げたかは動きではなく情報）。 */
+    .pv .pv-th1 { animation: none; opacity: 0; }
+    .pv .pv-th2 { animation: none; opacity: 1; }
     .pv .pv-pit { display: none; }   /* 投げた球は打球と重複するので出さない */
     /* ★**位置は情報なので残す。** 転がった先の球は濃いまま、手前の球（落ちた点・
        併殺の二塁）は**薄く**して「そこを通った」だけを伝える。 */
@@ -2196,12 +2322,13 @@ button.nm-tap {
     /* 下端の札のコマ（2026-09-23。実機の絵に合わせた）。★どの球場でも同じ色なので
        ここに置く（球場ごとに変わる色は `ParkView.Look`）。文字はどれも白。 */
     --pv-chip-bh: #c8372c;   /* 打（打者の見出し） */
-    --pv-chip-bs: #a8442f;   /* 打順（9番） */
-    --pv-chip-bl: #d98a76;   /* 打者のラベル（打率・本・打点・今日） */
+    --pv-chip-bs: #e3a79f;   /* 打順（9番）。★薄地＋灰文字 */
+    --pv-chip-bl: #e9c6bd;   /* 打者の項目名（打率・本・打点・今日）。★薄地＋灰文字 */
     --pv-chip-ph: #2c7a35;   /* 投（投手の見出し） */
-    --pv-chip-ps: #6aa96e;   /* 役割（先発・中継ぎ・抑え） */
-    --pv-chip-pl: #9ac79c;   /* 投手のラベル（球数・防御率・回数・勝負SH） */
+    --pv-chip-ps: #bdd9bd;   /* 役割（先発・中継ぎ・抑え）。★薄地＋灰文字 */
+    --pv-chip-pl: #c6e0c6;   /* 投手の項目名（球数・防御率・回数・勝負SH）。★薄地＋灰文字 */
     --pv-chip-nm: #4a4f55;   /* 選手名 */
     --pv-chip-hn: #4a90e2;   /* 左右（左打・右投） */
     --pv-chip-vl: #1a26c8;   /* 数値 */
+    --pv-chip-tx: #6b7078;   /* ★項目名の文字（灰）。数値の白と差を付けて数値を目立たせる */
 }
