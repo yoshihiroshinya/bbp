@@ -2,6 +2,12 @@
   "TeamId": "Team_E",
   "TeamName": "チームE",
   "ShortName": "E",
+  "Uniform": {
+    "CapColor": "#a8521a",
+    "HomeShirt": "#f3f5f8",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "無地"
+  },
   "HomeStadiumId": "ST05",
   "Manager": {
     "Name": "E監督",

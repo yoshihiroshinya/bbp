@@ -2,6 +2,12 @@
   "TeamId": "Team_F",
   "TeamName": "チームF",
   "ShortName": "F",
+  "Uniform": {
+    "CapColor": "#22262b",
+    "HomeShirt": "#f2efe4",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "胸ライン"
+  },
   "HomeStadiumId": "ST06",
   "Manager": {
     "Name": "F監督",

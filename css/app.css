@@ -2528,3 +2528,23 @@ button.nm-tap {
         gap: .35rem; margin-top: .25rem;
     }
 }
+
+/* ---- ユニフォームの見本と色のつまみ（2026-10-02。段階77）----
+   ★**見本は `ParkView.UniformSample` が返す SVG そのもの**（試合の絵と同じ `Figure`）。
+     ここは大きさと背景だけを決める。**形も色もここには1つも書かない。**
+   ★背景は芝ではなくパネル色 —— 見たいのはユニフォームで、芝があると色が読みにくい。 */
+.uni-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .4rem; }
+.uni-box { flex: 1 1 8rem; min-width: 0; text-align: center; }
+.uni-box .uni-sample {
+    display: block; width: 100%; height: auto; max-height: 9rem;
+    margin: .2rem auto 0;
+    background: #0f171d; border: 1px solid var(--line); border-radius: 8px;
+}
+/* ★`<input type="color">` の見た目は端末任せ（自前のパレットを作らない）。
+   ★大きさだけ指で押せる 44px 角にする。 */
+.uni-pick { display: flex; align-items: center; gap: .6rem; margin-top: .4rem; }
+.uni-pick input[type="color"] {
+    width: 2.9rem; height: 2.9rem; padding: 0;
+    background: none; border: 1px solid var(--line); border-radius: 8px;
+}
+.uni-hex { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .82rem; color: var(--muted); }

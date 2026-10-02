@@ -2,6 +2,12 @@
   "TeamId": "Team_D",
   "TeamName": "チームD",
   "ShortName": "D",
+  "Uniform": {
+    "CapColor": "#4a2a72",
+    "HomeShirt": "#f3f5f8",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "縦縞"
+  },
   "HomeStadiumId": "ST04",
   "Manager": {
     "Name": "D監督",

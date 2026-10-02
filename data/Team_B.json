@@ -2,6 +2,12 @@
   "TeamId": "Team_B",
   "TeamName": "チームB",
   "ShortName": "B",
+  "Uniform": {
+    "CapColor": "#5e161c",
+    "HomeShirt": "#f3f5f8",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "無地"
+  },
   "HomeStadiumId": "ST02",
   "Manager": {
     "Name": "B監督",
