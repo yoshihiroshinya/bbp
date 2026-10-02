@@ -327,6 +327,15 @@ input[type="file"] {
 .t-board.zoom .t-last   { order: 2; margin-top: 0; }   /* gap で取るので二重に空けない */
 .t-board.zoom .t-now    { order: 3; align-self: center; }
 
+/* 【左の列になる部分】スコアボード・横一列・打者と投手を包む箱（`SituationBoard.razor`）。
+   ★★**既定は箱を作らない。** だから**縦も球場タブも 1px も変わらない** —
+     この `<div>` が無かったころとまったく同じ箱の並びになる。
+     箱になるのは**横向きの盤面タブだけ**（この下の `@media` の `.tactics-sheet.board`）。
+   ★**球場タブでも箱にしないこと。** あちらは `.t-mid.zoom` を `display: contents` にして
+     中の絵を `.t-board` の直接の子へ繰り上げているので、ここが箱になると
+     **繰り上げ先がこの箱になって `order` が効かなくなる**。 */
+.t-left { display: contents; }
+
 .line { border-collapse: collapse; font-size: .78rem; font-variant-numeric: tabular-nums; }
 .line th, .line td {
     padding: .15rem .34rem;
@@ -2464,4 +2473,58 @@ button.nm-tap {
         flex: 0 1 auto; min-height: 0; overflow-y: auto;
     }
     .tactics-sheet.park > *:not(.t-board) { order: 2; }
+
+    /* ---- 盤面タブも左右に割る（2026-10-02。実機の要望） ----
+       ★★**割る前は采配が読めなかった。** 盤面は sticky で `min-height: 55dvh` ＝ **206px**
+         まで縮み（中身は 466px ＝ **260px が切れる**）、選択肢はその下に縦1列で積まれるので、
+         **代走8件・継投10件とも「見えるのは2件だけ」**だった（実測。最後の選択肢の下端は
+         673px / 775px ＝ 画面 375px の2倍）。
+       ★**割る仕掛けは球場タブとまったく同じ**（`display: contents` ＋ 左を抜き出して固定）。
+         写しではなく、**同じ3行を別のクラスへ当てている**だけ。 */
+    .tactics-sheet.board {
+        --bdw: 390px;                    /* ★スコアボードは 280px でも横あふれ 0。390 は読みやすさで決めた */
+        height: 100dvh; max-height: 100dvh;
+        padding: .5rem .6rem .5rem calc(var(--bdw) + 1.1rem);
+        overflow-y: auto; overflow-x: hidden;
+        gap: .3rem;
+    }
+
+    .tactics-sheet.board > .t-board { display: contents; }
+
+    /* ★★**`fixed` であって `absolute` ではない。** 右の列はあふれたらスクロールする
+         （継投10件は右が 465px ある）ので、`absolute` だと**左の盤面も一緒に流れて消える**。
+         シート自身が `position: fixed` なので、中の `fixed` はビューポート基準になる。 */
+    .tactics-sheet.board .t-left {
+        display: block;
+        position: fixed; left: .5rem; top: .5rem;
+        width: var(--bdw); height: calc(100dvh - 1rem);
+        overflow-y: auto; -webkit-overflow-scrolling: touch;
+        padding-right: .55rem;
+        border-right: 1px solid var(--line);
+    }
+
+    /* 右の列は タブ → 直前のプレー → 問い → 選択肢（球場タブと同じ並び）。
+       ★**`order` を全部決め直すこと**（球場タブと同じ理由。箱を消すとシート自身の子が
+         既定の order 0 でタブと混ざる）。 */
+    .tactics-sheet.board .t-board .t-tabs { order: 0; flex: 0 0 auto; }
+    /* ★★**`min-height` に下限を置くこと（0 にしない）。** 右の列であふれると
+         縮むのはここだけなので、0 にすると**継投10件で 12px まで潰れて
+         「見出しの上だけが覗く帯」**になる（実測。壊れて見える）。
+       ★**3.4rem ＝ 見出し ＋ 結果1行**（余白12 ＋ 見出し17 ＋ 1行21 ≒ 50px）。
+       ★**ふつうの問い（選択肢3件まで）ではそもそも縮まない** — 実測で 88px のまま、
+         代走8件でも右のスクロール 0。縮むのは継投だけ。 */
+    .tactics-sheet.board .t-board .t-last {
+        order: 1; margin: 0;
+        flex: 0 1 auto; min-height: 3.4rem; overflow-y: auto;
+    }
+    .tactics-sheet.board > *:not(.t-board) { order: 2; }
+
+    /* ★★**選択肢を2列にする。** 1列のままだと継投10件で 6件しか見えない（2列で8件）。
+       ★`auto-fit` にすること — 観戦の「次へ」は1つしかないので、
+         `1fr 1fr` だと**半分の幅のボタンがぽつんと残る**。`auto-fit` は空の列を畳む。
+       ★**`.btn-row`（観戦の逃げ道2つ）は触らない。** あれはもともと横2つ。 */
+    .tactics-sheet.board .t-choices {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+        gap: .35rem; margin-top: .25rem;
+    }
 }
