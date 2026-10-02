@@ -1,12 +1,12 @@
 {
   "SeasonYear": 2026,
   "CurrentDay": 1,
-  "TotalDays": 163,
+  "TotalDays": 162,
   "Schedule": [
     {
       "GameId": 1,
       "Day": 1,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -18,9 +18,9 @@
     {
       "GameId": 2,
       "Day": 1,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -30,9 +30,9 @@
     {
       "GameId": 3,
       "Day": 1,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -42,7 +42,7 @@
     {
       "GameId": 4,
       "Day": 2,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -55,18 +55,6 @@
       "GameId": 5,
       "Day": 2,
       "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 6,
-      "Day": 2,
-      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -76,9 +64,21 @@
       }
     },
     {
+      "GameId": 6,
+      "Day": 2,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 7,
       "Day": 3,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -90,7 +90,7 @@
     {
       "GameId": 8,
       "Day": 3,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -102,9 +102,9 @@
     {
       "GameId": 9,
       "Day": 3,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -114,9 +114,9 @@
     {
       "GameId": 10,
       "Day": 4,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -126,7 +126,7 @@
     {
       "GameId": 11,
       "Day": 4,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -138,9 +138,9 @@
     {
       "GameId": 12,
       "Day": 4,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -150,19 +150,7 @@
     {
       "GameId": 13,
       "Day": 5,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 14,
-      "Day": 5,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -172,11 +160,23 @@
       }
     },
     {
+      "GameId": 14,
+      "Day": 5,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 15,
       "Day": 5,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -210,9 +210,9 @@
     {
       "GameId": 18,
       "Day": 6,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -222,9 +222,9 @@
     {
       "GameId": 19,
       "Day": 8,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -246,9 +246,9 @@
     {
       "GameId": 21,
       "Day": 8,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -258,9 +258,9 @@
     {
       "GameId": 22,
       "Day": 9,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -270,9 +270,9 @@
     {
       "GameId": 23,
       "Day": 9,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -283,18 +283,6 @@
       "GameId": 24,
       "Day": 9,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 25,
-      "Day": 10,
-      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -304,11 +292,23 @@
       }
     },
     {
+      "GameId": 25,
+      "Day": 10,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 26,
       "Day": 10,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -318,9 +318,9 @@
     {
       "GameId": 27,
       "Day": 10,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -331,30 +331,6 @@
       "GameId": 28,
       "Day": 11,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 29,
-      "Day": 11,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 30,
-      "Day": 11,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -364,11 +340,35 @@
       }
     },
     {
+      "GameId": 29,
+      "Day": 11,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 30,
+      "Day": 11,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 31,
       "Day": 12,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -378,7 +378,7 @@
     {
       "GameId": 32,
       "Day": 12,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -390,9 +390,9 @@
     {
       "GameId": 33,
       "Day": 12,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -402,19 +402,7 @@
     {
       "GameId": 34,
       "Day": 13,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 35,
-      "Day": 13,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -424,11 +412,23 @@
       }
     },
     {
+      "GameId": 35,
+      "Day": 13,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 36,
       "Day": 13,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -438,7 +438,7 @@
     {
       "GameId": 37,
       "Day": 15,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -450,9 +450,9 @@
     {
       "GameId": 38,
       "Day": 15,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -462,9 +462,9 @@
     {
       "GameId": 39,
       "Day": 15,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -486,9 +486,9 @@
     {
       "GameId": 41,
       "Day": 16,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -510,7 +510,7 @@
     {
       "GameId": 43,
       "Day": 17,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -522,9 +522,9 @@
     {
       "GameId": 44,
       "Day": 17,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -534,9 +534,9 @@
     {
       "GameId": 45,
       "Day": 17,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -547,18 +547,6 @@
       "GameId": 46,
       "Day": 18,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 47,
-      "Day": 18,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -568,11 +556,23 @@
       }
     },
     {
+      "GameId": 47,
+      "Day": 18,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 48,
       "Day": 18,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -583,8 +583,8 @@
       "GameId": 49,
       "Day": 19,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -594,7 +594,7 @@
     {
       "GameId": 50,
       "Day": 19,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -606,9 +606,9 @@
     {
       "GameId": 51,
       "Day": 19,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -619,8 +619,8 @@
       "GameId": 52,
       "Day": 20,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -631,18 +631,6 @@
       "GameId": 53,
       "Day": 20,
       "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 54,
-      "Day": 20,
-      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -652,11 +640,23 @@
       }
     },
     {
+      "GameId": 54,
+      "Day": 20,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 55,
       "Day": 22,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -667,18 +667,6 @@
       "GameId": 56,
       "Day": 22,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 57,
-      "Day": 22,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -688,21 +676,9 @@
       }
     },
     {
-      "GameId": 58,
-      "Day": 23,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 59,
-      "Day": 23,
-      "AwayTeamFile": "Team_B.json",
+      "GameId": 57,
+      "Day": 22,
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -712,11 +688,35 @@
       }
     },
     {
+      "GameId": 58,
+      "Day": 23,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 59,
+      "Day": 23,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 60,
       "Day": 23,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -750,9 +750,9 @@
     {
       "GameId": 63,
       "Day": 24,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -762,9 +762,9 @@
     {
       "GameId": 64,
       "Day": 25,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -786,9 +786,9 @@
     {
       "GameId": 66,
       "Day": 25,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -798,9 +798,9 @@
     {
       "GameId": 67,
       "Day": 26,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -810,9 +810,9 @@
     {
       "GameId": 68,
       "Day": 26,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -822,7 +822,7 @@
     {
       "GameId": 69,
       "Day": 26,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -834,9 +834,9 @@
     {
       "GameId": 70,
       "Day": 27,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -846,9 +846,9 @@
     {
       "GameId": 71,
       "Day": 27,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -858,9 +858,9 @@
     {
       "GameId": 72,
       "Day": 27,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -870,7 +870,7 @@
     {
       "GameId": 73,
       "Day": 29,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -882,9 +882,9 @@
     {
       "GameId": 74,
       "Day": 29,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -894,9 +894,9 @@
     {
       "GameId": 75,
       "Day": 29,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -906,9 +906,9 @@
     {
       "GameId": 76,
       "Day": 30,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -919,18 +919,6 @@
       "GameId": 77,
       "Day": 30,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 78,
-      "Day": 30,
-      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -940,21 +928,9 @@
       }
     },
     {
-      "GameId": 79,
-      "Day": 31,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 80,
-      "Day": 31,
-      "AwayTeamFile": "Team_D.json",
+      "GameId": 78,
+      "Day": 30,
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -964,11 +940,35 @@
       }
     },
     {
+      "GameId": 79,
+      "Day": 31,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 80,
+      "Day": 31,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 81,
       "Day": 31,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -979,8 +979,8 @@
       "GameId": 82,
       "Day": 32,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -990,9 +990,9 @@
     {
       "GameId": 83,
       "Day": 32,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1002,9 +1002,9 @@
     {
       "GameId": 84,
       "Day": 32,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1026,9 +1026,9 @@
     {
       "GameId": 86,
       "Day": 33,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1051,18 +1051,6 @@
       "GameId": 88,
       "Day": 34,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 89,
-      "Day": 34,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -1072,11 +1060,23 @@
       }
     },
     {
+      "GameId": 89,
+      "Day": 34,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 90,
       "Day": 34,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1086,7 +1086,7 @@
     {
       "GameId": 91,
       "Day": 36,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST07",
       "IsFinished": false,
@@ -1098,9 +1098,9 @@
     {
       "GameId": 92,
       "Day": 36,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1110,9 +1110,9 @@
     {
       "GameId": 93,
       "Day": 36,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1122,7 +1122,7 @@
     {
       "GameId": 94,
       "Day": 37,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST07",
       "IsFinished": false,
@@ -1135,18 +1135,6 @@
       "GameId": 95,
       "Day": 37,
       "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 96,
-      "Day": 37,
-      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -1156,9 +1144,21 @@
       }
     },
     {
+      "GameId": 96,
+      "Day": 37,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 97,
       "Day": 38,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST07",
       "IsFinished": false,
@@ -1170,7 +1170,7 @@
     {
       "GameId": 98,
       "Day": 38,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -1182,9 +1182,9 @@
     {
       "GameId": 99,
       "Day": 38,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1194,9 +1194,9 @@
     {
       "GameId": 100,
       "Day": 39,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1206,7 +1206,7 @@
     {
       "GameId": 101,
       "Day": 39,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -1218,9 +1218,9 @@
     {
       "GameId": 102,
       "Day": 39,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1230,19 +1230,7 @@
     {
       "GameId": 103,
       "Day": 40,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 104,
-      "Day": 40,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -1252,11 +1240,23 @@
       }
     },
     {
+      "GameId": 104,
+      "Day": 40,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 105,
       "Day": 40,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1290,9 +1290,9 @@
     {
       "GameId": 108,
       "Day": 41,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1302,9 +1302,9 @@
     {
       "GameId": 109,
       "Day": 43,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1326,9 +1326,9 @@
     {
       "GameId": 111,
       "Day": 43,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1338,9 +1338,9 @@
     {
       "GameId": 112,
       "Day": 44,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1350,9 +1350,9 @@
     {
       "GameId": 113,
       "Day": 44,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1363,18 +1363,6 @@
       "GameId": 114,
       "Day": 44,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 115,
-      "Day": 45,
-      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -1384,11 +1372,23 @@
       }
     },
     {
+      "GameId": 115,
+      "Day": 45,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 116,
       "Day": 45,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1398,9 +1398,9 @@
     {
       "GameId": 117,
       "Day": 45,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1411,30 +1411,6 @@
       "GameId": 118,
       "Day": 46,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 119,
-      "Day": 46,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 120,
-      "Day": 46,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -1444,11 +1420,35 @@
       }
     },
     {
+      "GameId": 119,
+      "Day": 46,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 120,
+      "Day": 46,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 121,
       "Day": 47,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1458,7 +1458,7 @@
     {
       "GameId": 122,
       "Day": 47,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -1470,9 +1470,9 @@
     {
       "GameId": 123,
       "Day": 47,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1482,19 +1482,7 @@
     {
       "GameId": 124,
       "Day": 48,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 125,
-      "Day": 48,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -1504,11 +1492,23 @@
       }
     },
     {
+      "GameId": 125,
+      "Day": 48,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 126,
       "Day": 48,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1518,7 +1518,7 @@
     {
       "GameId": 127,
       "Day": 50,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -1530,9 +1530,9 @@
     {
       "GameId": 128,
       "Day": 50,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1542,9 +1542,9 @@
     {
       "GameId": 129,
       "Day": 50,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1566,9 +1566,9 @@
     {
       "GameId": 131,
       "Day": 51,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1590,7 +1590,7 @@
     {
       "GameId": 133,
       "Day": 52,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -1602,9 +1602,9 @@
     {
       "GameId": 134,
       "Day": 52,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1614,9 +1614,9 @@
     {
       "GameId": 135,
       "Day": 52,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1627,18 +1627,6 @@
       "GameId": 136,
       "Day": 53,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 137,
-      "Day": 53,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -1648,11 +1636,23 @@
       }
     },
     {
+      "GameId": 137,
+      "Day": 53,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 138,
       "Day": 53,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1663,8 +1663,8 @@
       "GameId": 139,
       "Day": 54,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1674,7 +1674,7 @@
     {
       "GameId": 140,
       "Day": 54,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -1686,9 +1686,9 @@
     {
       "GameId": 141,
       "Day": 54,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1699,8 +1699,8 @@
       "GameId": 142,
       "Day": 55,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1711,18 +1711,6 @@
       "GameId": 143,
       "Day": 55,
       "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 144,
-      "Day": 55,
-      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -1732,11 +1720,23 @@
       }
     },
     {
+      "GameId": 144,
+      "Day": 55,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 145,
       "Day": 57,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1747,18 +1747,6 @@
       "GameId": 146,
       "Day": 57,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 147,
-      "Day": 57,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -1768,21 +1756,9 @@
       }
     },
     {
-      "GameId": 148,
-      "Day": 58,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 149,
-      "Day": 58,
-      "AwayTeamFile": "Team_B.json",
+      "GameId": 147,
+      "Day": 57,
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -1792,11 +1768,35 @@
       }
     },
     {
+      "GameId": 148,
+      "Day": 58,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 149,
+      "Day": 58,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 150,
       "Day": 58,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1830,9 +1830,9 @@
     {
       "GameId": 153,
       "Day": 59,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1842,9 +1842,9 @@
     {
       "GameId": 154,
       "Day": 60,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1866,9 +1866,9 @@
     {
       "GameId": 156,
       "Day": 60,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1878,9 +1878,9 @@
     {
       "GameId": 157,
       "Day": 61,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1890,9 +1890,9 @@
     {
       "GameId": 158,
       "Day": 61,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1902,7 +1902,7 @@
     {
       "GameId": 159,
       "Day": 61,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -1914,67 +1914,7 @@
     {
       "GameId": 160,
       "Day": 62,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 161,
-      "Day": 62,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 162,
-      "Day": 62,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 163,
-      "Day": 64,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 164,
-      "Day": 64,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 165,
-      "Day": 64,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -1984,11 +1924,71 @@
       }
     },
     {
-      "GameId": 166,
-      "Day": 65,
-      "AwayTeamFile": "Team_A.json",
+      "GameId": 161,
+      "Day": 62,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 162,
+      "Day": 62,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 163,
+      "Day": 64,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST07",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 164,
+      "Day": 64,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 165,
+      "Day": 64,
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 166,
+      "Day": 65,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -1999,18 +1999,6 @@
       "GameId": 167,
       "Day": 65,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 168,
-      "Day": 65,
-      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -2020,21 +2008,9 @@
       }
     },
     {
-      "GameId": 169,
-      "Day": 66,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 170,
-      "Day": 66,
-      "AwayTeamFile": "Team_D.json",
+      "GameId": 168,
+      "Day": 65,
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -2044,11 +2020,35 @@
       }
     },
     {
+      "GameId": 169,
+      "Day": 66,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST07",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 170,
+      "Day": 66,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 171,
       "Day": 66,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2059,8 +2059,8 @@
       "GameId": 172,
       "Day": 67,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2070,9 +2070,9 @@
     {
       "GameId": 173,
       "Day": 67,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2082,9 +2082,9 @@
     {
       "GameId": 174,
       "Day": 67,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2106,9 +2106,9 @@
     {
       "GameId": 176,
       "Day": 68,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2131,18 +2131,6 @@
       "GameId": 178,
       "Day": 69,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 179,
-      "Day": 69,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -2152,11 +2140,23 @@
       }
     },
     {
+      "GameId": 179,
+      "Day": 69,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 180,
       "Day": 69,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2166,7 +2166,7 @@
     {
       "GameId": 181,
       "Day": 71,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2178,9 +2178,9 @@
     {
       "GameId": 182,
       "Day": 71,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2190,9 +2190,9 @@
     {
       "GameId": 183,
       "Day": 71,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2202,7 +2202,7 @@
     {
       "GameId": 184,
       "Day": 72,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2215,8 +2215,8 @@
       "GameId": 185,
       "Day": 72,
       "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2226,9 +2226,9 @@
     {
       "GameId": 186,
       "Day": 72,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2238,9 +2238,9 @@
     {
       "GameId": 187,
       "Day": 73,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2251,18 +2251,6 @@
       "GameId": 188,
       "Day": 73,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 189,
-      "Day": 73,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2272,11 +2260,23 @@
       }
     },
     {
+      "GameId": 189,
+      "Day": 73,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST07",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 190,
       "Day": 74,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2286,7 +2286,7 @@
     {
       "GameId": 191,
       "Day": 74,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2298,9 +2298,9 @@
     {
       "GameId": 192,
       "Day": 74,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2310,7 +2310,7 @@
     {
       "GameId": 193,
       "Day": 75,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2322,31 +2322,7 @@
     {
       "GameId": 194,
       "Day": 75,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 195,
-      "Day": 75,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 196,
-      "Day": 76,
-      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST07",
       "IsFinished": false,
@@ -2356,11 +2332,35 @@
       }
     },
     {
-      "GameId": 197,
+      "GameId": 195,
+      "Day": 75,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 196,
       "Day": 76,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 197,
+      "Day": 76,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2370,7 +2370,7 @@
     {
       "GameId": 198,
       "Day": 76,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_F.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -2383,8 +2383,8 @@
       "GameId": 199,
       "Day": 78,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST07",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2394,9 +2394,9 @@
     {
       "GameId": 200,
       "Day": 78,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2406,7 +2406,7 @@
     {
       "GameId": 201,
       "Day": 78,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2420,7 +2420,7 @@
       "Day": 79,
       "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST07",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2432,7 +2432,7 @@
       "Day": 79,
       "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2442,9 +2442,9 @@
     {
       "GameId": 204,
       "Day": 79,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2454,8 +2454,8 @@
     {
       "GameId": 205,
       "Day": 80,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
@@ -2478,9 +2478,9 @@
     {
       "GameId": 207,
       "Day": 80,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2490,8 +2490,8 @@
     {
       "GameId": 208,
       "Day": 81,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
@@ -2502,9 +2502,9 @@
     {
       "GameId": 209,
       "Day": 81,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2515,8 +2515,8 @@
       "GameId": 210,
       "Day": 81,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2526,9 +2526,9 @@
     {
       "GameId": 211,
       "Day": 82,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2538,9 +2538,9 @@
     {
       "GameId": 212,
       "Day": 82,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2550,7 +2550,7 @@
     {
       "GameId": 213,
       "Day": 82,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -2562,67 +2562,7 @@
     {
       "GameId": 214,
       "Day": 83,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 215,
-      "Day": 83,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 216,
-      "Day": 83,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 217,
-      "Day": 85,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 218,
-      "Day": 85,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 219,
-      "Day": 85,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2632,9 +2572,69 @@
       }
     },
     {
+      "GameId": 215,
+      "Day": 83,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 216,
+      "Day": 83,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 217,
+      "Day": 84,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 218,
+      "Day": 84,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 219,
+      "Day": 84,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 220,
       "Day": 86,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2646,9 +2646,9 @@
     {
       "GameId": 221,
       "Day": 86,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2658,9 +2658,9 @@
     {
       "GameId": 222,
       "Day": 86,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2670,7 +2670,7 @@
     {
       "GameId": 223,
       "Day": 87,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2682,9 +2682,9 @@
     {
       "GameId": 224,
       "Day": 87,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2695,8 +2695,8 @@
       "GameId": 225,
       "Day": 87,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2706,9 +2706,9 @@
     {
       "GameId": 226,
       "Day": 88,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2718,9 +2718,9 @@
     {
       "GameId": 227,
       "Day": 88,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2754,9 +2754,9 @@
     {
       "GameId": 230,
       "Day": 89,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2779,18 +2779,6 @@
       "GameId": 232,
       "Day": 90,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 233,
-      "Day": 90,
-      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -2800,11 +2788,23 @@
       }
     },
     {
+      "GameId": 233,
+      "Day": 90,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 234,
       "Day": 90,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2813,10 +2813,10 @@
     },
     {
       "GameId": 235,
-      "Day": 92,
+      "Day": 91,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2825,8 +2825,8 @@
     },
     {
       "GameId": 236,
-      "Day": 92,
-      "AwayTeamFile": "Team_F.json",
+      "Day": 91,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -2837,20 +2837,8 @@
     },
     {
       "GameId": 237,
-      "Day": 92,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 238,
-      "Day": 93,
-      "AwayTeamFile": "Team_A.json",
+      "Day": 91,
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2860,9 +2848,21 @@
       }
     },
     {
+      "GameId": 238,
+      "Day": 93,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 239,
       "Day": 93,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -2874,9 +2874,9 @@
     {
       "GameId": 240,
       "Day": 93,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2886,7 +2886,7 @@
     {
       "GameId": 241,
       "Day": 94,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2898,9 +2898,9 @@
     {
       "GameId": 242,
       "Day": 94,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2910,9 +2910,9 @@
     {
       "GameId": 243,
       "Day": 94,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -2922,7 +2922,7 @@
     {
       "GameId": 244,
       "Day": 95,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -2934,42 +2934,6 @@
     {
       "GameId": 245,
       "Day": 95,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 246,
-      "Day": 95,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 247,
-      "Day": 96,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 248,
-      "Day": 96,
       "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
@@ -2980,9 +2944,33 @@
       }
     },
     {
-      "GameId": 249,
+      "GameId": 246,
+      "Day": 95,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 247,
       "Day": 96,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 248,
+      "Day": 96,
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -2992,11 +2980,23 @@
       }
     },
     {
+      "GameId": 249,
+      "Day": 96,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 250,
       "Day": 97,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3018,9 +3018,9 @@
     {
       "GameId": 252,
       "Day": 97,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3029,10 +3029,10 @@
     },
     {
       "GameId": 253,
-      "Day": 99,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "Day": 98,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3041,10 +3041,10 @@
     },
     {
       "GameId": 254,
-      "Day": 99,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "Day": 98,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3053,8 +3053,8 @@
     },
     {
       "GameId": 255,
-      "Day": 99,
-      "AwayTeamFile": "Team_D.json",
+      "Day": 98,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -3066,9 +3066,9 @@
     {
       "GameId": 256,
       "Day": 100,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3078,9 +3078,9 @@
     {
       "GameId": 257,
       "Day": 100,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3091,8 +3091,8 @@
       "GameId": 258,
       "Day": 100,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3102,9 +3102,9 @@
     {
       "GameId": 259,
       "Day": 101,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3114,9 +3114,9 @@
     {
       "GameId": 260,
       "Day": 101,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3126,31 +3126,7 @@
     {
       "GameId": 261,
       "Day": 101,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 262,
-      "Day": 102,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 263,
-      "Day": 102,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -3160,11 +3136,35 @@
       }
     },
     {
-      "GameId": 264,
+      "GameId": 262,
       "Day": 102,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 263,
+      "Day": 102,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 264,
+      "Day": 102,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3175,8 +3175,8 @@
       "GameId": 265,
       "Day": 103,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3186,9 +3186,9 @@
     {
       "GameId": 266,
       "Day": 103,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3198,9 +3198,9 @@
     {
       "GameId": 267,
       "Day": 103,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3211,8 +3211,8 @@
       "GameId": 268,
       "Day": 104,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3222,9 +3222,9 @@
     {
       "GameId": 269,
       "Day": 104,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3234,7 +3234,7 @@
     {
       "GameId": 270,
       "Day": 104,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -3245,10 +3245,10 @@
     },
     {
       "GameId": 271,
-      "Day": 106,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "Day": 105,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3257,10 +3257,10 @@
     },
     {
       "GameId": 272,
-      "Day": 106,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "Day": 105,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3269,7 +3269,7 @@
     },
     {
       "GameId": 273,
-      "Day": 106,
+      "Day": 105,
       "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
@@ -3294,9 +3294,9 @@
     {
       "GameId": 275,
       "Day": 107,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3318,7 +3318,7 @@
     {
       "GameId": 277,
       "Day": 108,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -3330,9 +3330,9 @@
     {
       "GameId": 278,
       "Day": 108,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3342,9 +3342,9 @@
     {
       "GameId": 279,
       "Day": 108,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3354,7 +3354,7 @@
     {
       "GameId": 280,
       "Day": 109,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -3367,18 +3367,6 @@
       "GameId": 281,
       "Day": 109,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 282,
-      "Day": 109,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -3388,11 +3376,23 @@
       }
     },
     {
+      "GameId": 282,
+      "Day": 109,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 283,
       "Day": 110,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3403,8 +3403,8 @@
       "GameId": 284,
       "Day": 110,
       "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3414,9 +3414,9 @@
     {
       "GameId": 285,
       "Day": 110,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3427,8 +3427,8 @@
       "GameId": 286,
       "Day": 111,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3438,31 +3438,7 @@
     {
       "GameId": 287,
       "Day": 111,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 288,
-      "Day": 111,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 289,
-      "Day": 113,
-      "AwayTeamFile": "Team_A.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -3472,11 +3448,35 @@
       }
     },
     {
+      "GameId": 288,
+      "Day": 111,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 289,
+      "Day": 112,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 290,
-      "Day": 113,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "Day": 112,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3485,8 +3485,8 @@
     },
     {
       "GameId": 291,
-      "Day": 113,
-      "AwayTeamFile": "Team_E.json",
+      "Day": 112,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -3498,9 +3498,9 @@
     {
       "GameId": 292,
       "Day": 114,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3510,9 +3510,9 @@
     {
       "GameId": 293,
       "Day": 114,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3522,7 +3522,7 @@
     {
       "GameId": 294,
       "Day": 114,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -3534,9 +3534,9 @@
     {
       "GameId": 295,
       "Day": 115,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3558,9 +3558,9 @@
     {
       "GameId": 297,
       "Day": 115,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3570,9 +3570,9 @@
     {
       "GameId": 298,
       "Day": 116,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3582,9 +3582,9 @@
     {
       "GameId": 299,
       "Day": 116,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3595,8 +3595,8 @@
       "GameId": 300,
       "Day": 116,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3606,9 +3606,9 @@
     {
       "GameId": 301,
       "Day": 117,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3618,9 +3618,9 @@
     {
       "GameId": 302,
       "Day": 117,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3630,7 +3630,7 @@
     {
       "GameId": 303,
       "Day": 117,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -3642,9 +3642,9 @@
     {
       "GameId": 304,
       "Day": 118,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3654,9 +3654,9 @@
     {
       "GameId": 305,
       "Day": 118,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3666,9 +3666,9 @@
     {
       "GameId": 306,
       "Day": 118,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3677,10 +3677,10 @@
     },
     {
       "GameId": 307,
-      "Day": 120,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "Day": 119,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3689,10 +3689,10 @@
     },
     {
       "GameId": 308,
-      "Day": 120,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "Day": 119,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3701,10 +3701,10 @@
     },
     {
       "GameId": 309,
-      "Day": 120,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "Day": 119,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3714,9 +3714,9 @@
     {
       "GameId": 310,
       "Day": 121,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3726,9 +3726,9 @@
     {
       "GameId": 311,
       "Day": 121,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3738,9 +3738,9 @@
     {
       "GameId": 312,
       "Day": 121,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3750,9 +3750,9 @@
     {
       "GameId": 313,
       "Day": 122,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST07",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3762,9 +3762,9 @@
     {
       "GameId": 314,
       "Day": 122,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3775,8 +3775,8 @@
       "GameId": 315,
       "Day": 122,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3786,9 +3786,9 @@
     {
       "GameId": 316,
       "Day": 123,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3798,9 +3798,9 @@
     {
       "GameId": 317,
       "Day": 123,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3834,9 +3834,9 @@
     {
       "GameId": 320,
       "Day": 124,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3859,18 +3859,6 @@
       "GameId": 322,
       "Day": 125,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 323,
-      "Day": 125,
-      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -3880,11 +3868,23 @@
       }
     },
     {
+      "GameId": 323,
+      "Day": 125,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 324,
       "Day": 125,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3893,10 +3893,10 @@
     },
     {
       "GameId": 325,
-      "Day": 127,
+      "Day": 126,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3905,8 +3905,8 @@
     },
     {
       "GameId": 326,
-      "Day": 127,
-      "AwayTeamFile": "Team_F.json",
+      "Day": 126,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -3917,20 +3917,8 @@
     },
     {
       "GameId": 327,
-      "Day": 127,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 328,
-      "Day": 128,
-      "AwayTeamFile": "Team_A.json",
+      "Day": 126,
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -3940,9 +3928,21 @@
       }
     },
     {
+      "GameId": 328,
+      "Day": 128,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 329,
       "Day": 128,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -3954,9 +3954,9 @@
     {
       "GameId": 330,
       "Day": 128,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3966,7 +3966,7 @@
     {
       "GameId": 331,
       "Day": 129,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -3978,9 +3978,9 @@
     {
       "GameId": 332,
       "Day": 129,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -3990,9 +3990,9 @@
     {
       "GameId": 333,
       "Day": 129,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4002,7 +4002,7 @@
     {
       "GameId": 334,
       "Day": 130,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -4014,42 +4014,6 @@
     {
       "GameId": 335,
       "Day": 130,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 336,
-      "Day": 130,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 337,
-      "Day": 131,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 338,
-      "Day": 131,
       "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
@@ -4060,9 +4024,33 @@
       }
     },
     {
-      "GameId": 339,
+      "GameId": 336,
+      "Day": 130,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 337,
       "Day": 131,
-      "AwayTeamFile": "Team_B.json",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 338,
+      "Day": 131,
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -4072,11 +4060,23 @@
       }
     },
     {
+      "GameId": 339,
+      "Day": 131,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 340,
       "Day": 132,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4098,9 +4098,9 @@
     {
       "GameId": 342,
       "Day": 132,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4109,10 +4109,10 @@
     },
     {
       "GameId": 343,
-      "Day": 134,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "Day": 133,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4121,10 +4121,10 @@
     },
     {
       "GameId": 344,
-      "Day": 134,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "Day": 133,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4133,8 +4133,8 @@
     },
     {
       "GameId": 345,
-      "Day": 134,
-      "AwayTeamFile": "Team_D.json",
+      "Day": 133,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -4146,9 +4146,9 @@
     {
       "GameId": 346,
       "Day": 135,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4158,9 +4158,9 @@
     {
       "GameId": 347,
       "Day": 135,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4171,8 +4171,8 @@
       "GameId": 348,
       "Day": 135,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4182,9 +4182,9 @@
     {
       "GameId": 349,
       "Day": 136,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4194,9 +4194,9 @@
     {
       "GameId": 350,
       "Day": 136,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4206,31 +4206,7 @@
     {
       "GameId": 351,
       "Day": 136,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 352,
-      "Day": 137,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 353,
-      "Day": 137,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_D.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -4240,11 +4216,35 @@
       }
     },
     {
-      "GameId": 354,
+      "GameId": 352,
       "Day": 137,
       "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 353,
+      "Day": 137,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 354,
+      "Day": 137,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4255,8 +4255,8 @@
       "GameId": 355,
       "Day": 138,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4266,9 +4266,9 @@
     {
       "GameId": 356,
       "Day": 138,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4278,9 +4278,9 @@
     {
       "GameId": 357,
       "Day": 138,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4291,8 +4291,8 @@
       "GameId": 358,
       "Day": 139,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4302,9 +4302,9 @@
     {
       "GameId": 359,
       "Day": 139,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4314,7 +4314,7 @@
     {
       "GameId": 360,
       "Day": 139,
-      "AwayTeamFile": "Team_C.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -4325,10 +4325,10 @@
     },
     {
       "GameId": 361,
-      "Day": 141,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "Day": 140,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4337,10 +4337,10 @@
     },
     {
       "GameId": 362,
-      "Day": 141,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "Day": 140,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4349,7 +4349,7 @@
     },
     {
       "GameId": 363,
-      "Day": 141,
+      "Day": 140,
       "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
@@ -4374,9 +4374,9 @@
     {
       "GameId": 365,
       "Day": 142,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4398,7 +4398,7 @@
     {
       "GameId": 367,
       "Day": 143,
-      "AwayTeamFile": "Team_D.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -4410,9 +4410,9 @@
     {
       "GameId": 368,
       "Day": 143,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4422,9 +4422,9 @@
     {
       "GameId": 369,
       "Day": 143,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4434,7 +4434,7 @@
     {
       "GameId": 370,
       "Day": 144,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_A.json",
       "StadiumId": "ST01",
       "IsFinished": false,
@@ -4447,18 +4447,6 @@
       "GameId": 371,
       "Day": 144,
       "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 372,
-      "Day": 144,
-      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -4468,11 +4456,23 @@
       }
     },
     {
+      "GameId": 372,
+      "Day": 144,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 373,
       "Day": 145,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4483,8 +4483,8 @@
       "GameId": 374,
       "Day": 145,
       "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4494,9 +4494,9 @@
     {
       "GameId": 375,
       "Day": 145,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4507,8 +4507,8 @@
       "GameId": 376,
       "Day": 146,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4518,31 +4518,7 @@
     {
       "GameId": 377,
       "Day": 146,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 378,
-      "Day": 146,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 379,
-      "Day": 148,
-      "AwayTeamFile": "Team_A.json",
+      "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
       "IsFinished": false,
@@ -4552,11 +4528,35 @@
       }
     },
     {
+      "GameId": 378,
+      "Day": 146,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 379,
+      "Day": 147,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 380,
-      "Day": 148,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
+      "Day": 147,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4565,8 +4565,8 @@
     },
     {
       "GameId": 381,
-      "Day": 148,
-      "AwayTeamFile": "Team_E.json",
+      "Day": 147,
+      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
       "IsFinished": false,
@@ -4578,9 +4578,9 @@
     {
       "GameId": 382,
       "Day": 149,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4590,9 +4590,9 @@
     {
       "GameId": 383,
       "Day": 149,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4602,7 +4602,7 @@
     {
       "GameId": 384,
       "Day": 149,
-      "AwayTeamFile": "Team_F.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_B.json",
       "StadiumId": "ST02",
       "IsFinished": false,
@@ -4614,9 +4614,9 @@
     {
       "GameId": 385,
       "Day": 150,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4638,9 +4638,9 @@
     {
       "GameId": 387,
       "Day": 150,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4650,9 +4650,9 @@
     {
       "GameId": 388,
       "Day": 151,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4662,9 +4662,9 @@
     {
       "GameId": 389,
       "Day": 151,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4675,8 +4675,8 @@
       "GameId": 390,
       "Day": 151,
       "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4686,9 +4686,9 @@
     {
       "GameId": 391,
       "Day": 152,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4698,9 +4698,9 @@
     {
       "GameId": 392,
       "Day": 152,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4710,7 +4710,7 @@
     {
       "GameId": 393,
       "Day": 152,
-      "AwayTeamFile": "Team_E.json",
+      "AwayTeamFile": "Team_C.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
       "IsFinished": false,
@@ -4722,9 +4722,9 @@
     {
       "GameId": 394,
       "Day": 153,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST07",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4734,6 +4734,114 @@
     {
       "GameId": 395,
       "Day": 153,
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 396,
+      "Day": 153,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 397,
+      "Day": 154,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST07",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 398,
+      "Day": 154,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 399,
+      "Day": 154,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 400,
+      "Day": 155,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST07",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 401,
+      "Day": 155,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 402,
+      "Day": 155,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 403,
+      "Day": 157,
+      "AwayTeamFile": "Team_A.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 404,
+      "Day": 157,
       "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_D.json",
       "StadiumId": "ST04",
@@ -4744,119 +4852,11 @@
       }
     },
     {
-      "GameId": 396,
-      "Day": 153,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 397,
-      "Day": 155,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 398,
-      "Day": 155,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 399,
-      "Day": 155,
-      "AwayTeamFile": "Team_B.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 400,
-      "Day": 156,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 401,
-      "Day": 156,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 402,
-      "Day": 156,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 403,
-      "Day": 157,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_A.json",
-      "StadiumId": "ST01",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 404,
-      "Day": 157,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
       "GameId": 405,
       "Day": 157,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_E.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4867,8 +4867,8 @@
       "GameId": 406,
       "Day": 158,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST07",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4878,9 +4878,9 @@
     {
       "GameId": 407,
       "Day": 158,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST06",
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_D.json",
+      "StadiumId": "ST04",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4890,42 +4890,6 @@
     {
       "GameId": 408,
       "Day": 158,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST05",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 409,
-      "Day": 159,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST07",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 410,
-      "Day": 159,
-      "AwayTeamFile": "Team_D.json",
-      "HomeTeamFile": "Team_B.json",
-      "StadiumId": "ST02",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 411,
-      "Day": 159,
       "AwayTeamFile": "Team_E.json",
       "HomeTeamFile": "Team_F.json",
       "StadiumId": "ST06",
@@ -4936,11 +4900,47 @@
       }
     },
     {
+      "GameId": 409,
+      "Day": 159,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 410,
+      "Day": 159,
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
+      "GameId": 411,
+      "Day": 159,
+      "AwayTeamFile": "Team_F.json",
+      "HomeTeamFile": "Team_B.json",
+      "StadiumId": "ST02",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 412,
       "Day": 160,
-      "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST07",
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_A.json",
+      "StadiumId": "ST01",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4950,9 +4950,9 @@
     {
       "GameId": 413,
       "Day": 160,
-      "AwayTeamFile": "Team_E.json",
-      "HomeTeamFile": "Team_C.json",
-      "StadiumId": "ST03",
+      "AwayTeamFile": "Team_C.json",
+      "HomeTeamFile": "Team_E.json",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4973,10 +4973,10 @@
     },
     {
       "GameId": 415,
-      "Day": 162,
+      "Day": 161,
       "AwayTeamFile": "Team_A.json",
       "HomeTeamFile": "Team_E.json",
-      "StadiumId": "ST07",
+      "StadiumId": "ST05",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4985,10 +4985,10 @@
     },
     {
       "GameId": 416,
-      "Day": 162,
-      "AwayTeamFile": "Team_F.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "Day": 161,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,
@@ -4997,7 +4997,7 @@
     },
     {
       "GameId": 417,
-      "Day": 162,
+      "Day": 161,
       "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_C.json",
       "StadiumId": "ST03",
@@ -5009,20 +5009,8 @@
     },
     {
       "GameId": 418,
-      "Day": 163,
+      "Day": 162,
       "AwayTeamFile": "Team_A.json",
-      "HomeTeamFile": "Team_F.json",
-      "StadiumId": "ST07",
-      "IsFinished": false,
-      "Result": {
-        "HomeScore": 0,
-        "AwayScore": 0
-      }
-    },
-    {
-      "GameId": 419,
-      "Day": 163,
-      "AwayTeamFile": "Team_B.json",
       "HomeTeamFile": "Team_E.json",
       "StadiumId": "ST05",
       "IsFinished": false,
@@ -5032,11 +5020,23 @@
       }
     },
     {
+      "GameId": 419,
+      "Day": 162,
+      "AwayTeamFile": "Team_D.json",
+      "HomeTeamFile": "Team_F.json",
+      "StadiumId": "ST06",
+      "IsFinished": false,
+      "Result": {
+        "HomeScore": 0,
+        "AwayScore": 0
+      }
+    },
+    {
       "GameId": 420,
-      "Day": 163,
-      "AwayTeamFile": "Team_C.json",
-      "HomeTeamFile": "Team_D.json",
-      "StadiumId": "ST04",
+      "Day": 162,
+      "AwayTeamFile": "Team_B.json",
+      "HomeTeamFile": "Team_C.json",
+      "StadiumId": "ST03",
       "IsFinished": false,
       "Result": {
         "HomeScore": 0,

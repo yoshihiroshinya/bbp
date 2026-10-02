@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_D",
   "TeamName": "チームD",
+  "ShortName": "D",
   "HomeStadiumId": "ST04",
   "Manager": {
     "Name": "D監督",

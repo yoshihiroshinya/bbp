@@ -2012,9 +2012,15 @@ button.nm-tap {
 .pv .pv-sl1 { animation: pvRunA var(--dur, .42s) var(--dl, 0s) step-end both; }
 .pv .pv-sl2 { animation: pvRunB var(--dur, .42s) var(--dl, 0s) step-end both; }
 
-/* 捕った野手の光り。★球が届くまで待たせる（`--dl` ＝ 球の待ち .12s ＋ 弾道の長さ）。 */
+/* 捕った野手の光り。★球が届くまで待たせる（球の待ち .12s ＋ 弾道の長さ）。
+   ★★★**遅延は `--gl`。`--dl` を使わないこと**（2026-10-01）。この `<g>` は
+     `pv-mv`（走る包み）の**内側**に入ることがあり（強襲・失策の拾い直し／一塁手が自分で踏む形／バント）、
+     `--dl` をここへ置くと**中の走る脚と腕（`pv-rl` / `pv-ra`）がその遅延を継ぐ** ——
+     実測でバントの小フライが **脚の振り 0.93〜1.56s ＝ 予算 1,200ms を 360ms 超えた**。
+     **段階42 で `pv-th` について踏んだのとまったく同じ形**（あちらは `--fd` へ分けた）。
+   ★`--dl` への落としは残してある（古い書き方が残っていても光りは出る）。 */
 @keyframes pvGot { 0% { opacity: 1; } 35% { opacity: .45; } 100% { opacity: 1; } }
-.pv .pv-got { animation: pvGot var(--gd, .34s) var(--dl, 0s) ease-out both; }
+.pv .pv-got { animation: pvGot var(--gd, .34s) var(--gl, var(--dl, 0s)) ease-out both; }
 
 /* 打球が止まったところの印と、入った点。どちらも遅れて出す。 */
 @keyframes pvPop { 0% { opacity: 0; transform: scale(.3); } 100% { opacity: 1; transform: none; } }
@@ -2024,20 +2030,47 @@ button.nm-tap {
 
 /* 札。★下地を敷くこと — 地面はわざと暗くしてあるので、直に置くと沈む。 */
 .pv .pv-nm { fill: var(--accent); paint-order: stroke; stroke: rgba(9, 14, 18, .85); stroke-width: 2.2; }
-/* ★★札の中身は**コマ（色の付いた小さな箱）を並べる**（2026-09-23。実機の絵のとおり）。
-   文字はどれも白で、**意味は箱の色が持つ** — ラベルと数値を色で分けると、
-   同じ幅でも「どこを読めばよいか」が一目で分かる。 */
+/* ★★★**札の中身は「文字」で、箱を持つのは `打／投` と `左右` だけ**（2026-10-01。実機の
+   参考画像）。2026-09-23 は「意味は箱の色が持つ」として6種すべてを箱にしていたが、
+   **薄地の上の灰文字**という読みにくい組が2つできていた。箱を2つに絞ると、
+   残る色は**白（読む）と灰（どの数値か）**の2つだけになる。 */
 .pv .pv-chipt { fill: #ffffff; stroke: none; font-weight: 700; }
-/* ★★**項目名だけ灰文字**（2026-09-29。実機の参考画像）。「成績の数値は大きく、
-   項目名の説明は灰色の文字にして背景を薄くし、より数値を目立たせたい」。
-   ★**大きさも `ChipFs` がコマごとに変える**（値 ×1.30／項目名 ×0.92）。 */
-.pv .pv-chipt-dim { fill: var(--pv-chip-tx, #6b7078); }
-.pv .pv-chipc { stroke: rgba(255, 255, 255, .34); stroke-width: .35; }
+/* ★★**項目名だけ灰文字**（2026-09-29 / 2026-10-01。実機の参考画像）。
+   ★**真っ黒な札の上に乗る**ので、地が薄かったころより**明るい灰**にしてある
+   （`--pv-chip-tx` は回・得点・アウトの札が読むので触らない）。
+   ★**大きさも `ChipFs` がコマごとに変える**（値 ×1.22／項目名 ×0.76）。 */
+.pv .pv-chipt-dim { fill: var(--pv-chip-lb, #9aa0a6); }
+/* ★コマの箱は**塗りだけ**（枠を引くと、2つしかない箱がかえって騒がしい）。 */
+.pv .pv-chipc { stroke: none; }
 /* ★★打者・投手の札は**背景の箱**の上に置く（2026-09-21。実機で「文字がはっきり
    見えやすい色に」と言われた）。下の隅は席の点描と広告帯の上なので、
    縁取り（`paint-order: stroke`）だけでは沈む。★箱があるので縁取りは外す
-   （二重にすると文字が太って読みにくい）。 */
+   （二重にすると文字が太って読みにくい）。
+   ★★**下端の札だけ真っ黒**（2026-10-01。参考の絵）。`pv-chip-bg` とは別のクラスに
+   してある —— あちらは球場名・代打・投手交代・前進守備・回のはじめ・球種が読む。 */
+.pv .pv-chip-card { fill: #000000; stroke: none; }
 .pv .pv-chip-bg { fill: rgba(7, 12, 16, .84); stroke: rgba(255, 255, 255, .22); stroke-width: .5; }
+/* ★★絵の中の札（2026-09-30）。`pv-chip-bg` に重ねて色と濃さだけ差し替える
+   —— **形と座標は C#、色は CSS** の約束はここも同じ。
+   ★`pv-tag-atk` は攻撃側（＝代打）なので緑。投手交代は守備側なので地のまま。
+   ★`pv-tag-thin` は球場名。「多少文字が見えにくくてもよい」と言われたので薄い。
+   ★`pv-tag-half` は回の頭の大きな札。采配の一時停止のときだけ出る。 */
+.pv .pv-tag-atk  { fill: rgba(12, 46, 30, .86); stroke: var(--accent); stroke-width: .6; }
+.pv .pv-tag-thin { fill: rgba(7, 12, 16, .55); stroke: rgba(255, 255, 255, .14); }
+.pv .pv-tag-half { fill: rgba(7, 12, 16, .88); stroke: var(--accent); stroke-width: .8; }
+/* ★★回・得点・B・S・アウトの札（2026-09-30。B/S は 2026-10-01 の実機の要望で足した）。
+   ★**丸は図形**（文字の `●` ではない）。色は盤面の `.t-last-c .d` と**同じ** ——
+     ボール青 `#9ecbff` / ストライク琥珀 `#ffd479` / アウト赤 `--danger`。
+   ★**空の丸は `pv-dot-off` で共有**（B も S も O も「点いていない丸」は同じ見た目）。
+   ★**攻撃中の球団名だけ色と太さを変える** —— 球場タブにはスコアボードが無いので、
+     `▶` の代わりがここしかない（横一列に出していたときと同じ約束）。 */
+.pv .pv-stt     { fill: #ffffff; font-weight: 700; }
+.pv .pv-stt-dim { fill: var(--pv-chip-tx, #6b7078); font-weight: 700; }
+.pv .pv-stt-atk { fill: var(--accent); font-weight: 700; }
+.pv .pv-ball-on   { fill: #9ecbff; }
+.pv .pv-strike-on { fill: #ffd479; }
+.pv .pv-out-on    { fill: var(--danger); }
+.pv .pv-dot-off   { fill: none; stroke: var(--pv-chip-tx, #6b7078); stroke-width: .5; }
 /* ★打者・投手が**入れ替わった停止だけ**、その札のある側から滑り込む。
    ★`--sx` は札の幅ぶん（C# が出す）。`transform-box` は要らない（平行移動だけ）。 */
 @keyframes pvChipIn { 0% { transform: translateX(var(--sx, 0)); } 100% { transform: translateX(0); } }
@@ -2193,18 +2226,19 @@ button.nm-tap {
      `pv-late`（打者走者を待たせる）とまったく同じ仕掛け。
    ★★**`100%` を必ず書くこと。** 書かないと土台の `opacity` で暗黙の 100% ができ、
      `both` で**野手が消える**（段階35 で投手と打者が消えたのと同じ）。
-   ★`--dl` はすぐ外の `pv-got`（光り）が持っているので、**時刻を2箇所に書かない**。
+   ★**切り替えの時刻は必ず `--fd` に書く**（2026-09-27 の段階45 以降、呼ぶ側は全部そうしている）。
+     `--dl` へ落とす古い書き方は残してあるが、**新しく頼らないこと**。
    ★動きを減らす設定では**投げ終わりの形**を出す（どこへ投げたかは動きではなく情報）。 */
 @keyframes pvTh1 { 0% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes pvTh2 { 0% { opacity: 0; } 100% { opacity: 1; } }
 .pv .pv-th2 { opacity: 0; }
 /* ★★★**切り替えの時刻は `--fd` を先に読む**（2026-09-26）。
-     送球した野手（段階41）は**すぐ外の `pv-got` の `--dl`** をそのまま使えるが、
      **塁へ入る野手（段階42）は `pv-mv` の中にいる** —— ここへ `--dl` をインラインで置くと、
      **中の走る脚と腕（`pv-rl` / `pv-ra`）がその遅延を継いで**、着いてから振り始める。
      実測で **脚の振りが 0.8s 遅れて 1,600ms で終わっていた**（予算 1,200ms 超え）。
    ★**`--fd` なら `--dl` を汚さない**ので、脚は `pv-mv` の遅延（0）のまま振れる。
-   ★**送球した野手は `--fd` を持たない** ＝ `--dl` へ落ちるので、段階41 の挙動は 1px も変わらない。 */
+   ★★**同じ罠を 2026-10-01 に `pv-got` でもう一度踏んだ**（バントの小フライに光りを足したとき）。
+     あちらは `--gl` へ分けた。**`pv-mv` の中へ入りうる包みに `--dl` を書かないこと。** */
 .pv .pv-th1 { animation: pvTh1 var(--fd, var(--dl, .5s)) 0s step-end both; }
 .pv .pv-th2 { animation: pvTh2 var(--fd, var(--dl, .5s)) 0s step-end both; }
 /* ★★**投球の5コマ**（2026-09-24。段階34の B。実機の参考画像）。打者のスイングと同じコマ送り。
@@ -2264,6 +2298,21 @@ button.nm-tap {
     transform-box: fill-box; transform-origin: center;
 }
 
+/* ★★5点の動き（打席 → 1塁 → 2塁 → 3塁 → 本塁）。**本塁打の打者だけ**が使う（2026-09-30）。
+   ★実機で「ホームランの時に打者がホームまで走らない。一塁までしか走っていない」と指摘された。
+   ★4点で済ませると 3塁から本塁へ行かずに内野を突っ切る（`pvMove4` と同じ話）。 */
+@keyframes pvMove5 {
+    0%   { transform: translate(var(--ax), var(--ay)) scale(var(--as, 1)); }
+    25%  { transform: translate(var(--bx), var(--by)) scale(var(--bs, 1)); }
+    50%  { transform: translate(var(--cx), var(--cy)) scale(var(--cs, 1)); }
+    75%  { transform: translate(var(--ex), var(--ey)) scale(var(--es, 1)); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+.pv .pv-mv5 {
+    animation: pvMove5 var(--dur) var(--dl, 0s) ease-out both;
+    transform-box: fill-box; transform-origin: center;
+}
+
 /* 転がり（段階20）。落ちた点から止まる点へ。
    ★★**遅延のあいだは見えないこと。** `both` は遅延中に 0% のフレームを当てるので、
      0% に `opacity: 0` を置き、1% で 1 に上げる。こうしないと**落ちる前から
@@ -2281,14 +2330,20 @@ button.nm-tap {
 
 /* ★★**次の球へ渡したら消す**（段階20）。`--dl` の時刻で切るだけ（長さ .01s）。
      転がりの手前の飛球と、併殺の1本目の送球に付ける。
-     **消さないと球が2つ並ぶ**（真上盤面で `ballGone` を重ねたのと同じ話）。 */
-@keyframes pvCut { 0% { opacity: 1; } 100% { opacity: 0; } }
+     **消さないと球が2つ並ぶ**（真上盤面で `ballGone` を重ねたのと同じ話）。
+   ★★**`1%` で落とすこと**（2026-09-29）。`0% → 100%` を linear で落とすと
+     **.01s かけて薄くなる**ので、次の球を同じ時刻で出すと**1フレームだけ2つ**見える
+     （実機の計測で 72フレーム中1フレームだけ出た）。`pvRoll` が
+     `0%{0} 1%{1}` で出すのとちょうど裏返しの書き方。
+   ★**遅延のあいだは 0% のフレーム（opacity 1）が当たる**ので、
+     「それまでは見えている」はそのまま。 */
+@keyframes pvCut { 0% { opacity: 1; } 1%, 100% { opacity: 0; } }
 .pv .pv-cut { animation: pvCut .01s var(--dl, 0s) linear both; }
 
 /* ★動きを減らす設定では3つとも消す。**構えた姿勢のまま止まる**ので情報は落ちない。 */
 @media (prefers-reduced-motion: reduce) {
     .pv .pv-arm, .pv .pv-bat, .pv .pv-swa, .pv .pv-swb, .pv .pv-swl, .pv .pv-sf, .pv .pv-tk,
-    .pv .pv-walk, .pv .pv-mv4, .pv .pv-pf { animation: none; }
+    .pv .pv-walk, .pv .pv-mv4, .pv .pv-mv5, .pv .pv-pf { animation: none; }
     .pv .pv-sf0, .pv .pv-tk0, .pv .pv-pf0 { opacity: 1; }   /* ★動きを減らす設定では構え・セットのコマだけ出す */
     /* ★送球は**投げ終わりの形**を出す（どこへ投げたかは動きではなく情報）。 */
     .pv .pv-th1 { animation: none; opacity: 0; }
@@ -2319,16 +2374,94 @@ button.nm-tap {
     --pv-daysky: #8fbfe3;    /* 昼（坊っちゃんだけ） */
     --pv-roof: #7f8a96;      /* ドームの屋根 */
     --pv-standt: #525f6c;    /* スタンドの上端の線 */
-    /* 下端の札のコマ（2026-09-23。実機の絵に合わせた）。★どの球場でも同じ色なので
-       ここに置く（球場ごとに変わる色は `ParkView.Look`）。文字はどれも白。 */
-    --pv-chip-bh: #c8372c;   /* 打（打者の見出し） */
-    --pv-chip-bs: #e3a79f;   /* 打順（9番）。★薄地＋灰文字 */
-    --pv-chip-bl: #e9c6bd;   /* 打者の項目名（打率・本・打点・今日）。★薄地＋灰文字 */
-    --pv-chip-ph: #2c7a35;   /* 投（投手の見出し） */
-    --pv-chip-ps: #bdd9bd;   /* 役割（先発・中継ぎ・抑え）。★薄地＋灰文字 */
-    --pv-chip-pl: #c6e0c6;   /* 投手の項目名（球数・防御率・回数・勝負SH）。★薄地＋灰文字 */
-    --pv-chip-nm: #4a4f55;   /* 選手名 */
-    --pv-chip-hn: #4a90e2;   /* 左右（左打・右投） */
-    --pv-chip-vl: #1a26c8;   /* 数値 */
-    --pv-chip-tx: #6b7078;   /* ★項目名の文字（灰）。数値の白と差を付けて数値を目立たせる */
+    /* 下端の札（2026-09-23 →★2026-10-01 に参考の絵へ寄せた）。★どの球場でも同じ色なので
+       ここに置く（球場ごとに変わる色は `ParkView.Look`）。
+       ★★**箱の色は3つだけ** —— 打（赤）／投（緑）／左右（青）。打順・背番号・名前・
+       項目名・数値は**箱を持たない文字**なので、色は白か灰の2つで足りる。
+       ★**薄地の色（`-bs` `-bl` `-ps` `-pl`）と `-nm` `-vl` は消した** —— 箱が無くなって
+       読まれなくなったため（効かないものを残さない）。 */
+    --pv-chip-bh: #e01b1b;   /* 打（打者の見出し） */
+    --pv-chip-ph: #2f8f3a;   /* 投（投手の見出し） */
+    --pv-chip-hn: #2f7fe8;   /* 左右（左打・右投） */
+    --pv-chip-lb: #9aa0a6;   /* ★項目名の文字（灰）。真っ黒な札の上なので明るめ */
+    --pv-chip-tx: #6b7078;   /* 回・得点・アウトの札のラベル（★下端の札はもう読まない） */
+}
+
+/* ========================================================================
+   【スマホを横にしたとき】下タブを隠し、球場タブの絵を左半分いっぱいに置く
+   （2026-10-02。段階76。実機の要望2件）
+
+   ★★**しきい値は `orientation: landscape` ＋ `max-height: 500px`。**
+     向きだけで切ると、**短くしたデスクトップの窓**や横長のタブレット（iPad は
+     横でも 768px）まで巻き込む。スマホの横は 375〜430px なので 500 で割れる。
+
+   ★★**`--nav-h` を 0 にすること**（`.app-nav` を消すだけでは足りない）。
+     画面下に固定するシートが4つ（采配・観戦・確認・選手）**この変数で底を決めている**
+     ので、変数が 4.4rem のままだと**タブが無いのに 65px 浮く**。
+   ★`.app-body` の下の余白は `--nav-h` ではなく 5rem の直書きなので、別に上書きする。
+     ★**この直書きを変数に寄せる直しは別件**（縦でも効くので測り直しが要る）。 */
+@media (orientation: landscape) and (max-height: 500px) {
+
+    :root { --nav-h: 0rem; }
+    .app-nav { display: none; }
+    .app-body { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); }
+
+    /* ★**下タブを消したぶんはシートに渡す**（`max-height: 82dvh` のままだと 67px 余る）。
+       横では 82dvh ＝ 308px しかなく、**盤面タブで「この回まで自動」が画面の外**だった
+       （シートの中をスクロールすれば届くが見えない）。★これは**下タブを隠す前からそう**で、
+       隠しただけでは1px も直らない — シートの高さは `max-height` が決めているため。 */
+    .tactics-sheet { max-height: 100dvh; }
+
+    /* ---- 球場タブだけ「左に絵・右に文字」へ組み替える ----
+       ★**`.park` は Razor が付ける**（`SituationBoard.ShownTabOf(_boardTab, allowPark) == 3`）。
+         `:has(.t-board.zoom)` でも書けるが、**Safari 15.4 / Chrome 105 より前で黙って効かない**。
+         クラスなら古い端末でも「縦のまま」に落ちるだけで壊れない。
+       ★**盤面タブ・オーダー・ベンチは 1px も変わらない**（`.park` が付かない）。
+       ★**縦（portrait）も 1px も変わらない**（この `@media` の外は触っていない）。 */
+
+    /* 絵の縦横比は viewBox（330 × 208）そのもの。★**数字を2箇所に書かない**ためにここだけ。
+       330 / 208 = 1.5865。★ここを変えるときは `ParkView` の viewBox も見ること。 */
+    .tactics-sheet.park {
+        --pvh: calc(100dvh - 1rem);
+        --pvw: calc(var(--pvh) * 1.5865);
+        height: 100dvh; max-height: 100dvh;
+        /* 左は絵のぶんを空ける（絵は絶対配置なので、ここが右の列の左端になる） */
+        padding: .5rem .6rem .5rem calc(1.1rem + var(--pvw));
+        overflow: hidden;
+        gap: .35rem;
+    }
+
+    /* ★**盤面の箱を消す**（`display: contents`）。段階17 で球場タブの並びを
+         `order` で変えたのとまったく同じ手で、**中の タブ／絵／直前のプレー が
+         シートの直接の子になり、シート自身の子（次へ・逃げ道）と混ぜて並べられる**。
+       ★`.t-board` の `sticky` / `min-height`（横では 206px になる）/ 余白 / 区切り線も
+         ここで一緒に消える。**縦では今までどおり効く。** */
+    .tactics-sheet.park > .t-board.zoom { display: contents; }
+
+    /* 絵は絶対配置で左へ。★**`position: fixed` のシートが containing block**。 */
+    .tactics-sheet.park .dia-wrap.pv-wrap {
+        position: absolute; left: .5rem; top: .5rem;
+        width: var(--pvw); height: var(--pvh);
+        max-width: none; margin: 0;
+    }
+    .tactics-sheet.park .dia-wrap.pv-wrap > .pv { width: 100%; height: 100%; }
+
+    /* ★★**`order` を全部ここで決め直すこと。** `.t-board.zoom` の既定（タブ0・絵1・
+         直前2）は**盤面の箱の中での順番**で、箱を消すと**シート自身の子（次へ・
+         逃げ道のボタン）が既定の order 0** なので**タブと混ざって上に来る**
+         （実際に「次へ」がタブの直下、直前のプレーが一番下まで落ちた）。 */
+    .tactics-sheet.park .t-board.zoom .t-tabs { order: 0; flex: 0 0 auto; }
+
+    /* ★★**右の列であふれたら「直前のプレー」だけが縮む。** 縦のシートで
+         `.t-board` だけを縮ませているのとまったく同じ形（`flex: 0 1 auto` ＋ `min-height: 0`）。
+       ★**これが無いと、長い結果でボタンが画面の下へ押し出される**（シートは
+         `overflow: hidden` なのでスクロールもできない）。実測で
+         `+4[中] センターバックスクリーンに飛び込む特大サヨナラ満塁ホームラン!` が
+         **5行 115px** ＝ 一番下のボタンの下端 367px（画面 375px）で、**余りは 8px しかない**。
+       ★**収まるときは1px も縮まない**（ふだんの 51px のままが実測 101停止）。 */
+    .tactics-sheet.park .t-board.zoom .t-last {
+        order: 1; margin: 0;
+        flex: 0 1 auto; min-height: 0; overflow-y: auto;
+    }
+    .tactics-sheet.park > *:not(.t-board) { order: 2; }
 }
