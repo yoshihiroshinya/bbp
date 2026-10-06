@@ -385,6 +385,9 @@ input[type="file"] {
    ★**左の 3px の帯を打ち消すこと。** あれは「得点が入ったプレー」の印
    （`.t-last.scored` が色を付ける）で、片側だけだと**中心が 1.5px 右へずれる**。
    透明の右枠を同じ幅だけ足して左右対称にする（帯の見た目は変わらない）。 */
+/* ★采配の問いだけ「直前のプレー」をスコアボードの直下（`top`）に出し、下の写し（`alt`）は縦では隠す（2026-10-06）。
+   盤面は sticky で下から切られるので、一番下のままだと選択肢の多い問いで押し出された。 */
+.t-last.alt { display: none; }
 .t-last {
     margin-top: .5rem;
     padding: .4rem .55rem;
@@ -2495,6 +2498,10 @@ button.nm-tap {
         order: 1; margin: 0;
         flex: 0 1 auto; min-height: 3.4rem; overflow-y: auto;
     }
+    /* ★采配の問いでは「直前のプレー」を2つ描いている（縦用の上の写し `top` ／横用の下の写し `alt`）。
+       横では上の写しが左の列に入ってしまうので隠し、下の写しを右の列に出す。 */
+    .tactics-sheet.board .t-last.top { display: none; }
+    .tactics-sheet.board .t-last.alt { display: block; }
     .tactics-sheet.board > *:not(.t-board) { order: 2; }
 
     /* ★★**選択肢を2列にする。** 1列のままだと継投10件で 6件しか見えない（2列で8件）。
