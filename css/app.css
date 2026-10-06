@@ -62,8 +62,9 @@ html, body {
 .app-body {
     flex: 1;
     padding: 1rem;
-    /* 下タブに隠れないよう余白を確保する */
-    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+    /* 下タブに隠れないよう余白を確保する。★`--nav-h` から決める（横向きでは 0 になる）。
+       縦は 4.4rem ＋ .6rem ＝ 従来の 5rem と同じ */
+    padding-bottom: calc(var(--nav-h) + .6rem + env(safe-area-inset-bottom));
 }
 
 .app-nav {
@@ -98,6 +99,11 @@ h2 { font-size: 1rem; margin: 1.5rem 0 .5rem; color: var(--muted); }
 .big { font-size: 1.1rem; font-weight: 600; }
 
 .btn-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
+/* 2度押しの1回目（「この回まで自動」など）。琥珀 ＝ 戻せないが何も消えない（確認シートの .warn と同じ色）。 */
+.btn.armed { background: #2a2418; border-color: #e0a33a; color: #f0c674; }
+/* 采配の問いの下の行（「1つ前の采配に戻る」「以降この試合はおまかせ」）。★`.btn-row` の上下の余白を
+   付けないこと —— ボタン1つだったころには無かったぶん、横置きで右の列が 18px 伸びた。 */
+.btn-row.t-escape { margin: 0; }
 .btn {
     flex: 1 1 auto;
     padding: .7rem 1rem;
@@ -317,15 +323,17 @@ input[type="file"] {
      （子の親が違うままだと `order` では混ぜられない）。
    ★**`.t-mid.zoom` の箱が消えるので、あれが持っていた上下の区切り線と余白も消える。**
      代わりに `.t-board.zoom` の `gap` で間隔を取る。
-   ★**`.t-mid.zoom .t-now` などの指定はそのまま効く**（子孫セレクタなので、
-     `.t-mid` の箱が無くなっても一致する）。
+   ★**横一列（`.t-now`）は球場タブでは出さない**（段階62 で回・得点・O を絵の中へ移した）。
+     球場タブ用の `.t-now` の規則と球場名の `.t-park*` は 2026-10-06 に消した（到達しない）。
    ★**盤面タブは 1px も変えない** — `.t-board` に `zoom` が付かない。 */
-.t-board.zoom { display: flex; flex-direction: column; gap: .45rem; }
+.t-board.zoom { display: flex; flex-direction: column; gap: .45rem;
+    /* ★下限（23.5rem）は盤面タブで「ダイヤが切れない高さ」として決めたもの。球場タブは中身が
+       約313px しか無いので、残すと「直前のプレー」の下に 40px ほど空きができた（実機の指摘）。 */
+    min-height: 0; }
 .t-board.zoom .t-mid.zoom { display: contents; }
 .t-board.zoom .t-tabs   { order: 0; }
 .t-board.zoom .dia-wrap { order: 1; align-self: center; }
 .t-board.zoom .t-last   { order: 2; margin-top: 0; }   /* gap で取るので二重に空けない */
-.t-board.zoom .t-now    { order: 3; align-self: center; }
 
 /* 【左の列になる部分】スコアボード・横一列・打者と投手を包む箱（`SituationBoard.razor`）。
    ★★**既定は箱を作らない。** だから**縦も球場タブも 1px も変わらない** —
@@ -455,8 +463,6 @@ input[type="file"] {
    ★**攻撃中の側を太字に。** 「球場」タブにはスコアボードが無いので、
      攻撃中の行を示す `▶` の代わりがここしかない。 */
 .t-score { display: flex; align-items: baseline; gap: .3rem; min-width: 0; font-size: .72rem; }
-.t-sc-n { color: var(--muted); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.t-sc-n.atk { color: var(--fg); font-weight: 700; }
 .t-sc-v { color: var(--fg); font-weight: 700; flex: 0 0 auto; white-space: nowrap; }
 
 /* 打者・投手。★**左＝後攻・右＝先攻でチーム固定**（攻撃側で入れ替えない）。
@@ -599,38 +605,11 @@ button.t-p-n {
 .dia-wrap .diamond { transform: scale(var(--z)); transform-origin: top left; }
 
 /* 「球場」タブ（`Tab == 3`）。**スコアボードと打者・投手を出さず**、絵に場所を譲る。
-   ★**回・アウトは絵の上へ積む。** 横に並べたままだと 48.8px ＋ 307px = 356px で、
-     375px の盤面（内側 約343px）からはみ出す。
+   ★**回・得点・アウトは絵の中**（段階62。左のファウルグラウンドの札）。
    ★**「直前のプレー」は残す。** 観戦でいちばん読まれる行で、消すと何が起きたか分からない。
    ★**2.4倍**: 128×120 → 307×288。375px でも 360px でも横スクロールが出ない上限。 */
-/* ★**ここも `minmax(0, 1fr)`。** ただの `1fr` は `minmax(auto, 1fr)` なので、
-   中に `white-space: nowrap` があると**列が中身の幅まで勝手に広がる**。
-   実測（2026-09-17）: `坊っちゃんスタジアム（地方）` で球場名が 207px になり、
-   得点を足した `.t-now` が **440px** → 列も 440px → `.t-mid`（330px）からあふれ、
-   **ダイヤモンドが 55px 右へずれた**。0 を下限にすると `.t-park-n` の省略記号が効く。 */
-.t-mid.zoom { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: .5rem; }
-/* ★**2行に折り返してよい**（2026-09-17。実機で「球団名が見切れる」と言われた）。
-   回 ＋ 得点 ＋ O ＋ 球場名 を1行に詰めると、球場名に残るのが 97px しかなく、
-   **バンテリンドーム ナゴヤ（124px）と坊っちゃんスタジアム（地方）（154px）が切れていた**。
-   折り返せば 2行目に球場名が丸ごと入る（154px < 330px）。
-   ★**`row-gap` を `gap` と同じにしないこと。** `.9rem`（13.5px）だと2行で 51.5px になり、
-     絵の上を削った 12px では足りない。行間は `.15rem` に絞る。
-   ★**増えたぶんは `--crop` で取り返す**（`.dia-wrap` の注記）。 */
-.t-mid.zoom .t-now {
-    flex-direction: row; align-items: center; justify-self: center;
-    column-gap: .9rem; row-gap: .15rem; flex-wrap: wrap; justify-content: center;
-    min-width: 0; max-width: 100%;      /* ★これが無いと中の nowrap が押し広げる */
-}
 .t-mid.zoom .dia-wrap { --z: 2.4; --crop: calc(4px * var(--z)); }   /* 1倍で 4px ぶん上を削る */
 
-/* 球場と風（段階9 の配管。2026-09-16）。**「球場」タブの `.t-now` の中**に出す。
-   ★**別の行にしないこと。** `.t-mid.zoom` では `.t-now` が横一列になるので、
-     回・アウトの隣なら**盤面が 1px も伸びない**。行を足すと 18px 伸びて
-     シートが上限（82dvh）を越え、「次へ」が画面から押し出される。
-   ★**`t-park-n` は縮めてよい**（球場名は長い）。風は短いので縮ませない。 */
-.t-park { display: flex; align-items: baseline; gap: .35rem; min-width: 0; }
-.t-park-n { font-size: .74rem; color: var(--fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.t-park-w { font-size: .68rem; color: var(--muted); flex: 0 0 auto; white-space: nowrap; }
 .diamond { position: relative; width: 128px; height: 120px; flex: 0 0 128px; }
 
 /* ---- 球場の寸法 → px（2026-09-16。段階9）----
@@ -2407,13 +2386,12 @@ button.nm-tap {
    ★★**`--nav-h` を 0 にすること**（`.app-nav` を消すだけでは足りない）。
      画面下に固定するシートが4つ（采配・観戦・確認・選手）**この変数で底を決めている**
      ので、変数が 4.4rem のままだと**タブが無いのに 65px 浮く**。
-   ★`.app-body` の下の余白は `--nav-h` ではなく 5rem の直書きなので、別に上書きする。
-     ★**この直書きを変数に寄せる直しは別件**（縦でも効くので測り直しが要る）。 */
+   ★`.app-body` の下の余白も `--nav-h` から決まる（2026-10-06 に `5rem` の直書きをやめた）ので、
+     ここで上書きしなくても下タブのぶんだけ自動で詰まる。 */
 @media (orientation: landscape) and (max-height: 500px) {
 
     :root { --nav-h: 0rem; }
     .app-nav { display: none; }
-    .app-body { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); }
 
     /* ★**下タブを消したぶんはシートに渡す**（`max-height: 82dvh` のままだと 67px 余る）。
        横では 82dvh ＝ 308px しかなく、**盤面タブで「この回まで自動」が画面の外**だった
