@@ -1844,6 +1844,13 @@ button.t-p-n {
 .tbl tr.sel td { background: #1d3329; }
 .tbl tr.now td { color: var(--accent); }
 .tbl tr.total td { border-top: 1px solid var(--line); font-weight: 600; }
+/* 移籍した年の「計」（球団ごとの行のあと）。通算の行より控えめに */
+.tbl tr.sub td { color: var(--muted); font-style: italic; }
+/* 直近のオフの成長・衰え（GrowthTag）。伸びた＝緑・衰えた＝赤、目立つ年は太字 */
+.gtag { display: inline-block; margin-left: .3rem; padding: 0 .3rem; border-radius: .3rem; font-size: .72rem; font-style: normal; white-space: nowrap; color: var(--muted); border: 1px solid var(--line, rgba(255,255,255,.15)); }
+.gtag.up { color: var(--accent); }
+.gtag.down { color: var(--danger); }
+.gtag.loud { font-weight: 700; border-color: currentColor; }
 
 /* ---- 選手データ一覧（/players）----
    列が20近くあるので、まず横スクロール（.scroll-x）に載せる前提。
