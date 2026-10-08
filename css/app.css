@@ -1851,6 +1851,8 @@ button.t-p-n {
 .gtag.up { color: var(--accent); }
 .gtag.down { color: var(--danger); }
 .gtag.loud { font-weight: 700; border-color: currentColor; }
+/* 年度別成績の「新球種」列（2026-10-08） */
+.tbl td.new-pitch { color: var(--accent); font-weight: 700; white-space: nowrap; }
 
 /* ---- 選手データ一覧（/players）----
    列が20近くあるので、まず横スクロール（.scroll-x）に載せる前提。
