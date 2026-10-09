@@ -2426,7 +2426,9 @@ button.nm-tap {
         height: 100dvh; max-height: 100dvh;
         /* 左は絵のぶんを空ける（絵は絶対配置なので、ここが右の列の左端になる） */
         padding: .5rem .6rem .5rem calc(1.1rem + var(--pvw));
-        overflow: hidden;
+        /* ★★1球ごとの采配の問い（2026-10-09）では右の列が収まらないことがあるのでスクロールさせる。
+             絵は `position: fixed` にしてあるので一緒に流れない（盤面タブの左の列と同じ） */
+        overflow-y: auto; overflow-x: hidden;
         gap: .35rem;
     }
 
@@ -2437,9 +2439,9 @@ button.nm-tap {
          ここで一緒に消える。**縦では今までどおり効く。** */
     .tactics-sheet.park > .t-board.zoom { display: contents; }
 
-    /* 絵は絶対配置で左へ。★**`position: fixed` のシートが containing block**。 */
+    /* 絵は左へ。★2026-10-09 に `absolute` → `fixed`（シートが右の列ぶんスクロールしても絵は流れない） */
     .tactics-sheet.park .dia-wrap.pv-wrap {
-        position: absolute; left: .5rem; top: .5rem;
+        position: fixed; left: .5rem; top: .5rem;
         width: var(--pvw); height: var(--pvh);
         max-width: none; margin: 0;
     }
@@ -2463,6 +2465,11 @@ button.nm-tap {
         flex: 0 1 auto; min-height: 0; overflow-y: auto;
     }
     .tactics-sheet.park > *:not(.t-board) { order: 2; }
+    /* ★★1球ごとの采配の問い（2026-10-09）。選択肢が4〜5つあると右の列（約185px）に収まらないので、
+         ボタンを詰め、それでも収まらないぶんはシートをスクロールさせる（上の `overflow-y: auto`）。
+         ★「直前のプレー」を潰さない（縮むのはここだけなので、下限が無いと 12px の帯になった。実測） */
+    .tactics-sheet.park .t-board.zoom .t-last { min-height: 3.4rem; }
+    .tactics-sheet.park .t-choices .btn { padding: .4rem .7rem; }
 
     /* ---- 盤面タブも左右に割る（2026-10-02。実機の要望） ----
        ★★**割る前は采配が読めなかった。** 盤面は sticky で `min-height: 55dvh` ＝ **206px**
