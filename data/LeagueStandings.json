@@ -3,62 +3,134 @@
     {
       "TeamId": "Team_A",
       "TeamName": "チームA",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
     },
     {
       "TeamId": "Team_B",
       "TeamName": "チームB",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
     },
     {
       "TeamId": "Team_C",
       "TeamName": "チームC",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
     },
     {
       "TeamId": "Team_D",
       "TeamName": "チームD",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
     },
     {
       "TeamId": "Team_E",
       "TeamName": "チームE",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
     },
     {
       "TeamId": "Team_F",
       "TeamName": "チームF",
+      "League": "セ・リーグ",
       "Games": 0,
       "Wins": 0,
       "Losses": 0,
       "Draws": 0,
-      "WinRate": 0.0,
-      "GamesBehind": 0.0
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_G",
+      "TeamName": "チームG",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_H",
+      "TeamName": "チームH",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_I",
+      "TeamName": "チームI",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_J",
+      "TeamName": "チームJ",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_K",
+      "TeamName": "チームK",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
+    },
+    {
+      "TeamId": "Team_L",
+      "TeamName": "チームL",
+      "League": "パ・リーグ",
+      "Games": 0,
+      "Wins": 0,
+      "Losses": 0,
+      "Draws": 0,
+      "WinRate": 0,
+      "GamesBehind": 0
     }
   ]
 }

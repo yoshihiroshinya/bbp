@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_B",
   "TeamName": "チームB",
+  "League": "セ・リーグ",
   "ShortName": "B",
   "Uniform": {
     "CapColor": "#5e161c",

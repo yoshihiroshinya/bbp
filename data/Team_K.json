@@ -1,0 +1,2926 @@
+{
+  "TeamId": "Team_K",
+  "TeamName": "チームK",
+  "League": "パ・リーグ",
+  "ShortName": "K",
+  "Uniform": {
+    "CapColor": "#5a3a1e",
+    "HomeShirt": "#f2efe4",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "縦縞"
+  },
+  "HomeStadiumId": "ST12",
+  "Manager": {
+    "Name": "K監督",
+    "ReliefTendency": "Normal",
+    "StealTendency": "Aggressive",
+    "BuntTendency": "Conservative",
+    "PinchHitTendency": "Aggressive"
+  },
+  "Batters": [
+    {
+      "Name": "Kスタメン1(中)",
+      "BattingOrder": 1,
+      "MainPosition": "CF",
+      "Number": 8,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 25,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 75,
+      "Power": 48,
+      "Eye": 70,
+      "Speed": 55,
+      "Clutch": 81,
+      "Catching": 82,
+      "GroundBallRate": 62,
+      "Baserunning": 67,
+      "AvgVsRight": 0.258,
+      "AvgVsLeft": 0.249,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 35,
+        "Pos2B": 0,
+        "Pos3B": 84,
+        "SS": 80,
+        "LF": 0,
+        "CF": 100,
+        "RF": 34,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 83,
+          "ArmStrength": 62
+        },
+        "Pos1B": {
+          "DefenseRange": 75,
+          "ArmStrength": 54
+        },
+        "Pos2B": {
+          "DefenseRange": 58,
+          "ArmStrength": 54
+        },
+        "Pos3B": {
+          "DefenseRange": 81,
+          "ArmStrength": 73
+        },
+        "SS": {
+          "DefenseRange": 72,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 55,
+          "ArmStrength": 63
+        },
+        "CF": {
+          "DefenseRange": 74,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 52,
+          "ArmStrength": 66
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 53
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン2(二)",
+      "BattingOrder": 2,
+      "MainPosition": "Pos2B",
+      "Number": 4,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 30,
+      "InjuryProne": 96,
+      "Growth": "Early",
+      "Contact": 73,
+      "Power": 78,
+      "Eye": 67,
+      "Speed": 68,
+      "Clutch": 78,
+      "Catching": 78,
+      "GroundBallRate": 50,
+      "Baserunning": 57,
+      "AvgVsRight": 0.292,
+      "AvgVsLeft": 0.242,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 42,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 69,
+          "ArmStrength": 79
+        },
+        "Pos1B": {
+          "DefenseRange": 62,
+          "ArmStrength": 81
+        },
+        "Pos2B": {
+          "DefenseRange": 72,
+          "ArmStrength": 63
+        },
+        "Pos3B": {
+          "DefenseRange": 81,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 80,
+          "ArmStrength": 74
+        },
+        "LF": {
+          "DefenseRange": 81,
+          "ArmStrength": 63
+        },
+        "CF": {
+          "DefenseRange": 51,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 66,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 54,
+          "ArmStrength": 76
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン3(左)",
+      "BattingOrder": 3,
+      "MainPosition": "LF",
+      "Number": 7,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 32,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 78,
+      "Power": 71,
+      "Eye": 77,
+      "Speed": 75,
+      "Clutch": 76,
+      "Catching": 78,
+      "GroundBallRate": 47,
+      "Baserunning": 58,
+      "AvgVsRight": 0.271,
+      "AvgVsLeft": 0.275,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 41,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 68,
+        "SS": 0,
+        "LF": 100,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 61,
+          "ArmStrength": 83
+        },
+        "Pos1B": {
+          "DefenseRange": 69,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 81,
+          "ArmStrength": 77
+        },
+        "Pos3B": {
+          "DefenseRange": 56,
+          "ArmStrength": 81
+        },
+        "SS": {
+          "DefenseRange": 50,
+          "ArmStrength": 66
+        },
+        "LF": {
+          "DefenseRange": 67,
+          "ArmStrength": 61
+        },
+        "CF": {
+          "DefenseRange": 69,
+          "ArmStrength": 66
+        },
+        "RF": {
+          "DefenseRange": 77,
+          "ArmStrength": 52
+        },
+        "DH": {
+          "DefenseRange": 65,
+          "ArmStrength": 73
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン4(一)",
+      "BattingOrder": 4,
+      "MainPosition": "Pos1B",
+      "Number": 3,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 31,
+      "InjuryProne": 95,
+      "Growth": "Late",
+      "Contact": 77,
+      "Power": 77,
+      "Eye": 73,
+      "Speed": 70,
+      "Clutch": 63,
+      "Catching": 72,
+      "GroundBallRate": 46,
+      "Baserunning": 74,
+      "AvgVsRight": 0.275,
+      "AvgVsLeft": 0.239,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 41,
+        "Pos1B": 100,
+        "Pos2B": 48,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 74,
+          "ArmStrength": 78
+        },
+        "Pos1B": {
+          "DefenseRange": 73,
+          "ArmStrength": 69
+        },
+        "Pos2B": {
+          "DefenseRange": 75,
+          "ArmStrength": 66
+        },
+        "Pos3B": {
+          "DefenseRange": 67,
+          "ArmStrength": 77
+        },
+        "SS": {
+          "DefenseRange": 50,
+          "ArmStrength": 60
+        },
+        "LF": {
+          "DefenseRange": 54,
+          "ArmStrength": 70
+        },
+        "CF": {
+          "DefenseRange": 80,
+          "ArmStrength": 72
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 63,
+          "ArmStrength": 52
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン5(三)",
+      "BattingOrder": 5,
+      "MainPosition": "Pos3B",
+      "Number": 5,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 35,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 67,
+      "Power": 53,
+      "Eye": 72,
+      "Speed": 58,
+      "Clutch": 78,
+      "Catching": 69,
+      "GroundBallRate": 59,
+      "Baserunning": 79,
+      "AvgVsRight": 0.289,
+      "AvgVsLeft": 0.274,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 83,
+        "CF": 0,
+        "RF": 65,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 65,
+          "ArmStrength": 78
+        },
+        "Pos1B": {
+          "DefenseRange": 71,
+          "ArmStrength": 53
+        },
+        "Pos2B": {
+          "DefenseRange": 59,
+          "ArmStrength": 54
+        },
+        "Pos3B": {
+          "DefenseRange": 77,
+          "ArmStrength": 51
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 51
+        },
+        "LF": {
+          "DefenseRange": 54,
+          "ArmStrength": 71
+        },
+        "CF": {
+          "DefenseRange": 62,
+          "ArmStrength": 67
+        },
+        "RF": {
+          "DefenseRange": 60,
+          "ArmStrength": 69
+        },
+        "DH": {
+          "DefenseRange": 66,
+          "ArmStrength": 50
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン6(右)",
+      "BattingOrder": 6,
+      "MainPosition": "RF",
+      "Number": 9,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 23,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 75,
+      "Power": 84,
+      "Eye": 70,
+      "Speed": 58,
+      "Clutch": 52,
+      "Catching": 66,
+      "GroundBallRate": 39,
+      "Baserunning": 77,
+      "AvgVsRight": 0.246,
+      "AvgVsLeft": 0.26,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 65,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 55,
+        "RF": 100,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 82,
+          "ArmStrength": 52
+        },
+        "Pos1B": {
+          "DefenseRange": 72,
+          "ArmStrength": 70
+        },
+        "Pos2B": {
+          "DefenseRange": 66,
+          "ArmStrength": 55
+        },
+        "Pos3B": {
+          "DefenseRange": 55,
+          "ArmStrength": 72
+        },
+        "SS": {
+          "DefenseRange": 52,
+          "ArmStrength": 57
+        },
+        "LF": {
+          "DefenseRange": 74,
+          "ArmStrength": 54
+        },
+        "CF": {
+          "DefenseRange": 79,
+          "ArmStrength": 57
+        },
+        "RF": {
+          "DefenseRange": 70,
+          "ArmStrength": 58
+        },
+        "DH": {
+          "DefenseRange": 67,
+          "ArmStrength": 52
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン7(遊)",
+      "BattingOrder": 7,
+      "MainPosition": "SS",
+      "Number": 6,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 25,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Contact": 67,
+      "Power": 73,
+      "Eye": 71,
+      "Speed": 70,
+      "Clutch": 74,
+      "Catching": 82,
+      "GroundBallRate": 38,
+      "Baserunning": 84,
+      "AvgVsRight": 0.245,
+      "AvgVsLeft": 0.232,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 47,
+        "SS": 100,
+        "LF": 71,
+        "CF": 0,
+        "RF": 82,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 69,
+          "ArmStrength": 53
+        },
+        "Pos1B": {
+          "DefenseRange": 83,
+          "ArmStrength": 73
+        },
+        "Pos2B": {
+          "DefenseRange": 68,
+          "ArmStrength": 61
+        },
+        "Pos3B": {
+          "DefenseRange": 86,
+          "ArmStrength": 65
+        },
+        "SS": {
+          "DefenseRange": 78,
+          "ArmStrength": 78
+        },
+        "LF": {
+          "DefenseRange": 76,
+          "ArmStrength": 66
+        },
+        "CF": {
+          "DefenseRange": 78,
+          "ArmStrength": 53
+        },
+        "RF": {
+          "DefenseRange": 53,
+          "ArmStrength": 79
+        },
+        "DH": {
+          "DefenseRange": 66,
+          "ArmStrength": 64
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン8(捕)",
+      "BattingOrder": 8,
+      "MainPosition": "C",
+      "Number": 27,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 24,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 82,
+      "Power": 60,
+      "Eye": 68,
+      "Speed": 53,
+      "Clutch": 57,
+      "Catching": 79,
+      "GroundBallRate": 64,
+      "Baserunning": 79,
+      "AvgVsRight": 0.269,
+      "AvgVsLeft": 0.262,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 48,
+        "Pos2B": 42,
+        "Pos3B": 66,
+        "SS": 0,
+        "LF": 0,
+        "CF": 68,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 84,
+          "ArmStrength": 52
+        },
+        "Pos1B": {
+          "DefenseRange": 56,
+          "ArmStrength": 72
+        },
+        "Pos2B": {
+          "DefenseRange": 58,
+          "ArmStrength": 48
+        },
+        "Pos3B": {
+          "DefenseRange": 59,
+          "ArmStrength": 60
+        },
+        "SS": {
+          "DefenseRange": 62,
+          "ArmStrength": 66
+        },
+        "LF": {
+          "DefenseRange": 52,
+          "ArmStrength": 79
+        },
+        "CF": {
+          "DefenseRange": 58,
+          "ArmStrength": 79
+        },
+        "RF": {
+          "DefenseRange": 75,
+          "ArmStrength": 70
+        },
+        "DH": {
+          "DefenseRange": 82,
+          "ArmStrength": 61
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kスタメン9(指)",
+      "BattingOrder": 9,
+      "MainPosition": "DH",
+      "Number": 10,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 27,
+      "InjuryProne": 95,
+      "Growth": "Late",
+      "Contact": 63,
+      "Power": 73,
+      "Eye": 59,
+      "Speed": 70,
+      "Clutch": 56,
+      "Catching": 78,
+      "GroundBallRate": 43,
+      "Baserunning": 77,
+      "AvgVsRight": 0.244,
+      "AvgVsLeft": 0.262,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 76,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 56,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 74,
+          "ArmStrength": 70
+        },
+        "Pos1B": {
+          "DefenseRange": 48,
+          "ArmStrength": 62
+        },
+        "Pos2B": {
+          "DefenseRange": 61,
+          "ArmStrength": 69
+        },
+        "Pos3B": {
+          "DefenseRange": 51,
+          "ArmStrength": 82
+        },
+        "SS": {
+          "DefenseRange": 59,
+          "ArmStrength": 82
+        },
+        "LF": {
+          "DefenseRange": 66,
+          "ArmStrength": 55
+        },
+        "CF": {
+          "DefenseRange": 49,
+          "ArmStrength": 59
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 60
+        },
+        "DH": {
+          "DefenseRange": 83,
+          "ArmStrength": 49
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Number": 23,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 28,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 59,
+      "Power": 72,
+      "Eye": 55,
+      "Speed": 49,
+      "Clutch": 78,
+      "Catching": 77,
+      "GroundBallRate": 42,
+      "Baserunning": 68,
+      "AvgVsRight": 0.231,
+      "AvgVsLeft": 0.223,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 78,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 66,
+          "ArmStrength": 63
+        },
+        "Pos1B": {
+          "DefenseRange": 52,
+          "ArmStrength": 59
+        },
+        "Pos2B": {
+          "DefenseRange": 59,
+          "ArmStrength": 63
+        },
+        "Pos3B": {
+          "DefenseRange": 83,
+          "ArmStrength": 80
+        },
+        "SS": {
+          "DefenseRange": 79,
+          "ArmStrength": 57
+        },
+        "LF": {
+          "DefenseRange": 83,
+          "ArmStrength": 57
+        },
+        "CF": {
+          "DefenseRange": 79,
+          "ArmStrength": 60
+        },
+        "RF": {
+          "DefenseRange": 68,
+          "ArmStrength": 63
+        },
+        "DH": {
+          "DefenseRange": 66,
+          "ArmStrength": 60
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控2(一)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos1B",
+      "Number": 24,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 25,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 62,
+      "Power": 45,
+      "Eye": 62,
+      "Speed": 57,
+      "Clutch": 55,
+      "Catching": 65,
+      "GroundBallRate": 55,
+      "Baserunning": 80,
+      "AvgVsRight": 0.259,
+      "AvgVsLeft": 0.233,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 100,
+        "Pos2B": 0,
+        "Pos3B": 80,
+        "SS": 0,
+        "LF": 0,
+        "CF": 70,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 61,
+          "ArmStrength": 58
+        },
+        "Pos1B": {
+          "DefenseRange": 71,
+          "ArmStrength": 62
+        },
+        "Pos2B": {
+          "DefenseRange": 80,
+          "ArmStrength": 80
+        },
+        "Pos3B": {
+          "DefenseRange": 63,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 79,
+          "ArmStrength": 55
+        },
+        "LF": {
+          "DefenseRange": 58,
+          "ArmStrength": 52
+        },
+        "CF": {
+          "DefenseRange": 83,
+          "ArmStrength": 80
+        },
+        "RF": {
+          "DefenseRange": 83,
+          "ArmStrength": 74
+        },
+        "DH": {
+          "DefenseRange": 73,
+          "ArmStrength": 74
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控3(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Number": 25,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 21,
+      "InjuryProne": 96,
+      "Growth": "Early",
+      "Contact": 57,
+      "Power": 74,
+      "Eye": 59,
+      "Speed": 64,
+      "Clutch": 55,
+      "Catching": 77,
+      "GroundBallRate": 61,
+      "Baserunning": 54,
+      "AvgVsRight": 0.223,
+      "AvgVsLeft": 0.242,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 38,
+        "Pos1B": 43,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 40,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 64,
+          "ArmStrength": 57
+        },
+        "Pos1B": {
+          "DefenseRange": 81,
+          "ArmStrength": 69
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 63
+        },
+        "Pos3B": {
+          "DefenseRange": 74,
+          "ArmStrength": 78
+        },
+        "SS": {
+          "DefenseRange": 57,
+          "ArmStrength": 66
+        },
+        "LF": {
+          "DefenseRange": 58,
+          "ArmStrength": 55
+        },
+        "CF": {
+          "DefenseRange": 78,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 62,
+          "ArmStrength": 60
+        },
+        "DH": {
+          "DefenseRange": 48,
+          "ArmStrength": 68
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控4(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Number": 26,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 31,
+      "InjuryProne": 99,
+      "Growth": "Normal",
+      "Contact": 61,
+      "Power": 56,
+      "Eye": 54,
+      "Speed": 56,
+      "Clutch": 71,
+      "Catching": 69,
+      "GroundBallRate": 48,
+      "Baserunning": 54,
+      "AvgVsRight": 0.243,
+      "AvgVsLeft": 0.252,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 52,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 65,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 72,
+          "ArmStrength": 65
+        },
+        "Pos1B": {
+          "DefenseRange": 77,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 75,
+          "ArmStrength": 80
+        },
+        "Pos3B": {
+          "DefenseRange": 60,
+          "ArmStrength": 57
+        },
+        "SS": {
+          "DefenseRange": 75,
+          "ArmStrength": 53
+        },
+        "LF": {
+          "DefenseRange": 81,
+          "ArmStrength": 68
+        },
+        "CF": {
+          "DefenseRange": 55,
+          "ArmStrength": 54
+        },
+        "RF": {
+          "DefenseRange": 67,
+          "ArmStrength": 55
+        },
+        "DH": {
+          "DefenseRange": 67,
+          "ArmStrength": 79
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控5(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Number": 28,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 25,
+      "InjuryProne": 95,
+      "Growth": "Late",
+      "Contact": 73,
+      "Power": 68,
+      "Eye": 70,
+      "Speed": 68,
+      "Clutch": 69,
+      "Catching": 76,
+      "GroundBallRate": 38,
+      "Baserunning": 71,
+      "AvgVsRight": 0.229,
+      "AvgVsLeft": 0.232,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 100,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 52,
+          "ArmStrength": 69
+        },
+        "Pos1B": {
+          "DefenseRange": 77,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 72,
+          "ArmStrength": 58
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 54
+        },
+        "SS": {
+          "DefenseRange": 70,
+          "ArmStrength": 65
+        },
+        "LF": {
+          "DefenseRange": 68,
+          "ArmStrength": 49
+        },
+        "CF": {
+          "DefenseRange": 59,
+          "ArmStrength": 64
+        },
+        "RF": {
+          "DefenseRange": 77,
+          "ArmStrength": 51
+        },
+        "DH": {
+          "DefenseRange": 64,
+          "ArmStrength": 66
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控6(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Number": 29,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 36,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 74,
+      "Power": 66,
+      "Eye": 70,
+      "Speed": 60,
+      "Clutch": 81,
+      "Catching": 80,
+      "GroundBallRate": 37,
+      "Baserunning": 52,
+      "AvgVsRight": 0.231,
+      "AvgVsLeft": 0.255,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 67,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 60
+        },
+        "Pos1B": {
+          "DefenseRange": 79,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 68,
+          "ArmStrength": 53
+        },
+        "Pos3B": {
+          "DefenseRange": 68,
+          "ArmStrength": 73
+        },
+        "SS": {
+          "DefenseRange": 80,
+          "ArmStrength": 70
+        },
+        "LF": {
+          "DefenseRange": 72,
+          "ArmStrength": 68
+        },
+        "CF": {
+          "DefenseRange": 80,
+          "ArmStrength": 78
+        },
+        "RF": {
+          "DefenseRange": 68,
+          "ArmStrength": 53
+        },
+        "DH": {
+          "DefenseRange": 70,
+          "ArmStrength": 67
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K控7(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Number": 30,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 35,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 68,
+      "Power": 60,
+      "Eye": 69,
+      "Speed": 78,
+      "Clutch": 49,
+      "Catching": 80,
+      "GroundBallRate": 60,
+      "Baserunning": 73,
+      "AvgVsRight": 0.238,
+      "AvgVsLeft": 0.255,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 83,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 30,
+        "CF": 100,
+        "RF": 58,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 80,
+          "ArmStrength": 63
+        },
+        "Pos1B": {
+          "DefenseRange": 67,
+          "ArmStrength": 80
+        },
+        "Pos2B": {
+          "DefenseRange": 79,
+          "ArmStrength": 51
+        },
+        "Pos3B": {
+          "DefenseRange": 76,
+          "ArmStrength": 54
+        },
+        "SS": {
+          "DefenseRange": 69,
+          "ArmStrength": 55
+        },
+        "LF": {
+          "DefenseRange": 53,
+          "ArmStrength": 78
+        },
+        "CF": {
+          "DefenseRange": 74,
+          "ArmStrength": 70
+        },
+        "RF": {
+          "DefenseRange": 73,
+          "ArmStrength": 84
+        },
+        "DH": {
+          "DefenseRange": 80,
+          "ArmStrength": 82
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "Pitchers": [
+    {
+      "Name": "K先発1",
+      "Role": "Starter",
+      "Number": 11,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 80,
+      "Stuff": 75,
+      "Stamina": 77,
+      "HasIntimidation": true,
+      "Age": 22,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 59,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 66,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 46,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K先発2",
+      "Role": "Starter",
+      "Number": 12,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 73,
+      "Stuff": 69,
+      "Stamina": 84,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 96,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 75,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 76,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 65,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K先発3",
+      "Role": "Starter",
+      "Number": 13,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 80,
+      "Stuff": 75,
+      "Stamina": 66,
+      "HasIntimidation": false,
+      "Age": 29,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 69,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 57,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 70,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 57,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K先発4",
+      "Role": "Starter",
+      "Number": 14,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 79,
+      "Stuff": 73,
+      "Stamina": 76,
+      "HasIntimidation": false,
+      "Age": 25,
+      "InjuryProne": 93,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 59,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 62,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 43,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K先発5",
+      "Role": "Starter",
+      "Number": 15,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "アンダー",
+      "Control": 75,
+      "Stuff": 75,
+      "Stamina": 74,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 69,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 65,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 66,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "ナックルカーブ",
+          "Quality": 47,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 8
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K中継ぎ1",
+      "Role": "Reliever",
+      "Number": 16,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "オーバー",
+      "Control": 69,
+      "Stuff": 60,
+      "Stamina": 36,
+      "HasIntimidation": false,
+      "Age": 34,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 75,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 74,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 71,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K中継ぎ2",
+      "Role": "Reliever",
+      "Number": 17,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "スリークォーター",
+      "Control": 57,
+      "Stuff": 77,
+      "Stamina": 45,
+      "HasIntimidation": false,
+      "Age": 26,
+      "InjuryProne": 98,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 60,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 62,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K中継ぎ3",
+      "Role": "Reliever",
+      "Number": 18,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "サイド",
+      "Control": 65,
+      "Stuff": 75,
+      "Stamina": 39,
+      "HasIntimidation": false,
+      "Age": 24,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 71,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K中継ぎ4",
+      "Role": "Reliever",
+      "Number": 19,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 61,
+      "Stuff": 76,
+      "Stamina": 40,
+      "HasIntimidation": false,
+      "Age": 33,
+      "InjuryProne": 96,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 62,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 60,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "パーム",
+          "Quality": 55,
+          "StrikeoutBoost": 12,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "K抑え",
+      "Role": "Closer",
+      "Number": 20,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 84,
+      "Stuff": 90,
+      "Stamina": 39,
+      "HasIntimidation": true,
+      "Age": 24,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "豪速球",
+          "Quality": 86,
+          "StrikeoutBoost": 10,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "SFF",
+          "Quality": 86,
+          "StrikeoutBoost": 20,
+          "GroundBallBoost": 15
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 72,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmBatters": [
+    {
+      "Name": "Kファーム1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Number": 51,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 19,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 62,
+      "Power": 64,
+      "Eye": 63,
+      "Speed": 55,
+      "Clutch": 60,
+      "Catching": 66,
+      "GroundBallRate": 49,
+      "Baserunning": 70,
+      "AvgVsRight": 0.231,
+      "AvgVsLeft": 0.226,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 64,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 58,
+          "ArmStrength": 54
+        },
+        "Pos1B": {
+          "DefenseRange": 60,
+          "ArmStrength": 55
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 66
+        },
+        "Pos3B": {
+          "DefenseRange": 64,
+          "ArmStrength": 64
+        },
+        "SS": {
+          "DefenseRange": 59,
+          "ArmStrength": 62
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 61
+        },
+        "CF": {
+          "DefenseRange": 57,
+          "ArmStrength": 56
+        },
+        "RF": {
+          "DefenseRange": 59,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 51
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム2(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Number": 52,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 22,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Contact": 56,
+      "Power": 62,
+      "Eye": 57,
+      "Speed": 57,
+      "Clutch": 57,
+      "Catching": 64,
+      "GroundBallRate": 52,
+      "Baserunning": 54,
+      "AvgVsRight": 0.227,
+      "AvgVsLeft": 0.222,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 58,
+        "SS": 68,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 53,
+          "ArmStrength": 56
+        },
+        "Pos1B": {
+          "DefenseRange": 66,
+          "ArmStrength": 51
+        },
+        "Pos2B": {
+          "DefenseRange": 58,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 60,
+          "ArmStrength": 58
+        },
+        "SS": {
+          "DefenseRange": 63,
+          "ArmStrength": 58
+        },
+        "LF": {
+          "DefenseRange": 60,
+          "ArmStrength": 60
+        },
+        "CF": {
+          "DefenseRange": 62,
+          "ArmStrength": 55
+        },
+        "RF": {
+          "DefenseRange": 57,
+          "ArmStrength": 57
+        },
+        "DH": {
+          "DefenseRange": 57,
+          "ArmStrength": 52
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム3(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Number": 53,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 23,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 61,
+      "Power": 66,
+      "Eye": 57,
+      "Speed": 54,
+      "Clutch": 57,
+      "Catching": 64,
+      "GroundBallRate": 43,
+      "Baserunning": 73,
+      "AvgVsRight": 0.229,
+      "AvgVsLeft": 0.227,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 45,
+        "Pos3B": 47,
+        "SS": 100,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 57,
+          "ArmStrength": 64
+        },
+        "Pos1B": {
+          "DefenseRange": 67,
+          "ArmStrength": 50
+        },
+        "Pos2B": {
+          "DefenseRange": 59,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 59
+        },
+        "SS": {
+          "DefenseRange": 61,
+          "ArmStrength": 57
+        },
+        "LF": {
+          "DefenseRange": 63,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 63,
+          "ArmStrength": 56
+        },
+        "RF": {
+          "DefenseRange": 61,
+          "ArmStrength": 62
+        },
+        "DH": {
+          "DefenseRange": 53,
+          "ArmStrength": 59
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム4(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Number": 54,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 28,
+      "InjuryProne": 95,
+      "Growth": "Late",
+      "Contact": 61,
+      "Power": 55,
+      "Eye": 61,
+      "Speed": 63,
+      "Clutch": 56,
+      "Catching": 64,
+      "GroundBallRate": 48,
+      "Baserunning": 64,
+      "AvgVsRight": 0.243,
+      "AvgVsLeft": 0.223,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 51,
+        "RF": 47,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 57,
+          "ArmStrength": 60
+        },
+        "Pos1B": {
+          "DefenseRange": 61,
+          "ArmStrength": 64
+        },
+        "Pos2B": {
+          "DefenseRange": 62,
+          "ArmStrength": 60
+        },
+        "Pos3B": {
+          "DefenseRange": 63,
+          "ArmStrength": 60
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 54
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 57
+        },
+        "CF": {
+          "DefenseRange": 57,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 63
+        },
+        "DH": {
+          "DefenseRange": 60,
+          "ArmStrength": 56
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム5(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Number": 55,
+      "Bats": "左",
+      "Trend": "Balanced",
+      "Age": 30,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Contact": 61,
+      "Power": 53,
+      "Eye": 58,
+      "Speed": 62,
+      "Clutch": 52,
+      "Catching": 64,
+      "GroundBallRate": 64,
+      "Baserunning": 61,
+      "AvgVsRight": 0.236,
+      "AvgVsLeft": 0.214,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 66,
+        "CF": 100,
+        "RF": 57,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 61
+        },
+        "Pos1B": {
+          "DefenseRange": 64,
+          "ArmStrength": 52
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 59
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 61
+        },
+        "SS": {
+          "DefenseRange": 57,
+          "ArmStrength": 59
+        },
+        "LF": {
+          "DefenseRange": 53,
+          "ArmStrength": 60
+        },
+        "CF": {
+          "DefenseRange": 62,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 63
+        },
+        "DH": {
+          "DefenseRange": 59,
+          "ArmStrength": 64
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム6(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Number": 56,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 34,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 59,
+      "Power": 60,
+      "Eye": 54,
+      "Speed": 57,
+      "Clutch": 62,
+      "Catching": 64,
+      "GroundBallRate": 44,
+      "Baserunning": 71,
+      "AvgVsRight": 0.217,
+      "AvgVsLeft": 0.23,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 74,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 66,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 58,
+          "ArmStrength": 64
+        },
+        "Pos1B": {
+          "DefenseRange": 64,
+          "ArmStrength": 58
+        },
+        "Pos2B": {
+          "DefenseRange": 61,
+          "ArmStrength": 58
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 54
+        },
+        "SS": {
+          "DefenseRange": 60,
+          "ArmStrength": 52
+        },
+        "LF": {
+          "DefenseRange": 63,
+          "ArmStrength": 60
+        },
+        "CF": {
+          "DefenseRange": 67,
+          "ArmStrength": 58
+        },
+        "RF": {
+          "DefenseRange": 57,
+          "ArmStrength": 60
+        },
+        "DH": {
+          "DefenseRange": 57,
+          "ArmStrength": 59
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmPitchers": [
+    {
+      "Name": "Kファーム先発1",
+      "Role": "Starter",
+      "Number": 61,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 65,
+      "Stuff": 61,
+      "Stamina": 76,
+      "HasIntimidation": false,
+      "Age": 22,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 62,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 67,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム先発2",
+      "Role": "Starter",
+      "Number": 62,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 59,
+      "Stuff": 67,
+      "Stamina": 75,
+      "HasIntimidation": false,
+      "Age": 25,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "パーム",
+          "Quality": 65,
+          "StrikeoutBoost": 12,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シンカー",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム救援1",
+      "Role": "Reliever",
+      "Number": 63,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "サイド",
+      "Control": 60,
+      "Stuff": 68,
+      "Stamina": 39,
+      "HasIntimidation": false,
+      "Age": 27,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 72,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム救援2",
+      "Role": "Reliever",
+      "Number": 64,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "スリークォーター",
+      "Control": 62,
+      "Stuff": 66,
+      "Stamina": 46,
+      "HasIntimidation": false,
+      "Age": 32,
+      "InjuryProne": 94,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 69,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 66,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 73,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Kファーム救援3",
+      "Role": "Reliever",
+      "Number": 65,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "アンダー",
+      "Control": 60,
+      "Stuff": 62,
+      "Stamina": 38,
+      "HasIntimidation": false,
+      "Age": 22,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 64,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 63,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    }
+  ]
+}

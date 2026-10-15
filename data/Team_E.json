@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_E",
   "TeamName": "チームE",
+  "League": "セ・リーグ",
   "ShortName": "E",
   "Uniform": {
     "CapColor": "#a8521a",

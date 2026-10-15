@@ -1,6 +1,7 @@
 {
   "TeamId": "Team_C",
   "TeamName": "チームC",
+  "League": "セ・リーグ",
   "ShortName": "C",
   "Uniform": {
     "CapColor": "#1b5aa0",

@@ -1,0 +1,2896 @@
+{
+  "TeamId": "Team_J",
+  "TeamName": "チームJ",
+  "League": "パ・リーグ",
+  "ShortName": "J",
+  "Uniform": {
+    "CapColor": "#8a3a5a",
+    "HomeShirt": "#f3f5f8",
+    "AwayShirt": "#9fb0bd",
+    "Pattern": "無地"
+  },
+  "HomeStadiumId": "ST11",
+  "Manager": {
+    "Name": "J監督",
+    "ReliefTendency": "Conservative",
+    "StealTendency": "Conservative",
+    "BuntTendency": "Aggressive",
+    "PinchHitTendency": "Conservative"
+  },
+  "Batters": [
+    {
+      "Name": "Jスタメン1(中)",
+      "BattingOrder": 1,
+      "MainPosition": "CF",
+      "Number": 8,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 31,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 64,
+      "Power": 73,
+      "Eye": 70,
+      "Speed": 72,
+      "Clutch": 82,
+      "Catching": 67,
+      "GroundBallRate": 58,
+      "Baserunning": 76,
+      "AvgVsRight": 0.278,
+      "AvgVsLeft": 0.262,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 37,
+        "CF": 100,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 50,
+          "ArmStrength": 82
+        },
+        "Pos1B": {
+          "DefenseRange": 71,
+          "ArmStrength": 83
+        },
+        "Pos2B": {
+          "DefenseRange": 54,
+          "ArmStrength": 56
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 59,
+          "ArmStrength": 72
+        },
+        "LF": {
+          "DefenseRange": 79,
+          "ArmStrength": 52
+        },
+        "CF": {
+          "DefenseRange": 56,
+          "ArmStrength": 78
+        },
+        "RF": {
+          "DefenseRange": 51,
+          "ArmStrength": 52
+        },
+        "DH": {
+          "DefenseRange": 80,
+          "ArmStrength": 72
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン2(二)",
+      "BattingOrder": 2,
+      "MainPosition": "Pos2B",
+      "Number": 4,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 33,
+      "InjuryProne": 95,
+      "Growth": "Early",
+      "Contact": 72,
+      "Power": 77,
+      "Eye": 60,
+      "Speed": 67,
+      "Clutch": 81,
+      "Catching": 68,
+      "GroundBallRate": 39,
+      "Baserunning": 78,
+      "AvgVsRight": 0.28,
+      "AvgVsLeft": 0.28,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 69,
+        "Pos1B": 37,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 55,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 71,
+          "ArmStrength": 53
+        },
+        "Pos1B": {
+          "DefenseRange": 56,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 63
+        },
+        "Pos3B": {
+          "DefenseRange": 78,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 69,
+          "ArmStrength": 74
+        },
+        "LF": {
+          "DefenseRange": 61,
+          "ArmStrength": 72
+        },
+        "CF": {
+          "DefenseRange": 84,
+          "ArmStrength": 64
+        },
+        "RF": {
+          "DefenseRange": 54,
+          "ArmStrength": 48
+        },
+        "DH": {
+          "DefenseRange": 74,
+          "ArmStrength": 68
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン3(左)",
+      "BattingOrder": 3,
+      "MainPosition": "LF",
+      "Number": 7,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 21,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 66,
+      "Power": 69,
+      "Eye": 80,
+      "Speed": 73,
+      "Clutch": 81,
+      "Catching": 69,
+      "GroundBallRate": 51,
+      "Baserunning": 71,
+      "AvgVsRight": 0.247,
+      "AvgVsLeft": 0.25,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 79,
+        "RF": 31,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 83,
+          "ArmStrength": 72
+        },
+        "Pos1B": {
+          "DefenseRange": 67,
+          "ArmStrength": 71
+        },
+        "Pos2B": {
+          "DefenseRange": 78,
+          "ArmStrength": 67
+        },
+        "Pos3B": {
+          "DefenseRange": 65,
+          "ArmStrength": 83
+        },
+        "SS": {
+          "DefenseRange": 79,
+          "ArmStrength": 81
+        },
+        "LF": {
+          "DefenseRange": 72,
+          "ArmStrength": 80
+        },
+        "CF": {
+          "DefenseRange": 82,
+          "ArmStrength": 69
+        },
+        "RF": {
+          "DefenseRange": 84,
+          "ArmStrength": 77
+        },
+        "DH": {
+          "DefenseRange": 82,
+          "ArmStrength": 81
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン4(一)",
+      "BattingOrder": 4,
+      "MainPosition": "Pos1B",
+      "Number": 3,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 33,
+      "InjuryProne": 99,
+      "Growth": "Late",
+      "Contact": 68,
+      "Power": 71,
+      "Eye": 80,
+      "Speed": 65,
+      "Clutch": 79,
+      "Catching": 76,
+      "GroundBallRate": 48,
+      "Baserunning": 76,
+      "AvgVsRight": 0.293,
+      "AvgVsLeft": 0.235,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 55,
+        "Pos1B": 100,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 32,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 71,
+          "ArmStrength": 49
+        },
+        "Pos1B": {
+          "DefenseRange": 57,
+          "ArmStrength": 66
+        },
+        "Pos2B": {
+          "DefenseRange": 57,
+          "ArmStrength": 74
+        },
+        "Pos3B": {
+          "DefenseRange": 58,
+          "ArmStrength": 83
+        },
+        "SS": {
+          "DefenseRange": 66,
+          "ArmStrength": 79
+        },
+        "LF": {
+          "DefenseRange": 50,
+          "ArmStrength": 74
+        },
+        "CF": {
+          "DefenseRange": 60,
+          "ArmStrength": 71
+        },
+        "RF": {
+          "DefenseRange": 71,
+          "ArmStrength": 82
+        },
+        "DH": {
+          "DefenseRange": 79,
+          "ArmStrength": 48
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン5(三)",
+      "BattingOrder": 5,
+      "MainPosition": "Pos3B",
+      "Number": 5,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 20,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 72,
+      "Power": 64,
+      "Eye": 79,
+      "Speed": 61,
+      "Clutch": 63,
+      "Catching": 68,
+      "GroundBallRate": 42,
+      "Baserunning": 66,
+      "AvgVsRight": 0.295,
+      "AvgVsLeft": 0.241,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 44,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 52,
+          "ArmStrength": 65
+        },
+        "Pos1B": {
+          "DefenseRange": 61,
+          "ArmStrength": 78
+        },
+        "Pos2B": {
+          "DefenseRange": 77,
+          "ArmStrength": 61
+        },
+        "Pos3B": {
+          "DefenseRange": 57,
+          "ArmStrength": 81
+        },
+        "SS": {
+          "DefenseRange": 82,
+          "ArmStrength": 61
+        },
+        "LF": {
+          "DefenseRange": 84,
+          "ArmStrength": 62
+        },
+        "CF": {
+          "DefenseRange": 61,
+          "ArmStrength": 63
+        },
+        "RF": {
+          "DefenseRange": 60,
+          "ArmStrength": 62
+        },
+        "DH": {
+          "DefenseRange": 59,
+          "ArmStrength": 67
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン6(右)",
+      "BattingOrder": 6,
+      "MainPosition": "RF",
+      "Number": 9,
+      "Bats": "左",
+      "Trend": "Pull",
+      "Age": 33,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 73,
+      "Power": 64,
+      "Eye": 62,
+      "Speed": 76,
+      "Clutch": 71,
+      "Catching": 78,
+      "GroundBallRate": 38,
+      "Baserunning": 62,
+      "AvgVsRight": 0.246,
+      "AvgVsLeft": 0.254,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 53,
+        "Pos2B": 46,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 100,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 60,
+          "ArmStrength": 53
+        },
+        "Pos1B": {
+          "DefenseRange": 57,
+          "ArmStrength": 75
+        },
+        "Pos2B": {
+          "DefenseRange": 74,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 69,
+          "ArmStrength": 67
+        },
+        "SS": {
+          "DefenseRange": 67,
+          "ArmStrength": 85
+        },
+        "LF": {
+          "DefenseRange": 60,
+          "ArmStrength": 71
+        },
+        "CF": {
+          "DefenseRange": 70,
+          "ArmStrength": 65
+        },
+        "RF": {
+          "DefenseRange": 86,
+          "ArmStrength": 55
+        },
+        "DH": {
+          "DefenseRange": 67,
+          "ArmStrength": 77
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン7(遊)",
+      "BattingOrder": 7,
+      "MainPosition": "SS",
+      "Number": 6,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 33,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Contact": 76,
+      "Power": 64,
+      "Eye": 76,
+      "Speed": 77,
+      "Clutch": 57,
+      "Catching": 81,
+      "GroundBallRate": 62,
+      "Baserunning": 76,
+      "AvgVsRight": 0.253,
+      "AvgVsLeft": 0.286,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 100,
+        "LF": 0,
+        "CF": 79,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 51,
+          "ArmStrength": 76
+        },
+        "Pos1B": {
+          "DefenseRange": 80,
+          "ArmStrength": 78
+        },
+        "Pos2B": {
+          "DefenseRange": 69,
+          "ArmStrength": 71
+        },
+        "Pos3B": {
+          "DefenseRange": 56,
+          "ArmStrength": 79
+        },
+        "SS": {
+          "DefenseRange": 58,
+          "ArmStrength": 85
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 63
+        },
+        "CF": {
+          "DefenseRange": 65,
+          "ArmStrength": 68
+        },
+        "RF": {
+          "DefenseRange": 68,
+          "ArmStrength": 80
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 67
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン8(捕)",
+      "BattingOrder": 8,
+      "MainPosition": "C",
+      "Number": 27,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 21,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 80,
+      "Power": 66,
+      "Eye": 72,
+      "Speed": 69,
+      "Clutch": 53,
+      "Catching": 71,
+      "GroundBallRate": 61,
+      "Baserunning": 76,
+      "AvgVsRight": 0.273,
+      "AvgVsLeft": 0.282,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 52,
+        "LF": 0,
+        "CF": 35,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 52,
+          "ArmStrength": 54
+        },
+        "Pos1B": {
+          "DefenseRange": 60,
+          "ArmStrength": 84
+        },
+        "Pos2B": {
+          "DefenseRange": 74,
+          "ArmStrength": 62
+        },
+        "Pos3B": {
+          "DefenseRange": 73,
+          "ArmStrength": 64
+        },
+        "SS": {
+          "DefenseRange": 80,
+          "ArmStrength": 70
+        },
+        "LF": {
+          "DefenseRange": 79,
+          "ArmStrength": 68
+        },
+        "CF": {
+          "DefenseRange": 71,
+          "ArmStrength": 49
+        },
+        "RF": {
+          "DefenseRange": 58,
+          "ArmStrength": 74
+        },
+        "DH": {
+          "DefenseRange": 71,
+          "ArmStrength": 73
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jスタメン9(指)",
+      "BattingOrder": 9,
+      "MainPosition": "DH",
+      "Number": 10,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 24,
+      "InjuryProne": 98,
+      "Growth": "Late",
+      "Contact": 69,
+      "Power": 49,
+      "Eye": 66,
+      "Speed": 78,
+      "Clutch": 65,
+      "Catching": 75,
+      "GroundBallRate": 48,
+      "Baserunning": 69,
+      "AvgVsRight": 0.294,
+      "AvgVsLeft": 0.25,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 53,
+        "Pos2B": 57,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 67,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 75,
+          "ArmStrength": 73
+        },
+        "Pos1B": {
+          "DefenseRange": 65,
+          "ArmStrength": 77
+        },
+        "Pos2B": {
+          "DefenseRange": 79,
+          "ArmStrength": 60
+        },
+        "Pos3B": {
+          "DefenseRange": 83,
+          "ArmStrength": 71
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 59
+        },
+        "LF": {
+          "DefenseRange": 50,
+          "ArmStrength": 68
+        },
+        "CF": {
+          "DefenseRange": 51,
+          "ArmStrength": 80
+        },
+        "RF": {
+          "DefenseRange": 50,
+          "ArmStrength": 48
+        },
+        "DH": {
+          "DefenseRange": 56,
+          "ArmStrength": 73
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Number": 23,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 32,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Contact": 66,
+      "Power": 61,
+      "Eye": 54,
+      "Speed": 57,
+      "Clutch": 82,
+      "Catching": 76,
+      "GroundBallRate": 40,
+      "Baserunning": 61,
+      "AvgVsRight": 0.267,
+      "AvgVsLeft": 0.237,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 52,
+        "LF": 0,
+        "CF": 60,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 52
+        },
+        "Pos1B": {
+          "DefenseRange": 49,
+          "ArmStrength": 64
+        },
+        "Pos2B": {
+          "DefenseRange": 74,
+          "ArmStrength": 76
+        },
+        "Pos3B": {
+          "DefenseRange": 68,
+          "ArmStrength": 76
+        },
+        "SS": {
+          "DefenseRange": 72,
+          "ArmStrength": 63
+        },
+        "LF": {
+          "DefenseRange": 55,
+          "ArmStrength": 74
+        },
+        "CF": {
+          "DefenseRange": 83,
+          "ArmStrength": 72
+        },
+        "RF": {
+          "DefenseRange": 80,
+          "ArmStrength": 74
+        },
+        "DH": {
+          "DefenseRange": 63,
+          "ArmStrength": 54
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控2(一)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos1B",
+      "Number": 24,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 28,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 69,
+      "Power": 68,
+      "Eye": 58,
+      "Speed": 68,
+      "Clutch": 67,
+      "Catching": 77,
+      "GroundBallRate": 60,
+      "Baserunning": 52,
+      "AvgVsRight": 0.233,
+      "AvgVsLeft": 0.242,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 100,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 41,
+        "LF": 0,
+        "CF": 30,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 71,
+          "ArmStrength": 77
+        },
+        "Pos1B": {
+          "DefenseRange": 78,
+          "ArmStrength": 81
+        },
+        "Pos2B": {
+          "DefenseRange": 51,
+          "ArmStrength": 82
+        },
+        "Pos3B": {
+          "DefenseRange": 73,
+          "ArmStrength": 60
+        },
+        "SS": {
+          "DefenseRange": 52,
+          "ArmStrength": 64
+        },
+        "LF": {
+          "DefenseRange": 61,
+          "ArmStrength": 74
+        },
+        "CF": {
+          "DefenseRange": 62,
+          "ArmStrength": 49
+        },
+        "RF": {
+          "DefenseRange": 53,
+          "ArmStrength": 66
+        },
+        "DH": {
+          "DefenseRange": 70,
+          "ArmStrength": 79
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控3(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Number": 25,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 22,
+      "InjuryProne": 95,
+      "Growth": "Early",
+      "Contact": 62,
+      "Power": 69,
+      "Eye": 75,
+      "Speed": 61,
+      "Clutch": 63,
+      "Catching": 68,
+      "GroundBallRate": 60,
+      "Baserunning": 49,
+      "AvgVsRight": 0.257,
+      "AvgVsLeft": 0.241,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 36,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 58,
+          "ArmStrength": 73
+        },
+        "Pos1B": {
+          "DefenseRange": 72,
+          "ArmStrength": 55
+        },
+        "Pos2B": {
+          "DefenseRange": 72,
+          "ArmStrength": 82
+        },
+        "Pos3B": {
+          "DefenseRange": 66,
+          "ArmStrength": 67
+        },
+        "SS": {
+          "DefenseRange": 57,
+          "ArmStrength": 51
+        },
+        "LF": {
+          "DefenseRange": 80,
+          "ArmStrength": 82
+        },
+        "CF": {
+          "DefenseRange": 70,
+          "ArmStrength": 79
+        },
+        "RF": {
+          "DefenseRange": 58,
+          "ArmStrength": 58
+        },
+        "DH": {
+          "DefenseRange": 80,
+          "ArmStrength": 58
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控4(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Number": 26,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 33,
+      "InjuryProne": 95,
+      "Growth": "Normal",
+      "Contact": 73,
+      "Power": 72,
+      "Eye": 74,
+      "Speed": 58,
+      "Clutch": 52,
+      "Catching": 63,
+      "GroundBallRate": 45,
+      "Baserunning": 60,
+      "AvgVsRight": 0.219,
+      "AvgVsLeft": 0.213,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 76,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 54,
+          "ArmStrength": 56
+        },
+        "Pos1B": {
+          "DefenseRange": 79,
+          "ArmStrength": 56
+        },
+        "Pos2B": {
+          "DefenseRange": 77,
+          "ArmStrength": 84
+        },
+        "Pos3B": {
+          "DefenseRange": 55,
+          "ArmStrength": 77
+        },
+        "SS": {
+          "DefenseRange": 81,
+          "ArmStrength": 85
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 56
+        },
+        "CF": {
+          "DefenseRange": 56,
+          "ArmStrength": 80
+        },
+        "RF": {
+          "DefenseRange": 78,
+          "ArmStrength": 80
+        },
+        "DH": {
+          "DefenseRange": 58,
+          "ArmStrength": 56
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控5(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Number": 28,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 33,
+      "InjuryProne": 99,
+      "Growth": "Late",
+      "Contact": 76,
+      "Power": 54,
+      "Eye": 64,
+      "Speed": 54,
+      "Clutch": 56,
+      "Catching": 66,
+      "GroundBallRate": 45,
+      "Baserunning": 52,
+      "AvgVsRight": 0.226,
+      "AvgVsLeft": 0.237,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 43,
+        "Pos1B": 0,
+        "Pos2B": 84,
+        "Pos3B": 52,
+        "SS": 100,
+        "LF": 78,
+        "CF": 56,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 82,
+          "ArmStrength": 68
+        },
+        "Pos1B": {
+          "DefenseRange": 60,
+          "ArmStrength": 54
+        },
+        "Pos2B": {
+          "DefenseRange": 68,
+          "ArmStrength": 49
+        },
+        "Pos3B": {
+          "DefenseRange": 70,
+          "ArmStrength": 79
+        },
+        "SS": {
+          "DefenseRange": 65,
+          "ArmStrength": 68
+        },
+        "LF": {
+          "DefenseRange": 84,
+          "ArmStrength": 75
+        },
+        "CF": {
+          "DefenseRange": 54,
+          "ArmStrength": 77
+        },
+        "RF": {
+          "DefenseRange": 54,
+          "ArmStrength": 65
+        },
+        "DH": {
+          "DefenseRange": 65,
+          "ArmStrength": 74
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控6(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Number": 29,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 26,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 71,
+      "Power": 63,
+      "Eye": 73,
+      "Speed": 60,
+      "Clutch": 57,
+      "Catching": 63,
+      "GroundBallRate": 52,
+      "Baserunning": 55,
+      "AvgVsRight": 0.238,
+      "AvgVsLeft": 0.25,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 57,
+        "Pos2B": 32,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 61,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 68,
+          "ArmStrength": 62
+        },
+        "Pos1B": {
+          "DefenseRange": 71,
+          "ArmStrength": 61
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 65
+        },
+        "Pos3B": {
+          "DefenseRange": 84,
+          "ArmStrength": 83
+        },
+        "SS": {
+          "DefenseRange": 84,
+          "ArmStrength": 72
+        },
+        "LF": {
+          "DefenseRange": 48,
+          "ArmStrength": 51
+        },
+        "CF": {
+          "DefenseRange": 67,
+          "ArmStrength": 80
+        },
+        "RF": {
+          "DefenseRange": 56,
+          "ArmStrength": 76
+        },
+        "DH": {
+          "DefenseRange": 77,
+          "ArmStrength": 59
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J控7(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Number": 30,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 24,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 77,
+      "Power": 45,
+      "Eye": 67,
+      "Speed": 71,
+      "Clutch": 79,
+      "Catching": 72,
+      "GroundBallRate": 40,
+      "Baserunning": 80,
+      "AvgVsRight": 0.229,
+      "AvgVsLeft": 0.257,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 74,
+        "Pos1B": 33,
+        "Pos2B": 77,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 39,
+        "CF": 100,
+        "RF": 70,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 63,
+          "ArmStrength": 48
+        },
+        "Pos1B": {
+          "DefenseRange": 81,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 76,
+          "ArmStrength": 68
+        },
+        "Pos3B": {
+          "DefenseRange": 71,
+          "ArmStrength": 53
+        },
+        "SS": {
+          "DefenseRange": 71,
+          "ArmStrength": 61
+        },
+        "LF": {
+          "DefenseRange": 79,
+          "ArmStrength": 62
+        },
+        "CF": {
+          "DefenseRange": 79,
+          "ArmStrength": 82
+        },
+        "RF": {
+          "DefenseRange": 78,
+          "ArmStrength": 57
+        },
+        "DH": {
+          "DefenseRange": 60,
+          "ArmStrength": 66
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "Pitchers": [
+    {
+      "Name": "J先発1",
+      "Role": "Starter",
+      "Number": 11,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 62,
+      "Stuff": 70,
+      "Stamina": 69,
+      "HasIntimidation": true,
+      "Age": 27,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 76,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 71,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J先発2",
+      "Role": "Starter",
+      "Number": 12,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 76,
+      "Stuff": 69,
+      "Stamina": 85,
+      "HasIntimidation": false,
+      "Age": 31,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 82,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 79,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 79,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 49,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J先発3",
+      "Role": "Starter",
+      "Number": 13,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 74,
+      "Stuff": 67,
+      "Stamina": 79,
+      "HasIntimidation": false,
+      "Age": 35,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 51,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 52,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J先発4",
+      "Role": "Starter",
+      "Number": 14,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 76,
+      "Stuff": 75,
+      "Stamina": 75,
+      "HasIntimidation": false,
+      "Age": 35,
+      "InjuryProne": 98,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 84,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 58,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 52,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J先発5",
+      "Role": "Starter",
+      "Number": 15,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "アンダー",
+      "Control": 63,
+      "Stuff": 72,
+      "Stamina": 75,
+      "HasIntimidation": false,
+      "Age": 21,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 58,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 56,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 77,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "ナックルカーブ",
+          "Quality": 51,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 8
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J中継ぎ1",
+      "Role": "Reliever",
+      "Number": 16,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 74,
+      "Stuff": 74,
+      "Stamina": 41,
+      "HasIntimidation": false,
+      "Age": 32,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 65,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J中継ぎ2",
+      "Role": "Reliever",
+      "Number": 17,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "スリークォーター",
+      "Control": 59,
+      "Stuff": 77,
+      "Stamina": 44,
+      "HasIntimidation": false,
+      "Age": 26,
+      "InjuryProne": 98,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 61,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 62,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J中継ぎ3",
+      "Role": "Reliever",
+      "Number": 18,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "サイド",
+      "Control": 62,
+      "Stuff": 74,
+      "Stamina": 39,
+      "HasIntimidation": false,
+      "Age": 23,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 72,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J中継ぎ4",
+      "Role": "Reliever",
+      "Number": 19,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "スリークォーター",
+      "Control": 71,
+      "Stuff": 71,
+      "Stamina": 42,
+      "HasIntimidation": false,
+      "Age": 25,
+      "InjuryProne": 95,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 76,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "パーム",
+          "Quality": 64,
+          "StrikeoutBoost": 12,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "J抑え",
+      "Role": "Closer",
+      "Number": 20,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 78,
+      "Stuff": 88,
+      "Stamina": 35,
+      "HasIntimidation": true,
+      "Age": 32,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "豪速球",
+          "Quality": 84,
+          "StrikeoutBoost": 10,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "SFF",
+          "Quality": 86,
+          "StrikeoutBoost": 20,
+          "GroundBallBoost": 15
+        },
+        {
+          "Name": "スライダー",
+          "Quality": 71,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmBatters": [
+    {
+      "Name": "Jファーム1(捕)",
+      "BattingOrder": 0,
+      "MainPosition": "C",
+      "Number": 51,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 21,
+      "InjuryProne": 96,
+      "Growth": "Normal",
+      "Contact": 58,
+      "Power": 55,
+      "Eye": 58,
+      "Speed": 66,
+      "Clutch": 51,
+      "Catching": 57,
+      "GroundBallRate": 46,
+      "Baserunning": 56,
+      "AvgVsRight": 0.234,
+      "AvgVsLeft": 0.224,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 100,
+        "Pos1B": 62,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 51,
+          "ArmStrength": 56
+        },
+        "Pos1B": {
+          "DefenseRange": 57,
+          "ArmStrength": 63
+        },
+        "Pos2B": {
+          "DefenseRange": 62,
+          "ArmStrength": 56
+        },
+        "Pos3B": {
+          "DefenseRange": 60,
+          "ArmStrength": 62
+        },
+        "SS": {
+          "DefenseRange": 63,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 61,
+          "ArmStrength": 57
+        },
+        "CF": {
+          "DefenseRange": 59,
+          "ArmStrength": 62
+        },
+        "RF": {
+          "DefenseRange": 61,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 60,
+          "ArmStrength": 57
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム2(二)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos2B",
+      "Number": 52,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 22,
+      "InjuryProne": 94,
+      "Growth": "Early",
+      "Contact": 57,
+      "Power": 52,
+      "Eye": 60,
+      "Speed": 58,
+      "Clutch": 57,
+      "Catching": 57,
+      "GroundBallRate": 53,
+      "Baserunning": 77,
+      "AvgVsRight": 0.226,
+      "AvgVsLeft": 0.222,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 100,
+        "Pos3B": 46,
+        "SS": 49,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 53,
+          "ArmStrength": 58
+        },
+        "Pos1B": {
+          "DefenseRange": 54,
+          "ArmStrength": 65
+        },
+        "Pos2B": {
+          "DefenseRange": 65,
+          "ArmStrength": 57
+        },
+        "Pos3B": {
+          "DefenseRange": 68,
+          "ArmStrength": 64
+        },
+        "SS": {
+          "DefenseRange": 63,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 62,
+          "ArmStrength": 54
+        },
+        "CF": {
+          "DefenseRange": 56,
+          "ArmStrength": 61
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 57
+        },
+        "DH": {
+          "DefenseRange": 61,
+          "ArmStrength": 55
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム3(遊)",
+      "BattingOrder": 0,
+      "MainPosition": "SS",
+      "Number": 53,
+      "Bats": "左",
+      "Trend": "Opposite",
+      "Age": 23,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Contact": 52,
+      "Power": 50,
+      "Eye": 58,
+      "Speed": 60,
+      "Clutch": 58,
+      "Catching": 61,
+      "GroundBallRate": 52,
+      "Baserunning": 78,
+      "AvgVsRight": 0.221,
+      "AvgVsLeft": 0.222,
+      "HasVsLeftBoost": true,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 51,
+        "Pos3B": 40,
+        "SS": 100,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 54,
+          "ArmStrength": 63
+        },
+        "Pos1B": {
+          "DefenseRange": 60,
+          "ArmStrength": 53
+        },
+        "Pos2B": {
+          "DefenseRange": 63,
+          "ArmStrength": 58
+        },
+        "Pos3B": {
+          "DefenseRange": 61,
+          "ArmStrength": 62
+        },
+        "SS": {
+          "DefenseRange": 58,
+          "ArmStrength": 66
+        },
+        "LF": {
+          "DefenseRange": 63,
+          "ArmStrength": 59
+        },
+        "CF": {
+          "DefenseRange": 57,
+          "ArmStrength": 55
+        },
+        "RF": {
+          "DefenseRange": 59,
+          "ArmStrength": 64
+        },
+        "DH": {
+          "DefenseRange": 49,
+          "ArmStrength": 64
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム4(左)",
+      "BattingOrder": 0,
+      "MainPosition": "LF",
+      "Number": 54,
+      "Bats": "右",
+      "Trend": "Opposite",
+      "Age": 26,
+      "InjuryProne": 98,
+      "Growth": "Late",
+      "Contact": 62,
+      "Power": 58,
+      "Eye": 59,
+      "Speed": 56,
+      "Clutch": 53,
+      "Catching": 62,
+      "GroundBallRate": 65,
+      "Baserunning": 76,
+      "AvgVsRight": 0.239,
+      "AvgVsLeft": 0.228,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 100,
+        "CF": 49,
+        "RF": 64,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 56,
+          "ArmStrength": 58
+        },
+        "Pos1B": {
+          "DefenseRange": 60,
+          "ArmStrength": 59
+        },
+        "Pos2B": {
+          "DefenseRange": 61,
+          "ArmStrength": 54
+        },
+        "Pos3B": {
+          "DefenseRange": 56,
+          "ArmStrength": 65
+        },
+        "SS": {
+          "DefenseRange": 52,
+          "ArmStrength": 57
+        },
+        "LF": {
+          "DefenseRange": 52,
+          "ArmStrength": 63
+        },
+        "CF": {
+          "DefenseRange": 61,
+          "ArmStrength": 59
+        },
+        "RF": {
+          "DefenseRange": 63,
+          "ArmStrength": 61
+        },
+        "DH": {
+          "DefenseRange": 61,
+          "ArmStrength": 62
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム5(中)",
+      "BattingOrder": 0,
+      "MainPosition": "CF",
+      "Number": 55,
+      "Bats": "右",
+      "Trend": "Pull",
+      "Age": 32,
+      "InjuryProne": 98,
+      "Growth": "Normal",
+      "Contact": 60,
+      "Power": 48,
+      "Eye": 56,
+      "Speed": 57,
+      "Clutch": 60,
+      "Catching": 57,
+      "GroundBallRate": 52,
+      "Baserunning": 76,
+      "AvgVsRight": 0.231,
+      "AvgVsLeft": 0.219,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 0,
+        "Pos2B": 0,
+        "Pos3B": 0,
+        "SS": 0,
+        "LF": 63,
+        "CF": 100,
+        "RF": 47,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 61,
+          "ArmStrength": 59
+        },
+        "Pos1B": {
+          "DefenseRange": 62,
+          "ArmStrength": 61
+        },
+        "Pos2B": {
+          "DefenseRange": 59,
+          "ArmStrength": 64
+        },
+        "Pos3B": {
+          "DefenseRange": 59,
+          "ArmStrength": 63
+        },
+        "SS": {
+          "DefenseRange": 59,
+          "ArmStrength": 52
+        },
+        "LF": {
+          "DefenseRange": 65,
+          "ArmStrength": 63
+        },
+        "CF": {
+          "DefenseRange": 57,
+          "ArmStrength": 55
+        },
+        "RF": {
+          "DefenseRange": 54,
+          "ArmStrength": 54
+        },
+        "DH": {
+          "DefenseRange": 63,
+          "ArmStrength": 63
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム6(三)",
+      "BattingOrder": 0,
+      "MainPosition": "Pos3B",
+      "Number": 56,
+      "Bats": "右",
+      "Trend": "Balanced",
+      "Age": 35,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Contact": 62,
+      "Power": 64,
+      "Eye": 60,
+      "Speed": 58,
+      "Clutch": 64,
+      "Catching": 60,
+      "GroundBallRate": 44,
+      "Baserunning": 61,
+      "AvgVsRight": 0.22,
+      "AvgVsLeft": 0.222,
+      "HasVsLeftBoost": false,
+      "Condition": 0,
+      "Fatigue": 0,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "PositionAptitude": {
+        "C": 0,
+        "Pos1B": 49,
+        "Pos2B": 0,
+        "Pos3B": 100,
+        "SS": 57,
+        "LF": 0,
+        "CF": 0,
+        "RF": 0,
+        "DH": 100
+      },
+      "PositionAbilities": {
+        "C": {
+          "DefenseRange": 59,
+          "ArmStrength": 54
+        },
+        "Pos1B": {
+          "DefenseRange": 61,
+          "ArmStrength": 52
+        },
+        "Pos2B": {
+          "DefenseRange": 60,
+          "ArmStrength": 64
+        },
+        "Pos3B": {
+          "DefenseRange": 64,
+          "ArmStrength": 64
+        },
+        "SS": {
+          "DefenseRange": 57,
+          "ArmStrength": 56
+        },
+        "LF": {
+          "DefenseRange": 64,
+          "ArmStrength": 64
+        },
+        "CF": {
+          "DefenseRange": 54,
+          "ArmStrength": 53
+        },
+        "RF": {
+          "DefenseRange": 64,
+          "ArmStrength": 66
+        },
+        "DH": {
+          "DefenseRange": 57,
+          "ArmStrength": 52
+        }
+      },
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "AtBats": 0,
+        "Hits": 0,
+        "HR": 0,
+        "RBI": 0,
+        "Walks": 0,
+        "SO": 0,
+        "Steals": 0,
+        "CaughtStealing": 0,
+        "HitByPitch": 0
+      },
+      "CareerHistory": []
+    }
+  ],
+  "FarmPitchers": [
+    {
+      "Name": "Jファーム先発1",
+      "Role": "Starter",
+      "Number": 61,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 60,
+      "Stuff": 61,
+      "Stamina": 77,
+      "HasIntimidation": false,
+      "Age": 21,
+      "InjuryProne": 93,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 60,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム先発2",
+      "Role": "Starter",
+      "Number": 62,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "オーバー",
+      "Control": 67,
+      "Stuff": 70,
+      "Stamina": 81,
+      "HasIntimidation": false,
+      "Age": 24,
+      "InjuryProne": 97,
+      "Growth": "Early",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 68,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム救援1",
+      "Role": "Reliever",
+      "Number": 63,
+      "RotationOrder": 0,
+      "Hand": "右",
+      "Delivery": "サイド",
+      "Control": 66,
+      "Stuff": 69,
+      "Stamina": 38,
+      "HasIntimidation": false,
+      "Age": 29,
+      "InjuryProne": 94,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 70,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カーブ",
+          "Quality": 67,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 10
+        },
+        {
+          "Name": "フォーク",
+          "Quality": 67,
+          "StrikeoutBoost": 15,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム救援2",
+      "Role": "Reliever",
+      "Number": 64,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "スリークォーター",
+      "Control": 63,
+      "Stuff": 64,
+      "Stamina": 50,
+      "HasIntimidation": false,
+      "Age": 32,
+      "InjuryProne": 94,
+      "Growth": "Late",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 63,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    },
+    {
+      "Name": "Jファーム救援3",
+      "Role": "Reliever",
+      "Number": 65,
+      "RotationOrder": 0,
+      "Hand": "左",
+      "Delivery": "アンダー",
+      "Control": 62,
+      "Stuff": 63,
+      "Stamina": 42,
+      "HasIntimidation": false,
+      "Age": 22,
+      "InjuryProne": 97,
+      "Growth": "Normal",
+      "Condition": 0,
+      "Fatigue": 0,
+      "DaysPitchedInRow": 0,
+      "RestDays": 6,
+      "InjuryStatus": 0,
+      "FarmDays": 0,
+      "JustSwapped": false,
+      "Pitches": [
+        {
+          "Name": "ストレート",
+          "Quality": 63,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "シュート",
+          "Quality": 65,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 14
+        },
+        {
+          "Name": "チェンジアップ",
+          "Quality": 63,
+          "StrikeoutBoost": 8,
+          "GroundBallBoost": 0
+        },
+        {
+          "Name": "カットボール",
+          "Quality": 66,
+          "StrikeoutBoost": 0,
+          "GroundBallBoost": 0
+        }
+      ],
+      "Stats": {
+        "Year": 2026,
+        "Games": 0,
+        "Wins": 0,
+        "Losses": 0,
+        "Saves": 0,
+        "Holds": 0,
+        "OutsPitched": 0,
+        "RunsAllowed": 0,
+        "EarnedRuns": 0,
+        "HitsAllowed": 0,
+        "HRAllowed": 0,
+        "WalksAllowed": 0,
+        "Strikeouts": 0
+      },
+      "CareerHistory": []
+    }
+  ]
+}
