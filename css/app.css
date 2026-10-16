@@ -1851,6 +1851,8 @@ button.t-p-n {
 .gtag.up { color: var(--accent); }
 .gtag.down { color: var(--danger); }
 .gtag.loud { font-weight: 700; border-color: currentColor; }
+/* 外国人選手の印（2026-10-16。`ForeignTag.razor`） */
+.ftag { display: inline-block; margin-left: .3rem; padding: 0 .25rem; border-radius: .3rem; font-size: .68rem; font-weight: 700; font-style: normal; white-space: nowrap; color: #e3b341; border: 1px solid currentColor; }
 /* 年度別成績の「新球種」列（2026-10-08） */
 .tbl .new-pitch { color: var(--accent); font-weight: 700; white-space: nowrap; }
 
@@ -2549,3 +2551,14 @@ button.nm-tap {
     background: none; border: 1px solid var(--line); border-radius: 8px;
 }
 .uni-hex { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .82rem; color: var(--muted); }
+
+/* ---- 保存できなかったことを知らせる枠（2026-10-16。保存容量）----
+   `.confirm-sheet` の赤（＝データにかかわる）と同じ色で、ページの中に置く（画面を覆わない）。 */
+.card.save-err { background: #2a1618; border-color: var(--danger, #b04a4a); }
+.card.save-err a.btn { text-decoration: none; text-align: center; }
+
+/* 選手シートの改名（2026-10-16）。★入力欄は縮んでよい（ボタンが画面の外へ出ないように） */
+.rename-row { display: flex; gap: .35rem; align-items: center; flex-wrap: wrap; margin: .3rem 0; }
+.rename-in { flex: 1 1 8rem; min-width: 0; font: inherit; padding: .3rem .45rem;
+    background: var(--bg, #0f1418); color: inherit; border: 1px solid var(--line, #3a4650); border-radius: 6px; }
+.rename-err { color: var(--danger); }
